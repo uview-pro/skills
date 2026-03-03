@@ -4,7 +4,7 @@ const path = require('path');
 // 文档根目录
 const docsRoot = path.join(__dirname, '../docs/zh');
 // Skills输出目录
-const skillsRoot = path.join(__dirname, '../skills');
+const skillsRoot = path.join(__dirname, '../skills/uview-pro');
 const referencesDir = path.join(skillsRoot, 'references');
 
 // 要处理的目录列表

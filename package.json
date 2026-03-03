@@ -4,7 +4,7 @@
   "description": "uView Pro Skill 技能集",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gen:skills": "node ./scripts/generate-skills.js"
   },
   "repository": {
     "type": "git",
