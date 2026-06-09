@@ -1,7 +1,8 @@
 ---
 name: "divider"
-description: "区隔内容的分割线，一般用于页面底部"没有更多"的提示。. Invoke when user needs to use divider component in their uni-app project."
+description: "区隔内容的分割线，一般用于页面底部"没有更多"的提示。. Invoke when user needs to use divider component."
 url: "https://uviewpro.cn/zh/components/divider.html"
+triggers: ["divider","分割线"]
 ---
 
 # Divider 分割线 <to-api/>
@@ -44,7 +45,7 @@ url: "https://uviewpro.cn/zh/components/divider.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            |        默认值        | 可选值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
@@ -61,7 +62,7 @@ url: "https://uviewpro.cn/zh/components/divider.html"
 
 
 
-## Events
+### Events
 
 
 |事件名|说明|回调参数|版本|

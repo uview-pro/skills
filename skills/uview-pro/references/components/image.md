@@ -1,7 +1,8 @@
 ---
 name: "image"
-description: "此组件为 uni-app 的`image`组件的加强版，在继承了原有功能外，还支持淡入动画、加载中、加载失败提示、圆角值和形状等。. Invoke when user needs to use image component in their uni-app project."
+description: "此组件为 uni-app 的`image`组件的加强版，在继承了原有功能外，还支持淡入动画、加载中、加载失败提示、圆角值和形状等。. Invoke when user needs to use image component."
 url: "https://uviewpro.cn/zh/components/image.html"
+triggers: ["image","图片"]
 ---
 
 # Image 图片 <to-api/>
@@ -41,6 +42,27 @@ const src = ref<string>("https://ik.imagekit.io/anyup/uview-pro/logo/default.png
 ```html
 <u-image src="https://ik.imagekit.io/anyup/uview-pro/logo/default.png" mode="widthFix"></u-image>
 ```
+
+## mode 有效值
+
+mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
+
+| 模式 | 值            | 说明                                                                          |
+| ----- | ------------ | --------------------------------------------------------------------------- |
+| 缩放 | scaleToFill  | 不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素                                           |
+| 缩放 | aspectFit    | 保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。                                  |
+| 缩放 | aspectFill   | 保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。               |
+| 缩放 | widthFix     | 宽度不变，高度自动变化，保持原图宽高比不变                                                       |
+| 缩放 | heightFix    | 高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3** |
+| 裁剪 | top          | 不缩放图片，只显示图片的顶部区域                                                            |
+| 裁剪 | bottom       | 不缩放图片，只显示图片的底部区域                                                            |
+| 裁剪 | center       | 不缩放图片，只显示图片的中间区域                                                            |
+| 裁剪 | left         | 不缩放图片，只显示图片的左边区域                                                            |
+| 裁剪 | right        | 不缩放图片，只显示图片的右边区域                                                            |
+| 裁剪 | top left     | 不缩放图片，只显示图片的左上边区域                                                           |
+| 裁剪 | top right    | 不缩放图片，只显示图片的右上边区域                                                           |
+| 裁剪 | bottom left  | 不缩放图片，只显示图片的左下边区域                                                           |
+| 裁剪 | bottom right | 不缩放图片，只显示图片的右下边区域|
 
 ## 图片形状
 
@@ -114,7 +136,7 @@ const src = ref<string>("https://ik.imagekit.io/anyup/uview-pro/logo/default.png
 
 ## API
 
-## Props
+### Props
 
 | 参数                            | 说明                                                          | 类型             | 默认值       | 可选值 |
 | ------------------------------- | ------------------------------------------------------------- | ---------------- | ------------ | ------ |
@@ -135,7 +157,7 @@ const src = ref<string>("https://ik.imagekit.io/anyup/uview-pro/logo/default.png
 | duration                        | 搭配`fade`参数的过渡时间，单位 ms                             | String \| Number | 500          | -      |
 | bg-color | 背景颜色                                                      | String           | #f3f4f6      | -      |
 
-## Slot
+### Slots
 
 | 名称    | 说明                   |
 | :------ | :--------------------- |
@@ -149,9 +171,3 @@ const src = ref<string>("https://ik.imagekit.io/anyup/uview-pro/logo/default.png
 | click  | 点击图片时触发     | -             |
 | error  | 图片加载失败时触发 | err: 错误信息 |
 | load   | 图片加载成功时触发 | -             |
-
-<style scoped>
-h3[id=slot] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

@@ -1,7 +1,8 @@
 ---
 name: "useToast"
-description: "Toast 提示 composable，提供简洁的 Toast 显示功能，支持多种类型和全局/局部模式。. Invoke when user needs to use useToast hook in their uni-app project."
+description: "Toast 提示 composable，提供简洁的 Toast 显示功能，支持多种类型和全局/局部模式。. Invoke when user needs to use useToast hook."
 url: "https://uviewpro.cn/zh/hooks/useToast.html"
+triggers: ["useToast","轻提示钩子"]
 ---
 
 # useToast 提示
@@ -541,3 +542,5 @@ const submitOrder = async () => {
 | 全局支持 | ✅ | ✅ |
 | 局部支持 | ✅ | ✅ |
 | 学习成本 | 低 | 中 |
+
+<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/pkAZ96qITcdsbf7M73gJ-A']" />

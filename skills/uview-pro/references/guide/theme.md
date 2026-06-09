@@ -1,7 +1,8 @@
 ---
 name: "theme"
-description: ":::tip 说明. Invoke when user needs guidance on theme in uView Pro."
+description: ":::tip 说明. Invoke when user needs guidance on theme."
 url: "https://uviewpro.cn/zh/guide/theme.html"
+triggers: ["theme","主题配置"]
 ---
 
 # 自定义主题 <BadgeVersion text="0.4.x以下" :show-suffix="false" />

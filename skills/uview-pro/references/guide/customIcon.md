@@ -1,7 +1,8 @@
 ---
 name: "customIcon"
-description: "uView Pro 已通过大量的实践中，收集了用户最有可能需要用到的图标，见 [Icon 图标](/zh/components/icon.html)，但我们也相信，它肯定无法覆盖所有的场景和需求。. Invoke when user needs guidance on customIcon in uView Pro."
+description: "uView Pro 已通过大量的实践中，收集了用户最有可能需要用到的图标，见 [Icon 图标](/zh/components/icon.html)，但我们也相信，它肯定无法覆盖所有的场景和需求。. Invoke when user needs guidance on customIcon."
 url: "https://uviewpro.cn/zh/guide/customIcon.html"
+triggers: ["customIcon","自定义图标"]
 ---
 
 # CustomIcon 扩展自定义图标库

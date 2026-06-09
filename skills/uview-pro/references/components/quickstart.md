@@ -1,7 +1,8 @@
 ---
 name: "quickstart"
-description: "通过 npm 和下载方式的配置之后，在某个页面可以直接使用组件，无需通过`import`引入组件。. Invoke when user needs to use quickstart component in their uni-app project."
+description: "通过 npm 和下载方式的配置之后，在某个页面可以直接使用组件，无需通过`import`引入组件。. Invoke when user needs to use quickstart component."
 url: "https://uviewpro.cn/zh/components/quickstart.html"
+triggers: ["quickstart"]
 ---
 
 # 快速上手

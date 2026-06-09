@@ -1,7 +1,8 @@
 ---
 name: "grid"
-description: "宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件([badge](/zh/components/badge.html))，或者图标等，也可以扩展为左右滑动的轮播形式。. Invoke when user needs to use grid component in their uni-app project."
+description: "宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件([badge](/zh/components/badge.html))，或者图标等，也可以扩展为左右滑动的轮播形式。. Invoke when user needs to use grid component."
 url: "https://uviewpro.cn/zh/components/grid.html"
+triggers: ["grid","宫格"]
 ---
 
 # Grid 宫格布局 <to-api/>
@@ -194,7 +195,7 @@ const click = (index: number) => {
 
 ## API
 
-## Grid Props
+### Props Grid
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -203,14 +204,14 @@ const click = (index: number) => {
 | align | 宫格的对齐方式，用于控制只有一两个宫格时的对齐场景  | String | left | center / right |
 | hover-class | 样式类名，按下时有效，样式必须写在根目录的`App.vue`或通过其引入的全局样式中才有效，`none`为无效果，作用于头部标题区域  | String | u-hover-class | none / 其他 |
 
-## Grid-item Props
+### Props GridItem
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
 | bg-color | 宫格的背景颜色  | String | #ffffff | - |
 | index | 点击宫格时，返回的值  | String \| Number	 | - | - |
 
-## Grid Event
+### Events Grid
 
 注意：请在`<u-grid></u-grid>`上监听此事件
 
@@ -219,17 +220,10 @@ const click = (index: number) => {
 |click|点击宫格触发|index: `u-grid-item`通过`props`传递的`index`值|
 
 
-## Grid-item Event
+### Events GridItem
 
 注意：请在`<u-grid-item></u-grid-item>`上监听此事件
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
 |click|点击宫格触发|index: `u-grid-item`通过`props`传递的`index`值|
-
-
-<style scoped>
-h3[id=grid-props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-</style>

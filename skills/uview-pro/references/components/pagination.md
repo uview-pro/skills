@@ -1,7 +1,8 @@
 ---
 name: "pagination"
-description: "分页组件（Pagination）用于在数据量较大的情况下，将数据进行分页，并允许用户进行主动点击跳转。. Invoke when user needs to use pagination component in their uni-app project."
+description: "分页组件（Pagination）用于在数据量较大的情况下，将数据进行分页，并允许用户进行主动点击跳转。. Invoke when user needs to use pagination component."
 url: "https://uviewpro.cn/zh/components/pagination.html"
+triggers: ["pagination"]
 ---
 
 # Pagination 分页 <BadgeVersion text="0.3.10" /> <to-api/>
@@ -63,7 +64,7 @@ function handleChange(val: PaginationChangePayload) {
 
 ## API
 
-## Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |:- |:- |:- |:-: |:-: |
@@ -75,13 +76,13 @@ function handleChange(val: PaginationChangePayload) {
 | prevIcon | 左侧按钮图标，仅支持内置图标 | String | arrow-left | - |
 | nextIcon | 右侧按钮图标，仅支持内置图标 | String | arrow-right | - |
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |:-|:-|:-|
 | change | 切换分页事件 | `{ type: string, current: number }` current 为当前页，type 值为：next/prev，表示点击的是上一页还是下一页 |
 
-## Slots
+### Slots
 
 | 名称 | 说明 |
 |:-|:-|

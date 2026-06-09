@@ -1,7 +1,8 @@
 ---
 name: "guid"
-description: "该函数可以生产一个全局唯一、随机的guid，默认首字母为`u`，可以用于当做元素的id或者class名等需要唯一，随机字符串的地方，因为id或者class不能以数字开头。. Invoke when user needs to use guid tool in their uni-app project."
+description: "该函数可以生产一个全局唯一、随机的guid，默认首字母为`u`，可以用于当做元素的id或者class名等需要唯一，随机字符串的地方，因为id或者class不能以数字开头。. Invoke when user needs to use guid tool."
 url: "https://uviewpro.cn/zh/tools/guid.html"
+triggers: ["guid","GUID生成"]
 ---
 
 # guid 全局唯一标识符

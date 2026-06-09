@@ -1,7 +1,8 @@
 ---
 name: "random"
-description: "该方法可以返回在"min"和"max"之间的数值，要求"min"和"max"都为数值，且"max"大于或等于"min"，否则返回0.. Invoke when user needs to use random tool in their uni-app project."
+description: "该方法可以返回在"min"和"max"之间的数值，要求"min"和"max"都为数值，且"max"大于或等于"min"，否则返回0.. Invoke when user needs to use random tool."
 url: "https://uviewpro.cn/zh/tools/random.html"
+triggers: ["random","随机数"]
 ---
 
 # random 随机数值

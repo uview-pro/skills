@@ -1,7 +1,8 @@
 ---
 name: "messageInput"
-description: "该组件一般用于验证用户短信验证码的场景，也可以结合uView的[键盘组件](/zh/components/keyboard.html)使用. Invoke when user needs to use messageInput component in their uni-app project."
+description: "该组件一般用于验证用户短信验证码的场景，也可以结合uView的[键盘组件](/zh/components/keyboard.html)使用. Invoke when user needs to use messageInput component."
 url: "https://uviewpro.cn/zh/components/messageInput.html"
+triggers: ["messageInput"]
 ---
 
 # MessageInput 验证码输入 <to-api/>
@@ -94,7 +95,7 @@ const finish = (e: string) => {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -111,7 +112,7 @@ const finish = (e: string) => {
 | width | 输入框的宽度(高等于宽)，单位rpx | String \| Number | 80 | - |
 | disabled-keyboard | 禁止点击输入框唤起系统键盘 | Boolean  | false | true |
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 | 版本 |
 | :- | :- | :- | :- |

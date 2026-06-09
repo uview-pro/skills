@@ -1,7 +1,8 @@
 ---
 name: "line"
-description: "此组件一般用于显示一根线条，用于分隔内容块，有横向和竖向两种模式，且能设置0.5px线条，使用也很简单。. Invoke when user needs to use line component in their uni-app project."
+description: "此组件一般用于显示一根线条，用于分隔内容块，有横向和竖向两种模式，且能设置0.5px线条，使用也很简单。. Invoke when user needs to use line component."
 url: "https://uviewpro.cn/zh/components/line.html"
+triggers: ["line"]
 ---
 
 # Line 线条 <to-api/>
@@ -56,7 +57,7 @@ url: "https://uviewpro.cn/zh/components/line.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -66,10 +67,3 @@ url: "https://uviewpro.cn/zh/components/line.html"
 | hair-line | 是否显示细线条 | Boolean  | true | false |
 | margin | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx" | String  | - | - |
 | border-style | 线条类型，见上方说明 | String  | solid | dashed / dotted |
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 37%;
-}
-</style>

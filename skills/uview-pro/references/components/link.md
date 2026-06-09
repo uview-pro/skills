@@ -1,7 +1,8 @@
 ---
 name: "link"
-description: "该组件为超链接组件，在不同平台有不同表现形式：. Invoke when user needs to use link component in their uni-app project."
+description: "该组件为超链接组件，在不同平台有不同表现形式：. Invoke when user needs to use link component."
 url: "https://uviewpro.cn/zh/components/link.html"
+triggers: ["link"]
 ---
 
 # Link 超链接 <to-api/>
@@ -38,7 +39,7 @@ url: "https://uviewpro.cn/zh/components/link.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -50,7 +51,7 @@ url: "https://uviewpro.cn/zh/components/link.html"
 | mp-tips | 各个小程序平台把链接复制到粘贴板后的提示语 | String  | 链接已复制，请在浏览器打开 | - |
 | default-click <BadgeVersion text="0.3.16" /> | 是否有默认点击事件，不同平台有不同表现形式，如上介绍 | Boolean  | true | false |
 
-## Event
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

@@ -1,7 +1,8 @@
 ---
 name: "lazyLoad"
-description: "懒加载使用的场景为：页面有很多图片时，APP会同时加载所有的图片，导致页面卡顿，各个位置的图片出现前后不一致等. Invoke when user needs to use lazyLoad component in their uni-app project."
+description: "懒加载使用的场景为：页面有很多图片时，APP会同时加载所有的图片，导致页面卡顿，各个位置的图片出现前后不一致等. Invoke when user needs to use lazyLoad component."
 url: "https://uviewpro.cn/zh/components/lazyLoad.html"
+triggers: ["lazyLoad"]
 ---
 
 # LazyLoad 懒加载 <to-api/>
@@ -100,7 +101,7 @@ const errorImg = ref<string>('/static/uView/load_error.png')
 
 ## API
 
-##  Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -116,7 +117,7 @@ const errorImg = ref<string>('/static/uView/load_error.png')
 | height | 图片高度，注意：实际高度可能受`img-mode`参数影响 | String \| Number | 450 | - |
 | img-mode | 图片的裁剪模式，详见[image组件裁剪模式](https://uniapp.dcloud.io/component/image) | String \| Number | widthFix | - |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

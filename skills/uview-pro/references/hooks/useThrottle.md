@@ -1,7 +1,8 @@
 ---
 name: "useThrottle"
-description: "节流 composable，用于控制函数在指定时间间隔内只执行一次。. Invoke when user needs to use useThrottle hook in their uni-app project."
+description: "节流 composable，用于控制函数在指定时间间隔内只执行一次。. Invoke when user needs to use useThrottle hook."
 url: "https://uviewpro.cn/zh/hooks/useThrottle.html"
+triggers: ["useThrottle","节流钩子"]
 ---
 
 # useThrottle 节流

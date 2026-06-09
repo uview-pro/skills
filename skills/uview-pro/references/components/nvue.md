@@ -1,7 +1,8 @@
 ---
 name: "nvue"
-description: "前言：uView 在 1.x 版本，只有部分组件支持`nvue`，不推荐在`nvue`项目中使用，uView Pro 也不建议在`nvue`项目中使用，我们在这里做一个专题，列出一些`nvue`上的坑，希望能帮助到您。. Invoke when user needs to use nvue component in their uni-app project."
+description: "前言：uView 在 1.x 版本，只有部分组件支持`nvue`，不推荐在`nvue`项目中使用，uView Pro 也不建议在`nvue`项目中使用，我们在这里做一个专题，列出一些`nvue`上的坑，希望能帮助到您。. Invoke when user needs to use nvue component."
 url: "https://uviewpro.cn/zh/components/nvue.html"
+triggers: ["nvue"]
 ---
 
 # Nvue 特性相关

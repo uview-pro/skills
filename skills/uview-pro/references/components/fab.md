@@ -1,7 +1,8 @@
 ---
 name: "fab"
-description: "悬浮按钮（Floating Action Button）用于在页面右下角或指定位置提供常用快捷操作入口，支持拖拽、展开子操作项、以及多种布局策略。本文件按组件文档规范提供示例与 API 说明，包含平台差异与常见问题说明。. Invoke when user needs to use fab component in their uni-app project."
+description: "悬浮按钮（Floating Action Button）用于在页面右下角或指定位置提供常用快捷操作入口，支持拖拽、展开子操作项、以及多种布局策略。本文件按组件文档规范提供示例与 API 说明，包含平台差异与常见问题说明。. Invoke when user needs to use fab component."
 url: "https://uviewpro.cn/zh/components/fab.html"
+triggers: ["fab","悬浮按钮"]
 ---
 
 # Fab 悬浮按钮 <BadgeVersion text="0.3.8" /> <to-api/>
@@ -100,7 +101,7 @@ function onBtnClick() {
 
 ## API
 
-## Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |:- |:- |:- |:-: |:-: |
@@ -115,7 +116,7 @@ function onBtnClick() {
 
 > 说明：`gap` 支持对象形式 `{ top, right, bottom, left }`，单位：px。
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |:-|:-|:-|
@@ -127,7 +128,7 @@ function onBtnClick() {
 |:-|:-|
 | toggle | 切换展开/收缩状态（通过组件 ref 调用） |
 
-## Slots
+### Slots
 
 | 名称 | 说明 |
 |:-|:-|

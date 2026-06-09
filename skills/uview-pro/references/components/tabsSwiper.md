@@ -1,7 +1,8 @@
 ---
 name: "tabsSwiper"
-description: "该组件内部实现主要依托于uni-app`scroll-view`和`swiper`组件，主要特色是切换过程中，tabsSwiper文字的颜色可以渐变，底部滑块可以. Invoke when user needs to use tabsSwiper component in their uni-app project."
+description: "该组件内部实现主要依托于uni-app`scroll-view`和`swiper`组件，主要特色是切换过程中，tabsSwiper文字的颜色可以渐变，底部滑块可以. Invoke when user needs to use tabsSwiper component."
 url: "https://uviewpro.cn/zh/components/tabsSwiper.html"
+triggers: ["tabsSwiper"]
 ---
 
 # tabsSwiper 全屏选项卡 <to-api/>
@@ -223,7 +224,7 @@ function onreachBottom() {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -247,7 +248,7 @@ function onreachBottom() {
 | count | 组件内部读取的`list`参数中的属性名（badge徽标数），用法与`name`一致，见上方说明 | string  | count | - |
 | offset | 设置badge的位置偏移，格式为 [x, y]，也即设置的为`top`和`right`的值，单位rpx。 | Array  | [5, 20] | - |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

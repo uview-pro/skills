@@ -1,7 +1,8 @@
 ---
 name: "color"
-description: "此功能为uView内部通过js提供的一些颜色值，可以用于通过js修改元素字体，背景颜色等一些场景，常用于uView的各个组件中。. Invoke when user needs to use color tool in their uni-app project."
+description: "此功能为uView内部通过js提供的一些颜色值，可以用于通过js修改元素字体，背景颜色等一些场景，常用于uView的各个组件中。. Invoke when user needs to use color tool."
 url: "https://uviewpro.cn/zh/tools/color.html"
+triggers: ["color","颜色"]
 ---
 
 # color 颜色值

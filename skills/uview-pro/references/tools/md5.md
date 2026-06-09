@@ -1,7 +1,8 @@
 ---
 name: "md5"
-description: "该`md5`加密方法，需要手动`import`库函数，调用`md5`方法即可使用，可以对字符串加密为32位的字符串结果，如需进一步了解，. Invoke when user needs to use md5 tool in their uni-app project."
+description: "该`md5`加密方法，需要手动`import`库函数，调用`md5`方法即可使用，可以对字符串加密为32位的字符串结果，如需进一步了解，. Invoke when user needs to use md5 tool."
 url: "https://uviewpro.cn/zh/tools/md5.html"
+triggers: ["md5","MD5加密"]
 ---
 
 # md5 加密

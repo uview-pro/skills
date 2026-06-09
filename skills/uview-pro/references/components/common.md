@@ -1,7 +1,8 @@
 ---
 name: "common"
-description: "uView Pro 组件功能的实现，并不依赖全局样式，内置的一些类名，只是提供一些基础且常用的样式，仅此而已。. Invoke when user needs to use common component in their uni-app project."
+description: "uView Pro 组件功能的实现，并不依赖全局样式，内置的一些类名，只是提供一些基础且常用的样式，仅此而已。. Invoke when user needs to use common component."
 url: "https://uviewpro.cn/zh/components/common.html"
+triggers: ["common"]
 ---
 
 # 内置样式

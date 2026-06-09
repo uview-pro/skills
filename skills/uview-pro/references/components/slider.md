@@ -1,7 +1,8 @@
 ---
 name: "slider"
-description: "该组件一般用于表单中，手动选择一个区间范围的场景。. Invoke when user needs to use slider component in their uni-app project."
+description: "该组件一般用于表单中，手动选择一个区间范围的场景。. Invoke when user needs to use slider component."
 url: "https://uviewpro.cn/zh/components/slider.html"
+triggers: ["slider","滑块"]
 ---
 
 # Slider 滑动选择器 <to-api/>
@@ -123,7 +124,7 @@ const value = ref<number>(30)
 ```
 ## API
 
-## Props
+### Props
 
 |参数|说明|类型|默认值|可选值|版本|
 |:-:|:-:|:-:|:-:|:-:|:-:|
@@ -146,13 +147,13 @@ const value = ref<number>(30)
 |showEdgeValue|是否在起始和结束位置显示数值|Boolean|false|true|<BadgeVersion text="0.4.6" />|
 |valuePosition|起始和结束数值显示位置，top-上方，bottom-下方|'top' \| 'bottom'|top|bottom|<BadgeVersion text="0.4.6" />|
 
-## Slot
+### Slots
 
 |名称|说明|
 |:-:|:-:|
 |-|自定义滑块内容|
 
-## Events
+### Events
 
 |事件名|说明|回调参数|
 |:-:|:-:|:-:|

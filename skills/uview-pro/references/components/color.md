@@ -1,7 +1,8 @@
 ---
 name: "color"
-description: "uView经过大量调试和研究，得出一套专有的调色板，在各个组件内部，使用统一的配色，为您的产品带来统一又鲜明的视觉效果。. Invoke when user needs to use color component in their uni-app project."
+description: "uView经过大量调试和研究，得出一套专有的调色板，在各个组件内部，使用统一的配色，为您的产品带来统一又鲜明的视觉效果。. Invoke when user needs to use color component."
 url: "https://uviewpro.cn/zh/components/color.html"
+triggers: ["color","颜色"]
 ---
 
 # Color 色彩

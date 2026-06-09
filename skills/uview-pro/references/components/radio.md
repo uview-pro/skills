@@ -1,7 +1,8 @@
 ---
 name: "radio"
-description: "单选框用于有一个选择，用户只能选择其中一个的场景。. Invoke when user needs to use radio component in their uni-app project."
+description: "单选框用于有一个选择，用户只能选择其中一个的场景。. Invoke when user needs to use radio component."
 url: "https://uviewpro.cn/zh/components/radio.html"
+triggers: ["radio","单选框"]
 ---
 
 # Radio 单选框 <to-api/>
@@ -135,7 +136,7 @@ const radioGroupChange = (e: any) => {
 
 ## API
 
-## Radio Props
+### Props Radio
 
 注意：`radio`和`radio-group`二者同名参数中，`radio`的参数优先级更高。
 
@@ -151,9 +152,7 @@ const radioGroupChange = (e: any) => {
 | label-disabled | 是否禁止点击文本操作`radio` | Boolean  | - | true / false | - |
 | active-color | 选中时的颜色，如设置`radioGroup`的`active-color`将失效 | String  | - | - | - |
 
-
-
-## radioGroup Props
+### Props RadioGroup 
 
 注意：需要给`radioGroup`组件通过`v-model`绑定一个**变量**，来初始化`radio`的状态，随后该值被双向绑定，
 当用户勾单选框时，该值在`radio`内部被修改为`name`值，并反映到父组件，换言之，您无需监听`radio`的`change`事件，也能知道哪个`radio`被选中了。
@@ -171,20 +170,20 @@ const radioGroupChange = (e: any) => {
 | wrap | 是否每个`radio`占一行 | Boolean  | false | true |
 
 
-## radio Event
+### Events Radio
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | change | 某个`radio`状态发生变化时触发(选中状态) | name: 通过`props`传递的`name`参数 | - |
 
 
-## radioGroup Event
+### Events RadioGroup
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | change | 任一个`radio`状态发生变化时触发 | name: 值为`radio`通过`props`传递的`name`值 | - |
 
-## radio Slots
+### Slots Radio
 | 名称 | 说明 | 版本 |
 |:-|:-|:-|
 | default | 默认插槽，用于放置`radio`的文本 | - |

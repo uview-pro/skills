@@ -1,7 +1,8 @@
 ---
 name: "fullScreen"
-description: "所谓压窗屏，是指遮罩能盖住原生导航栏和底部tabbar栏的弹窗，一般用于在APP端弹出升级应用弹框，或者其他需要增强型弹窗的场景。. Invoke when user needs to use fullScreen component in their uni-app project."
+description: "所谓压窗屏，是指遮罩能盖住原生导航栏和底部tabbar栏的弹窗，一般用于在APP端弹出升级应用弹框，或者其他需要增强型弹窗的场景。. Invoke when user needs to use fullScreen component."
 url: "https://uviewpro.cn/zh/components/fullScreen.html"
+triggers: ["fullScreen"]
 ---
 
 # fullScreen 压窗屏

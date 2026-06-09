@@ -1,11 +1,11 @@
 ---
-name: "upload"
-description: "该组件用于上传文件场景，支持图片、视频、文档等多种类型，支持网格(grid)和列表(list)两种展示模式. Invoke when user needs to use upload component."
-url: "https://uviewpro.cn/zh/components/upload.html"
-triggers: ["upload","上传"]
+name: "uploadNew"
+description: "该组件用于上传文件场景，支持图片、视频、文档等多种类型，支持网格(grid)和列表(list)两种展示模式. Invoke when user needs to use uploadNew component."
+url: "https://uviewpro.cn/zh/components/uploadNew.html"
+triggers: ["uploadNew"]
 ---
 
-# Upload 上传 <to-api/> 
+# Upload 上传 <BadgeText text="公测版" type="danger" size="large"></BadgeText> <to-api/> 
 
 <demo-model url="/pages/componentsB/upload/index"></demo-model>
 
@@ -668,5 +668,3 @@ onMounted(() => {
 | on-list-change | 文件列表发生变化时触发 | (lists,name) | - |
 | on-choose | 启用custom-choose时触发 | ({accept,maxCount,currentFiles,index}) | 0.6.0 |
 | update:modelValue | v-model双向绑定事件 | (lists) | 0.6.0 |
-
-<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/CLa0yMSFXjEFdJdnJc_Jkw']" />

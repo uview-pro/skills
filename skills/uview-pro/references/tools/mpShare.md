@@ -1,7 +1,8 @@
 ---
 name: "mpShare"
-description: "此功能，是对uni的[onShareAppMessage 生命周期](https://uniapp.dcloud.io/api/plugins/share?id=onshareappmessage)的封装。. Invoke when user needs to use mpShare tool in their uni-app project."
+description: "此功能，是对uni的[onShareAppMessage 生命周期](https://uniapp.dcloud.io/api/plugins/share?id=onshareappmessage)的封装。. Invoke when user needs to use mpShare tool."
 url: "https://uviewpro.cn/zh/tools/mpShare.html"
+triggers: ["mpShare","小程序分享"]
 ---
 
 # mpShare 小程序分享

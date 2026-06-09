@@ -1,7 +1,8 @@
 ---
 name: "deepMerge"
-description: ":::tip 注意. Invoke when user needs to use deepMerge tool in their uni-app project."
+description: ":::tip 注意. Invoke when user needs to use deepMerge tool."
 url: "https://uviewpro.cn/zh/tools/deepMerge.html"
+triggers: ["deepMerge","深度合并"]
 ---
 
 # deepMerge 对象深度合并

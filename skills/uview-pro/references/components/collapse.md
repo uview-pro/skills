@@ -1,7 +1,8 @@
 ---
 name: "collapse"
-description: "通过折叠面板收纳内容区域. Invoke when user needs to use collapse component in their uni-app project."
+description: "通过折叠面板收纳内容区域. Invoke when user needs to use collapse component."
 url: "https://uviewpro.cn/zh/components/collapse.html"
+triggers: ["collapse","折叠面板"]
 ---
 
 # Collapse 折叠面板 <to-api/>
@@ -156,7 +157,7 @@ const itemStyle = reactive({
 
 ## API
 
-## Collapse Props
+### Props Collapse
 
 |参数|说明|类型|默认值|可选值|
 |---|---|---|---|---|
@@ -168,7 +169,7 @@ const itemStyle = reactive({
 |body-style|`Item`的主体自定义样式，对象形式|Object|-|-|
 |hover-class|样式类名，按下时有效，样式必须写在根目录的`App.vue`或通过其引入的全局样式中才有效，`none`为无效果，作用于头部标题区域|String|u-hover-class|none/其他|
 
-## Collapse Item Props
+### Props CollapseItem
 
 |参数|说明|类型|默认值|可选值|
 |---|---|---|---|---|
@@ -180,7 +181,7 @@ const itemStyle = reactive({
 |align|标题的对齐方式|String|left|-|
 |active-style|不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式|Object|-|-|
 
-## Collapse Event
+### Events Collapse
 
 注意：请在`<u-collapse></u-collapse>`上监听此事件
 
@@ -188,7 +189,7 @@ const itemStyle = reactive({
 |---|---|---|
 |change|当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)|activeNames: String/Array|
 
-## Collapse Item Event
+### Event CollapseItem
 
 注意：请在`<u-collapse-item></u-collapse-item>`上监听此事件
 
@@ -196,7 +197,7 @@ const itemStyle = reactive({
 |---|---|---|
 |change|某个item被打开或者收起时触发|对象，{index: index, show: true|false}，index为`collapse-item`的`index`参数，show为`true`表示被打开，`false`表示被收起|
 
-## Collapse Methods
+### Methods Collapse
 
 注意：此方法需要通过`ref`调用
 
@@ -204,37 +205,10 @@ const itemStyle = reactive({
 |---|---|
 |init|重新初始化内部高度计算，用于异步获取内容的情形，请结合`nextTick()`使用|
 
-## Slot
+### Slots
 
 |名称|说明|
 |---|---|
 |-|主体部分的内容|
 |title|头部的内容，不含右边的箭头|
 |title-all|整个头部的内容，包含右边的箭头|
-
-
-<style scoped>
-h3[id=collapse-props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=collapse-item-props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=collapse-event] + p + table thead tr th:nth-child(2){
-	width: 50%;
-}
-
-h3[id=collapse-methods] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-
-h3[id=collapse-item-event] + p + table thead tr th:nth-child(3){
-	width: 50%;
-}
-
-h3[id=slot] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

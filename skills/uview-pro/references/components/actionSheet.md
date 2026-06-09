@@ -1,7 +1,8 @@
 ---
 name: "actionSheet"
-description: "本组件用于从底部弹出一个操作菜单，供用户选择并返回结果。. Invoke when user needs to use actionSheet component in their uni-app project."
+description: "本组件用于从底部弹出一个操作菜单，供用户选择并返回结果。. Invoke when user needs to use actionSheet component."
 url: "https://uviewpro.cn/zh/components/actionSheet.html"
+triggers: ["actionSheet","动作面板"]
 ---
 
 # ActionSheet 操作菜单 <to-api/>
@@ -257,7 +258,7 @@ function handleClick(index: number) {
 
 ## API
 
-## ActionSheet Props
+### Props ActionSheet
 
 注意：props 中没有控制组件弹出与收起的参数，因为这是通过 v-model 绑定变量实现的，见上方说明。
 |参数|说明|类型|默认值|可选值|
@@ -272,37 +273,37 @@ function handleClick(index: number) {
 |cancel-text|取消按钮的提示文字|String|取消|-|
 |async-close <BadgeVersion text="0.3.5" />|是否异步关闭|Boolean|false|true|
 
-## ActionSheet Event
+### Events ActionSheet
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | click | 点击ActionSheet列表项时触发 | index: 点击了第几个，从0开始 | - |
 | close | 点击取消按钮时触发 | - | - |
 
-## ActionSheet-item Props <BadgeVersion text="0.3.5" />
+### Props ActionSheetItem
 
 注意：props 中没有控制组件弹出与收起的参数，因为这是通过 v-model 绑定变量实现的，见上方说明。
 
-|参数|说明|类型|默认值|可选值|
-|:-|:-|:-|:-|:-|
-|text|标题|String|''|-|
-|subText|描述|String|''|-|
-|padding|边距|Number \ String|'34rpx 0'|-|
-|color|字体颜色|String|mainColor|-|
-|fontSize|字体大小|Number \ String|'32rpx'|-|
-|disabled|是否禁用|Boolean|false|true|
-|asyncClose|是否异步关闭|Boolean|false|true|
+|参数|说明|类型|默认值|可选值|版本|
+|:-|:-|:-|:-|:-|:-|
+|text|标题|String|''|-|0.3.5|
+|subText|描述|String|''|-|0.3.5|
+|padding|边距|Number \ String|'34rpx 0'|-|0.3.5|
+|color|字体颜色|String|mainColor|-|0.3.5|
+|fontSize|字体大小|Number \ String|'32rpx'|-|0.3.5|
+|disabled|是否禁用|Boolean|false|true|0.3.5|
+|asyncClose|是否异步关闭|Boolean|false|true|0.3.5|
 
-## ActionSheet-item Slot <BadgeVersion text="0.3.5" />
+### Slots ActionSheetItem
 
-|名称|说明|
-|:-|:-|
-|default|自定义item内容|
+|名称|说明|版本|
+|:-|:-|:-|
+|default|自定义item内容|0.3.5|
 
-## ActionSheet-item Event <BadgeVersion text="0.3.5" />
+### Events ActionSheetItem
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
-| click | 点击ActionSheet列表项时触发 | index: 点击了第几个，从0开始 | - |
-| async-close | 是否异步关闭 | Boolean  | false | true |
+| click | 点击ActionSheet列表项时触发 | index: 点击了第几个，从0开始 | 0.3.5 |
+| async-close | 是否异步关闭 | Boolean  | 0.3.5 |
 

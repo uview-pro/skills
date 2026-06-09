@@ -1,7 +1,8 @@
 ---
 name: "faq"
-description: ":::tip 说明. Invoke when user needs guidance on faq in uView Pro."
+description: ":::tip 说明. Invoke when user needs guidance on faq."
 url: "https://uviewpro.cn/zh/guide/faq.html"
+triggers: ["faq","常见问题"]
 ---
 
 # 常见问题与解决方案
@@ -12,20 +13,6 @@ url: "https://uviewpro.cn/zh/guide/faq.html"
 本文会持续更新一些常见问题及解决方案
 :::
 
-## 目录
-
-- [1.组件无法正常显示/样式错乱](#_1-组件无法正常显示-样式错乱)
-- [2.npm 与 uni_modules 安装混用导致依赖冲突](#_2-npm-与-uni-modules-安装混用导致依赖冲突)
-- [3.Volar/TypeScript 类型提示缺失](#_3-volar-typescript-类型提示缺失)
-- [4.组件属性报错无提示](#_4-组件属性报错无提示)
-- [5.工具函数类型提示与 tree-shaking](#_5-工具函数类型提示与-tree-shaking)
-- [6.HBuilderX/WebStorm 项目类型提示支持不足](#_6-hbuilderx-webstorm-项目类型提示支持不足)
-- [7.组件未识别/打包异常/运行报错](#_7-组件未识别-打包异常-运行报错)
-- [8.主题定制与全局样式冲突](#_8-主题定制与全局样式冲突)
-- [9.与其他组件库（如 uview-plus 等）引入冲突](#_9-与其他组件库-如-uview-plus-等-引入冲突)
-- [10.使用 Sass 时语法不对引起的 bug](#_10-使用-sass-时语法不对引起的-bug)
-- [11.ref 和组件同名报错问题](#_11-ref-和组件同名报错问题)
-- [12.UnoCss 解析规则与组件库冲突问题](#_12-unocss-解析规则与组件库冲突问题)
 
 ## 1.组件无法正常显示/样式错乱
 
@@ -312,6 +299,24 @@ export default defineConfig({
     })
   ]
 })
+```
+
+## 13.h5正常，微信小程序报错 Unknown word //
+
+**问题表现**：
+
+```text
+[plugin:vite:css] [postcss]postcss-import: node_modules/uview-pro/index.scss:1:1: Unknown word // at App.vue:1:1
+```
+
+**解决方案**：
+
+在 App.vue 的 `<style>` 标签中引入添加 `lang="scss"` 属性
+
+```html 
+<style lang="scss">
+@import 'uview-pro/index.scss';
+</style>
 ```
 
 ## 最佳实践总结

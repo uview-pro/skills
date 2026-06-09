@@ -1,7 +1,8 @@
 ---
 name: "verificationCode"
-description: "考虑到用户实际发送验证码的场景，可能是一个按钮，也可能是一段文字，提示语各有不同，所以本组件. Invoke when user needs to use verificationCode component in their uni-app project."
+description: "考虑到用户实际发送验证码的场景，可能是一个按钮，也可能是一段文字，提示语各有不同，所以本组件. Invoke when user needs to use verificationCode component."
 url: "https://uviewpro.cn/zh/components/verificationCode.html"
+triggers: ["verificationCode"]
 ---
 
 # VerificationCode 验证码倒计时 <to-api/>
@@ -115,7 +116,7 @@ function start() {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -127,7 +128,7 @@ function start() {
 | unique-key | 多个组件之间继续倒计时的区分`key`，见上方说明 | String  | - | - |
 
 
-## Methods
+### Methods
 
 需要通过ref获取验证码组件才能调用，见上方"基本使用"说明
 
@@ -138,22 +139,10 @@ function start() {
 | reset | 结束当前正在进行中的倒计时，设置组件为可以重新获取验证码的状态  |
 
 
-## Event
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | change | 倒计时期间，每秒触发一次 | text: 当前剩余多少秒的状态，见上方说明 | - |
 | start | 开始倒计时触发 | - | - |
 | end | 结束倒计时触发 | - | - |
-
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 35%;
-}
-
-h3[id=methods] + p + table thead tr th:nth-child(2){
-	width: 60%;
-}
-</style>

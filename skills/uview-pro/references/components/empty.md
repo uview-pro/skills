@@ -1,7 +1,8 @@
 ---
 name: "empty"
-description: "该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景，. Invoke when user needs to use empty component in their uni-app project."
+description: "该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景，. Invoke when user needs to use empty component."
 url: "https://uviewpro.cn/zh/components/empty.html"
+triggers: ["empty","空状态"]
 ---
 
 # Empty 内容为空 <to-api/>
@@ -56,7 +57,7 @@ url: "https://uviewpro.cn/zh/components/empty.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -74,15 +75,8 @@ url: "https://uviewpro.cn/zh/components/empty.html"
 
 
 
-## Slot
+### Slots
 
 | 名称          | 说明            |
 |-------------  |---------------- |
 | bottom |  给组件底部传入`slot`内容  |
-
-
-<style scoped>
-h3[id=内置图标] + p + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

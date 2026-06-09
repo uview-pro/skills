@@ -1,7 +1,8 @@
 ---
 name: "input"
-description: "此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件[u-form](/zh/components/form.html)而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。. Invoke when user needs to use input component in their uni-app project."
+description: "此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件[u-form](/zh/components/form.html)而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。. Invoke when user needs to use input component."
 url: "https://uviewpro.cn/zh/components/input.html"
+triggers: ["input","输入框"]
 ---
 
 # Input 输入框 <to-api/>
@@ -170,7 +171,7 @@ const actionSheetCallback = (index: number) => {
 
 ## API
 
-## Props
+### Props
 
 | 参数                                     | 说明            | 类型            | 默认值             |  可选值   |
 |----------------------------------------|---------------- |---------------|------------------ |-------- |
@@ -197,10 +198,3 @@ const actionSheetCallback = (index: number) => {
 | trim            | 是否自动去除两端的空格 | Boolean | true | false |
 | show-confirmbar | 是否显示键盘上方带有”完成“按钮那一栏 | Boolean | true | false |
 | adjust-position | 弹出键盘时是否自动调节高度 | Boolean | true | false |
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 35%;
-}
-</style>

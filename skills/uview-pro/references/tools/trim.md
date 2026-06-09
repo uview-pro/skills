@@ -1,7 +1,8 @@
 ---
 name: "trim"
-description: "该方法可以去除空格，分别可以去除所有空格，两端空格，左边空格，右边空格，默认为去除两端空格. Invoke when user needs to use trim tool in their uni-app project."
+description: "该方法可以去除空格，分别可以去除所有空格，两端空格，左边空格，右边空格，默认为去除两端空格. Invoke when user needs to use trim tool."
 url: "https://uviewpro.cn/zh/tools/trim.html"
+triggers: ["trim","字符串修剪"]
 ---
 
 # trim 去除空格

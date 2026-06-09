@@ -1,7 +1,8 @@
 ---
 name: "circleProgress"
-description: "展示操作或任务的当前进度，比如上传文件，是一个圆形的进度环。. Invoke when user needs to use circleProgress component in their uni-app project."
+description: "展示操作或任务的当前进度，比如上传文件，是一个圆形的进度环。. Invoke when user needs to use circleProgress component."
 url: "https://uviewpro.cn/zh/components/circleProgress.html"
+triggers: ["circleProgress"]
 ---
 
 # CircleProgress 圆形进度条 <to-api/>
@@ -71,7 +72,7 @@ url: "https://uviewpro.cn/zh/components/circleProgress.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -83,10 +84,3 @@ url: "https://uviewpro.cn/zh/components/circleProgress.html"
 | duration | 整个圆环执行一圈的时间，单位ms | String \| Number  | 1500 | - |
 | type | 如设置，`active-color`值将会失效 | String  | - | success / primary / error / info / warning |
 | bg-color | 整个组件背景颜色，默认为白色 | String  | #ffffff | - |
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-</style>

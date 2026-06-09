@@ -1,7 +1,8 @@
 ---
 name: "modal"
-description: "弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作。. Invoke when user needs to use modal component in their uni-app project."
+description: "弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作。. Invoke when user needs to use modal component."
 url: "https://uviewpro.cn/zh/components/modal.html"
+triggers: ["modal","模态框"]
 ---
 
 # Modal 模态框 <to-api/>
@@ -170,7 +171,7 @@ const confirm = () => {
 
 ## API
 
-## Props
+### Props
 
 注意：需要给`modal`组件通过`v-model`绑定一个布尔值，来初始化`modal`的状态，随后该值被双向绑定。
 
@@ -199,7 +200,7 @@ const confirm = () => {
 | negative-top | 往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位  | String \| Number | 0 | - |
 
 
-## Event
+### Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
@@ -207,7 +208,7 @@ const confirm = () => {
 | cancel | 点击取消按钮时触发 | - |
 
 
-## Method
+### Methods
 
 此方法需要通过ref调用，详见上方的"异步关闭"
 
@@ -216,20 +217,9 @@ const confirm = () => {
 | clearLoading | 异步控制时，通过调用此方法，可以不关闭Modal，而单是清除loading状态 |
 
 
-## Slots
+### Slots
 
 | 名称 | 说明 |
 |:-|:-|
 | default | 传入自定义内容，一般为富文本，见上方说明 |
 | confirm-button | 传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景 |
-
-
-<style scoped>
-h3[id=slots] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-
-h3[id=method] + p + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

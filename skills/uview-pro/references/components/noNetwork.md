@@ -1,7 +1,8 @@
 ---
 name: "noNetwork"
-description: "该组件无需任何配置，引入即可，内部自动处理所有功能和事件，有如下特点：. Invoke when user needs to use noNetwork component in their uni-app project."
+description: "该组件无需任何配置，引入即可，内部自动处理所有功能和事件，有如下特点：. Invoke when user needs to use noNetwork component."
 url: "https://uviewpro.cn/zh/components/noNetwork.html"
+triggers: ["noNetwork"]
 ---
 
 # NoNetwork 无网络提示 <to-api/>
@@ -58,7 +59,7 @@ url: "https://uviewpro.cn/zh/components/noNetwork.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -66,7 +67,7 @@ url: "https://uviewpro.cn/zh/components/noNetwork.html"
 | zIndex | 组件的`z-index`值  | String \| Number | 10080 | - |
 | image | 无网络的图片提示，可用的src地址或base64图片 | String | - | - |
 
-## Events
+### Events
 
 
 | 事件名 | 说明 | 回调参数 |

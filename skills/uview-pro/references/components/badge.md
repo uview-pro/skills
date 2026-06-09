@@ -1,7 +1,8 @@
 ---
 name: "badge"
-description: "该组件一般用于图标右上角显示未读的消息数量，提示用户点击，有圆点和圆包含文字两种形式。. Invoke when user needs to use badge component in their uni-app project."
+description: "该组件一般用于图标右上角显示未读的消息数量，提示用户点击，有圆点和圆包含文字两种形式。. Invoke when user needs to use badge component."
 url: "https://uviewpro.cn/zh/components/badge.html"
+triggers: ["badge","徽标"]
 ---
 
 # Badge 徽标数 <to-api/>
@@ -73,7 +74,7 @@ url: "https://uviewpro.cn/zh/components/badge.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -89,10 +90,3 @@ url: "https://uviewpro.cn/zh/components/badge.html"
 | bgColor | 背景颜色，优先级比`type`高，如设置，`type`参数会失效 | String  | - | - |
 | is-center | 组件中心点是否和父组件右上角重合，优先级比`offset`高，如设置，`offset`参数会失效 | Boolean  | false | true |
 
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-</style>

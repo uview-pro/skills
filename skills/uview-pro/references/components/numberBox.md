@@ -1,7 +1,8 @@
 ---
 name: "numberBox"
-description: "该组件一般用于商城购物选择物品数量的场景. Invoke when user needs to use numberBox component in their uni-app project."
+description: "该组件一般用于商城购物选择物品数量的场景. Invoke when user needs to use numberBox component."
 url: "https://uviewpro.cn/zh/components/numberBox.html"
+triggers: ["numberBox"]
 ---
 
 # NumberBox 步进器 <to-api/>
@@ -80,7 +81,7 @@ const valChange = (e: { value: number }) => {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -102,7 +103,7 @@ const valChange = (e: { value: number }) => {
 | positive-integer | 是否只能输入正整数 | Boolean | true | false |
 
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 | 版本 |
 | :- | :- | :- | :- |
@@ -111,18 +112,3 @@ const valChange = (e: { value: number }) => {
 | minus | 点击减少按钮时触发(按钮可点击情况下)，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
 | plus | 点击增加按钮时触发(按钮可点击情况下)，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
 | blur  | 输入框失去焦点时触发，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=events] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=events] + table thead tr th:nth-child(3){
-	width: 40%;
-}
-</style>

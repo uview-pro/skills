@@ -1,7 +1,8 @@
 ---
 name: "swiper"
-description: "该组件一般用于导航轮播，广告展示等场景,可开箱即用，具有如下特点：. Invoke when user needs to use swiper component in their uni-app project."
+description: "该组件一般用于导航轮播，广告展示等场景,可开箱即用，具有如下特点：. Invoke when user needs to use swiper component."
 url: "https://uviewpro.cn/zh/components/swiper.html"
+triggers: ["swiper","轮播图"]
 ---
 
 # Swiper 轮播图 <to-api/>
@@ -128,7 +129,7 @@ const list = ref<SwiperItem[]>([
 
 ## API
 
-## Props
+### Props
 
 | 参数                           | 说明                                                                               | 类型             | 默认值       | 可选值                                                    |
 | ------------------------------ | ---------------------------------------------------------------------------------- | ---------------- | ------------ | --------------------------------------------------------- |
@@ -150,7 +151,7 @@ const list = ref<SwiperItem[]>([
 | bg-color                       | 背景颜色                                                                           | string           | #f3f4f6      | -                                                         |
 | current | 初始化时，默认显示第几项                                                           | String \| Number | 0            | -                                                         |
 
-## Events
+### Events
 
 | 事件名 | 说明                               | 回调参数                             |
 | :----- | :--------------------------------- | :----------------------------------- |

@@ -1,7 +1,8 @@
 ---
 name: "tabs"
-description: "该组件，是一个tabs标签组件，在标签多的时候，可以配置为左右滑动，标签少的时候，可以禁止滑动。. Invoke when user needs to use tabs component in their uni-app project."
+description: "该组件，是一个tabs标签组件，在标签多的时候，可以配置为左右滑动，标签少的时候，可以禁止滑动。. Invoke when user needs to use tabs component."
 url: "https://uviewpro.cn/zh/components/tabs.html"
+triggers: ["tabs","标签页"]
 ---
 
 # tabs 标签 <to-api/>
@@ -162,7 +163,7 @@ const change = (index: number) => {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -187,7 +188,7 @@ const change = (index: number) => {
 | count | 组件内部读取的`list`参数中的属性名（badge徽标数），用法与`name`一致，见上方说明 | string  | count | - |
 | offset | 设置badge的位置偏移，格式为 [x, y]，也即设置的为`top`和`right`的值，单位rpx。 | Array  | [5, 20] | - |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

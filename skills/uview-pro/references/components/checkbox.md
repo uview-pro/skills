@@ -1,7 +1,8 @@
 ---
 name: "checkbox"
-description: "复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便. Invoke when user needs to use checkbox component in their uni-app project."
+description: "复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便. Invoke when user needs to use checkbox component."
 url: "https://uviewpro.cn/zh/components/checkbox.html"
+triggers: ["checkbox","复选框"]
 ---
 
 # Checkbox 复选框 <to-api/>
@@ -55,19 +56,19 @@ const checkboxValues = ref(['apple']);
 const list = reactive<CheckboxItem[]>([
   {
     label: 'apple',
-    value: 'apple'
+    value: 'apple',
     checked: false,
     disabled: false
   },
   {
     label: 'banner',
-    value: 'banner'
+    value: 'banner',
     checked: false,
     disabled: false
   },
   {
     label: 'orange',
-    value: 'orange'
+    value: 'orange',
     checked: false,
     disabled: false
   }
@@ -85,7 +86,7 @@ const checkboxGroupChange = (e: any) => {
 
 // 全选
 const checkedAll = () => {
-  checkboxValues.value = list.map(item => item.name)
+  checkboxValues.value = list.map(item => item.value)
 }
 </script>
 ```

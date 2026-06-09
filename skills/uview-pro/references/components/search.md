@@ -1,7 +1,8 @@
 ---
 name: "search"
-description: "搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用。. Invoke when user needs to use search component in their uni-app project."
+description: "搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用。. Invoke when user needs to use search component."
 url: "https://uviewpro.cn/zh/components/search.html"
+triggers: ["search","搜索"]
 ---
 
 # Search 搜索 <to-api/>
@@ -86,7 +87,7 @@ const keyword = ref<string>('遥看瀑布挂前川')
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -113,7 +114,7 @@ const keyword = ref<string>('遥看瀑布挂前川')
 | search-icon | 输入框左边的图标，可以为uView图标名称或图片路径 | String | search | - |
 
 
-## Events
+### Events
 
 您可以通过监听`change`事件，在回调中将返回的结果绑定一个变量去获得用户的输入内容。  
 但如"基本使用"中的说明一样，您双向绑定了一个变量后，无需监听`change`事件也是可以的。
@@ -128,9 +129,3 @@ const keyword = ref<string>('遥看瀑布挂前川')
 | clear | 配置了`clearabled`后，清空内容时会发出此事件 | - | - |
 | click | `disabled`为`true`时，点击输入框，发出此事件，用于跳转搜索页 | - | - |
 
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 35%;
-}
-</style>

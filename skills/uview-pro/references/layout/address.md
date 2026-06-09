@@ -1,7 +1,8 @@
 ---
 name: "address"
-description: "此功能包含两个页面，分为展示用户收货地址列表和添加收货地址。相关功能和数据均为本地模拟数据和格式，不一定. Invoke when user needs layout examples for address in uView Pro."
+description: "此功能包含两个页面，分为展示用户收货地址列表和添加收货地址。相关功能和数据均为本地模拟数据和格式，不一定. Invoke when user needs layout examples for address."
 url: "https://uviewpro.cn/zh/layout/address.html"
+triggers: ["address","地址"]
 ---
 
 # 收货地址

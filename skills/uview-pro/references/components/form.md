@@ -1,7 +1,8 @@
 ---
 name: "form"
-description: "此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。. Invoke when user needs to use form component in their uni-app project."
+description: "此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。. Invoke when user needs to use form component."
 url: "https://uviewpro.cn/zh/components/form.html"
+triggers: ["form","表单"]
 ---
 
 # Form 表单 <to-api/>
@@ -95,6 +96,41 @@ const switchVal = ref(false);
 - `label-position`可以配置左侧"label"的对齐方式，可选为`left`和`top`。
 - `border-bottom`是否显示表单域的下划线，如果给`Input`组件配置了边框，可以将此属性设置为`false`，从而隐藏默认的下划线。
 - 如果想在表单域配置左右的图标(或小图片，[Icon 图标](/zh/components/icon.html)可以配置图片)，可以通过`left-icon`和`right-icon`参数实现。
+
+## 表单尺寸
+
+v0.5.16 新增了组件尺寸配置系统，`Form`组件新增了`size`参数，可以配置组件的尺寸，影响内部组件的尺寸，具体如下：
+
+- `size`参数可选值：`default`(默认)、`small`、`large`，通过配置`size`参数，可以同时调整表单内组件的尺寸，达到整体协调的效果。
+- 默认情况下，表单尺寸为`default`，即默认尺寸，如果希望表单尺寸为`small`，可以在`u-form`组件上设置`size="small"`，同理，设置`size="large"`，为`large`尺寸。
+
+```VUE
+<template>
+	<view>
+		<u-form :model="form" size="large">
+			<u-form-item label="姓名" prop="name">
+				<u-input v-model="form.name" />
+			</u-form-item>
+			<u-form-item label="简介" prop="intro">
+				<u-input v-model="form.intro" />
+			</u-form-item>
+		</u-form>
+	</view>
+</template>
+<script setup lang="ts">
+import { reactive } from 'vue';
+
+const form = reactive({
+	name: '',
+	intro: ''
+});
+</script>
+```
+
+`u-form-item`，`u-input`，`u-textarea`，`u-switch`，`u-radio`，`u-checkbox` 等组件也新增了`size`参数，如果需要单独调整某一个表单域的尺寸，可以在对应组件上设置`size`参数，优先级高于`Form`组件的同名参数：
+
+具体可参考issue提交：[表单组件尺寸配置系统 · Issue #137 · anyup/uView-Pro](https://github.com/anyup/uView-Pro/issues/137)
+
 
 ## 表单验证
 
@@ -571,16 +607,17 @@ onMounted(() => {
 
 ## Form Props
 
-| 参数          | 说明            | 类型            | 默认值             |  可选值   |
-|-------------  |---------------- |---------------|------------------ |-------- |
-| model | 表单数据对象  | Object	 | - | - |
-| rules | 通过`ref`设置，见上方说明 | Object | - | - |
-| error-type | 错误的提示方式，数组形式，见上方说明 | Array | ['message', 'toast'] | - |
-| border-bottom | 是否显示表单域的下划线边框 | Boolean | true | - |
-| label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方 | String | left | top |
-| label-width | 提示文字的宽度，单位rpx | String \| Number | 90 | 数值 / auto |
-| label-style | `lable`的样式，对象形式 | Object | - | - |
-| label-align | `lable`的对齐方式 | String | left |  center / right |
+| 参数          | 说明            | 类型            | 默认值             |  可选值   |  版本   |
+|-------------  |---------------- |---------------|------------------ |-------- | - |
+| model | 表单数据对象  | Object	 | - | - | - |
+| rules | 通过`ref`设置，见上方说明 | Object | - | - | - |
+| error-type | 错误的提示方式，数组形式，见上方说明 | Array | ['message', 'toast'] | - | - |
+| border-bottom | 是否显示表单域的下划线边框 | Boolean | true | - | - |
+| label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方 | String | left | top | - |
+| label-width | 提示文字的宽度，单位rpx | String \| Number | 90 | 数值 / auto | - |
+| label-style | `lable`的样式，对象形式 | Object | - | - | - |
+| label-align | `lable`的对齐方式 | String | left |  center / right | - |
+| size | 组件尺寸，影响内部组件的尺寸 | String | default | small / large | <BadgeVersion text="0.5.16" align="middle" /> |
 
 ## Form Methods
 
@@ -594,20 +631,23 @@ onMounted(() => {
 
 ## Form-item Props
 
-| 参数          | 说明            | 类型            | 默认值             |  可选值   |
-|-------------  |---------------- |---------------|------------------ |-------- |
-| label | 左侧提示文字  | String	 | - | - |
-| prop | 表单域`model`对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的 | String | - | - |
-| border-bottom | 是否显示下边框，如不需要下边框，需同时将`u-form`的同名参数设置为`false` | Boolean | true | true / false |
-| label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方，如设置，将覆盖`u-form`的同名参数 | String | - | left / top |
-| label-width | 提示文字的宽度，单位rpx，如设置，将覆盖`u-form`的同名参数| String \| Number | - | - |
-| label-style | `lable`的样式，对象形式，如设置，将覆盖`u-form`的同名参数 | Object | - | - |
-| label-align | `lable`的对齐方式，如设置，将覆盖`u-form`的同名参数 | String | - |  - |
-| right-icon | 右侧自定义字体图标(限uView内置图标)或图片地址 | String |  - |
-| left-icon | 左侧自定义字体图标(限uView内置图标)或图片地址 | String |  - |
-| left-icon-style | 左侧图标的样式，对象形式 | Object | - | - |
-| right-icon-style | 右侧图标的样式，对象形式 | Object | - | - |
-| required | 是否显示左边的"*"号，这里仅起展示作用，如需校验必填，请通过`rules`配置必填规则 | Boolean | false | true |
+| 参数          | 说明            | 类型            | 默认值             |  可选值   | 版本 |
+|-------------  |---------------- |---------------|------------------ |-------- |-------- |
+| label | 左侧提示文字  | String	 | - | - | - |
+| prop | 表单域`model`对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的 | String | - | - | - |
+| border-bottom | 是否显示下边框，如不需要下边框，需同时将`u-form`的同名参数设置为`false` | Boolean | true | true / false | - |
+| label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方，如设置，将覆盖`u-form`的同名参数 | String | - | left / top | - |
+| label-width | 提示文字的宽度，单位rpx，如设置，将覆盖`u-form`的同名参数| String \| Number | - | - | - |
+| label-style | `lable`的样式，对象形式，如设置，将覆盖`u-form`的同名参数 | Object | - | - | - |
+| label-align | `lable`的对齐方式，如设置，将覆盖`u-form`的同名参数 | String | - |  - | - |
+| right-icon | 右侧自定义字体图标(限uView内置图标)或图片地址 | String |  - | - |
+| left-icon | 左侧自定义字体图标(限uView内置图标)或图片地址 | String |  - | - |
+| left-icon-style | 左侧图标的样式，对象形式 | Object | - | - | - |
+| right-icon-style | 右侧图标的样式，对象形式 | Object | - | - | - |
+| required | 是否显示左边的"*"号，这里仅起展示作用，如需校验必填，请通过`rules`配置必填规则 | Boolean | false | true | - |
+| left-icon-prefix | 自定义左侧图标的前缀，相当于u-icon组件的custom-prefix | String | - | - | <BadgeVersion text="0.5.14" align="middle" /> |
+| right-icon-prefix | 自定义右侧图标的前缀，相当于u-icon组件的custom-prefix | String | - | - | <BadgeVersion text="0.5.14" align="middle" /> |
+| size | 组件尺寸，影响内部组件的尺寸 | String | default | small / large | <BadgeVersion text="0.5.16" align="middle" /> |
 
 ## Form-item Slot
 
@@ -616,4 +656,5 @@ onMounted(() => {
 | default | Form Item 的内容 | - |
 | right | 右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景 | - |
 | label | 左侧标题自定义内容 | <BadgeVersion text="0.5.1" align="middle" /> |
-
+| leftIcon | 左侧图标自定义内容 | <BadgeVersion text="0.5.14" align="middle" /> |
+| rightIcon | 右侧图标自定义内容 | <BadgeVersion text="0.5.14" align="middle" /> |

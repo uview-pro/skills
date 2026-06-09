@@ -1,7 +1,8 @@
 ---
 name: "readMore"
-description: "该组件一般用于内容较长，预先收起一部分，点击展开全部内容的场景。. Invoke when user needs to use readMore component in their uni-app project."
+description: "该组件一般用于内容较长，预先收起一部分，点击展开全部内容的场景。. Invoke when user needs to use readMore component."
 url: "https://uviewpro.cn/zh/components/readMore.html"
+triggers: ["readMore"]
 ---
 
 # ReadMore 展开阅读更多 <to-api/>
@@ -137,7 +138,7 @@ const shadowStyle = reactive({
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -153,7 +154,7 @@ const shadowStyle = reactive({
 
 
 
-## Methods
+### Methods
 
 此方法如要通过ref手动调用
 
@@ -162,21 +163,10 @@ const shadowStyle = reactive({
 | init | 重新初始化组件内部高度计算过程，如果内嵌组件时可能需要用到 |
 
 
-## Events
+### Events
 
 
 | 事件名 | 说明 | 回调参数 |
 | :- | :- | :- |
 | open | 内容被展开时触发 | index - props中传入的`index`参数值 |
 | close | 内容被收起时触发 | index - props中传入的`index`参数值 |
-
-
-<style scoped>
-h3[id=events] + table thead tr th:nth-child(2){
-	width: 33.3%;
-}
-
-h3[id=methods] + p + table thead tr th:nth-child(2){
-	width: 70%;
-}
-</style>

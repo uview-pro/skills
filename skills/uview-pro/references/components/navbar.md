@@ -1,7 +1,8 @@
 ---
 name: "navbar"
-description: "此组件一般用于在特殊情况下，需要自定义导航栏的时候用到，一般建议使用 uni-app 带的导航栏。. Invoke when user needs to use navbar component in their uni-app project."
+description: "此组件一般用于在特殊情况下，需要自定义导航栏的时候用到，一般建议使用 uni-app 带的导航栏。. Invoke when user needs to use navbar component."
 url: "https://uviewpro.cn/zh/components/navbar.html"
+triggers: ["navbar","导航栏"]
 ---
 
 # Navbar 自定义导航栏 <to-api/>
@@ -146,7 +147,7 @@ const background = reactive({
 ```
 ## API
 
-## Props
+### Props
 
 |参数|说明|类型|默认值|可选值|
 |---|---|---|---|---|
@@ -169,7 +170,7 @@ const background = reactive({
 |immersive|沉浸式，允许 fixed 定位后导航栏塌陷，仅 fixed 定位下生效|Boolean|false|true|
 |title-bold|导航栏标题字体是否加粗|Boolean|false|true|
 
-## Slot
+### Slots
 
 |名称|说明|
 |---|---|

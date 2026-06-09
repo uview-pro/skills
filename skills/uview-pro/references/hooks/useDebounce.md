@@ -1,7 +1,8 @@
 ---
 name: "useDebounce"
-description: "防抖 composable，用于控制函数在指定时间间隔内只执行最后一次调用。. Invoke when user needs to use useDebounce hook in their uni-app project."
+description: "防抖 composable，用于控制函数在指定时间间隔内只执行最后一次调用。. Invoke when user needs to use useDebounce hook."
 url: "https://uviewpro.cn/zh/hooks/useDebounce.html"
+triggers: ["useDebounce","防抖钩子"]
 ---
 
 # useDebounce 防抖

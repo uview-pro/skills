@@ -1,7 +1,8 @@
 ---
 name: "customStyle"
-description: "uView Pro 默认提供了一套美观且统一的组件样式，但在实际项目开发中，往往需要根据业务需求进行个性化定制。参考[自定义主题](/zh/guide/theme.html)。. Invoke when user needs guidance on customStyle in uView Pro."
+description: "uView Pro 默认提供了一套美观且统一的组件样式，但在实际项目开发中，往往需要根据业务需求进行个性化定制。参考[自定义主题](/zh/guide/theme.html)。. Invoke when user needs guidance on customStyle."
 url: "https://uviewpro.cn/zh/guide/customStyle.html"
+triggers: ["customStyle","自定义样式"]
 ---
 
 # 自定义样式 <BadgeVersion text="0.3.0" />

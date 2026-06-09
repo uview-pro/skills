@@ -1,7 +1,8 @@
 ---
 name: "fastUse"
-description: "此专题内容为一些方便用户快速，便捷使用的小工具，可能是uView的一些方法的简易版，或者对uni的一些方法进行二次封装，方便用户. Invoke when user needs to use fastUse tool in their uni-app project."
+description: "此专题内容为一些方便用户快速，便捷使用的小工具，可能是uView的一些方法的简易版，或者对uni的一些方法进行二次封装，方便用户. Invoke when user needs to use fastUse tool."
 url: "https://uviewpro.cn/zh/tools/fastUse.html"
+triggers: ["fastUse","快速使用"]
 ---
 
 # 便捷工具

@@ -1,7 +1,8 @@
 ---
 name: "configProvider"
-description: "`u-config-provider` 是 uView Pro 主题系统的唯一入口组件，负责把 `useTheme` 维护的 CSS 变量注入到页面，同时向外抛出主题与暗黑模式变更事件。本文档面向业务开发者，介绍其用法、属性与常见场景。. Invoke when user needs to use configProvider component in their uni-app project."
+description: "`u-config-provider` 是 uView Pro 主题系统的唯一入口组件，负责把 `useTheme` 维护的 CSS 变量注入到页面，同时向外抛出主题与暗黑模式变更事件。本文档面向业务开发者，介绍其用法、属性与常见场景。. Invoke when user needs to use configProvider component."
 url: "https://uviewpro.cn/zh/components/configProvider.html"
+triggers: ["configProvider"]
 ---
 
 # ConfigProvider 全局配置 <BadgeVersion text="0.4.1" /> <to-api/>
@@ -87,7 +88,7 @@ const themeName = computed(() => currentTheme.value?.name);
 
 ## API
 
-## Props
+### Props
 | Prop | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | `themes` | `Theme[]` | `[]` | 可选。用于在运行时（如远程拉取主题）重新初始化主题列表，通常不需要手动传入。 |
@@ -98,7 +99,7 @@ const themeName = computed(() => currentTheme.value?.name);
 
 > 当 `themes` 已通过插件初始化后，`u-config-provider` 会跳过重复初始化，仅根据 props 调整当前主题/模式，因此可以安心地多次挂载（例如微前端场景）。
 
-## Events
+### Events
 
 | 事件 | 回调参数 | 触发时机 |
 | --- | --- | --- |

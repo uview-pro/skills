@@ -1,7 +1,8 @@
 ---
 name: "countTo"
-description: "该组件一般用于需要滚动数字到某一个值的场景，目标要求是一个递增的值。. Invoke when user needs to use countTo component in their uni-app project."
+description: "该组件一般用于需要滚动数字到某一个值的场景，目标要求是一个递增的值。. Invoke when user needs to use countTo component."
 url: "https://uviewpro.cn/zh/components/countTo.html"
+triggers: ["countTo"]
 ---
 
 # CountTo 数字滚动 <to-api/>
@@ -90,7 +91,7 @@ const reStart = () => {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -106,7 +107,7 @@ const reStart = () => {
 | bold | 字体是否加粗 | Boolean | false | true |
 
 
-## Methods
+### Methods
 
 此方法如要通过ref手动调用
 
@@ -117,19 +118,8 @@ const reStart = () => {
 | paused |   暂停滚动 |
 
 
-## Event
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | end | 数值滚动到目标值时触发 | - | - |
-
-
-<style scoped>
-h3[id=methods] + p + table thead tr th:nth-child(1) {
-	width: 50%;
-}
-
-h3[id=methods] + p + table thead tr th:nth-child(2) {
-	width: 50%;
-}
-</style>

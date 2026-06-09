@@ -1,7 +1,8 @@
 ---
 name: "select"
-description: "此选择器用于单列，多列，多列联动的选择场景。. Invoke when user needs to use select component in their uni-app project."
+description: "此选择器用于单列，多列，多列联动的选择场景。. Invoke when user needs to use select component."
 url: "https://uviewpro.cn/zh/components/select.html"
+triggers: ["select"]
 ---
 
 # Select 列选择器 <to-api/>
@@ -316,7 +317,7 @@ res = [
 
 ## API
 
-## Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |---|---|---:|:---:|---|
@@ -337,7 +338,7 @@ res = [
 | cancel-text | 取消按钮的文字 | String | `取消` | - |
 | preserve-selection <BadgeVersion text="0.3.6" /> | 是否保留用户上次确认的选择（true：优先使用已保存的选择；false：优先使用外部传入的 defaultValue） | Boolean | `true` | `false` |
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 | 版本 |
 |---|---|---|---|

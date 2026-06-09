@@ -1,7 +1,8 @@
 ---
 name: "queryParams"
-description: "该方法，可以将一个对象形式参数转换成`get`传参所需参数形式，如把`{name: 'lisa', age: 20}`转换成`?name=lisa&age=20`. Invoke when user needs to use queryParams tool in their uni-app project."
+description: "该方法，可以将一个对象形式参数转换成`get`传参所需参数形式，如把`{name: 'lisa', age: 20}`转换成`?name=lisa&age=20`. Invoke when user needs to use queryParams tool."
 url: "https://uviewpro.cn/zh/tools/queryParams.html"
+triggers: ["queryParams","查询参数"]
 ---
 
 # queryParams 对象转URL参数

@@ -1,7 +1,8 @@
 ---
 name: "sticky"
-description: "该组件与CSS中`position: sticky`属性实现的效果一致，当组件达到预设的到顶部距离时，. Invoke when user needs to use sticky component in their uni-app project."
+description: "该组件与CSS中`position: sticky`属性实现的效果一致，当组件达到预设的到顶部距离时，. Invoke when user needs to use sticky component."
 url: "https://uviewpro.cn/zh/components/sticky.html"
+triggers: ["sticky","吸顶"]
 ---
 
 # Sticky 吸顶 <to-api/>
@@ -70,7 +71,7 @@ url: "https://uviewpro.cn/zh/components/sticky.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -81,7 +82,7 @@ url: "https://uviewpro.cn/zh/components/sticky.html"
 | z-index | 吸顶时的`z-index`值 | String \| Number  | 970 | - |
 | h5-nav-height | 导航栏高度，自定义导航栏时(无导航栏时需设置为`0`)，需要传入此值，单位**px** | String \| Number  | 44 | - |
 
-## Event
+### Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|

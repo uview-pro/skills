@@ -1,7 +1,8 @@
 ---
 name: "transition"
-description: "统一的过渡与进出场动效封装，支持多种预设动画和自定义时长。基于CSS动画实现，性能优异。. Invoke when user needs to use transition component in their uni-app project."
+description: "统一的过渡与进出场动效封装，支持多种预设动画和自定义时长。基于CSS动画实现，性能优异。. Invoke when user needs to use transition component."
 url: "https://uviewpro.cn/zh/components/transition.html"
+triggers: ["transition"]
 ---
 
 # Transition 过渡动画 <BadgeVersion text="0.5.2" /> <to-api/>
@@ -148,7 +149,7 @@ url: "https://uviewpro.cn/zh/components/transition.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            |        默认值        | 可选值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
@@ -162,7 +163,7 @@ url: "https://uviewpro.cn/zh/components/transition.html"
 | custom-class | 自定义 class | String | - | - |
 | custom-style | 自定义样式 | String \| Object | - | - |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
@@ -175,7 +176,7 @@ url: "https://uviewpro.cn/zh/components/transition.html"
 | after-leave | 离开动画结束后触发 | element | - |
 | leave-cancelled | 离开动画被取消时触发 | element | - |
 
-## Slot
+### Slots
 
 |名称|说明|
 |:-|:-|

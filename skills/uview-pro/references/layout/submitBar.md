@@ -1,7 +1,8 @@
 ---
 name: "submitBar"
-description: "该布局一般用于商品详情页底部引导用户快速购买商品的场景，开发者可以根据自己的需求修改布局结构和样式，. Invoke when user needs layout examples for submitBar in uView Pro."
+description: "该布局一般用于商品详情页底部引导用户快速购买商品的场景，开发者可以根据自己的需求修改布局结构和样式，. Invoke when user needs layout examples for submitBar."
 url: "https://uviewpro.cn/zh/layout/submitBar.html"
+triggers: ["submitBar","提交栏"]
 ---
 
 # 提交订单栏

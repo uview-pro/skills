@@ -1,7 +1,8 @@
 ---
 name: "useTheme"
-description: "主题管理 composable，提供主题切换、持久化、CSS 变量注入、暗黑模式等功能。. Invoke when user needs to use useTheme hook in their uni-app project."
+description: "主题管理 composable，提供主题切换、持久化、CSS 变量注入、暗黑模式等功能。. Invoke when user needs to use useTheme hook."
 url: "https://uviewpro.cn/zh/hooks/useTheme.html"
+triggers: ["useTheme","主题管理"]
 ---
 
 # useTheme 主题管理

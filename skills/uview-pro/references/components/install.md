@@ -1,7 +1,8 @@
 ---
 name: "install"
-description: ":::tip 说明. Invoke when user needs to use install component in their uni-app project."
+description: ":::tip 说明. Invoke when user needs to use install component."
 url: "https://uviewpro.cn/zh/components/install.html"
+triggers: ["install"]
 ---
 
 # 安装
@@ -10,8 +11,7 @@ url: "https://uviewpro.cn/zh/components/install.html"
 
 :::tip 说明
 
-1. 由于 uView Pro 使用`easycom`模式，让您无需引入组件即可直接使用，但是此功能需要 Hbuilder X 2.5.5 及以上版本才支持，详见[配置 easycom 组件模式](/zh/components/quickstart.html#_3-配置easycom组件模式)。
-   `easycom`打包的时候是**按需引入**的，您可以放心引入 uView Pro 的整个组件库，发布打包时会自动剔除您没有使用的组件(注意：调试时仍然是全部引入的)
+1. 由于 uView Pro 使用`easycom`模式，让您无需引入组件即可直接使用，但是此功能需要 Hbuilder X 2.5.5 及以上版本才支持，详见[配置自动引入组件](/zh/components/setting.html#_3-配置自动引入组件)。`easycom`打包的时候是**按需引入**的，您可以放心引入 uView Pro 的整个组件库，发布打包时会自动剔除您没有使用的组件(注意：调试时仍然是全部引入的)
 
 2. 请确保您下载的[Hbuilder X](https://www.dcloud.io/hbuilderx.html)为`APP开发版`，而非`标准版`，并且在"工具-插件安装"中安装了"scss/sass 编译"插件
 

@@ -1,7 +1,8 @@
 ---
 name: "noticeBar"
-description: "该组件用于滚动通告场景，有多种模式可供选择. Invoke when user needs to use noticeBar component in their uni-app project."
+description: "该组件用于滚动通告场景，有多种模式可供选择. Invoke when user needs to use noticeBar component."
 url: "https://uviewpro.cn/zh/components/noticeBar.html"
+triggers: ["noticeBar","通知栏"]
 ---
 
 # NoticeBar 滚动通知 <to-api/>
@@ -103,7 +104,7 @@ const list = ref<string[]>([
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -129,7 +130,7 @@ const list = ref<string[]>([
 | no-list-hidden | `list`为空数组时，是否显示组件 | Boolean | true | false |
 
 
-## Events
+### Events
 
 详细解释见上方说明
 

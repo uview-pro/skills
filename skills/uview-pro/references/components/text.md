@@ -1,7 +1,8 @@
 ---
 name: "text"
-description: "此组件集成了文本类在项目中的常用功能，包括状态，拨打电话，格式化日期，*替换，超链接...等功能。. Invoke when user needs to use text component in their uni-app project."
+description: "此组件集成了文本类在项目中的常用功能，包括状态，拨打电话，格式化日期，*替换，超链接...等功能。. Invoke when user needs to use text component."
 url: "https://uviewpro.cn/zh/components/text.html"
+triggers: ["text"]
 ---
 
 # Text 文本 <BadgeVersion text="0.2.0" /> <to-api/>

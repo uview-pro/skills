@@ -1,7 +1,8 @@
 ---
 name: "order"
-description: "该页面模板结合了uView Pro的[Tabs 标签](/zh/components/tabs.html)组件，可以左右滑动。如果页面没有内容，会提示没有相关内容。. Invoke when user needs layout examples for order in uView Pro."
+description: "该页面模板结合了uView Pro的[Tabs 标签](/zh/components/tabs.html)组件，可以左右滑动。如果页面没有内容，会提示没有相关内容。. Invoke when user needs layout examples for order."
 url: "https://uviewpro.cn/zh/layout/order.html"
+triggers: ["order","订单"]
 ---
 
 # 订单列表 

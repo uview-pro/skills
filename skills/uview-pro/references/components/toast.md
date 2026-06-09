@@ -1,7 +1,8 @@
 ---
 name: "toast"
-description: "此组件表现形式类似uni的`uni.showToast`API，但也有不同的地方，具体表现在：. Invoke when user needs to use toast component in their uni-app project."
+description: "此组件表现形式类似uni的`uni.showToast`API，但也有不同的地方，具体表现在：. Invoke when user needs to use toast component."
 url: "https://uviewpro.cn/zh/components/toast.html"
+triggers: ["toast","轻提示"]
 ---
 
 # Toast 消息提示 <to-api/>
@@ -91,13 +92,13 @@ uToastRef.value?.show({
 
 ## API
 
-## Props
+### Props
 
 | 参数      | 说明        | 类型     |  默认值  |  可选值   |
 |-----------|-----------|----------|----------|---------|
 | z-index | toast展示时的`z-index`值  | String \| Number | 10090 | - |
 
-## Params
+### Params
 
 这些参数为通过`ref`调用`<toast/>`组件内部的`show`方法时，需要传递参数
 
@@ -113,7 +114,7 @@ uToastRef.value?.show({
 | isTab | toast结束后，跳转tab页面时需要配置为`true` | Boolean  | false | true |
 | back | toast结束后，是否返回上一页，优先级低于`url`参数 | Boolean  | false | true |
 
-## Methods
+### Methods
 
 方法是通过`ref`调用的，参见上方说明
 注意：所有有关`ref`的调用，都不能在页面的`onLoad`生命周期调用，因为此时组件尚未创建完毕，会报错，应该在`onReady`生命周期调用。
@@ -121,3 +122,5 @@ uToastRef.value?.show({
 |方法名|说明|参数|版本|
 |:-|:-|:-|:-|
 | show | 显示toast，如需一进入页面就显示toast，请在`onReady`生命周期调用 | 见上方说明 |  -  |
+
+<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/pkAZ96qITcdsbf7M73gJ-A']" />

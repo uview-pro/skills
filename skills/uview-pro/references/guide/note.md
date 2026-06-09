@@ -1,7 +1,8 @@
 ---
 name: "note"
-description: "什么是`nvue`？见[关于 nvue](/zh/guide/design.html#关于nvue). Invoke when user needs guidance on note in uView Pro."
+description: "什么是`nvue`？见[关于 nvue](/zh/guide/design.html#关于nvue). Invoke when user needs guidance on note."
 url: "https://uviewpro.cn/zh/guide/note.html"
+triggers: ["note","注意事项"]
 ---
 
 # 注意事项

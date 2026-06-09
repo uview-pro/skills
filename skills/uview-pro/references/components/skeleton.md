@@ -1,7 +1,8 @@
 ---
 name: "skeleton"
-description: "骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验。. Invoke when user needs to use skeleton component in their uni-app project."
+description: "骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验。. Invoke when user needs to use skeleton component."
 url: "https://uviewpro.cn/zh/components/skeleton.html"
+triggers: ["skeleton","骨架屏"]
 ---
 
 # Skeleton 骨架屏 <BadgeVersion text="0.5.0" /> <to-api/>
@@ -81,7 +82,7 @@ onMounted(() => {
 </script>
 ```
 
-### API
+## API
 
 ### Props
 

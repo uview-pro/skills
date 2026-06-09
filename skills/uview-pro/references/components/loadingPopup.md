@@ -1,7 +1,8 @@
 ---
 name: "loadingPopup"
-description: "`u-loading-popup` 是 uView Pro 提供的弹窗式加载动画组件，常用于页面或局部异步加载、数据请求等待等场景。相比普通的 `u-loading`，它支持遮罩、内容插槽、自动关闭等高级功能。. Invoke when user needs to use loadingPopup component in their uni-app project."
+description: "`u-loading-popup` 是 uView Pro 提供的弹窗式加载动画组件，常用于页面或局部异步加载、数据请求等待等场景。相比普通的 `u-loading`，它支持遮罩、内容插槽、自动关闭等高级功能。. Invoke when user needs to use loadingPopup component."
 url: "https://uviewpro.cn/zh/components/loadingPopup.html"
+triggers: ["loadingPopup"]
 ---
 
 # LoadingPopup 加载弹窗 <BadgeVersion text="0.0.17" /> <to-api/>

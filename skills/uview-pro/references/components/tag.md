@@ -1,7 +1,8 @@
 ---
 name: "tag"
-description: "该组件一般用于标记和选择，有如下特点：. Invoke when user needs to use tag component in their uni-app project."
+description: "该组件一般用于标记和选择，有如下特点：. Invoke when user needs to use tag component."
 url: "https://uviewpro.cn/zh/components/tag.html"
+triggers: ["tag","标签"]
 ---
 
 # Tag 标签 <to-api/>
@@ -71,7 +72,7 @@ function tagClick(index: number) {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -88,13 +89,13 @@ function tagClick(index: number) {
 | closeable | 是否可关闭，设置为`true`，文字右边会出现一个关闭图标  | Boolean | false | true |
 | show | 标签显示与否  | Boolean | true | false |
 
-## Slot
+### Slots
 
 | 名称          | 说明            |
 |-------------  |---------------- |
 | default <BadgeVersion text="0.4.4" /> | 同 text prop |
 
-## Event
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

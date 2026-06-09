@@ -1,7 +1,8 @@
 ---
 name: "timeLine"
-description: "时间轴组件一般用于物流信息展示，各种跟时间相关的记录等场景。. Invoke when user needs to use timeLine component in their uni-app project."
+description: "时间轴组件一般用于物流信息展示，各种跟时间相关的记录等场景。. Invoke when user needs to use timeLine component."
 url: "https://uviewpro.cn/zh/components/timeLine.html"
+triggers: ["timeLine"]
 ---
 
 # TimeLine 时间轴 <to-api/>
@@ -102,17 +103,10 @@ url: "https://uviewpro.cn/zh/components/timeLine.html"
 
 ## API
 
-## TiemLimeItem Props
+### Props TimeLineItem
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
 | bg-color | 左边节点的背景颜色，一般通过slot内容自定义背景颜色即可 | String | #ffffff | - |
 | node-top | 节点左边图标绝对定位的top值，单位rpx | String \| Number | - | - |
 
-
-
-<style scoped>
-h3[id=tiemlimeitem-props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-</style>

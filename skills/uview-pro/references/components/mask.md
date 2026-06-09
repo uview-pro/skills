@@ -1,7 +1,8 @@
 ---
 name: "mask"
-description: "创建一个遮罩层，用于强调特定的页面元素，并阻止用户对遮罩下层的内容进行操作，一般用于弹窗场景. Invoke when user needs to use mask component in their uni-app project."
+description: "创建一个遮罩层，用于强调特定的页面元素，并阻止用户对遮罩下层的内容进行操作，一般用于弹窗场景. Invoke when user needs to use mask component."
 url: "https://uviewpro.cn/zh/components/mask.html"
+triggers: ["mask"]
 ---
 
 # Mask 遮罩层 <to-api/>
@@ -84,7 +85,7 @@ const show = ref<boolean>(true)
 
 ## API
 
-## Props
+### Props
 
 | 参数      | 说明        | 类型     |  默认值  |  可选值   |
 |-----------|-----------|----------|----------|---------|
@@ -94,26 +95,14 @@ const show = ref<boolean>(true)
 | zoom | 是否使用`scale`对遮罩进行缩放 | Boolean  | true | false |
 | mask-click-able | 遮罩是否可点击，为`false`时点击不会发送`click`事件 | Boolean  | true | false |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
 | click | `mask-click-able`为`true`时，点击遮罩发送此事件 | - |
 
-## Slot
+### Slots
 
 |名称|说明|
 |:-|:-|
 | default | 默认插槽，用于在遮罩层上方嵌入内容 |
-
-
-
-<style scoped>
-h3[id=events] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-
-h3[id=slot] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

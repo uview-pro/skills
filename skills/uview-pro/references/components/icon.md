@@ -1,7 +1,8 @@
 ---
 name: "icon"
-description: "基于字体的图标集，包含了大多数常见场景的图标。. Invoke when user needs to use icon component in their uni-app project."
+description: "基于字体的图标集，包含了大多数常见场景的图标。. Invoke when user needs to use icon component."
 url: "https://uviewpro.cn/zh/components/icon.html"
+triggers: ["icon","图标"]
 ---
 
 # Icon 图标 <to-api/>
@@ -58,7 +59,7 @@ url: "https://uviewpro.cn/zh/components/icon.html"
 
 ## API
 
-## Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |---|---|---|---|---|
@@ -84,7 +85,7 @@ url: "https://uviewpro.cn/zh/components/icon.html"
 | inactive-color | 背景颜色，可接受主题色，仅 Decimal 时有效 | String | #ececec | - |
 | percent | 显示的百分比，仅 Decimal 时有效 | String\|Number | 50 | - |
 
-## Events
+### Events
 
 | 事件名 | 说明           | 回调参数                          | 版本 |
 | :----- | :------------- | :-------------------------------- | :--- |

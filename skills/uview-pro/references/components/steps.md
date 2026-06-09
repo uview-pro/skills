@@ -1,7 +1,8 @@
 ---
 name: "steps"
-description: "该组件一般用于完成一个任务要分几个步骤，标识目前处于第几步的场景。. Invoke when user needs to use steps component in their uni-app project."
+description: "该组件一般用于完成一个任务要分几个步骤，标识目前处于第几步的场景。. Invoke when user needs to use steps component."
 url: "https://uviewpro.cn/zh/components/steps.html"
+triggers: ["steps","步骤条"]
 ---
 
 # Steps 步骤条 <to-api/>
@@ -153,7 +154,7 @@ const direction = ref<StepDirection>('row');
 
 ## API
 
-## Steps Props
+### Props Steps
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
@@ -165,22 +166,22 @@ const direction = ref<StepDirection>('row');
 | un-active-color | 未激活的颜色，用于表示未完成步骤的颜色 | `String` | `#606266` | - |
 | icon | `mode = number`时的自定义图标 | `String` | `checkmark` | - |
 
-## Step Props <BadgeVersion text="0.3.6" />
+### Props Step
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-| --- | --- | --- | --- | --- |
-| mode | 设置模式 | `String` | `dot` | `number` |
-| direction | `row`-横向，`column`-竖向 | `String` | `row` | `column` |
-| active-color | 已完成步骤的激活颜色，如设置，`type`值会失效 | `String` | - | - |
-| un-active-color | 未激活的颜色，用于表示未完成步骤的颜色 | `String` | `#606266` | - |
-| icon | `mode = number`时的自定义图标 | `String` | `checkmark` | - |
-| name | 标题 | `String` | - | - |
-| desc | 描述 | `String` | - | - |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 | 版本 |
+| --- | --- | --- | --- | --- | --- |
+| mode | 设置模式 | `String` | `dot` | `number` | 0.3.6 |
+| direction | `row`-横向，`column`-竖向 | `String` | `row` | `column` | 0.3.6 |
+| active-color | 已完成步骤的激活颜色，如设置，`type`值会失效 | `String` | - | - | 0.3.6 |
+| un-active-color | 未激活的颜色，用于表示未完成步骤的颜色 | `String` | `#606266` | - | 0.3.6 |
+| icon | `mode = number`时的自定义图标 | `String` | `checkmark` | - | 0.3.6 |
+| name | 标题 | `String` | - | - | 0.3.6 |
+| desc | 描述 | `String` | - | - | 0.3.6 |
 
-## Step Slots <BadgeVersion text="0.3.6" />
+### Slots Step
 
-| 名称 | 说明 |
-| --- | --- |
-| `icon` | 自定义图标内容 |
-| `name` | 自定义标题内容 |
-| `desc` | 自定义描述内容 |
+| 名称 | 说明 | 版本 |
+| --- | --- | --- |
+| `icon` | 自定义图标内容 | 0.3.6 |
+| `name` | 自定义标题内容 | 0.3.6 |
+| `desc` | 自定义描述内容 | 0.3.6 |

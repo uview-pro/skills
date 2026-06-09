@@ -1,7 +1,8 @@
 ---
 name: "feature"
-description: "由于 uni-app 支持多端开发，而各端，特别是各小程序平台，没有统一的标准，加重了开发者和企业的成本，幸好 uni-app 使用 Vue 标准，对各端进行了写法的统一，. Invoke when user needs to use feature component in their uni-app project."
+description: "由于 uni-app 支持多端开发，而各端，特别是各小程序平台，没有统一的标准，加重了开发者和企业的成本，幸好 uni-app 使用 Vue 标准，对各端进行了写法的统一，. Invoke when user needs to use feature component."
 url: "https://uviewpro.cn/zh/components/feature.html"
+triggers: ["feature"]
 ---
 
 # 注意事项
@@ -41,12 +42,6 @@ uView Pro 需要开启了`component2`模式才支持支付宝小程序
 - $slots
 - v-model / sync
 - $parent / $children
-
-<style scoped>
-h3[id=vue特性在各平台支持度] + ol + table thead tr th:nth-child(2){
-	width: auto;
-}
-</style>
 
 <!-- ## 二次修改封装uView组件
 

@@ -1,7 +1,8 @@
 ---
 name: "comment"
-description: "此布局包含2个页面，一个是评论列表页，另一个是点击"共xxx条回复"进去的评论详情页面，可以进行点赞。. Invoke when user needs layout examples for comment in uView Pro."
+description: "此布局包含2个页面，一个是评论列表页，另一个是点击"共xxx条回复"进去的评论详情页面，可以进行点赞。. Invoke when user needs layout examples for comment."
 url: "https://uviewpro.cn/zh/layout/comment.html"
+triggers: ["comment","评论"]
 ---
 
 # 评论

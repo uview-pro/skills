@@ -1,7 +1,8 @@
 ---
 name: "swipeAction"
-description: "该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作。. Invoke when user needs to use swipeAction component in their uni-app project."
+description: "该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作。. Invoke when user needs to use swipeAction component."
 url: "https://uviewpro.cn/zh/components/swipeAction.html"
+triggers: ["swipeAction"]
 ---
 
 # SwipeAction 滑动操作 <to-api/>
@@ -172,7 +173,7 @@ image {
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明                                                                      | 类型             | 默认值  | 可选值 |
 | ------------- | ------------------------------------------------------------------------- | ---------------- | ------- | ------ |
@@ -184,7 +185,7 @@ image {
 | show          | 打开或者关闭某个组件                                                      | Boolean          | false   | true   |
 | options       | 按钮组的配置参数，数组形式，见上方说明                                    | Array            | [ ]     | -      |
 
-## Event
+### Events
 
 | 事件名        | 说明               | 回调参数                                |
 | :------------ | :----------------- | :-------------------------------------- |

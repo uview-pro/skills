@@ -1,7 +1,8 @@
 ---
 name: "topTips"
-description: "该组件一般用于页面顶部向下滑出一个提示，尔后自动收起的场景。. Invoke when user needs to use topTips component in their uni-app project."
+description: "该组件一般用于页面顶部向下滑出一个提示，尔后自动收起的场景。. Invoke when user needs to use topTips component."
 url: "https://uviewpro.cn/zh/components/topTips.html"
+triggers: ["topTips"]
 ---
 
 # TopTips 顶部提示 <to-api/>
@@ -114,7 +115,7 @@ const showTips = () => {
 
 ## API
 
-## Methods
+### Methods
 
 需要注意的是，这里的参数是通过`ref`调用的，调用方法如上方"基本使用"中所示
 
@@ -125,7 +126,7 @@ const showTips = () => {
 | duration | 显示的时间，单位ms |  String \| Number | - |
 
 
-## Props
+### Props
 
 需要注意到是，这里的参数是需要通过`props`调用的，只有**使用了自定义导航栏**才需要配置，见上方说明。
 

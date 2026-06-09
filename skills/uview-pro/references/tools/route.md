@@ -1,7 +1,8 @@
 ---
 name: "route"
-description: "此为一个路由跳转方法，内部是对uni多个路由跳转api的封装，更方便使用. Invoke when user needs to use route tool in their uni-app project."
+description: "此为一个路由跳转方法，内部是对uni多个路由跳转api的封装，更方便使用. Invoke when user needs to use route tool."
 url: "https://uviewpro.cn/zh/tools/route.html"
+triggers: ["route","路由跳转"]
 ---
 
 # route 路由跳转
@@ -61,15 +62,3 @@ uni.$u.route('/pages/components/empty/index', {
 	age: 20
 });
 ```
-
-
-<style scoped>
-h4[id=route-object] + p + p + table thead tr th:nth-child(5){
-	width: 40%;
-}
-
-h4[id=route-object] + p + p + table thead tr th:nth-child(2){
-	width: 12%;
-}
-
-</style>

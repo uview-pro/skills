@@ -1,7 +1,8 @@
 ---
 name: "keyboard"
-description: "此为uView自定义的键盘面板，内含了数字键盘，车牌号键，身份证号键盘3种模式，都有可以打乱按键顺序的选项。. Invoke when user needs to use keyboard component in their uni-app project."
+description: "此为uView自定义的键盘面板，内含了数字键盘，车牌号键，身份证号键盘3种模式，都有可以打乱按键顺序的选项。. Invoke when user needs to use keyboard component."
 url: "https://uviewpro.cn/zh/components/keyboard.html"
+triggers: ["keyboard"]
 ---
 
 # Keyboard 键盘 <to-api/>
@@ -145,7 +146,7 @@ const backspace = () => {
 
 ## API
 
-## Props
+### Props
 
 注意：props中没有控制键盘弹出与收起的参数，因为这是通过v-model绑定变量实现的，见上方说明。
 
@@ -166,7 +167,7 @@ const backspace = () => {
 | confirm-text  | 确认按钮的文字 | String | 取消 | - |
 | cancel-text  | 取消按钮的文字 | String | 确认 | - |
 
-## Events
+### Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
@@ -175,23 +176,8 @@ const backspace = () => {
 | confirm | 键盘顶部工具条右边的"完成"按钮被点击 | - | - |
 | backspace | 键盘退格键被点击 | - | - |
 
-## Slot
+### Slots
 
 |名称|说明|版本|
 |:-|:-|:-|
 | default | 内容将会显示键盘的工具条上面，可以结合[MessageInput 验证码输入](/zh/components/messageInput.html)组件实现类似支付宝输入密码时，上方显示输入内容的功能 |  - |
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=events] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=slot] + table thead tr th:nth-child(2){
-	width: 60%;
-}
-</style>

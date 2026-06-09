@@ -1,7 +1,8 @@
 ---
 name: "waterfall"
-description: "这是一个瀑布流形式的组件，内容分为左右两列，结合uView的`懒加载`组件效果更佳。. Invoke when user needs to use waterfall component in their uni-app project."
+description: "这是一个瀑布流形式的组件，内容分为左右两列，结合uView的`懒加载`组件效果更佳。. Invoke when user needs to use waterfall component."
 url: "https://uviewpro.cn/zh/components/waterfall.html"
+triggers: ["waterfall"]
 ---
 
 # Waterfall 瀑布流 <to-api/>
@@ -337,7 +338,7 @@ onReachBottom(() => {
 
 ## API
 
-## IndexBar Props
+### Props IndexBar
 
 注意：通过`v-model`双向绑定传递参数，因为组件内部需要修改父组件的值。
 
@@ -348,7 +349,7 @@ onReachBottom(() => {
 
 
 
-## Methods
+### Methods
 
 这些为组件内部的方法，需要通过`ref`调用
 
@@ -356,11 +357,3 @@ onReachBottom(() => {
 |-------------  |---------------- |
 | clear | 清空列表数据 | 
 | remove(id) | `id`为唯一的"id"值，见上方说明  | 
-
-
-
-<style scoped>
-h3[id=methods] + p + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

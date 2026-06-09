@@ -1,7 +1,8 @@
 ---
 name: "textarea"
-description: "文本域此组件满足了可能出现的表单信息补充，编辑等实际逻辑的功能，内置了字数校验等，和 [u-input](/zh/components/input.html) 的 textarea 基本一致。. Invoke when user needs to use textarea component in their uni-app project."
+description: "文本域此组件满足了可能出现的表单信息补充，编辑等实际逻辑的功能，内置了字数校验等，和 [u-input](/zh/components/input.html) 的 textarea 基本一致。. Invoke when user needs to use textarea component."
 url: "https://uviewpro.cn/zh/components/textarea.html"
+triggers: ["textarea","文本域"]
 ---
 
 # Textarea 文本域 <BadgeVersion text="0.3.7" /> <to-api/>
@@ -137,7 +138,7 @@ onMounted(() => {
 
 ## API
 
-## Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |:- |:- |:- |:-: |:-: |
@@ -168,13 +169,13 @@ onMounted(() => {
 <!-- | formatter | 输入过滤或格式化函数（如需兼容微信小程序，则只能通过 `setFormatter` 方法） | Function | null | - | -->
 
 
-<!-- ## Methods
+<!-- ### Methods
 | 方法名 | 说明 |
 |:-|:-|
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 | -->
 
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |:-|:-|:-|
@@ -184,9 +185,3 @@ onMounted(() => {
 | input | 当键盘输入时，触发 `input` 事件 | `event.detail.value` |
 | confirm | 点击完成时， 触发 `confirm` 事件 | event |
 | keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event |
-
-<style scoped>
-h3[id=methods] + table thead tr th:nth-child(2) {
-	width: 50%;
-}
-</style>

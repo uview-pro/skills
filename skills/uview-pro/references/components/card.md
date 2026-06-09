@@ -1,7 +1,8 @@
 ---
 name: "card"
-description: "卡片组件一般用于多个列表条目，且风格统一的场景。. Invoke when user needs to use card component in their uni-app project."
+description: "卡片组件一般用于多个列表条目，且风格统一的场景。. Invoke when user needs to use card component."
 url: "https://uviewpro.cn/zh/components/card.html"
+triggers: ["card","卡片"]
 ---
 
 # Card 卡片 <to-api/>
@@ -120,7 +121,7 @@ const thumb = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jp
 
 ## API
 
-## Props
+### Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -149,7 +150,7 @@ const thumb = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jp
 | box-shadow | 卡片外围阴影，字符串形式 | String  | none | - |
 
 
-## Slot
+### Slots
 
 | 名称          | 说明            |
 |-------------  |---------------- |
@@ -159,7 +160,7 @@ const thumb = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jp
 | foot | 自定义卡片底部部分内容 |
 
 
-## Event
+### Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
@@ -167,16 +168,3 @@ const thumb = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jp
 | head-click | 卡片头部被点击时触发 | index: 用户传递的标识符 |
 | body-click | 卡片主体部分被点击时触发 | index: 用户传递的标识符 |
 | foot-click | 卡片底部部分被点击时触发 | index: 用户传递的标识符 |
-
-
-
-
-<style scoped>
-h3[id=props] + table thead tr th:nth-child(2){
-	width: 35%;
-}
-
-h3[id=slot] + table thead tr th:nth-child(2){
-	width: 50%;
-}
-</style>

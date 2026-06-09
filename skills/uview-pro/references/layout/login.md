@@ -1,7 +1,8 @@
 ---
 name: "login"
-description: "这个界面功能，为模仿美团APP的登录界面，包括输入手机号，获取验证码填写(uView Pro的`MessageInput`组件)等共两个界面。. Invoke when user needs layout examples for login in uView Pro."
+description: "这个界面功能，为模仿美团APP的登录界面，包括输入手机号，获取验证码填写(uView Pro的`MessageInput`组件)等共两个界面。. Invoke when user needs layout examples for login."
 url: "https://uviewpro.cn/zh/layout/login.html"
+triggers: ["login","登录"]
 ---
 
 # 登录界面

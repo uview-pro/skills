@@ -1,7 +1,8 @@
 ---
 name: "picker"
-description: "此选择器有四种弹出模式. Invoke when user needs to use picker component in their uni-app project."
+description: "此选择器有四种弹出模式. Invoke when user needs to use picker component."
 url: "https://uviewpro.cn/zh/components/picker.html"
+triggers: ["picker","选择器"]
 ---
 
 # Picker 选择器 <to-api/>
@@ -248,12 +249,9 @@ const selectorObj = reactive([
 `column`表示第几列发生了变化(从0开始)，`index`表示当前的下标值，如`{column: 1, index: 2}`表示第二列(从0开始)发生了变化，下标变成了`2`，您可以
 根据这个回调，对应的修改`default-selector`参数，让多列中的其他列联动起来。
 
-此处演示较为复杂，请见uView的演示代码，在[安装](/zh/components/install.html)页下载`演示项目`方式，内有所有演示的示例，是一个完整的HX工程。
-
-
 ## API
 
-## Props
+### Props
 
 注意：props中没有控制Picker打开与收起的参数，因为这是通过v-model绑定变量实现的，见上方说明。
 
@@ -280,7 +278,7 @@ const selectorObj = reactive([
 | cancel-text | 取消按钮的文字 | `String` | `取消` | - |
 | preserve-selection | 是否保留用户上次确认的选择 | `Boolean` | `true` | `false` |
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 | 版本 |
 |:-|:-|:-|:-|

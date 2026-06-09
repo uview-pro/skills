@@ -1,7 +1,8 @@
 ---
 name: "deepClone"
-description: ":::tip 注意. Invoke when user needs to use deepClone tool in their uni-app project."
+description: ":::tip 注意. Invoke when user needs to use deepClone tool."
 url: "https://uviewpro.cn/zh/tools/deepClone.html"
+triggers: ["deepClone","深克隆"]
 ---
 
 # deepClone 对象深度克隆

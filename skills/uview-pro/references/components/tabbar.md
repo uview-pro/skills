@@ -1,7 +1,8 @@
 ---
 name: "tabbar"
-description: "此组件一般用于应用的底部导航，具有如下特点：. Invoke when user needs to use tabbar component in their uni-app project."
+description: "此组件一般用于应用的底部导航，具有如下特点：. Invoke when user needs to use tabbar component."
 url: "https://uviewpro.cn/zh/components/tabbar.html"
+triggers: ["tabbar","标签栏"]
 ---
 
 # Tabbar 底部导航栏 <to-api/>
@@ -241,24 +242,24 @@ const beforeSwitch = (index: number): Promise<void> => {
 
 组件默认带了顶部边框，如果有配置中部凸起按钮的话，此按钮同时也会有外层边框，如果不需要，配置`border-top`为`false`即可。
 
-<!-- ## 实战教程
+## 实战教程
 
 自定义 tabbar 场景，我们不建议在一个页面内通过几个组件，用`v-if`切换去模拟各个页面，而应该使用 uni-app 自带的 tabbar 系统，同时隐藏原生的 tabbar，
 再引入自定导航栏，这样可以保证原有性能，同时又能自定义 tabbar，思路如下：
 
 1. 在 pages.json 中正常定义 tabbar 逻辑和字段，只需配置`tabBar`字段`list`中的`pagePath`(需以"/"开头)属性即可
 2. 在各个 tabbar 页面引入`u-tabbar`组件，组件会默认自动通过`uni.hideTabBar()`隐藏系统 tabbar
-3. 通过`vuex`引用同一份 tabbar 组件的`list`参数，这样可以做到修改某一个页面的`u-tabbar`数据，其他页面的`u-tabbar`也能同步更新
+3. 通过`app-page`公共布局，配置是否显示 tabbar组件，保证`u-tabbar`组件在需要的页面能显示
 4. 组件内部会自动处理各种跳转的逻辑，同时需要注意以下两点：
 
 - 要在`list`参数中配置`pagePath`路径，此路径为`pages.json`中定义的 tabbar 字段的路径
 - 此种方式，无需通过`v-model`绑定活动项，内部会自动进行判断和跳转
 
-我们为此做了一个演示`demo`，您可以在下载页找到对应的资源，下载运行即可，[点此跳转下载页](/zh/components/resource.html) -->
+我们做了一个快速启动模板，包含了这部分最佳实践，下载运行即可，[点此跳转到 uView Pro Starter 开源项目](https://github.com/anyup/uView-Pro-Starter)
 
 ## API
 
-## Tabbar Props
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 | 最低版本 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -277,22 +278,8 @@ const beforeSwitch = (index: number): Promise<void> => {
 | hide-tab-bar | 是否隐藏原生 tabbar | Boolean | true | false | - |
 | text-size | 文字的大小，单位任意，数值则为 rpx 单位 | String \| Number | 26 | - | <BadgeVersion text="0.4.10" /> |
 
-## Events
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 | :--- | :--- | :--- |
 | change | 切换选项时触发 | index：当前要切换项的索引 |
-
-<style scoped>
-h3[id=table-props] + table thead tr th:nth-child(2){
-	width: 40%;
-}
-
-h3[id=td-props] + table thead tr th:nth-child(2){
-	width: 43%;
-}
-
-h3[id=th-props] + table thead tr th:nth-child(2){
-	width: 43%;
-}
-</style>
