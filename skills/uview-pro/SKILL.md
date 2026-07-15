@@ -69,7 +69,7 @@ uview useTheme             # 访问主题钩子
 
 ## 技能分类索引
 
-### 指南类 Skills (11)
+### 指南类 Skills (12)
 - [codeHint](references/guide/codeHint.md) - 代码提示(codeHint)
 - [customIcon](references/guide/customIcon.md) - 自定义图标(customIcon)
 - [customStyle](references/guide/customStyle.md) - 自定义样式(customStyle)
@@ -78,6 +78,7 @@ uview useTheme             # 访问主题钩子
 - [design](references/guide/design.md) - 设计(design)
 - [faq](references/guide/faq.md) - 常见问题(faq)
 - [llms](references/guide/llms.md) - LLMs说明(llms)
+- [mcp](references/guide/mcp.md) - mcp
 - [note](references/guide/note.md) - 注意事项(note)
 - [skills](references/guide/skills.md) - 技能说明(skills)
 - [theme](references/guide/theme.md) - 主题配置(theme)

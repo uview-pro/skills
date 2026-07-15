@@ -140,32 +140,34 @@ onMounted(() => {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|:- |:- |:- |:-: |:-: |
-| value | 输入框的内容 | String &#124; String | - | - |
-| placeholder | 输入框为空时占位符 | Number &#124; String | - | - |
-| height | 输入框高度 | String &#124; Number | 70 | - |
-| confirmType | 设置键盘右下角按钮的文字，仅微信小程序、App-vue 和 H5 有效 | String | done | - |
-| disabled | 是否禁用 | Boolean | false | true |
-| count | 是否显示统计字数 | Boolean | false | true |
-| focus | 是否自动获取焦点，nvue 不支持，H5 取决于浏览器实现 | Boolean | false | true |
-| autoHeight | 是否自动增加高度 | Boolean | false | true |
-| ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件 | Boolean | true | false |
-| fixed | 如果 textarea 在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true | Boolean | false | true |
-| cursorSpacing | 指定光标与键盘的距离 | Number | 0 | - |
-| cursor | 指定 focus 时的光标位置 | Number &#124; String | - | - |
-| showConfirmBar | 是否显示键盘上方带有“完成”按钮的那一栏 | Boolean | true | false |
-| selectionStart | 光标起始位置，自动聚焦时有效，需与 selectionEnd 搭配使用 | Number | -1 | - |
-| selectionEnd | 光标结束位置，自动聚焦时有效，需与 selectionStart 搭配使用 | Number | -1 | - |
-| adjustPosition | 键盘弹起时，是否自动上推页面 | Boolean | true | false |
-| disableDefaultPadding | 是否去掉 iOS 下的默认内边距（仅微信小程序有效） | Boolean | false | true |
-| holdKeyboard | focus 时，点击页面不会收起键盘（仅微信小程序有效） | Boolean | false | true |
-| maxlength | 最大输入长度，设置为 -1 时不限制最大长度 | String &#124; Number | 140 | - |
-| border | 边框类型：surround-四周边框，none-无边框，bottom-底部边框 | String | surround | bottom |
-| placeholderClass | 指定 placeholder 的样式类，注意当页面或组件使用 scoped 时需在类名前写 /deep/ | String | textarea-placeholder | - |
-| placeholderStyle | 指定 placeholder 的样式，字符串或对象形式，如 "color: red;" | String &#124; Object | color: #c0c4cc | - |
-| formatter | 输入过滤或格式化函数 | Function | null | - |
-| ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理 | Boolean | true | false |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 | 版本 |
+|:- |:- |:- |:-: |:-: |:-: |
+| value | 输入框的内容 | String &#124; String | - | - | - |
+| placeholder | 输入框为空时占位符 | Number &#124; String | - | - | - |
+| height | 输入框高度 | String &#124; Number | 70 | - | - |
+| confirmType | 设置键盘右下角按钮的文字，仅微信小程序、App-vue 和 H5 有效 | String | done | - | - |
+| disabled | 是否禁用 | Boolean | false | true | - |
+| readonly | 是否只读 | Boolean | false | true | 0.6.4 |
+| count | 是否显示统计字数 | Boolean | false | true | - |
+| focus | 是否自动获取焦点，nvue 不支持，H5 取决于浏览器实现 | Boolean | false | true | - |
+| autoHeight | 是否自动增加高度 | Boolean | false | true | - |
+| ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件 | Boolean | true | false | - |
+| fixed | 如果 textarea 在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true | Boolean | false | true | - |
+| cursorSpacing | 指定光标与键盘的距离 | Number | 0 | - | - |
+| cursor | 指定 focus 时的光标位置 | Number &#124; String | - | - | - |
+| showConfirmBar | 是否显示键盘上方带有“完成”按钮的那一栏 | Boolean | true | false | - |
+| selectionStart | 光标起始位置，自动聚焦时有效，需与 selectionEnd 搭配使用 | Number | -1 | - | - |
+| selectionEnd | 光标结束位置，自动聚焦时有效，需与 selectionStart 搭配使用 | Number | -1 | - | - |
+| adjustPosition | 键盘弹起时，是否自动上推页面 | Boolean | true | false | - |
+| disableDefaultPadding | 是否去掉 iOS 下的默认内边距（仅微信小程序有效） | Boolean | false | true | - |
+| holdKeyboard | focus 时，点击页面不会收起键盘（仅微信小程序有效） | Boolean | false | true | - |
+| maxlength | 最大输入长度，设置为 -1 时不限制最大长度 | String &#124; Number | 140 | - | - |
+| border | 边框类型：surround-四周边框，none-无边框，bottom-底部边框 | String | surround | bottom | - |
+| placeholderClass | 指定 placeholder 的样式类，注意当页面或组件使用 scoped 时需在类名前写 /deep/ | String | textarea-placeholder | - | - |
+| placeholderStyle | 指定 placeholder 的样式，字符串或对象形式，如 "color: red;" | String &#124; Object | color: #c0c4cc | - | - |
+| formatter | 输入过滤或格式化函数 | Function | null | - | - |
+| ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理 | Boolean | true | false | - |
+| confirmHold | 点击键盘右下角完成按钮时，是否保持键盘不收起 | Boolean | false | true | 0.6.7 |
 <!-- | formatter | 输入过滤或格式化函数（如需兼容微信小程序，则只能通过 `setFormatter` 方法） | Function | null | - | -->
 
 
