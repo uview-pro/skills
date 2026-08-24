@@ -1,8 +1,7 @@
 ---
 name: "indexList"
-description: "通过折叠面板收纳内容区域. Invoke when user needs to use indexList component."
+description: "通过折叠面板收纳内容区域. Invoke when user needs to use indexList component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/indexList.html"
-triggers: ["indexList"]
 ---
 
 # IndexList 索引列表 <to-api/>
@@ -130,7 +129,7 @@ onPageScroll((e) => {
 
 ## API
 
-### Props IndexBar
+## IndexBar Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -141,7 +140,7 @@ onPageScroll((e) => {
 | offset-top | 锚点自动吸顶时与顶部的距离，单位rpx，见上方"自定义导航栏"说明  | Number \| String | 0 | - |
 | active-color | 锚点和右边索引字符高亮颜色  | String | #2979ff | - |
 
-### Props IndexAnchor
+## IndexAnchor Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -149,13 +148,13 @@ onPageScroll((e) => {
 | index | 索引字符，如果定义了`use-slot`，此参数自动失效   | String \| Number | - | - |
 
 
-### Events IndexBar
+## IndexBar Events
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|
 | select | 选中右边索引字符时触发 | index: 索引字符 | - |
  
- ### Slots IndexAnchor
+ ## IndexAnchor Slots
 
 | 名称 | 说明 |
 |:-|:-|

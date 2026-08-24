@@ -1,8 +1,7 @@
 ---
 name: "avatar"
-description: "本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。. Invoke when user needs to use avatar component."
+description: "本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。. Invoke when user needs to use avatar component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/avatar.html"
-triggers: ["avatar","头像"]
 ---
 
 # Avatar 头像 <to-api/>
@@ -64,7 +63,7 @@ const src = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg'
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -83,7 +82,7 @@ const src = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg'
 
 
 
-### Events
+## Event
 
 |事件名|说明|回调参数|
 |:-|:-|:-|

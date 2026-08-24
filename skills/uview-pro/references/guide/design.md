@@ -1,8 +1,7 @@
 ---
 name: "design"
-description: ":::tip 说明. Invoke when user needs guidance on design."
+description: ":::tip 说明. Invoke when user needs guidance on design in uView Pro."
 url: "https://uviewpro.cn/zh/guide/design.html"
-triggers: ["design","设计"]
 ---
 
 # 设计理念

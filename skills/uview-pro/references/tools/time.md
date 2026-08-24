@@ -1,8 +1,7 @@
 ---
 name: "time"
-description: "**注意**：date和timeFormat为同功能不同名函数，无论用哪个方法名，都是一样的。. Invoke when user needs to use time tool."
+description: "**注意**：date和timeFormat为同功能不同名函数，无论用哪个方法名，都是一样的。. Invoke when user needs to use time tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/time.html"
-triggers: ["time","时间处理"]
 ---
 
 # time 时间格式

@@ -1,8 +1,7 @@
 ---
 name: "countDown"
-description: "该组件一般使用于某个活动的截止时间上，通过数字的变化，给用户明确的时间感受，提示用户进行某一个行为操作。. Invoke when user needs to use countDown component."
+description: "该组件一般使用于某个活动的截止时间上，通过数字的变化，给用户明确的时间感受，提示用户进行某一个行为操作。. Invoke when user needs to use countDown component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/countDown.html"
-triggers: ["countDown"]
 ---
 
 # CountDown 倒计时 <to-api/>
@@ -125,7 +124,7 @@ const getSeconds = () => {
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -147,7 +146,7 @@ const getSeconds = () => {
 | hide-zero-day | 当"天"的部分为0时，隐藏该字段 | Boolean  | true | false |
 
 
-### Events
+## Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
@@ -156,7 +155,7 @@ const getSeconds = () => {
 
 
 
-### Methods
+## Methods
 
 需要通过ref获取倒计时组件才能调用，见上方"倒计时执行的时机"说明
 

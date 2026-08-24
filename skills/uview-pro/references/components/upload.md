@@ -1,15 +1,15 @@
 ---
 name: "upload"
-description: "该组件用于上传文件场景，支持图片、视频、文档等多种类型，支持网格(grid)和列表(list)两种展示模式. Invoke when user needs to use upload component."
+description: "该组件用于上传图片场景. Invoke when user needs to use upload component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/upload.html"
-triggers: ["upload","上传"]
 ---
 
-# Upload 上传 <to-api/> 
+# Upload 上传 <to-api/>
 
 <demo-model url="/pages/componentsB/upload/index"></demo-model>
 
-该组件用于上传文件场景，支持图片、视频、文档等多种类型，支持网格(grid)和列表(list)两种展示模式
+
+该组件用于上传图片场景
 
 ## 平台差异说明
 
@@ -17,20 +17,14 @@ triggers: ["upload","上传"]
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|
 
-**特殊说明：**
-- `accept="file"` 仅在 H5 和微信小程序支持
-- `accept="media"` 仅在微信小程序、支付宝小程序、App 支持
-- 文件预览功能在 H5 支持最好，其他平台可能受限于系统能力
-
 ## 基本使用
 
-- 可以通过设置`v-model`参数(数组，元素为对象)，显示预置的文件。其中元素的`url`属性为文件路径
+- 可以通过设置`file-list`参数(数组，元素为对象)，显示预置的图片。其中元素的`url`属性为图片路径
 - 设置`action`参数为后端服务器地址，注意H5在浏览器可能会有跨域限制，让后端允许域即可
-- 默认`accept="image"`，只支持图片上传
 
 ```html
 <template>
-    <u-upload :action="action" v-model="fileList"></u-upload>
+    <u-upload :action="action" :file-list="fileList" ></u-upload>
 </template>
 
 <script setup lang="ts">
@@ -46,126 +40,9 @@ const fileList = ref([
 </script>
 ```
 
-::: tip 提示
-`v-model` 是 `modelValue` 的语法糖，推荐优先使用 `v-model` 替代 `:file-list` + `@on-list-change` 的组合。
-
-如果同时使用 `v-model` 和 `:file-list`，`v-model` 优先级更高。
-:::
-
-## 双向绑定（v-model）
-
-组件支持 `v-model` 双向绑定，可以更方便地同步文件列表数据。
-
-### 基础用法
-
-```html
-<template>
-    <u-upload :action="action" v-model="fileList"></u-upload>
-</template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const action = ref('http://www.example.com/upload')
-const fileList = ref([
-    {
-        url: 'http://pics.sc.chinaz.com/files/pic/pic9/201912/hpic1886.jpg',
-        name: '示例图片.jpg',
-        size: 1024 * 50,
-        progress: 100,
-        error: false
-    }
-])
-</script>
-```
-
-### 与自定义插槽配合使用
-
-当使用自定义 `file` 插槽时，`v-model` 可以确保数据双向同步：
-
-```html
-<template>
-    <u-upload :action="action" v-model="fileList" :show-upload-list="false">
-        <template #file="{ file }">
-            <view class="custom-list">
-                <view v-for="(item, index) in file" :key="index" class="custom-item">
-                    <image :src="item.url" mode="aspectFill"></image>
-                    <text>{{ item.name }}</text>
-                    <button @click="removeFile(index)">删除</button>
-                </view>
-            </view>
-        </template>
-    </u-upload>
-</template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const action = ref('http://www.example.com/upload')
-const fileList = ref([])
-
-function removeFile(index: number) {
-    // 直接修改数组，v-model 会自动同步
-    fileList.value.splice(index, 1)
-}
-</script>
-```
-
-### 向后兼容
-
-如果项目中已有代码使用 `:file-list` + `@on-list-change` 的组合，仍然可以继续使用，两者完全兼容：
-
-```html
-<!-- 旧版用法（仍然支持） -->
-<u-upload 
-    :action="action" 
-    :file-list="fileList"
-    @on-list-change="list => fileList = list"
-></u-upload>
-
-<!-- 新版推荐用法 -->
-<u-upload :action="action" v-model="fileList"></u-upload>
-```
-
-## 上传多种文件类型
-
-通过设置`accept`参数，可以上传不同类型的文件：
-
-- `image` - 图片（默认）
-- `video` - 视频
-- `file` - 文件（仅H5、微信小程序支持）
-- `media` - 媒体文件（图片+视频，仅部分平台支持）
-- `all` - 所有文件
-
-```html
-<!-- 上传视频 -->
-<u-upload :action="action" accept="video" :max-duration="120"></u-upload>
-
-<!-- 上传文件（H5/微信小程序） -->
-<u-upload :action="action" accept="file" :extension="['.pdf', '.docx']"></u-upload>
-
-<!-- 上传所有类型 -->
-<u-upload :action="action" accept="all"></u-upload>
-```
-
-## 展示模式
-
-组件支持两种展示模式，通过`mode`参数设置：
-
-- `grid` - 网格模式（默认），适合图片展示
-- `list` - 列表模式，适合文件展示，显示文件名和大小
-
-```html
-<!-- 网格模式（默认） -->
-<u-upload :action="action" accept="image" mode="grid"></u-upload>
-
-<!-- 列表模式 -->
-<u-upload :action="action" accept="file" mode="list" :show-file-name="true" :show-file-size="true"></u-upload>
-```
-
 ## 手动上传
 
-组件默认为自动上传，可以设置`auto-upload`为`false`，然后通过`ref`调用组件的`upload`方法，手动上传文件
+组件默认为自动上传，可以设置`auto-upload`为`false`，然后通过`ref`调用组件的`upload`方法，手动上传图片
 
 ```html
 <!-- 手动上传 -->
@@ -189,21 +66,18 @@ function submit() {
 </script>
 ```
 
-## 获取上传的文件列表
+## 获取上传的图片列表
 
-文件选择或者上传成功后，会保存在组件内部的`lists`数组中，数组元素为对象，有如下属性：
-- `url`: 文件地址
-- `name`: 文件名
-- `size`: 文件大小（字节）
-- `fileType`: 文件类型（image/video/file）
-- `error`：上传失败标记
-- `progress`：上传进度，0-100，100表示上传成功
-- `response`：上传成功后，服务器返回的数据
+图片选择或者上传成功后，会保存在组件内部的`lists`数组中，数组元素为对象，有如下属性：
+- url: 图片地址
+- error：组件内部使用，不应根据此值判断上传是否成功，而应根据`progress`属性
+- progress：如果值为100，表示图片上传成功
+- response：上传成功后，服务器返回的数据，这是最有用的了
 
-为了获得上传的文件列表，可以在提交表单时，通过`ref`获取组件内部的`lists`文件数组，筛选出`progress`为100的文件
+为了获得上传的文件列表，可以在提交表单时，通过`ref`获取组件内部的`lists`文件数组，历遍元素筛选出`progress`为100的文件
 
 ```html
-<!-- 获取上传的文件列表 -->
+<!-- 获取上传的图片列表 -->
 <template>
     <view>
         <u-upload ref="uUploadRef" :action="action" :auto-upload="true" ></u-upload>
@@ -235,14 +109,14 @@ function submit() {
 在以下几种情况，组件会默认通过toast提示用户信息，可以把`show-tips`设置为`false`取消默认的提示，这时可以通过API
 中的各种事件，进行自定义的个性化提示
 - 超出允许的最大上传数量
-- 文件大小超出最大允许大小
-- 上传文件出错
-- 移除文件
+- 图片大小超出最大允许大小
+- 上传图片出错
+- 移除图片
 
-以下示例为屏蔽组件内部的提示，在移除文件时，监听`onRemove`事件，手动提示的情况
+以下示例为屏蔽组件内部的提示，在移除图片时，监听`onRemove`事件，手动提示的情况
 
 ```html
-<!-- 屏蔽组件内部的提示，在移除文件时，监听onRemove事件，手动提示的情况 -->
+<!-- 屏蔽组件内部的提示，在移除图片时，监听onRemove事件，手动提示的情况 -->
 <template>
     <u-upload ref="uUploadRef" :action="action" :show-tips="false" @on-remove="onRemove"></u-upload>
 </template>
@@ -254,40 +128,22 @@ const action = ref('http://www.example.com/upload')
 const uUploadRef = ref()
 
 function onRemove(index: number, lists: any[]) {
-    console.log('文件已被移除')
+    console.log('图片已被移除')
 }
 </script>
 ```
 
-## 限制文件数量和大小
+## 限制图片数量和大小
 
-- 通过`max-count`可以设置最多可以选择的文件的数量
-- 通过`max-size`设置单个文件最大的大小，单位为B(byte)，默认不限制
+- 通过`max-count`可以设置最多可以选择的图片的数量
+- 通过`max-size`设置单张图片最大的大小，单位为B(byte)，默认不限制
 
-下方示例为单张最大为5M，最多选择6个文件的情况：
+下方示例为单张最大为5M，最多选择6张的情况：
 
 ```html
 <u-upload :max-size="5 * 1024 * 1024" max-count="6"></u-upload>
 ```
 
-## 限制文件类型
-
-可以通过以下方式限制文件类型：
-
-1. **`accept`参数** - 基础文件类型限制（image/video/file/media/all）
-2. **`limit-type`参数** - 详细的文件后缀限制，优先级最高
-3. **`extension`参数** - 仅在 H5 和微信小程序 `accept="file"` 时有效，用于系统文件选择器过滤
-
-```html
-<!-- 方式1：限制为图片 -->
-<u-upload accept="image"></u-upload>
-
-<!-- 方式2：详细限制后缀（推荐） -->
-<u-upload accept="image" :limit-type="['png', 'jpg', 'jpeg']"></u-upload>
-
-<!-- 方式3：H5/微信小程序选择PDF和Word -->
-<u-upload accept="file" :extension="['.pdf', '.docx']" :limit-type="['pdf', 'docx']"></u-upload>
-```
 
 ## 上传前的钩子
 
@@ -298,8 +154,8 @@ function onRemove(index: number, lists: any[]) {
 
 此回调可以返回一个`promise`、`true`，或者`false`，下面分别阐述三者的处理情况：
 
-- `false`——如果返回`false`，将会跳过当前文件，继续上传下一个文件(如果有)，并且再次执行`before-upload`钩子
-- `true`——如果返回`true`，会随即上传当前文件，上传成功后，继续上传下一个文件(如果有)，并且再次执行`before-upload`钩子
+- `false`——如果返回`false`，将会跳过当前文件，继续上传下一张图片(如果有)，并且再次执行`before-upload`钩子
+- `true`——如果返回`true`，会随即上传当前文件，上传成功后，继续上传下一张图片(如果有)，并且再次执行`before-upload`钩子
 - `promise`——如果返回的是一个`promise`，如果进入`then`回调，就会和返回`true`的情况一样，如果进入`catch`回调，就会和返回`false`的情况一样
 
 下面举例说明：
@@ -377,66 +233,11 @@ function beforeUpload(index: number, list: any[]) {
 
 此处不举例说明，参考`before-upload`的示例即可。
 
-## 删除确认弹窗
-
-默认情况下，删除文件前会显示确认弹窗。可以通过`show-confirm`参数控制：
-
-```html
-<!-- 不显示删除确认弹窗 -->
-<u-upload :action="action" :show-confirm="false"></u-upload>
-```
-
-## 自定义文件选择
-
-对于不支持文件选择的平台（如 App），可以通过 `custom-choose` 属性开启自定义选择模式：
-
-```html
-<template>
-    <u-upload 
-        ref="uploadRef"
-        accept="file"
-        :custom-choose="true"
-        :action="action"
-        @on-choose="handleCustomChoose"
-    ></u-upload>
-</template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const action = ref('https://your-server.com/upload')
-const uploadRef = ref()
-
-// 自定义文件选择
-function handleCustomChoose({ accept, maxCount, currentFiles, index }: any) {
-    // App 端使用原生文件选择
-    // #ifdef APP-PLUS
-    plus.runtime.chooseFile({
-        success: (res: any) => {
-            const files = res.files.map((file: any) => ({
-                path: file.path,
-                name: file.name,
-                size: file.size,
-                fileType: 'file'
-            }))
-            // 将文件添加到组件
-            uploadRef.value?.addFiles(files)
-        }
-    })
-    // #endif
-}
-</script>
-```
-
-**说明：**
-- 设置 `:custom-choose="true"` 后，点击选择按钮会触发 `on-choose` 事件，而不是调用默认的文件选择 API
-- `on-choose` 事件参数为 `{ accept, maxCount, currentFiles, index }`
-- 通过 `ref` 调用 `addFiles(files)` 方法将选择的文件添加到组件列表
 
 ## 自定义相关说明
 
 1. 组件内部样式  
-组件默认选取文件会展示预览缩略图，包括默认的选取文件的按钮，他们的宽高都是`200rpx`，`border-radius`值为`10rpx`，
+组件默认选取图片会展示预览缩略图，包括默认的选取图片的按钮，他们的宽高都是`200rpx`，`border-radius`值为`10rpx`，
 另外预览图片的盒子有一个默认的边框，值为`border: 1px solid rgb(235, 236, 238)`。如果用户需要自定义上传按钮，可以参考这些值。
 
 2. 自定义上传按钮  
@@ -478,10 +279,7 @@ function handleCustomChoose({ accept, maxCount, currentFiles, index }: any) {
 ```js
 lists = [
 	{
-		url: 'xxx.png', // 预览文件的地址
-		name: 'xxx.png', // 文件名
-		size: 1024, // 文件大小（字节）
-		fileType: 'image', // 文件类型
+		url: 'xxx.png', // 预览图片的地址
 		error: false, // 上传失败，此值为true
 		progress: 100, // 0-100之间的值
 	},
@@ -489,12 +287,12 @@ lists = [
 ]
 ```
 
-- `deleteItem(index)`(方法)，可以用此方法在自定义列表中通过`ref`删除某一个文件
+- `deleteItem(index)`(方法)，可以用此方法在自定义列表中通过`ref`删除某一张图片
 
-以下为完整的自定义文件预览列表示例：
+以下为完整的自定义图片预览列表示例：
 
 ```html
-<!-- 自定义文件预览列表 -->
+<!-- 自定义图片预览列表 -->
 <template>
     <view class="wrap">
         <view class="pre-box" v-if="!showUploadList">
@@ -522,7 +320,7 @@ const lists = ref<any[]>([])
 
 // 只有onMounted生命周期才能调用refs操作组件
 onMounted(() => {
-    // 得到整个组件对象，内部文件列表变量为"lists"
+    // 得到整个组件对象，内部图片列表变量为"lists"
     lists.value = uUploadRef.value?.lists || []
 })
 </script>
@@ -566,107 +364,95 @@ onMounted(() => {
         width: 100%;
         height: 140rpx;
     }
-</style>
 ```
 
 
 ## API
 
-### Props
+## Props
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 | 版本 |
-|------|------|------|--------|--------|------|
-| action | 服务器上传地址 | String | - | - | - |
-| accept | 接受的文件类型 | String | image | image/video/file/media/all | 0.6.0 |
-| modelValue | 文件列表（推荐，v-model 双向绑定） | Array | [] | - | 0.6.0 |
-| mode | 展示模式 | String | grid | grid/list | 0.6.0 |
-| max-count | 最大选择文件的数量 | String/Number | 52 | - | - |
-| max-size | 选择单个文件的最大大小，单位B(byte) | String/Number | Number.MAX_VALUE | - | - |
-| width | 预览区域和添加按钮的宽度，单位rpx | String/Number | 200 | - | - |
-| height | 预览区域和添加按钮的高度，单位rpx | String/Number | 200 | - | - |
-| multiple | 是否开启文件多选 | Boolean | true | true/false | - |
-| disabled | 是否禁用组件 | Boolean | false | true/false | - |
-| auto-upload | 选择完文件是否自动上传 | Boolean | true | true/false | - |
-| deletable | 是否显示删除文件的按钮 | Boolean | true | true/false | - |
-| show-confirm | 删除文件前是否显示确认弹窗 | Boolean | true | true/false | 0.6.0 |
-| show-tips | 特殊情况下是否自动提示toast | Boolean | true | true/false | - |
-| show-progress | 是否显示上传进度条 | Boolean | true | true/false | - |
-| show-upload-list | 是否显示组件内部的文件预览列表 | Boolean | true | true/false | - |
-| show-file-name | 是否显示文件名 | Boolean | true | true/false | 0.6.0 |
-| show-file-size | 是否显示文件大小 | Boolean | false | true/false | 0.6.0 |
-| preview-full-image | 是否可以通过`uni.previewImage`预览已选择的图片 | Boolean | true | true/false | - |
-| preview-file | 是否可预览文件（非图片类型） | Boolean | true | true/false | 0.6.0 |
-| custom-btn | 是否自定义选择文件的按钮 | Boolean | false | true/false | - |
-| upload-text | 选择文件按钮的提示文字 | String | 根据accept自动显示 | - | - |
-| image-mode | 预览图片的显示模式 | String | aspectFill | - | - |
-| del-icon | 右上角删除图标名称 | String | close | - | - |
-| del-bg-color | 右上角删除按钮的背景颜色 | String | var(--u-type-error) | - | - |
-| del-color | 右上角删除按钮图标的颜色 | String | var(--u-white-color) | - | - |
-| header | 上传携带的请求头信息 | Object | {} | - | - |
-| form-data | 上传额外携带的参数 | Object | {} | - | - |
-| name | 上传文件的字段名 | String | file | - | - |
-| size-type | original原图，compressed压缩图 | Array | ['original','compressed'] | - | - |
-| source-type | 选择文件的来源，album-相册，camera-相机 | Array | ['album','camera'] | - | - |
-| limit-type | 限制允许上传的文件后缀，优先级高于accept | Array | [] | - | - |
-| extension | 选择文件时的扩展名过滤，仅H5和微信小程序有效 | Array | [] | - | 0.6.0 |
-| file-icon-map | 文件类型图标映射配置 | Object | {} | - | 0.6.0 |
-| file-list | 默认显示的文件列表（旧版，建议使用v-model） | Array | [] | - | - |
-| compressed | 选择视频时是否压缩 | Boolean | true | true/false | 0.6.0 |
-| max-duration | 选择视频时拍摄最长时长，单位秒 | Number | 60 | - | 0.6.0 |
-| camera | 选择视频时摄像头方向 | String | back | front/back | 0.6.0 |
-| image-shape | 图片/图标展示形状 | String | square | square/circle | 0.6.0 |
-| custom-choose | 是否使用自定义文件选择 | Boolean | false | true/false | 0.6.0 |
-| before-upload | 上传前钩子 | Function | - | - | - |
-| before-remove | 删除前钩子 | Function | - | - | - |
-| to-json | 如果上传后返回值为json字符串，是否自动转为json | Boolean | true | true/false | - |
-| index | 在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件 | String/Number | - | - | - |
+| 参数          | 说明            | 类型            | 默认值             |  可选值   |
+|-------------  |---------------- |---------------|------------------ |-------- |
+| action | 服务器上传地址  | String | - | - |
+| max-count | 最大选择图片的数量 | String \| Number | 99 | - |
+| width | 图片预览区域和添加图片按钮的宽度，单位rpx，不能是百分比，或者`auto` | String \| Number | 200 | - |
+| height | 图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者`auto` | String \| Number | 200 | - |
+| custom-btn | 如果需要自定义选择图片的按钮，设置为`true` | Boolean | false | true |
+| show-progress | 是否显示进度条 | Boolean  | true | false |
+| disabled | 是否启用(显示/隐藏)组件 | Boolean  | false | true |
+| image-mode | 预览图片等显示模式，可选值为uni的image的`mode`属性值 | String  | aspectFill | - |
+| header | 上传携带的头信息，对象形式 | Object | {} | - |
+| form-data | 上传额外携带的参数 | Object | {} | - |
+| name | 上传文件的字段名，供后端获取使用 | String  | file | - |
+| size-type | original 原图，compressed 压缩图，默认二者都有，H5无效 | Array\<String\>  | ['original', 'compressed'] | - |
+| source-type | 选择图片的来源，album-从相册选图，camera-使用相机，默认二者都有 | Array\<String\>  | ['album', 'camera'] | - |
+| preview-full-image | 是否可以通过`uni.previewImage`预览已选择的图片 | Boolean  | true | false |
+| multiple | 是否开启图片多选，部分安卓机型不支持  | Boolean  | true | false |
+| deletable | 是否显示删除图片的按钮 | Boolean  | true | false |
+| max-size | 选择单个文件的最大大小，单位B(byte)，默认不限制 | String \| Number  | Number.MAX_VALUE | - |
+| file-list | 默认显示的图片列表，数组元素为对象，必须提供`url`属性 | Array\<Object\>  | - | - |
+| upload-text | 选择图片按钮的提示文字 | String  | 选择图片 | - |
+| auto-upload | 选择完图片是否自动上传，见上方说明 | Boolean  | true | false |
+| show-tips | 特殊情况下是否自动提示toast，见上方说明 | Boolean  | true | false |
+| show-upload-list | 是否显示组件内部的图片预览 | Boolean  | true | false |
+| del-icon | 右上角删除图标名称，只能为uView内置图标 | String  | close | - |
+| del-bg-color | 右上角关闭按钮的背景颜色 | String  | #fa3534 | - |
+| del-color | 右上角关闭按钮图标的颜色 | String  | #ffffff | - |
+| to-json | 如果上传后服务端返回的值为`json`字符串的话，是否自动转为`json` | Boolean | true  | false |
+| before-upload | 每个文件上传前触发的钩子回调函数，见上方说明，注意不要加括号 | Function | - | - |
+| limitType | 允许的图片后缀 | Array | ['png', 'jpg', 'jpeg', 'webp', 'gif'] | - |
+| index  | 在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件 | String \| Number  | - | - |
 
 
-### Methods
+## Methods
 
 此方法如要通过ref手动调用
 
-| 名称 | 说明 | 版本 |
-|------|------|------|
-| upload | 手动上传文件 | - |
-| clear | 清空内部文件列表 | - |
-| reUpload | 重新上传所有失败/未上传的文件 | - |
-| retry(index) | 重新上传指定索引的文件 | - |
-| remove(index) | 手动移除指定索引的文件 | - |
-| selectFile | 手动触发文件选择 | - |
-| doPreviewImage(url, index) | 预览图片 | - |
-| doPreviewFile(item, index) | 预览/打开文件 | 0.6.0 |
-| addFiles(files) | 添加文件到列表（配合custom-choose使用） | 0.6.0 |
+| 名称          | 说明            |
+|-------------  |---------------- |
+| upload | 调用此方法，手动上传图片  |
+| clear | 调用此方法，清空内部文件列表  |
+| reUpload | 调用此方法，重新上传内部上传失败或者尚未上传的图片  |
+| remove(index) | 手动移除列表的某一个图片，`index`为`lists`数组的索引  |
 
 
-### Slots
+## Slot
 
-| 名称 | 说明 | 版本 |
-|------|------|------|
-| addBtn | 自定义选择文件按钮 | - |
-| file | 自定义文件列表插槽 | - |
+|名称|说明|
+|:-|:-|
+| addBtn | 自定义的选择图片按钮 |
 
 
 
-### Events
+## Events
 
-回调参数中的`lists`参数，为目前组件内的所有文件数组，`index`为当前操作的文件的索引，`name`为通过`props`传递的`index`参数：
+回调参数中的`lists`参数，为目前组件内的所有图片数组，`index`为当前操作的图片的索引，`name`为通过`props`传递的`index`参数：
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|--------|------|----------|------|
-| on-oversize | 文件大小超出max-size限制时触发 | (file,lists,name) | - |
-| on-exceed | 文件数量超出max-count限制时触发 | (file,lists,name) | - |
-| on-choose-complete | 每次选择文件后触发 | (lists,name) | - |
-| on-choose-fail | 文件选择失败时触发 | (error) | - |
-| on-uploaded | 所有文件上传完毕触发 | (lists,name) | - |
-| on-success | 单个文件上传成功时触发 | (data,index,lists,name) | - |
-| on-error | 单个文件上传失败时触发 | (res,index,lists,name) | - |
-| on-change | 单个文件上传状态改变时触发 | (res,index,lists,name) | - |
-| on-progress | 文件上传过程中的进度变化时触发 | (res,index,lists,name) | - |
-| on-remove | 移除文件时触发 | (index,lists,name) | - |
-| on-preview | 预览文件时触发 | (url,lists,name) | - |
-| on-list-change | 文件列表发生变化时触发 | (lists,name) | - |
-| on-choose | 启用custom-choose时触发 | ({accept,maxCount,currentFiles,index}) | 0.6.0 |
-| update:modelValue | v-model双向绑定事件 | (lists) | 0.6.0 |
+|事件名|说明|回调参数|
+|:-|:-|:-|
+| on-oversize | 图片大小超出最大允许大小 | (file, lists, name), name为通过`props`传递的`index`参数 |
+| on-preview | 全屏预览图片时触发 | (url, lists, name)，url为当前选中的图片地址，index为通过`props`传递的`index`参数 |
+| on-remove | 移除图片时触发 | (index, lists, name)，name为通过`props`传递的`index`参数 |
+| on-success | 图片上传成功时触发 | (data, index, lists, name)，data为服务器返回的数据，name为通过`props`传递的`index`参数 |
+| on-change | 图片上传后，无论成功或者失败都会触发 | (res, index, lists, name)，res为服务器返回的信息，name为通过`props`传递的`index`参数 |
+| on-error | 图片上传失败时触发 | (res, index, lists, name)，res为服务器返回的信息，name为通过`props`传递的`index`参数 |
+| on-progress | 图片上传过程中的进度变化过程触发 | (res, index, lists, name)，res为服务器返回的信息，具体参数请打印查看，name为通过`props`传递的`index`参数 |
+| on-uploaded | 所有图片上传完毕触发 | (lists, name)，可以通过此事件，将lists参数获取，提交给后端使用，name为通过`props`传递的`index`参数 |
+| on-choose-complete | 每次选择图片后触发，只是让外部可以得知每次选择后，内部的文件列表 | (lists, name)，内部当前的文件列表，name为通过`props`传递的`index`参数 |
+| on-list-change | 当内部文件列表被加入文件、移除文件，或手动调用`clear`方法时触发 | (lists, name)，内部文件变化之后的列表，name为通过`props`传递的`index`参数 |
+| on-choose-fail | 选择文件出错时触发，比如选择文件时取消了操作，只在微信和APP有效 | (error)，错误信息 |
 
-<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/CLa0yMSFXjEFdJdnJc_Jkw']" />
+
+<style scoped>
+h3[id=props] + table thead tr th:nth-child(2){
+	width: 40%;
+}
+
+h3[id=events] + p + table thead tr th:nth-child(3){
+	width: 45%;
+}
+
+h3[id=methods] + p + table thead tr th:nth-child(2){
+	width: 50%;
+}
+</style>

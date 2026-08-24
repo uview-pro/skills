@@ -1,8 +1,7 @@
 ---
 name: "debounce"
-description: "- 节流. Invoke when user needs to use debounce tool."
+description: "- 节流. Invoke when user needs to use debounce tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/debounce.html"
-triggers: ["debounce","防抖"]
 ---
 
 # throttle & debounce节流防抖

@@ -1,8 +1,7 @@
 ---
 name: "button"
-description: "该组件内部实现以uni-app`button`组件为基础，进行二次封装，主要区别在于：. Invoke when user needs to use button component."
+description: "该组件内部实现以uni-app`button`组件为基础，进行二次封装，主要区别在于：. Invoke when user needs to use button component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/button.html"
-triggers: ["button","按钮"]
 ---
 
 # Button 按钮 <to-api/>
@@ -58,13 +57,12 @@ uni-app`button`组件比较特殊，因为它有一些其他小程序平台的�
 
 ## 设置尺寸
 
-`button`组件的`size`（可选值为`default`(默认)，`mini`(小尺寸)和`medium`(中等尺寸)和`large`(大尺寸)）
+`button`组件的`size`（可选值为`default`(默认)，`mini`(小尺寸)和`medium`(中等尺寸)）
 
 ```html
 <u-button size="default">江湖</u-button>
 <u-button size="medium">夜雨</u-button>
 <u-button size="mini">十年灯</u-button>
-<u-button size="large">西风</u-button>
 ```
 
 ## 设置按钮的镂空状态
@@ -124,16 +122,16 @@ const customStyle = reactive({
 
 ## 各家小程序开放能力的对接
 
-uView Pro已对接[uni-app button组件 open-type](https://uniapp.dcloud.net.cn/component/button.html#open-type-有效值)的基础开放能力，按照文档说明使用即可，如果有发现遗漏的地方，请提交issue反馈。
+uView Pro已对接uni-app档关于[uni-app方button组件](https://uni-app.dcloud.io/component/button)的所有开放能力(截止2020-04-14)uni-app-app文档说明使用即可，如果有发现遗漏的地方，请加群反馈。
 
 ## API
 
-### Props
+## Props
 
 
 |属性名|说明|类型|默认值|可选值|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
-|size|按钮的大小|String|default|medium / mini / large|-|
+|size|按钮的大小|String|default|medium / mini|-|
 |ripple|是否开启点击水波纹效果|Boolean|false|true|-|
 |ripple-bg-color|水波纹的背景色，ripple为true时有效|String|rgba(0, 0, 0, 0.15)|-|-|
 |type|按钮的样式类型|String|default|primary / success / info/ warning / error|-|
@@ -158,7 +156,7 @@ uView Pro已对接[uni-app button组件 open-type](https://uniapp.dcloud.net.cn/
 |throttle-time| 节流的时间间隔(一定时间内无论点击多少次，只会触发一次`click`事件)，单位ms，详见[节流防抖](/zh/tools/debounce.html) |String \| Number |0|-|-|
 
 
-### Events
+## Events
 
 **说明**：目前经测试(Hbuilder X 2.6.8)，在H5，APP，可以直接对组件监听`tap`事件，等同组件内部发出的`click`事件效果，某些HX版本上，
 微信小程序对组件使用`tap`事件可能无效，故建议对按钮组件的点击事件监听统一使用组件内部发出的`click`事件。

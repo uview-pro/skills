@@ -1,8 +1,7 @@
 ---
 name: "customTheme"
-description: ":::tip 说明. Invoke when user needs guidance on customTheme."
+description: ":::tip 说明. Invoke when user needs guidance on customTheme in uView Pro."
 url: "https://uviewpro.cn/zh/guide/customTheme.html"
-triggers: ["customTheme","自定义主题"]
 ---
 
 # 多主题与暗黑模式 <BadgeVersion text="0.4.1" />
@@ -306,4 +305,3 @@ const { themes, currentTheme, setTheme, darkMode, setDarkMode, toggleDarkMode } 
 
 完成以上步骤即可获得统一、响应式、可扩展的主题与暗黑体验。若需更复杂的用例，可结合 `useTheme` 返回的 `cssVars` 做自定义动画或渐变效果。
 
-<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/aH9IiLsHXaqSA9FyALhESg']" />

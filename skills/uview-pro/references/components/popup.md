@@ -1,8 +1,7 @@
 ---
 name: "popup"
-description: "弹出层容器，用于展示弹窗、信息提示等内容，支持上、下、左、右和中部弹出。组件只提供容器，内部内容由用户自定义. Invoke when user needs to use popup component."
+description: "弹出层容器，用于展示弹窗、信息提示等内容，支持上、下、左、右和中部弹出。组件只提供容器，内部内容由用户自定义. Invoke when user needs to use popup component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/popup.html"
-triggers: ["popup","弹出层"]
 ---
 
 # Popup 弹出层 <to-api/>
@@ -153,7 +152,7 @@ const show = ref<boolean>(false)
 
 ## API
 
-### Props
+## Props
 
 注意：props中没有控制弹窗打开与收起的参数，因为这是通过v-model绑定变量实现的，见上方说明。
 
@@ -179,7 +178,7 @@ const show = ref<boolean>(false)
 | duration  | 遮罩打开或收起的动画过渡时间，单位ms | String \| Number | 250 | - |
 
 
-### Events
+## Event
 
 |事件名|说明|回调参数|版本|
 |:-|:-|:-|:-|

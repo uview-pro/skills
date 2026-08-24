@@ -1,8 +1,7 @@
 ---
 name: "rate"
-description: "该组件一般用于满意度调查，星型评分的场景。. Invoke when user needs to use rate component."
+description: "该组件一般用于满意度调查，星型评分的场景。. Invoke when user needs to use rate component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/rate.html"
-triggers: ["rate","评分"]
 ---
 
 # Rate 评分 <to-api/>
@@ -98,7 +97,7 @@ const icons = ref<string[]>(['thumb-down-fill', 'thumb-down-fill', 'thumb-up-fil
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -118,7 +117,7 @@ const icons = ref<string[]>(['thumb-down-fill', 'thumb-down-fill', 'thumb-up-fil
 | icons | 图标分级显示，可以用不同类型的icon区分评分层级 | Array  | - | - |
 | allow-half | 是否允许半星选择（仅当禁用状态disabled=true时有效） | Boolean | false | true |
 
-### Events
+## Events
 
 | 事件名 | 说明 | 回调参数 |
 | :- | :- | :- |

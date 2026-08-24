@@ -1,8 +1,7 @@
 ---
 name: "lineProgress"
-description: "展示操作或任务的当前进度，比如上传文件，是一个线形的进度条。. Invoke when user needs to use lineProgress component."
+description: "展示操作或任务的当前进度，比如上传文件，是一个线形的进度条。. Invoke when user needs to use lineProgress component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/lineProgress.html"
-triggers: ["lineProgress"]
 ---
 
 # LineProgress 线形进度条 <to-api/>
@@ -58,7 +57,7 @@ triggers: ["lineProgress"]
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -73,8 +72,15 @@ triggers: ["lineProgress"]
 | striped-active | 条纹是否具有动态效果 | Boolean  | false | true |
 
 
- ### Slots
+ ## Slots
 
 | 名称 | 说明 |
 |:-|:-|
 | default | 传入自定义的显示内容，将会覆盖默认显示的百分比值 |
+
+
+<style scoped>
+h3[id=slots] + table thead tr th:nth-child(2){
+	width: 50%;
+}
+</style>

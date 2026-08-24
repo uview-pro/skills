@@ -1,8 +1,7 @@
 ---
 name: "useColor"
-description: "响应式颜色管理 composable，提供响应式的颜色访问，支持主题切换和暗黑模式。. Invoke when user needs to use useColor hook."
+description: "响应式颜色管理 composable，提供响应式的颜色访问，支持主题切换和暗黑模式。. Invoke when user needs to use useColor hook in their uni-app project."
 url: "https://uviewpro.cn/zh/hooks/useColor.html"
-triggers: ["useColor","颜色管理"]
 ---
 
 # useColor 主题颜色

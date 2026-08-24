@@ -1,8 +1,7 @@
 ---
 name: "switch"
-description: "选择开关一般用于只有两个选择，且只能选其一的场景。. Invoke when user needs to use switch component."
+description: "选择开关一般用于只有两个选择，且只能选其一的场景。. Invoke when user needs to use switch component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/switch.html"
-triggers: ["switch","开关"]
 ---
 
 # Switch 开关选择器 <to-api/>
@@ -158,7 +157,7 @@ const getRestultFromServer = () => {
 
 ## API
 
-## Props
+## Switch Props
 
 注意：需要给`switch`组件通过`v-model`绑定一个布尔值，来初始化`switch`的状态，随后该值被双向绑定，
 当用打开选择器时，该值在`switch`组件内部被修改为`true`，并反映到父组件，否则为`false`，换言之，您无需监听`switch`的`change`事件，也能
@@ -177,7 +176,7 @@ const getRestultFromServer = () => {
 | inactive-value | 关闭选择器时通过change事件发出的值 | Boolean \| Number \| String | false | - |
 
 
-## Events
+## Switch Event
 
 |事件名|说明|回调参数|
 |:-|:-|:-|

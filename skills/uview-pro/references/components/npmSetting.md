@@ -1,8 +1,7 @@
 ---
 name: "npmSetting"
-description: "uView Pro 依赖 SCSS，您必须要安装此插件，否则无法正常运行。. Invoke when user needs to use npmSetting component."
+description: "uView Pro 依赖 SCSS，您必须要安装此插件，否则无法正常运行。. Invoke when user needs to use npmSetting component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/npmSetting.html"
-triggers: ["npmSetting"]
 ---
 
 # npm 安装方式配置

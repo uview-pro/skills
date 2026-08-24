@@ -1,8 +1,7 @@
 ---
 name: "codeHint"
-description: "> 不建议使用 HBuilder X，建议使用 VSCode. Invoke when user needs guidance on codeHint."
+description: "> 不建议使用 HBuilder X，建议使用 VSCode. Invoke when user needs guidance on codeHint in uView Pro."
 url: "https://uviewpro.cn/zh/guide/codeHint.html"
-triggers: ["codeHint","代码提示"]
 ---
 
 # 编辑器对 uView Pro 的代码提示

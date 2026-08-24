@@ -1,8 +1,7 @@
 ---
 name: "layout"
-description: "通过基础的 12 分栏，迅速简便地创建布局. Invoke when user needs to use layout component."
+description: "通过基础的 12 分栏，迅速简便地创建布局. Invoke when user needs to use layout component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/layout.html"
-triggers: ["layout"]
 ---
 
 # Layout 布局 <to-api/>

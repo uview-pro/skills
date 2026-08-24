@@ -1,8 +1,7 @@
 ---
 name: "section"
-description: "该组件一般用于分类信息有很多，但是限于篇幅只能列出一部分，让用户通过"查看更多"获得更多信息的场景，实际效果见演示。. Invoke when user needs to use section component."
+description: "该组件一般用于分类信息有很多，但是限于篇幅只能列出一部分，让用户通过"查看更多"获得更多信息的场景，实际效果见演示。. Invoke when user needs to use section component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/section.html"
-triggers: ["section"]
 ---
 
 # Section 查看更多 <to-api/>
@@ -41,7 +40,7 @@ triggers: ["section"]
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -57,7 +56,7 @@ triggers: ["section"]
 | arrow | 是否显示右边箭头 | Boolean  | true | false |
 
 
-### Events
+## Events
 
 
 | 事件名 | 说明 | 回调参数 | 版本 |
@@ -65,9 +64,15 @@ triggers: ["section"]
 | click | 组件右侧的内容被点击时触发，用于跳转"更多" | - | - |
 
 
-### Slots
+## Slot
 
 | 名称          | 说明            |
 |-------------  |---------------- |
 | right | 自定义右侧内容  |
 
+
+<style scoped>
+h3[id=slot] + table thead tr th:nth-child(2){
+	width: 50%;
+}
+</style>

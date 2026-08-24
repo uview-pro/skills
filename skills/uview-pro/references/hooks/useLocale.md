@@ -1,8 +1,7 @@
 ---
 name: "useLocale"
-description: "国际化 composable，提供多语言支持，包括语言切换、翻译功能、响应式引用等。. Invoke when user needs to use useLocale hook."
+description: "国际化 composable，提供多语言支持，包括语言切换、翻译功能、响应式引用等。. Invoke when user needs to use useLocale hook in their uni-app project."
 url: "https://uviewpro.cn/zh/hooks/useLocale.html"
-triggers: ["useLocale","国际化"]
 ---
 
 # useLocale 国际化

@@ -1,8 +1,7 @@
 ---
 name: "cell"
-description: "cell单元格一般用于一组列表的情况，比如个人中心页，设置页等。. Invoke when user needs to use cell component."
+description: "cell单元格一般用于一组列表的情况，比如个人中心页，设置页等。. Invoke when user needs to use cell component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/cell.html"
-triggers: ["cell","单元格"]
 ---
 
 # Cell 单元格 <to-api/>
@@ -157,3 +156,19 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 |事件名|说明|回调参数|
 |:-|:-|:-|
 | click | 点击cell列表时触发 | index: 通过`props`传递的`index`参数 |
+
+
+
+<style scoped>
+h3[id=cellgroup-props] + table thead tr th:nth-child(2){
+	width: 40%;
+}
+
+h3[id=cellitem-props] + table thead tr th:nth-child(2){
+	width: 40%;
+}
+
+h3[id=cellitem-slot] + table thead tr th:nth-child(2){
+	width: 50%;
+}
+</style>

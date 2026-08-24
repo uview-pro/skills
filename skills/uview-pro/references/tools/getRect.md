@@ -1,8 +1,7 @@
 ---
 name: "getRect"
-description: "此方法封装自uni的[nodesRef.boundingClientRect](https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect)，它极大简化了. Invoke when user needs to use getRect tool."
+description: "此方法封装自uni的[nodesRef.boundingClientRect](https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect)，它极大简化了. Invoke when user needs to use getRect tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/getRect.html"
-triggers: ["getRect","获取元素尺寸"]
 ---
 
 # getRect 节点布局信息

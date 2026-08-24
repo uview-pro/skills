@@ -1,8 +1,7 @@
 ---
 name: "alertTips"
-description: "警告提示，展现需要关注的信息。. Invoke when user needs to use alertTips component."
+description: "警告提示，展现需要关注的信息。. Invoke when user needs to use alertTips component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/alertTips.html"
-triggers: ["alertTips","警告提示"]
 ---
 
 # AlertTips 警告提示 <to-api/>
@@ -78,7 +77,7 @@ const show = ref(true)
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -94,7 +93,7 @@ const show = ref(true)
 | title-style | 自定义标题的样式，对象形式 | Object  | - | - |
 | desc-style | 自定义内容的样式，对象形式 | Object  | - | - |
 
-### Events
+## Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|

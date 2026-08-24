@@ -1,8 +1,7 @@
 ---
 name: "useModal"
-description: "Modal 弹窗 composable，提供简洁的模态框显示功能，支持全局/局部模式和函数式调用。. Invoke when user needs to use useModal hook."
+description: "Modal 弹窗 composable，提供简洁的模态框显示功能，支持全局/局部模式和函数式调用。. Invoke when user needs to use useModal hook in their uni-app project."
 url: "https://uviewpro.cn/zh/hooks/useModal.html"
-triggers: ["useModal","模态框钩子"]
 ---
 
 # useModal 弹窗
@@ -573,5 +572,3 @@ export const deleteConfirm = (itemName: string, onConfirm: () => void) => {
 | 全局支持 | ✅            | ✅               |
 | 局部支持 | ✅            | ✅               |
 | 学习成本 | 低           | 中              |
-
-<ArticleRecommend :articleLinks="['https://mp.weixin.qq.com/s/pkAZ96qITcdsbf7M73gJ-A']" />

@@ -1,8 +1,7 @@
 ---
 name: "menu"
-description: "uView为用户制作了两个类型的分类页面，分别是左右联动，左右分开的场景。. Invoke when user needs layout examples for menu."
+description: "uView为用户制作了两个类型的分类页面，分别是左右联动，左右分开的场景。. Invoke when user needs layout examples for menu in uView Pro."
 url: "https://uviewpro.cn/zh/layout/menu.html"
-triggers: ["menu","菜单"]
 ---
 
 # 垂直分类

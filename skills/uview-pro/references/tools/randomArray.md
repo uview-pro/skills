@@ -1,8 +1,7 @@
 ---
 name: "randomArray"
-description: "该函数可以打乱一维数组元素的顺序，这是随机过程. Invoke when user needs to use randomArray tool."
+description: "该函数可以打乱一维数组元素的顺序，这是随机过程. Invoke when user needs to use randomArray tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/randomArray.html"
-triggers: ["randomArray","随机数组"]
 ---
 
 # randomArray 数组乱序

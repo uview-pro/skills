@@ -1,8 +1,7 @@
 ---
 name: "demo"
-description: "uView Pro 会将各个版本的演示在此展示，目前演示的版本有 H5，安卓，微信小程序，其他版本的演示将会陆续添加。. Invoke when user needs guidance on demo."
+description: "uView Pro 会将各个版本的演示在此展示，目前演示的版本有 H5，安卓，微信小程序，其他版本的演示将会陆续添加。. Invoke when user needs guidance on demo in uView Pro."
 url: "https://uviewpro.cn/zh/guide/demo.html"
-triggers: ["demo","示例"]
 ---
 
 # 演示
@@ -20,3 +19,7 @@ uView Pro 会将各个版本的演示在此展示，目前演示的版本有 H5�
 文档中也有相应的演示示例，但它是通过`iframe`嵌入到网页的，所以可能会造成某些 uni-appAPI 在网页上(浏览器 F12 手机调试模式无问题)无法使用，造成组件有 BUG 的错觉。
 
 **注意：** 建议您只在浏览文档时使用文档右侧的演示功能，电脑示例由于分辨率和 uni-app 用`rpx`单位的问题，显示可能会不够细致，请通过微信扫码小程序体验最佳的效果。
+
+## 扫码
+
+<demo-scan />

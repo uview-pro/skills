@@ -1,8 +1,7 @@
 ---
 name: "vuexDetail"
-description: "`vuex`传统写法简单，但是也很繁琐：. Invoke when user needs to use vuexDetail component."
+description: "`vuex`传统写法简单，但是也很繁琐：. Invoke when user needs to use vuexDetail component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/vuexDetail.html"
-triggers: ["vuexDetail"]
 ---
 
 # uView简化Vuex写法的基本原理

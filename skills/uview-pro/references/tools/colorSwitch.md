@@ -1,8 +1,7 @@
 ---
 name: "colorSwitch"
-description: "该函数可以将一个RGB颜色值转换成一个Hex的十六进制颜色值. Invoke when user needs to use colorSwitch tool."
+description: "该函数可以将一个RGB颜色值转换成一个Hex的十六进制颜色值. Invoke when user needs to use colorSwitch tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/colorSwitch.html"
-triggers: ["colorSwitch","颜色转换"]
 ---
 
 # colorSwitch 颜色转换

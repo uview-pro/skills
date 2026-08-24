@@ -1,8 +1,7 @@
 ---
 name: "subsection"
-description: "该分段器一般用于用户从几个选项中选择某一个的场景. Invoke when user needs to use subsection component."
+description: "该分段器一般用于用户从几个选项中选择某一个的场景. Invoke when user needs to use subsection component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/subsection.html"
-triggers: ["subsection"]
 ---
 
 # Subsection 分段器 <to-api/>
@@ -128,7 +127,7 @@ const sectionChange = (index: number) => {
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -144,7 +143,7 @@ const sectionChange = (index: number) => {
 | bg-color | 组件背景颜色，`mode`为`button`时有效 | String | #eeeeef | - |
 | button-color | 按钮背景颜色，`mode`为`button`时有效 | String | #ffffff | - |
 
-### Events
+## Events
 
 | 事件名 | 说明 | 回调参数 |
 | :- | :- | :- |

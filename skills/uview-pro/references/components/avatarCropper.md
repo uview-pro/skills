@@ -1,8 +1,7 @@
 ---
 name: "avatarCropper"
-description: "该组件一般的图片裁剪需求场景，尤其适合于头像裁剪方面。. Invoke when user needs to use avatarCropper component."
+description: "该组件一般的图片裁剪需求场景，尤其适合于头像裁剪方面。. Invoke when user needs to use avatarCropper component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/avatarCropper.html"
-triggers: ["avatarCropper"]
 ---
 
 # AvatarCropper 头像裁剪 <to-api/>
@@ -141,7 +140,7 @@ const chooseAvatar = () => {
 | rect-width | 裁剪框宽度，高等于宽，单位**px**                               | String \| Number | 200    | -      |
 | file-type  | 输出的图片类型，如果'png'类型发现裁剪的图片太大，改成"jpg"即可 | String           | jpg    | png    |
 
-### Events
+## Event
 
 | 事件名         | 说明                                | 回调参数             |
 | :------------- | :---------------------------------- | :------------------- |

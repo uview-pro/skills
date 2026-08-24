@@ -1,8 +1,7 @@
 ---
 name: "backTop"
-description: "该组件一个用于长页面，滑动一定距离后，出现返回顶部按钮，方便快速返回顶部的场景。. Invoke when user needs to use backTop component."
+description: "该组件一个用于长页面，滑动一定距离后，出现返回顶部按钮，方便快速返回顶部的场景。. Invoke when user needs to use backTop component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/backTop.html"
-triggers: ["backTop","返回顶部"]
 ---
 
 # BackTop 返回顶部 <to-api/>
@@ -114,7 +113,7 @@ onPageScroll: function(e) => {
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -132,9 +131,16 @@ onPageScroll: function(e) => {
 
 
 
-### Slots
+## Slot
 
 |名称|说明|
 |:-|:-|
 | - | 自定义返回按钮的所有内容 |
 
+
+
+<style scoped>
+h3[id=slot] + table thead tr th:nth-child(2){
+	width: 50%;
+}
+</style>

@@ -1,8 +1,7 @@
 ---
 name: "loadMore"
-description: "此组件一般用于标识页面底部加载数据时的状态，共有三种状态：. Invoke when user needs to use loadMore component."
+description: "此组件一般用于标识页面底部加载数据时的状态，共有三种状态：. Invoke when user needs to use loadMore component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/loadMore.html"
-triggers: ["loadMore"]
 ---
 
 # loadmore 加载更多 <to-api/>
@@ -108,7 +107,7 @@ const loadText = reactive({
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
@@ -125,7 +124,7 @@ const loadText = reactive({
 | margin-bottom | 与后一个元素的距离，单位rpx | String \| Number  | 0 | - |
 
 
-### Events
+## Event
 
 
 |事件名|说明|回调参数|版本|

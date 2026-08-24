@@ -1,8 +1,7 @@
 ---
 name: "gap"
-description: "该组件一般用于内容块之间的用一个灰色块隔开的场景，方便用户风格统一，减少工作量. Invoke when user needs to use gap component."
+description: "该组件一般用于内容块之间的用一个灰色块隔开的场景，方便用户风格统一，减少工作量. Invoke when user needs to use gap component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/gap.html"
-triggers: ["gap","间隔槽"]
 ---
 
 # Gap 间隔槽 <to-api/>
@@ -30,7 +29,7 @@ triggers: ["gap","间隔槽"]
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |

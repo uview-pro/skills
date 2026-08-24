@@ -1,8 +1,7 @@
 ---
 name: "test"
-description: "uView内置了一些校验规则，如是否手机号，邮箱号，URL等. Invoke when user needs to use test tool."
+description: "uView内置了一些校验规则，如是否手机号，邮箱号，URL等. Invoke when user needs to use test tool in their uni-app project."
 url: "https://uviewpro.cn/zh/tools/test.html"
-triggers: ["test","正则测试"]
 ---
 
 # test 规则校验

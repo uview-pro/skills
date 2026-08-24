@@ -1,8 +1,7 @@
 ---
 name: "loading"
-description: "此组件为一个小动画，目前用在uView的[loadmore加载更多](/zh/components/loadMore.html)和[switch开关](/zh/components/switch.html)等组件的正在加载状态场景。. Invoke when user needs to use loading component."
+description: "此组件为一个小动画，目前用在uView的[loadmore加载更多](/zh/components/loadMore.html)和[switch开关](/zh/components/switch.html)等组件的正在加载状态场景。. Invoke when user needs to use loading component in their uni-app project."
 url: "https://uviewpro.cn/zh/components/loading.html"
-triggers: ["loading","加载"]
 ---
 
 # Loading 加载动画 <to-api/>
@@ -62,7 +61,7 @@ triggers: ["loading","加载"]
 
 ## API
 
-### Props
+## Props
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
