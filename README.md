@@ -12,11 +12,13 @@ pnpx skills add uview-pro/skills
 
 ## 技能
 
-这个集合旨在成为您主要使用 uview-pro 组件库时的技能集合。
+这个集合旨在成为您主要使用 uview-pro(x) 组件库时的技能集合。
 
 ### 从官方文档生成的技能
 
 | 技能 | 描述 | 来源 |
 |-------|-------------|--------|
-| [uview-pro](skills/uview-pro) | uView Pro 组件库 - uni-app 跨平台组件库 | [uview-pro/docs](https://uviewpro.cn/) |
+| [uview-pro](skills/uview-pro) | uView Pro 组件库 - uni-app 跨平台组件库 | [uview-pro 官方文档站](https://uviewpro.cn/) |
+| [uview-pro-x](skills/uview-pro-x) | uView Pro X 组件库 - uni-app x 跨平台组件库 | [uview-pro-x 官方文档站](https://x.uviewpro.cn/) |
+
 
