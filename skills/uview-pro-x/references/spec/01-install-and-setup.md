@@ -4,7 +4,7 @@
 
 - HBuilderX（建议较新版本）+ **uni-app x** 项目（Vue3 + UTS，页面文件为 `.uvue`）
 - uview-pro-x 以 uni_modules 形式分发：仅支持通过 **DCloud 插件市场**导入，不支持 npm 安装
-- 插件市场地址：`https://ext.dcloud.net.cn/plugin?id=24633`（uView Pro X）
+- 插件市场地址：`https://ext.dcloud.net.cn/plugin?name=uview-pro-x`（uView Pro X）
 
 ## 第一步：导入组件库
 
