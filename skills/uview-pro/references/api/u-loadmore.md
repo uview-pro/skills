@@ -1,0 +1,49 @@
+<!-- 生成物，勿手改：由 scripts/gen-api-cards.mjs 渲染，改动会在下次再生成时丢失 -->
+
+# u-loadmore API
+
+> 来源：`components/u-loadmore`（uview-pro v0.6.21）
+> API 指纹：`sha256:db58f7c8c2de30d721711d6595974dcd8f210254e387abff615b528133347cff`
+> 官方文档：https://uviewpro.cn/zh/components/loadMore.html
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro 路径> --only loadmore`
+
+此组件一般用于标识页面底部加载数据时的状态。
+
+## 用法示例
+
+```vue
+<u-loadmore :status="status" icon-type="iconType" load-text="loadText" />
+```
+
+## 属性
+
+| 属性 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| Record<string, any>` | - |
+| `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
+| `bg-color` / `bgColor` | 组件背景色 | `string` | `'transparent'` |
+| `icon` | 是否显示加载中的图标 | `boolean` | `true` |
+| `font-size` / `fontSize` | 字体大小 | `string` | `'28'` |
+| `color` | 字体颜色 | `string` | `'var(--u-content-color)'` |
+| `status` | 组件状态，loadmore-加载前，loading-加载中，nomore-没有更多 | `LoadmoreStatus`（`loadmore`｜`loading`｜`nomore`） | `'loadmore'` |
+| `icon-type` / `iconType` | 加载中状态的图标，flower-花朵状，circle-圆圈状 | `LoadmoreIconType`（`circle`｜`flower`） | `'circle'` |
+| `load-text` / `loadText` | 显示的文字 | `LoadmoreText` | - |
+| `is-dot` / `isDot` | 在“没有更多”状态下，是否显示粗点 | `boolean` | `false` |
+| `icon-color` / `iconColor` | 加载中显示圆圈动画时，动画的颜色 | `string` | `'var(--u-light-color)'` |
+| `margin-top` / `marginTop` | 上边距 | `string \| number` | `0` |
+| `margin-bottom` / `marginBottom` | 下边距 | `string \| number` | `0` |
+| `height` | 高度，单位rpx | `string \| number` | `'auto'` |
+
+## 双向绑定（v-model）
+
+该组件无双向绑定。
+
+## 事件
+
+| 事件 | 回调参数 | 说明 |
+| --- | --- | --- |
+| `@loadmore` | - | status为loadmore时，点击组件会发出此事件 |
+
+## 插槽
+
+无插槽。

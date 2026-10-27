@@ -1,351 +1,66 @@
 ---
-name: uview-pro
-description: "uView Pro uni-app UI component library. Invoke when developing uni-app pages, using uView components (u-button, u-input, u-form, etc.), or needing UI elements like forms, buttons, modals, toasts, navigation."
+name: "uview-pro"
+description: "UView Pro 页面编写规范（消费侧自包含技能）——在任意普通 uni-app 项目中，用 uview-pro 组件库（u-* 前缀，Vue3 + TypeScript）编写页面：npm/uni_modules 安装接入、页面脚本 TS 写法、页面样式 SCSS 与主题取色、组件/$u/hooks/请求速查、多端兼容避错、多语言国际化、多主题与暗黑模式。写任何 u-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-u-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。⚠️ 本技能服务普通 uni-app 项目（.vue 页面 / TS / u-* 组件）；uni-app x 项目（.uvue / UTS / ux-* 组件）请改用 uview-pro-x 技能。当用户要求使用 uview-pro 编写或修改页面、规范 TS/SCSS 写法、接入多语言/换肤/暗黑模式、排查多端兼容与运行报错时使用。"
 ---
 
-# uView Pro 组件库技能
+# UView Pro 页面编写规范（uview-pro）
 
-## 触发条件
+> **本技能是「使用 uview-pro 组件库编写普通 uni-app 页面」的唯一权威入口。** 规范正文唯一权威源在 `references/`：
+> `references/README.md`（手册索引）→ `references/spec/`（按主题拆分：接入 / TS / SCSS / 组件 / 多端 / 国际化 / 主题）+ `references/recipes/`（照抄写法）。
+> 本技能面向**消费者**（使用组件库的项目），指导「页面怎么写」；不涉及组件库自身实现与开发流程。
 
-**在以下场景中自动调用此技能：**
+## ⚠️ 适用边界（第一红线：不要与 uni-app x 混淆）
 
-1. 开发 uni-app 页面时
-2. 使用 `u-` 前缀的组件时（如 `u-button`, `u-input`, `u-form` 等）
-3. 需要表单、按钮、弹窗、提示、导航等 UI 组件时
-4. 需要使用工具函数（防抖、节流、深拷贝等）时
-5. 需要使用组合式 API 钩子（useToast, useModal, useTheme 等）时
-6. 需要 uView Pro 相关的布局模板时
+| | 本技能 uview-pro | 另一个技能 uview-pro-x |
+|---|---|---|
+| 项目类型 | 普通 uni-app（Vue3 + TS） | uni-app x（Vue3 + UTS） |
+| 组件前缀 | `u-*`（uview-pro） | `ux-*`（uview-pro-x） |
+| 页面文件 | `.vue` | `.uvue` |
+| 语言 / 样式 | TypeScript / SCSS（全量 CSS） | UTS（强类型）/ UCSS（子集） |
 
-## 组件快速索引
+- 目标项目是普通 uni-app → 本技能；目标项目是 uni-app x → 立即改用 **uview-pro-x** 技能（两者写法完全不同，禁止混用）。
+- 识别信号：项目中存在 `.uvue` 文件、`UTSJSONObject`、`ux-*` 组件、`main.uts` 时，说明这是 uni-app x 项目，本技能不适用。
 
-### 基础组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| button | 按钮组件 | [button](references/components/button.md) |
-| icon | 图标组件 | [icon](references/components/icon.md) |
-| image | 图片组件 | [image](references/components/image.md) |
-| text | 文本组件 | [text](references/components/text.md) |
-| tag | 标签组件 | [tag](references/components/tag.md) |
-| badge | 徽章组件 | [badge](references/components/badge.md) |
-| link | 链接组件 | [link](references/components/link.md) |
-| avatar | 头像组件 | [avatar](references/components/avatar.md) |
+## 适用场景
 
-### 表单组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| form | 表单组件 | [form](references/components/form.md) |
-| input | 输入框组件 | [input](references/components/input.md) |
-| field | 表单字段组件 | [field](references/components/field.md) |
-| textarea | 文本域组件 | [textarea](references/components/textarea.md) |
-| checkbox | 复选框组件 | [checkbox](references/components/checkbox.md) |
-| radio | 单选框组件 | [radio](references/components/radio.md) |
-| switch | 开关组件 | [switch](references/components/switch.md) |
-| slider | 滑块组件 | [slider](references/components/slider.md) |
-| rate | 评分组件 | [rate](references/components/rate.md) |
-| numberBox | 数字输入框组件 | [numberBox](references/components/numberBox.md) |
-| upload | 上传组件 | [upload](references/components/upload.md) |
-| picker | 选择器组件 | [picker](references/components/picker.md) |
-| select | 选择器组件 | [select](references/components/select.md) |
-| keyboard | 键盘组件 | [keyboard](references/components/keyboard.md) |
+- 在普通 uni-app 项目（Vue3 + TS，`.vue` 页面）中使用 `u-*` 组件编写业务页面
+- 需要 TS/SCSS 页面写法规范、多端（App / H5 / 微信等小程序）兼容、不出现运行期报错
+- 不适用：修改组件库源码本身（那是另一个技能域的职责）；uni-app x 项目（见上表）
 
-### 数据展示组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| card | 卡片组件 | [card](references/components/card.md) |
-| grid | 宫格组件 | [grid](references/components/grid.md) |
-| cell | 单元格组件 | [cell](references/components/cell.md) |
-| collapse | 折叠面板组件 | [collapse](references/components/collapse.md) |
-| table | 表格组件 | [table](references/components/table.md) |
-| list | 列表组件 | [indexList](references/components/indexList.md) |
-| skeleton | 骨架屏组件 | [skeleton](references/components/skeleton.md) |
-| empty | 空状态组件 | [empty](references/components/empty.md) |
-| loading | 加载组件 | [loading](references/components/loading.md) |
-| swiper | 轮播组件 | [swiper](references/components/swiper.md) |
-| steps | 步骤组件 | [steps](references/components/steps.md) |
-| timeLine | 时间轴组件 | [timeLine](references/components/timeLine.md) |
+## 强制机制（动手前必读）
 
-### 反馈组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| toast | 提示组件 | [toast](references/components/toast.md) |
-| modal | 模态框组件 | [modal](references/components/modal.md) |
-| popup | 弹出层组件 | [popup](references/components/popup.md) |
-| actionSheet | 操作菜单组件 | [actionSheet](references/components/actionSheet.md) |
-| noticeBar | 通知栏组件 | [noticeBar](references/components/noticeBar.md) |
-| alertTips | 警告提示组件 | [alertTips](references/components/alertTips.md) |
-| topTips | 顶部提示组件 | [topTips](references/components/topTips.md) |
-| loadingPopup | 加载弹窗组件 | [loadingPopup](references/components/loadingPopup.md) |
+1. **单一权威源**：规范正文只在本技能 `references/`；组件 API 以 `references/api/` 快照卡片为准。组件库源码可读时可 `--lib` 比对（冲突以源码为准并重生成快照）；**源码不可读时快照即权威**（优先级细则见 `references/README.md`）。
+2. **自包含**：本技能可整体复制到任意使用 uview-pro 的普通 uni-app 项目中独立使用；不依赖任何特定宿主工程的目录、脚本或约定；API 快照与卡片随技能发货，校验器零源码依赖。
+3. **recipe-first**：`references/recipes/` 中已有对应场景的配方时**必须采用**，禁止自造写法。
+4. **取色走主题**：所有颜色取自 `$u.color.*`、CSS 变量 `var(--u-*)` 或 SCSS 变量 `$u-*`，不硬编码色值（多主题与暗黑模式才能生效）。
+5. **多端红线自查**：收尾时逐条核对 `references/spec/05-cross-platform.md` 的红线表与症状速查表。
+6. **写前查卡片**：写任何 `<u-*>` 前先查 `references/api/u-<name>.md` 卡片（属性/取值/事件/v-model/插槽一页俱全，**随技能发货、不依赖项目内组件库源码**）；卡上没有的写法不猜。
+7. **写后必校验**：页面写完/改动后必须运行 `node scripts/verify-u-usage.mjs <页面文件或目录>`，**0 违规才算完成**；报 error 逐条改到 0 再交付。
 
-### 导航组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| navbar | 导航栏组件 | [navbar](references/components/navbar.md) |
-| tabbar | 标签栏组件 | [tabbar](references/components/tabbar.md) |
-| tabs | 标签页组件 | [tabs](references/components/tabs.md) |
-| subsection | 分段器组件 | [subsection](references/components/subsection.md) |
-| pagination | 分页组件 | [pagination](references/components/pagination.md) |
+## references 结构索引
 
-### 布局组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| layout | 布局组件 | [layout](references/components/layout.md) |
-| gap | 间距组件 | [gap](references/components/gap.md) |
-| divider | 分割线组件 | [divider](references/components/divider.md) |
-| line | 线条组件 | [line](references/components/line.md) |
-| section | 区块组件 | [section](references/components/section.md) |
-| safeAreaInset | 安全区域适配组件 | [safeAreaInset](references/components/safeAreaInset.md) |
+| 文件 | 职责 |
+|---|---|
+| `references/spec/01-install-and-setup.md` | 安装（npm / uni_modules 双方式）、easycom、main.ts 注册、样式接入、Volar、install 选项全表 |
+| `references/spec/02-page-script-ts.md` | 页面脚本 TS：Vue3 组合式写法、页面生命周期、`$u` 用法、模板绑定规则 |
+| `references/spec/03-page-style-scss.md` | 页面样式 SCSS：单位、主题取色（CSS 变量 / SCSS 变量）、暗黑模式写法 |
+| `references/spec/04-component-usage.md` | 组件使用约定、全量组件速查表、`$u` 工具 / hooks / http 请求速查、常用示例 |
+| `references/spec/05-cross-platform.md` | 条件编译宏清单（权威）、多端红线表、症状→修法速查 |
+| `references/spec/06-i18n-locale.md` | 多语言国际化：语言包注册与合并语义、locale API、默认语言优先级、组件内置文案联动 |
+| `references/spec/07-theme-dark-mode.md` | 多主题与暗黑模式：主题注册形态、ConfigProvider API、CSS 变量、持久化、跟随系统 |
+| `references/recipes/recipe-page-scaffold.md` | 消费者视角最小页面（路由注册 + 骨架 + 主题接入） |
+| `references/api/README.md` | 组件 API 卡片索引（含快照再生成与版本升级流程） |
+| `scripts/gen-api-cards.mjs` | API 快照/卡片生成器（组件库源码可读时重生成；生成物随技能发货） |
+| `scripts/update-api.mjs` | 一条命令更新快照与卡片：重生成 → 一致性核对（库维护者用，消费侧不需要） |
+| `scripts/verify-u-usage.mjs` | 页面写法校验器（默认读内置快照，写后 0 违规门禁） |
 
-### 功能组件
-| 组件 | 说明 | 文档 |
-|------|------|------|
-| calendar | 日历组件 | [calendar](references/components/calendar.md) |
-| countDown | 倒计时组件 | [countDown](references/components/countDown.md) |
-| countTo | 数字滚动组件 | [countTo](references/components/countTo.md) |
-| backTop | 返回顶部组件 | [backTop](references/components/backTop.md) |
-| lazyLoad | 懒加载组件 | [lazyLoad](references/components/lazyLoad.md) |
-| readMore | 阅读更多组件 | [readMore](references/components/readMore.md) |
-| search | 搜索组件 | [search](references/components/search.md) |
-| swipeAction | 滑动操作组件 | [swipeAction](references/components/swipeAction.md) |
-| transition | 过渡动画组件 | [transition](references/components/transition.md) |
-| waterfall | 瀑布流组件 | [waterfall](references/components/waterfall.md) |
+## 工作流
 
-## 工具函数快速索引
+1. 读 `spec/01` 完成接入（安装 / easycom / 注册 / 样式）
+2. 参照 `recipe-page-scaffold` 起页面骨架
+3. 写每个 `<u-*>` 前查 `references/api/u-<name>.md` 卡片，核对属性/取值/事件/v-model/插槽
+4. 按 `spec/04` 选组件与工具、按 `spec/02` 写脚本、按 `spec/03` 写样式
+5. 收尾按 `spec/05` 红线与症状表自查
+6. 运行 `node scripts/verify-u-usage.mjs <页面文件>` 校验至 **0 违规**（error 必须清零）
 
-| 工具 | 说明 | 文档 |
-|------|------|------|
-| debounce | 防抖工具 | [debounce](references/tools/debounce.md) |
-| deepClone | 深拷贝工具 | [deepClone](references/tools/deepClone.md) |
-| deepMerge | 深度合并工具 | [deepMerge](references/tools/deepMerge.md) |
-| route | 路由工具 | [route](references/tools/route.md) |
-| time | 时间工具 | [time](references/tools/time.md) |
-| test | 测试工具（验证） | [test](references/tools/test.md) |
-| queryParams | 查询参数工具 | [queryParams](references/tools/queryParams.md) |
-| guid | 生成GUID工具 | [guid](references/tools/guid.md) |
-| random | 随机数工具 | [random](references/tools/random.md) |
-| trim | 字符串修剪工具 | [trim](references/tools/trim.md) |
-| color | 颜色值工具 | [color](references/tools/color.md) |
-| colorSwitch | 颜色转换工具 | [colorSwitch](references/tools/colorSwitch.md) |
-
-## 组合式 API 钩子
-
-| 钩子 | 说明 | 文档 |
-|------|------|------|
-| useToast | 提示钩子 | [useToast](references/hooks/useToast.md) |
-| useModal | 模态框钩子 | [useModal](references/hooks/useModal.md) |
-| useTheme | 主题管理钩子 | [useTheme](references/hooks/useTheme.md) |
-| useLocale | 国际化钩子 | [useLocale](references/hooks/useLocale.md) |
-| useDebounce | 防抖钩子 | [useDebounce](references/hooks/useDebounce.md) |
-| useThrottle | 节流钩子 | [useThrottle](references/hooks/useThrottle.md) |
-| useColor | 颜色管理钩子 | [useColor](references/hooks/useColor.md) |
-
-## 布局模板
-
-| 布局 | 说明 | 文档 |
-|------|------|------|
-| login | 登录布局 | [login](references/layout/login.md) |
-| address | 地址布局 | [address](references/layout/address.md) |
-| citySelect | 城市选择布局 | [citySelect](references/layout/citySelect.md) |
-| comment | 评论布局 | [comment](references/layout/comment.md) |
-| coupon | 优惠券布局 | [coupon](references/layout/coupon.md) |
-| order | 订单布局 | [order](references/layout/order.md) |
-| submitBar | 提交栏布局 | [submitBar](references/layout/submitBar.md) |
-| menu | 菜单布局 | [menu](references/layout/menu.md) |
-| keyboardPay | 键盘支付布局 | [keyboardPay](references/layout/keyboardPay.md) |
-| wxCenter | 微信中心布局 | [wxCenter](references/layout/wxCenter.md) |
-
-## 指南文档
-
-| 指南 | 说明 | 文档 |
-|------|------|------|
-| design | 设计指南 | [design](references/guide/design.md) |
-| customTheme | 自定义主题指南 | [customTheme](references/guide/customTheme.md) |
-| customStyle | 自定义样式指南 | [customStyle](references/guide/customStyle.md) |
-| customIcon | 自定义图标指南 | [customIcon](references/guide/customIcon.md) |
-| i18n | 国际化指南 | [i18n](references/guide/i18n.md) |
-| faq | 常见问题指南 | [faq](references/guide/faq.md) |
-| note | 注意事项指南 | [note](references/guide/note.md) |
-
-## 使用示例
-
-### 按钮组件
-```vue
-<template>
-  <u-button type="primary" @click="handleClick">主要按钮</u-button>
-  <u-button type="success">成功按钮</u-button>
-  <u-button type="warning" plain>镂空按钮</u-button>
-</template>
-```
-
-### 表单组件
-```vue
-<template>
-  <u-form :model="form" :rules="rules" ref="formRef">
-    <u-form-item label="用户名" prop="username">
-      <u-input v-model="form.username" placeholder="请输入用户名" />
-    </u-form-item>
-    <u-form-item label="密码" prop="password">
-      <u-input v-model="form.password" type="password" placeholder="请输入密码" />
-    </u-form-item>
-  </u-form>
-</template>
-```
-
-### 提示组件
-```vue
-<script setup>
-import { useToast } from '@/uni_modules/uview-pro'
-
-const toast = useToast()
-
-const showToast = () => {
-  toast.show({
-    title: '操作成功',
-    type: 'success'
-  })
-}
-</script>
-```
-
-## 完整组件列表
-
-### 指南类 Skills
-- [codeHint](references/guide/codeHint.md) - 代码提示指南
-- [customIcon](references/guide/customIcon.md) - 自定义图标指南
-- [customStyle](references/guide/customStyle.md) - 自定义样式指南
-- [customTheme](references/guide/customTheme.md) - 自定义主题指南
-- [demo](references/guide/demo.md) - 示例指南
-- [design](references/guide/design.md) - 设计指南
-- [faq](references/guide/faq.md) - 常见问题指南
-- [i18n](references/guide/i18n.md) - 国际化指南
-- [note](references/guide/note.md) - 注意事项指南
-- [theme](references/guide/theme.md) - 主题指南
-- [themeGenerate](references/guide/themeGenerate.md) - 主题生成指南
-
-### 组件类 Skills
-- [actionSheet](references/components/actionSheet.md) - 操作菜单组件
-- [alertTips](references/components/alertTips.md) - 警告提示组件
-- [avatar](references/components/avatar.md) - 头像组件
-- [avatarCropper](references/components/avatarCropper.md) - 头像裁剪组件
-- [backTop](references/components/backTop.md) - 返回顶部组件
-- [badge](references/components/badge.md) - 徽章组件
-- [button](references/components/button.md) - 按钮组件
-- [calendar](references/components/calendar.md) - 日历组件
-- [card](references/components/card.md) - 卡片组件
-- [cell](references/components/cell.md) - 单元格组件
-- [checkbox](references/components/checkbox.md) - 复选框组件
-- [circleProgress](references/components/circleProgress.md) - 圆形进度条组件
-- [collapse](references/components/collapse.md) - 折叠面板组件
-- [color](references/components/color.md) - 颜色组件
-- [common](references/components/common.md) - 通用组件
-- [configProvider](references/components/configProvider.md) - 配置提供者组件
-- [countDown](references/components/countDown.md) - 倒计时组件
-- [countTo](references/components/countTo.md) - 数字滚动组件
-- [divider](references/components/divider.md) - 分割线组件
-- [downloadSetting](references/components/downloadSetting.md) - 下载设置组件
-- [dropdown](references/components/dropdown.md) - 下拉菜单组件
-- [empty](references/components/empty.md) - 空状态组件
-- [fab](references/components/fab.md) - 悬浮按钮组件
-- [feature](references/components/feature.md) - 特性组件
-- [field](references/components/field.md) - 表单字段组件
-- [form](references/components/form.md) - 表单组件
-- [fullScreen](references/components/fullScreen.md) - 全屏组件
-- [gap](references/components/gap.md) - 间距组件
-- [grid](references/components/grid.md) - 宫格组件
-- [icon](references/components/icon.md) - 图标组件
-- [image](references/components/image.md) - 图片组件
-- [indexList](references/components/indexList.md) - 索引列表组件
-- [input](references/components/input.md) - 输入框组件
-- [install](references/components/install.md) - 安装组件
-- [keyboard](references/components/keyboard.md) - 键盘组件
-- [layout](references/components/layout.md) - 布局组件
-- [lazyLoad](references/components/lazyLoad.md) - 懒加载组件
-- [line](references/components/line.md) - 线条组件
-- [lineProgress](references/components/lineProgress.md) - 线性进度条组件
-- [link](references/components/link.md) - 链接组件
-- [loading](references/components/loading.md) - 加载组件
-- [loadingPopup](references/components/loadingPopup.md) - 加载弹窗组件
-- [loadMore](references/components/loadMore.md) - 加载更多组件
-- [mask](references/components/mask.md) - 遮罩组件
-- [messageInput](references/components/messageInput.md) - 消息输入组件
-- [modal](references/components/modal.md) - 模态框组件
-- [navbar](references/components/navbar.md) - 导航栏组件
-- [noNetwork](references/components/noNetwork.md) - 无网络组件
-- [noticeBar](references/components/noticeBar.md) - 通知栏组件
-- [npmSetting](references/components/npmSetting.md) - npm设置组件
-- [numberBox](references/components/numberBox.md) - 数字输入框组件
-- [nvue](references/components/nvue.md) - nvue组件
-- [pagination](references/components/pagination.md) - 分页组件
-- [picker](references/components/picker.md) - 选择器组件
-- [popup](references/components/popup.md) - 弹出层组件
-- [quickstart](references/components/quickstart.md) - 快速开始组件
-- [radio](references/components/radio.md) - 单选框组件
-- [rate](references/components/rate.md) - 评分组件
-- [readMore](references/components/readMore.md) - 阅读更多组件
-- [safeAreaInset](references/components/safeAreaInset.md) - 安全区域适配组件
-- [search](references/components/search.md) - 搜索组件
-- [section](references/components/section.md) - 区块组件
-- [select](references/components/select.md) - 选择器组件
-- [skeleton](references/components/skeleton.md) - 骨架屏组件
-- [slider](references/components/slider.md) - 滑块组件
-- [steps](references/components/steps.md) - 步骤组件
-- [sticky](references/components/sticky.md) - 粘性组件
-- [subsection](references/components/subsection.md) - 分段器组件
-- [swipeAction](references/components/swipeAction.md) - 滑动操作组件
-- [swiper](references/components/swiper.md) - 轮播组件
-- [switch](references/components/switch.md) - 开关组件
-- [tabbar](references/components/tabbar.md) - 标签栏组件
-- [table](references/components/table.md) - 表格组件
-- [tabs](references/components/tabs.md) - 标签页组件
-- [tabsSwiper](references/components/tabsSwiper.md) - 标签轮播组件
-- [tag](references/components/tag.md) - 标签组件
-- [text](references/components/text.md) - 文本组件
-- [textarea](references/components/textarea.md) - 文本域组件
-- [timeLine](references/components/timeLine.md) - 时间轴组件
-- [toast](references/components/toast.md) - 提示组件
-- [topTips](references/components/topTips.md) - 顶部提示组件
-- [transition](references/components/transition.md) - 过渡动画组件
-- [uniModulesSetting](references/components/uniModulesSetting.md) - uni_modules设置组件
-- [upload](references/components/upload.md) - 上传组件
-- [verificationCode](references/components/verificationCode.md) - 验证码组件
-- [vuexDetail](references/components/vuexDetail.md) - Vuex详情组件
-- [waterfall](references/components/waterfall.md) - 瀑布流组件
-
-### 工具类 Skills
-- [color](references/tools/color.md) - 颜色值工具
-- [colorSwitch](references/tools/colorSwitch.md) - 颜色转换工具
-- [debounce](references/tools/debounce.md) - 防抖工具
-- [deepClone](references/tools/deepClone.md) - 深拷贝工具
-- [deepMerge](references/tools/deepMerge.md) - 深度合并工具
-- [fastUse](references/tools/fastUse.md) - 快速使用工具
-- [getRect](references/tools/getRect.md) - 获取元素尺寸工具
-- [guid](references/tools/guid.md) - 生成GUID工具
-- [md5](references/tools/md5.md) - MD5加密工具
-- [mpShare](references/tools/mpShare.md) - 小程序分享工具
-- [queryParams](references/tools/queryParams.md) - 查询参数工具
-- [random](references/tools/random.md) - 随机数工具
-- [randomArray](references/tools/randomArray.md) - 随机数组工具
-- [route](references/tools/route.md) - 路由工具
-- [test](references/tools/test.md) - 测试工具
-- [time](references/tools/time.md) - 时间工具
-- [trim](references/tools/trim.md) - 字符串修剪工具
-
-### 钩子类 Skills
-- [useColor](references/hooks/useColor.md) - 颜色管理钩子
-- [useDebounce](references/hooks/useDebounce.md) - 防抖钩子
-- [useLocale](references/hooks/useLocale.md) - 国际化钩子
-- [useModal](references/hooks/useModal.md) - 模态框钩子
-- [useTheme](references/hooks/useTheme.md) - 主题管理钩子
-- [useThrottle](references/hooks/useThrottle.md) - 节流钩子
-- [useToast](references/hooks/useToast.md) - 提示钩子
-
-### 布局类 Skills
-- [address](references/layout/address.md) - 地址布局
-- [citySelect](references/layout/citySelect.md) - 城市选择布局
-- [comment](references/layout/comment.md) - 评论布局
-- [coupon](references/layout/coupon.md) - 优惠券布局
-- [keyboardPay](references/layout/keyboardPay.md) - 键盘支付布局
-- [login](references/layout/login.md) - 登录布局
-- [menu](references/layout/menu.md) - 菜单布局
-- [order](references/layout/order.md) - 订单布局
-- [submitBar](references/layout/submitBar.md) - 提交栏布局
-- [wxCenter](references/layout/wxCenter.md) - 微信中心布局
+> 全部示例均为消费者视角：`<u-*>` 组件依赖 easycom 免手动 import（接入见 `spec/01`）。
