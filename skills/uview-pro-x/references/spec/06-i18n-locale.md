@@ -29,7 +29,7 @@ app.use(uViewProX)   // 注册表 = 内置 zh-CN + en-US
 要「内置文案 + 应用文案」同时可用，必须把库内置包一并传入：
 
 ```ts
-import uViewProX, { zhCN as libZhCN, enUS as libEnUS } from '@/uni_modules/uview-pro-x'
+import { uViewProX, zhCN as libZhCN, enUS as libEnUS } from '@/uni_modules/uview-pro-x'
 import { zhCN as appZhCN, enUS as appEnUS } from '@/locales'
 
 export function createApp() {

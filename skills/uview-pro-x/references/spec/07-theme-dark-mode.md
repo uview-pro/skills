@@ -25,7 +25,8 @@
 | 多主题 + 默认配置 | `{ themes: [...], defaultTheme?, defaultDarkMode?, isForce? }` | 在数组基础上设定默认主题 / 默认暗黑模式 / 是否忽略已保存选择 |
 
 ```ts
-import uViewProX from '@/uni_modules/uview-pro-x'
+// 命名导入：加密版插件入口的 `export * from './index'` 不转发 default（见 spec/01）
+import { uViewProX } from '@/uni_modules/uview-pro-x'
 import themes from './theme.uts'    // Theme[]：自定义主题数组
 
 app.use(uViewProX, {

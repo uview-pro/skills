@@ -51,7 +51,10 @@ your-project/
 
 ```ts
 import App from './App.uvue'
-import uViewProX from './uni_modules/uview-pro-x'
+// 必须用命名导入：加密版插件的入口由云端编译生成，固定为 `export * from './index'` + 组件命名导出，
+// `export *` 不转发 default，写 `import uViewProX from '...'` 会在加密版上报
+// "does not provide an export named 'default'"。命名导入在源码版 / 加密版均可用。
+import { uViewProX } from './uni_modules/uview-pro-x'
 import { createSSRApp } from 'vue'
 
 export function createApp() {
@@ -66,6 +69,8 @@ export function createApp() {
 ```
 
 > `app.use(uViewProX)` 不带任何参数也能工作：语言取内置 `zh-CN`，主题取内置官方蓝。
+>
+> 库入口同时导出了 `install` 函数，等价写法：`import { install } from '@/uni_modules/uview-pro-x'` + `app.use(install, options)`。
 
 ### install 选项全表
 
