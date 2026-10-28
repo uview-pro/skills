@@ -89,7 +89,7 @@ flex: 1;
 | 传给组件的 `custom-class` 样式不生效 | 类写在 scoped 样式里 | 移到非 scoped 页面样式 |
 | 模板里 `<ux-xxx>` 未解析/报错 | easycom 未配置 | pages.json 增加 `^ux-(.*)` 规则（见 `spec/01`） |
 | 主题/暗黑切换后页面自定义颜色不联动 | 页面根节点未绑定 `cssVars` | 根节点 `:style="cssVarsStyle"` |
-| 全项目 `$u-xxx` SCSS 变量编译报错 | `uni.scss` 未引入 theme.scss | 追加 `@import '@/uni_modules/uview-pro-x/theme.scss';` |
+| 全项目 `$u-xxx` SCSS 变量编译报错 | `uni.scss` 未接入主题变量 | 加密版把 `theme.scss` 的 `$u-*` 变量块复制进 `uni.scss`；源码版追加 `@import '@/uni_modules/uview-pro-x/theme.scss';`（见 `spec/01`） |
 | H5 底部出现两条导航栏 | 原生 tabBar 与自绘 `ux-tabbar` 同时显示 | 检查 pages.json 的 tabBar 配置，二者只保留一种方案 |
 | 图标不显示 | `name` 传了不存在的图标名 | 使用内置图标名 |
 

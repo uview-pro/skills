@@ -23,3 +23,8 @@ dist
 /.ftp
 
 deploy.sh
+plan.md
+mcp.json
+skills/migrate-component/
+skills/component-writer/
+skills/uniappx-crash-triage/

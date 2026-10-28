@@ -2,7 +2,7 @@
 
 **适用场景**：新建业务页面（注册路由 → 起骨架 → 主题联动 → 放组件）。
 
-**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.uts 注册 + uni.scss 引入 theme.scss）。
+**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.uts 注册 + 在 `uni.scss` 接入主题变量——加密版粘贴 `$u-*` 变量块，源码版 `@import '@/uni_modules/uview-pro-x/theme.scss';`）。
 
 ## 1. 注册路由（pages.json）
 

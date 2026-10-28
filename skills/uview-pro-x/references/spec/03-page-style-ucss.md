@@ -2,7 +2,7 @@
 
 ## 基本形态
 
-页面样式写在页面文件的 `<style lang="scss">`（配合 `uni.scss` 引入的 `theme.scss`，`$u-*` 变量全项目可用）：
+页面样式写在页面文件的 `<style lang="scss">`（前提是按 `spec/01` 在 `uni.scss` 接入主题变量：加密版粘贴 `theme.scss` 的 `$u-*` 变量块，源码版 `@import theme.scss`；接入后 `$u-*` 变量全项目可用）：
 
 ```vue
 <style lang="scss">

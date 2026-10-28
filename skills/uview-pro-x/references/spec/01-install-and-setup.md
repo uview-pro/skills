@@ -98,17 +98,79 @@ export function createApp() {
 
 ## 第四步：样式接入（uni.scss）
 
-在项目 `uni.scss` 末尾追加：
+**加密版（插件市场安装）无法 `@import` 组件库的 `theme.scss`**，需把下面的 `$u-*` 变量块复制到项目 `uni.scss` 末尾（内容与 `theme.scss` 的 `$u-*` 段一致）：
+
+```scss
+// 纯色
+$u-white-color: var(--u-white-color, #ffffff);
+$u-black-color: var(--u-black-color, #000000);
+
+// 字体色
+$u-main-color: var(--u-main-color, #303133);
+$u-content-color: var(--u-content-color, #606266);
+$u-tips-color: var(--u-tips-color, #909399);
+$u-light-color: var(--u-light-color, #c0c4cc);
+
+// 边框色
+$u-border-color: var(--u-border-color, #dcdfe6);
+$u-divider-color: var(--u-divider-color, #e4e7ed);
+
+// 遮罩色
+$u-mask-color: var(--u-mask-color, rgba(0, 0, 0, 0.4));
+$u-shadow-color: var(--u-shadow-color, rgba(0, 0, 0, 0.1));
+
+// 背景色
+$u-bg-color: var(--u-bg-color, #f3f4f6);
+$u-bg-white: var(--u-bg-white, #ffffff);
+$u-bg-gray-light: var(--u-bg-gray-light, #f1f1f1);
+$u-bg-gray-dark: var(--u-bg-gray-dark, #2f343c);
+$u-bg-black: var(--u-bg-black, #000000);
+
+// 主色
+$u-type-primary: var(--u-type-primary, #2979ff);
+$u-type-primary-disabled: var(--u-type-primary-disabled, #a0cfff);
+$u-type-primary-dark: var(--u-type-primary-dark, #2b85e4);
+$u-type-primary-light: var(--u-type-primary-light, #ecf5ff);
+
+// 警告色
+$u-type-warning: var(--u-type-warning, #ff9900);
+$u-type-warning-disabled: var(--u-type-warning-disabled, #fcbd71);
+$u-type-warning-dark: var(--u-type-warning-dark, #f29100);
+$u-type-warning-light: var(--u-type-warning-light, #fdf6ec);
+
+// 成功色
+$u-type-success: var(--u-type-success, #19be6b);
+$u-type-success-disabled: var(--u-type-success-disabled, #71d5a1);
+$u-type-success-dark: var(--u-type-success-dark, #18b566);
+$u-type-success-light: var(--u-type-success-light, #dbf1e1);
+
+// 错误色
+$u-type-error: var(--u-type-error, #fa3534);
+$u-type-error-disabled: var(--u-type-error-disabled, #fab6b6);
+$u-type-error-dark: var(--u-type-error-dark, #dd6161);
+$u-type-error-light: var(--u-type-error-light, #fef0f0);
+
+// 信息色
+$u-type-info: var(--u-type-info, #909399);
+$u-type-info-disabled: var(--u-type-info-disabled, #c8c9cc);
+$u-type-info-dark: var(--u-type-info-dark, #82848a);
+$u-type-info-light: var(--u-type-info-light, #f4f4f5);
+```
+
+源码版可直接在项目 `uni.scss` 末尾追加：
 
 ```scss
 @import '@/uni_modules/uview-pro-x/theme.scss';
 ```
 
+两种方式**不要同时使用**。
+
 引入后，全项目（页面与组件的 `<style lang="scss">`）均可使用 `$u-*` 主题变量：文字色、背景色、边框色、5 组语义色 × 4 态等（完整变量表见 `spec/03`）。
 
 补充说明：
 
-- `theme.scss` 是**必需**接入项：不引入则页面样式中的 `$u-*` 变量编译报错。
+- 主题变量接入是**必需**项（加密版复制变量块，源码版 `@import`）：不做则页面样式中的 `$u-*` 变量编译报错。
+- `--u-*` CSS 变量默认值由库样式在 `page` 层提供，运行时主题切换通过注入覆盖，无需在 `uni.scss` 中声明。
 - `index.scss` 是样式统一入口（三分类：主题变量 + 全局共用样式 + 全局 mixins），需要全局能力时可在页面/组件中 `@import '@/uni_modules/uview-pro-x/index.scss';` 一次拿全。
 - SCSS `@import` 不去重：**不要同时引入统一入口与其内部的叶子文件**（如 `libs/styles/mixins/hairline.scss` 细边框 mixin），重复引入会触发 mixin 重复定义。
 - 库内组件各自引用主题变量，组件本身开箱即用；页面样式要用 `$u-*` 时依赖本步的 `uni.scss` 全局注入即可，通常无需在页面内单独再引 `theme.scss`。
