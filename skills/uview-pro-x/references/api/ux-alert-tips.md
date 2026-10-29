@@ -3,7 +3,7 @@
 # ux-alert-tips API
 
 > 来源：`components/ux-alert-tips`（uview-pro-x v1.0.0）
-> API 指纹：`sha256:776b5c0d4f27ddc27e870d30a1e8b23c54ab09f59512994793701e3975f6b3fe`
+> API 指纹：`sha256:77f8274fc8841509cb17d78bbb64f69b34336e20425d29f4fc6867350b173876`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only alert-tips`
 
 警告提示，展现需要关注的信息；分 success / warning / info / error 四种主题，背景、边框、文字与默认图标颜色均按 type 回退，可关闭并支持自定义关闭文案
@@ -25,6 +25,7 @@
 | `border-color` / `borderColor` | 边框颜色 | `string` | `''` |
 | `show` | 是否显示 | `boolean` | `true` |
 | `icon` | 左边显示的icon | `string` | `''` |
+| `icon-size` / `iconSize` | 左边icon的大小，单位px（默认16） | `number` | `16` |
 | `icon-style` / `iconStyle` | icon的样式 | `UTSJSONObject` | - |
 | `title-style` / `titleStyle` | 标题的样式 | `UTSJSONObject` | - |
 | `desc-style` / `descStyle` | 描述文字的样式 | `UTSJSONObject` | - |

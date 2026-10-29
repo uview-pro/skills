@@ -161,7 +161,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 
 ## hooks 速查
 
-16 个 hooks 均从库入口导入。页面常用：
+17 个 hooks 均从库入口导入。页面型（9 个）常用：
 
 | hook | 签名与返回 | 用途 |
 |---|---|---|
@@ -170,10 +170,29 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `useCountDown({ time, millisecond?, onChange?, onFinish? })` | → `{ current, start, pause, reset }` | 倒计时（已处理定时器清理与漂移） |
 | `useSafeArea()` | → `{ top, bottom }`（ComputedRef\<number>，安全区插入距离 px） | 安全区适配 |
 | `useWindowInfo()` | → `{ info, pixelRatio, screenWidth, screenHeight, ... }` | 窗口信息（状态栏高度等） |
+| `useDeviceInfo()` | → `{ device, platform, orientation }` 等 | 运行期只读的设备与系统标识 |
 | `useDebounce(delay?)` / `useThrottle(delay?)` | → `{ debounce(callback, debounceTime) }` / 节流同构 | 延迟执行包装 |
 | `useRect()` | → `{ getRect(el) }` | 获取节点尺寸/位置（配合模板 ref） |
 
-组件内部通用（页面层少用）：`useBEM`（BEM 类名）、`useConfig`、`usePopup`、`useTouch`、`useNotice`、`useStyle`、`useChildren`、`useParent`。
+### 页面型 / 组件内部型
+
+| 类型 | 数量 | hook |
+|---|---|---|
+| 页面型 | 9 | `useTheme`、`useLocale`、`useCountDown`、`useSafeArea`、`useWindowInfo`、`useDeviceInfo`、`useDebounce`、`useThrottle`、`useRect` |
+| 配置型 | 1 | `useConfig`（`config/` 组，应用层通常不需要） |
+| 组件内部型 | 7 | `useBEM`、`useStyle`、`useNotice`、`useTouch`、`useChildren`、`useParent`、`usePopup` |
+
+**组件内部型 hook 不建议应用层直接调用**：它们依赖组件实例上下文（`getCurrentInstance`、provide / inject 层级、组件级 props），脱离 `ux-*` 组件使用行为不确定或遗留监听。
+
+| hook | 职责 | 不在页面演示的理由 |
+|---|---|---|
+| `useBEM` | 生成组件 BEM 类名（`ux-` 前缀 + 修饰符） | 依赖组件 `name`，页面无 BEM 命名需求 |
+| `useStyle` | `createStyle()` 增量构建样式对象 | 与组件 props 默认值和主题联动绑死，页面直接用 `$u.toStyle` 即可 |
+| `useNotice` | 组件内 `uni.$emit` / `$on` 通知总线 | 成对依赖组件实例生命周期，页面单独用会遗留监听 |
+| `useTouch` | 触摸手势状态（起止坐标、方向判定） | 供滑动类组件内部使用，页面应直接用组件 |
+| `useChildren` | 父子组件注入与注册（provide / inject） | 需要组件层级，页面无对应上下文 |
+| `useParent` | 子组件获取父组件实例 | 同上 |
+| `usePopup` | 弹层开关 / 动画状态机 | 与 `ux-popup` 内部结构绑定 |
 
 ## 常用组合示例
 
