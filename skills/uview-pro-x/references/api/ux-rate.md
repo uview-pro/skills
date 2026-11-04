@@ -26,7 +26,7 @@
 | `allow-half` / `allowHalf` | 是否允许半星 | `boolean` | `false` |
 | `active-icon` / `activeIcon` | 选中时的图标(星星) | `string` | `'star-fill'` |
 | `inactive-icon` / `inactiveIcon` | 未选中时的图标(星星) | `string` | `'star'` |
-| `custom-prefix` / `customPrefix` | 自定义扩展前缀，方便用户扩展自己的图标库 | `string` | `'uicon'` |
+| `custom-prefix` / `customPrefix` | 图标库前缀（前缀即 font-family 名；空串为内置图标库） | `string` | `''` |
 | `colors` | 分段颜色 | `string[]` | - |
 | `icons` | 分段图标 | `string[]` | - |
 

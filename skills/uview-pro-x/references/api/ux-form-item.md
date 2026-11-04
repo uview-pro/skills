@@ -23,8 +23,8 @@
 | `label-align` / `labelAlign` | label 字体的对齐方式 | `string` | `''` |
 | `right-icon` / `rightIcon` | 右侧图标 | `string` | `''` |
 | `left-icon` / `leftIcon` | 左侧图标 | `string` | `''` |
-| `left-icon-prefix` / `leftIconPrefix` | 左侧图标的自定义前缀 | `string` | `'uicon'` |
-| `right-icon-prefix` / `rightIconPrefix` | 右侧图标的自定义前缀 | `string` | `'uicon'` |
+| `left-icon-prefix` / `leftIconPrefix` | 左侧图标的图标库前缀（前缀即 font-family 名；空串为内置图标库） | `string` | `''` |
+| `right-icon-prefix` / `rightIconPrefix` | 右侧图标的图标库前缀（前缀即 font-family 名；空串为内置图标库） | `string` | `''` |
 | `left-icon-style` / `leftIconStyle` | 左侧图标的样式 | `UTSJSONObject` | - |
 | `right-icon-style` / `rightIconStyle` | 右侧图标的样式 | `UTSJSONObject` | - |
 | `required` | 是否显示左边的必填星号，只作显示用，具体校验必填的逻辑，请在 rules 中配置（默认false） | `boolean` | `false` |

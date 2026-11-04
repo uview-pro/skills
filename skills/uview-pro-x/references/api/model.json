@@ -1,6 +1,6 @@
 {
   "libVersion": "1.0.0",
-  "libHash": "sha256:340a2ea62e998e66837fa0324f51549c8ff4c1f0ed5b6fa0e31c2f07b9db9967",
+  "libHash": "sha256:be4d53b5d99c61fefbc10c500a5988b4986a7341e105a1c60c9f2f67d0b6c23b",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -436,6 +436,20 @@
           "descFrom": "types"
         },
         {
+          "name": "iconSize",
+          "kebab": "icon-size",
+          "type": "number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "16",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "左边icon的大小，单位px（默认16）",
+          "descFrom": "types"
+        },
+        {
           "name": "iconStyle",
           "kebab": "icon-style",
           "type": "UTSJSONObject",
@@ -507,7 +521,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:776b5c0d4f27ddc27e870d30a1e8b23c54ab09f59512994793701e3975f6b3fe"
+      "apiHash": "sha256:77f8274fc8841509cb17d78bbb64f69b34336e20425d29f4fc6867350b173876"
     },
     "ux-avatar": {
       "name": "ux-avatar",
@@ -17810,7 +17824,7 @@
   "errors": [],
   "stats": {
     "components": 74,
-    "props": 1005,
+    "props": 1006,
     "events": 138,
     "models": 32,
     "slots": 65,

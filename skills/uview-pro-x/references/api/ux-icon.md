@@ -19,7 +19,7 @@
 | `color` | 自定义颜色，为任意色值；传入时优先于 type 的主题色 | `string` | `''` |
 | `size` | 字体大小，单位px（默认inherit） | `string \| number` | `'inherit'` |
 | `bold` | 是否显示粗体 | `boolean` | `false` |
-| `custom-prefix` / `customPrefix` | 自定义扩展前缀，方便用户扩展自己的图标库 | `string` | `'uicon'` |
+| `custom-prefix` / `customPrefix` | 字体图标库前缀（前缀即 font-family 名，需在应用入口声明同名 @font-face；空串为内置图标库） | `string` | `'uxicon-iconfont'` |
 | `img-mode` / `imgMode` | 图片的mode，参考uni-app image组件 | `ImgMode`（`aspectFit`｜`aspectFill`｜`widthFix`｜`top`｜`bottom`｜`center`｜`scaleToFill`） | `'widthFix'` |
 | `width` | 用于显示图片小图标时，图片的宽度，单位px | `string \| number` | `''` |
 | `height` | 用于显示图片小图标时，图片的高度，单位px | `string \| number` | `''` |
