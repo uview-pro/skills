@@ -3,7 +3,7 @@
 # ux-rate API
 
 > 来源：`components/ux-rate`（uview-pro-x v1.0.0）
-> API 指纹：`sha256:e7fb96341b69d27d5e313a476e87f04634df6d2b65878e8357c3a6f3b378fa03`
+> API 指纹：`sha256:09e888cf9b2ae58953123cec8f040c84d2203722578955e50a514596ac4da95f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only rate`
 
 该组件一般用于满意度调查，星型评分的场景
@@ -26,7 +26,7 @@
 | `allow-half` / `allowHalf` | 是否允许半星 | `boolean` | `false` |
 | `active-icon` / `activeIcon` | 选中时的图标(星星) | `string` | `'star-fill'` |
 | `inactive-icon` / `inactiveIcon` | 未选中时的图标(星星) | `string` | `'star'` |
-| `custom-prefix` / `customPrefix` | 图标库前缀（前缀即 font-family 名；空串为内置图标库） | `string` | `''` |
+| `custom-prefix` / `customPrefix` | 图标库前缀（前缀即 font-family 名，传给 ux-icon；空串为内置图标库） | `string` | `''` |
 | `colors` | 分段颜色 | `string[]` | - |
 | `icons` | 分段图标 | `string[]` | - |
 

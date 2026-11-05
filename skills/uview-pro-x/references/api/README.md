@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x v1.0.0 ｜ 全库 API 指纹 `sha256:be4d53b5d99c61fefbc10c500a5988b4986a7341e105a1c60c9f2f67d0b6c23b` ｜ 74 个组件
+> uview-pro-x v1.0.0 ｜ 全库 API 指纹 `sha256:e59cb4b9f79ceddbf768b4c8814fd53c447e24e73dc02d4dce435f45a0dfe1fd` ｜ 69 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
@@ -25,7 +25,6 @@
 
 | 组件 | 说明 | v-model | 事件数 |
 | --- | --- | --- | --- |
-| [ux-car-keyboard](./ux-car-keyboard.md) | 车牌号键盘：省份简称与字母数字两套按键，按「中 / 英」按钮切换 | — | 2 |
 | [ux-checkbox](./ux-checkbox.md) | 该组件需要搭配checkboxGroup组件使用，以便用户进行操作时，获得当前复选框组的选中情况 | `v-model` | 1 |
 | [ux-checkbox-group](./ux-checkbox-group.md) | 复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便 | `v-model` | 1 |
 | [ux-form](./ux-form.md) | 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等 | — | 0 |
@@ -33,7 +32,6 @@
 | [ux-input](./ux-input.md) | 此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件ux-form而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能 | `v-model` | 7 |
 | [ux-keyboard](./ux-keyboard.md) | 自定义键盘面板，按 mode 内置数字 / 身份证 / 车牌号三种键盘，以底部弹层承载 | `v-model` | 4 |
 | [ux-number-box](./ux-number-box.md) | 该组件一般用于商城购物选择物品数量的场景 | `v-model` | 5 |
-| [ux-number-keyboard](./ux-number-keyboard.md) | 数字 / 身份证键盘面板，支持小数点、按键乱序与长按退格连续删除 | — | 2 |
 | [ux-picker](./ux-picker.md) | 由 ux-popup 从底部弹出的滚动选择器，支持 selector-单列 / multiSelector-多列 / cascade-级联联动三种模式 | `v-model` | 3 |
 | [ux-radio](./ux-radio.md) | 单选框用于有一个选择，用户只能选择其中一个的场景 | — | 1 |
 | [ux-radio-group](./ux-radio-group.md) | 单选框用于有一个选择，用户只能选择其中一个的场景 | `v-model` | 1 |
@@ -62,7 +60,6 @@
 | [ux-alert-tips](./ux-alert-tips.md) | 警告提示，展现需要关注的信息 | — | 2 |
 | [ux-collapse](./ux-collapse.md) | 通过折叠面板收纳内容区域 | — | 1 |
 | [ux-collapse-item](./ux-collapse-item.md) | 通过折叠面板收纳内容区域（搭配u-collapse使用） | — | 1 |
-| [ux-column-notice](./ux-column-notice.md) | 垂直滚动的通告栏，用于滚动展示通知、公告等内容，支持水平/垂直两种方向 | — | 4 |
 | [ux-empty](./ux-empty.md) | 该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景，我们精心挑选了十几个场景的图标，方便您使用 | — | 0 |
 | [ux-loading](./ux-loading.md) | 此组件为一个小动画，目前用在 ux-loadmore 加载更多和 ux-switch 开关等组件的正在加载状态场景 | — | 0 |
 | [ux-loadmore](./ux-loadmore.md) | 此组件一般用于标识页面底部加载数据时的状态 | — | 1 |
@@ -70,9 +67,7 @@
 | [ux-modal](./ux-modal.md) | 弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作 | `v-model` | 2 |
 | [ux-no-network](./ux-no-network.md) | 监听网络状态自动显隐的无网络提示页，支持自定义图片、提示语与层级 | — | 1 |
 | [ux-notice-bar](./ux-notice-bar.md) | 该组件用于滚动通告场景，有多种模式可供选择 | — | 4 |
-| [ux-overlay](./ux-overlay.md) | 创建一个全屏固定定位的遮罩层，可独立使用，也是 ux-popup 的遮罩实现 | `v-model:show` | 3 |
 | [ux-popup](./ux-popup.md) | 弹出层容器，用于展示弹窗、信息提示等内容，支持上、下、左、右和中部弹出 | `v-model:show` | 5 |
-| [ux-row-notice](./ux-row-notice.md) | 水平滚动通告栏，支持主题、图标、关闭等 | — | 3 |
 | [ux-swipe-action](./ux-swipe-action.md) | 该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作 | — | 4 |
 | [ux-toast](./ux-toast.md) | 此组件表现形式类似uni的uni.showToastAPI，但也有不同的地方 | — | 0 |
 | [ux-top-tips](./ux-top-tips.md) | 顶部提示条，通过组件实例的 show() 弹出，支持导航栏高度适配与 z-index 定制，到时自动收起 | — | 0 |

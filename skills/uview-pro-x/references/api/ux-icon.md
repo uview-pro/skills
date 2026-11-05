@@ -3,7 +3,7 @@
 # ux-icon API
 
 > 来源：`components/ux-icon`（uview-pro-x v1.0.0）
-> API 指纹：`sha256:269ea4bcc357495ee2e9577ad437820802b4152afb0d5d877415ec5e7756c63b`
+> API 指纹：`sha256:0747ab67b0f4784047dd3bbcd804091d10bf95018192a268a837c528e2ed9438`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only icon`
 
 基于字体的图标集，包含了大多数常见场景的图标。
@@ -19,7 +19,7 @@
 | `color` | 自定义颜色，为任意色值；传入时优先于 type 的主题色 | `string` | `''` |
 | `size` | 字体大小，单位px（默认inherit） | `string \| number` | `'inherit'` |
 | `bold` | 是否显示粗体 | `boolean` | `false` |
-| `custom-prefix` / `customPrefix` | 字体图标库前缀（前缀即 font-family 名，需在应用入口声明同名 @font-face；空串为内置图标库） | `string` | `'uxicon-iconfont'` |
+| `custom-prefix` / `customPrefix` | 字体图标库前缀（约定：前缀即图标类名前缀与 font-family 名，需在应用入口声明同名 @font-face；内置前缀 uxicon-iconfont，传空串也走内置库。其余库下 name 可传已登记码点表的图标名，也可直接传四位十六进制码点，字符还可由默认插槽直传） | `string` | `BUILTIN_ICON_PREFIX` |
 | `img-mode` / `imgMode` | 图片的mode，参考uni-app image组件 | `ImgMode`（`aspectFit`｜`aspectFill`｜`widthFix`｜`top`｜`bottom`｜`center`｜`scaleToFill`） | `'widthFix'` |
 | `width` | 用于显示图片小图标时，图片的宽度，单位px | `string \| number` | `''` |
 | `height` | 用于显示图片小图标时，图片的高度，单位px | `string \| number` | `''` |
@@ -38,7 +38,10 @@
 
 ## 插槽
 
-无插槽。
+| 插槽名 | 说明 |
+| --- | --- |
+| `默认插槽，可直传自定义字体图标的` | unicode 字符；传入插槽时优先用插槽内容，未传时按 name 检索码点表渲染 |
+| `default` | - |
 
 ## 外部样式类
 

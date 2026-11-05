@@ -52,9 +52,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-radio` / `ux-radio-group` | 单选框 / 单选框组 |
 | `ux-switch` | 开关 |
 | `ux-slider` | 滑块 |
-| `ux-keyboard` | 键盘 |
-| `ux-number-keyboard` | 数字键盘 |
-| `ux-car-keyboard` | 车牌键盘 |
+| `ux-keyboard` | 键盘（`mode` 切 number / card / car，内部分派给数字与车牌键盘子件） |
 
 ### 数据展示
 
@@ -72,14 +70,12 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 |---|---|
 | `ux-action-sheet` | 操作菜单 |
 | `ux-toast` | 提示框（`ref` 命令式调用） |
-| `ux-notice-bar` | 通告栏 |
-| `ux-column-notice` / `ux-row-notice` | 通告栏纵向/横向滚动子件（一般直接用 `ux-notice-bar`） |
+| `ux-notice-bar` | 通告栏（`mode` 切 horizontal / vertical，内部渲染横向或纵向滚动子件） |
 | `ux-collapse` / `ux-collapse-item` | 折叠面板 / 面板项 |
 | `ux-popup` | 弹窗（`v-model:show`） |
 | `ux-swipe-action` | 滑动单元格 |
 | `ux-modal` | 弹窗（确认/取消） |
 | `ux-mask` | 遮罩层 |
-| `ux-overlay` | 遮罩层（新） |
 | `ux-loading` | 加载 |
 | `ux-loadmore` | 加载更多 |
 | `ux-empty` | 内容为空 |

@@ -1,6 +1,6 @@
 {
   "libVersion": "1.0.0",
-  "libHash": "sha256:be4d53b5d99c61fefbc10c500a5988b4986a7341e105a1c60c9f2f67d0b6c23b",
+  "libHash": "sha256:e59cb4b9f79ceddbf768b4c8814fd53c447e24e73dc02d4dce435f45a0dfe1fd",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -1838,75 +1838,6 @@
       "methods": [],
       "warnings": [],
       "apiHash": "sha256:f5d2a442253549fd52247d6e7fd7d7d9c086068a9f76d33fbd1a34e963609b05"
-    },
-    "ux-car-keyboard": {
-      "name": "ux-car-keyboard",
-      "dir": "components/ux-car-keyboard",
-      "description": "车牌号键盘：省份简称与字母数字两套按键，按「中 / 英」按钮切换；支持 long press 长按退格连续删除（250ms 间隔）与 random 按键乱序",
-      "props": [
-        {
-          "name": "customStyle",
-          "kebab": "custom-style",
-          "type": "UTSJSONObject",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): UTSJSONObject => ({})",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "自定义根节点样式",
-          "descFrom": "types"
-        },
-        {
-          "name": "customClass",
-          "kebab": "custom-class",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "自定义根节点样式类",
-          "descFrom": "types"
-        },
-        {
-          "name": "random",
-          "kebab": "random",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否打乱键盘按键的顺序",
-          "descFrom": "types"
-        }
-      ],
-      "events": [
-        {
-          "name": "change",
-          "payload": "value: string",
-          "desc": "点击按键时触发，携带按键内容"
-        },
-        {
-          "name": "backspace",
-          "payload": "",
-          "desc": "点击退格键时触发；长按会以 250ms 间隔连续触发"
-        }
-      ],
-      "models": [],
-      "slots": [],
-      "externalClasses": [
-        "custom-class"
-      ],
-      "methods": [],
-      "warnings": [],
-      "apiHash": "sha256:648c0a03412b9c74a370bec6a866f3c394c7dabe3eaf5660e2d259999fa76c9f"
     },
     "ux-card": {
       "name": "ux-card",
@@ -3796,319 +3727,6 @@
       "warnings": [],
       "apiHash": "sha256:a1d3201bc2dad26d8cfead1a6415153aaf1c54a5ab66884cadd87c40be2a166a"
     },
-    "ux-column-notice": {
-      "name": "ux-column-notice",
-      "dir": "components/ux-column-notice",
-      "description": "垂直滚动的通告栏，用于滚动展示通知、公告等内容，支持水平/垂直两种方向。",
-      "props": [
-        {
-          "name": "customStyle",
-          "kebab": "custom-style",
-          "type": "string | UTSJSONObject",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): UTSJSONObject => ({})",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "自定义根节点样式",
-          "descFrom": "types"
-        },
-        {
-          "name": "customClass",
-          "kebab": "custom-class",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "自定义根节点样式类",
-          "descFrom": "types"
-        },
-        {
-          "name": "list",
-          "kebab": "list",
-          "type": "string[]",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): string[] => []",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "显示的内容，数组",
-          "descFrom": "types"
-        },
-        {
-          "name": "type",
-          "kebab": "type",
-          "type": "ThemeType | 'none'",
-          "typeResolved": {
-            "kind": "literalUnion",
-            "values": [
-              "primary",
-              "info",
-              "error",
-              "warning",
-              "success",
-              "default",
-              "none"
-            ]
-          },
-          "default": "'warning'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "显示的主题，success|error|primary|info|warning|none",
-          "descFrom": "types"
-        },
-        {
-          "name": "volumeIcon",
-          "kebab": "volume-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示左侧的音量图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "moreIcon",
-          "kebab": "more-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示右侧的右箭头图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "closeIcon",
-          "kebab": "close-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示右侧的关闭图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "autoplay",
-          "kebab": "autoplay",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否自动播放",
-          "descFrom": "types"
-        },
-        {
-          "name": "color",
-          "kebab": "color",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "文字颜色，各图标也会使用文字颜色",
-          "descFrom": "types"
-        },
-        {
-          "name": "bgColor",
-          "kebab": "bg-color",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "背景颜色",
-          "descFrom": "types"
-        },
-        {
-          "name": "show",
-          "kebab": "show",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示",
-          "descFrom": "types"
-        },
-        {
-          "name": "fontSize",
-          "kebab": "font-size",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "13",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "字体大小，单位px",
-          "descFrom": "types"
-        },
-        {
-          "name": "duration",
-          "kebab": "duration",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "2000",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "滚动一个周期的时间长，单位ms",
-          "descFrom": "types"
-        },
-        {
-          "name": "volumeSize",
-          "kebab": "volume-size",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "17",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "音量喇叭的大小",
-          "descFrom": "types"
-        },
-        {
-          "name": "mode",
-          "kebab": "mode",
-          "type": "Direction",
-          "typeResolved": {
-            "kind": "literalUnion",
-            "values": [
-              "horizontal",
-              "vertical"
-            ]
-          },
-          "default": "'horizontal'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "滚动方向，horizontal-水平滚动，vertical-垂直滚动",
-          "descFrom": "types"
-        },
-        {
-          "name": "playState",
-          "kebab": "play-state",
-          "type": "PlayState",
-          "typeResolved": {
-            "kind": "literalUnion",
-            "values": [
-              "play",
-              "paused"
-            ]
-          },
-          "default": "'play'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "播放状态，play-播放，paused-暂停",
-          "descFrom": "types"
-        },
-        {
-          "name": "disableTouch",
-          "kebab": "disable-touch",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否禁止用手滑动切换",
-          "descFrom": "types"
-        },
-        {
-          "name": "padding",
-          "kebab": "padding",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "'9px 12px'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "通知的边距",
-          "descFrom": "types"
-        }
-      ],
-      "events": [
-        {
-          "name": "click",
-          "payload": "index: number",
-          "desc": "点击通告文字触发，参数为点击的下标"
-        },
-        {
-          "name": "close",
-          "payload": "",
-          "desc": "点击右侧关闭图标触发"
-        },
-        {
-          "name": "getMore",
-          "payload": "",
-          "desc": "点击右侧向右图标触发"
-        },
-        {
-          "name": "end",
-          "payload": "",
-          "desc": "滚动到最后一个内容时触发"
-        }
-      ],
-      "models": [
-        {
-          "name": "show",
-          "channels": [
-            "prop"
-          ],
-          "propName": "show",
-          "updateEvent": null,
-          "default": "true"
-        }
-      ],
-      "slots": [],
-      "externalClasses": [
-        "custom-class"
-      ],
-      "methods": [],
-      "warnings": [],
-      "apiHash": "sha256:ae4f0cc2dac2b3eb83873bc63eab605ee6598df75dc77f9fdbfa43fb86763f18"
-    },
     "ux-config-provider": {
       "name": "ux-config-provider",
       "dir": "components/ux-config-provider",
@@ -5521,10 +5139,10 @@
             "kind": "opaque",
             "values": null
           },
-          "default": "'uicon'",
+          "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "左侧图标的自定义前缀",
+          "desc": "左侧图标的图标库前缀（前缀即 font-family 名；空串为内置图标库）",
           "descFrom": "types"
         },
         {
@@ -5535,10 +5153,10 @@
             "kind": "opaque",
             "values": null
           },
-          "default": "'uicon'",
+          "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "右侧图标的自定义前缀",
+          "desc": "右侧图标的图标库前缀（前缀即 font-family 名；空串为内置图标库）",
           "descFrom": "types"
         },
         {
@@ -5640,7 +5258,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:ded84cd82c9c0411410d7f89532aa331a7694818928d48f784274c1fb88652f7"
+      "apiHash": "sha256:be6d3abe59c3eb9bd25cb9188c2c1c83f05711bfa86cec9405442480daaa7a35"
     },
     "ux-full-screen": {
       "name": "ux-full-screen",
@@ -6151,10 +5769,10 @@
             "kind": "opaque",
             "values": null
           },
-          "default": "'uicon'",
+          "default": "BUILTIN_ICON_PREFIX",
           "defaultKind": "literal",
           "required": false,
-          "desc": "自定义扩展前缀，方便用户扩展自己的图标库",
+          "desc": "字体图标库前缀（约定：前缀即图标类名前缀与 font-family 名，需在应用入口声明同名 @font-face；内置前缀 uxicon-iconfont，传空串也走内置库。其余库下 name 可传已登记码点表的图标名，也可直接传四位十六进制码点，字符还可由默认插槽直传）",
           "descFrom": "types"
         },
         {
@@ -6235,13 +5853,22 @@
         }
       ],
       "models": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "默认插槽，可直传自定义字体图标的",
+          "desc": "unicode 字符；传入插槽时优先用插槽内容，未传时按 name 检索码点表渲染"
+        },
+        {
+          "name": "default",
+          "desc": ""
+        }
+      ],
       "externalClasses": [
         "custom-class"
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:269ea4bcc357495ee2e9577ad437820802b4152afb0d5d877415ec5e7756c63b"
+      "apiHash": "sha256:0747ab67b0f4784047dd3bbcd804091d10bf95018192a268a837c528e2ed9438"
     },
     "ux-image": {
       "name": "ux-image",
@@ -9813,204 +9440,6 @@
       "warnings": [],
       "apiHash": "sha256:adf867dff71a20cdf2a6b3d2ea460cfa6b0b875965ef5782901e58b31c1e0634"
     },
-    "ux-number-keyboard": {
-      "name": "ux-number-keyboard",
-      "dir": "components/ux-number-keyboard",
-      "description": "数字 / 身份证键盘面板，支持小数点、按键乱序与长按退格连续删除",
-      "props": [
-        {
-          "name": "mode",
-          "kebab": "mode",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "'number'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "键盘的类型，number-数字键盘，card-身份证键盘",
-          "descFrom": "types"
-        },
-        {
-          "name": "dotEnabled",
-          "kebab": "dot-enabled",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示键盘的\".\"符号",
-          "descFrom": "types"
-        },
-        {
-          "name": "random",
-          "kebab": "random",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否打乱键盘按键的顺序",
-          "descFrom": "types"
-        }
-      ],
-      "events": [
-        {
-          "name": "change",
-          "payload": "value: string | number",
-          "desc": "点击按键时触发，携带按键内容"
-        },
-        {
-          "name": "backspace",
-          "payload": "",
-          "desc": "点击退格键时触发；长按会以 250ms 间隔连续触发"
-        }
-      ],
-      "models": [],
-      "slots": [],
-      "externalClasses": [],
-      "methods": [],
-      "warnings": [],
-      "apiHash": "sha256:36f464c9859f966a3f01c8a2d448b0266073fd043de5d644374a132bba56cd4a"
-    },
-    "ux-overlay": {
-      "name": "ux-overlay",
-      "dir": "components/ux-overlay",
-      "description": "创建一个全屏固定定位的遮罩层，可独立使用，也是 ux-popup 的遮罩实现。显隐通道：`v-model:show` 驱动 `v-if` 建节点（起始态 opacity:0 由静态类承载），下一拍定时器翻 `--show` 类播淡入；关闭时撤类播淡出，时长走完再收掉节点。",
-      "props": [
-        {
-          "name": "customStyle",
-          "kebab": "custom-style",
-          "type": "string | UTSJSONObject",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): UTSJSONObject => ({})",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "自定义根节点样式",
-          "descFrom": "types"
-        },
-        {
-          "name": "customClass",
-          "kebab": "custom-class",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "自定义根节点样式类",
-          "descFrom": "types"
-        },
-        {
-          "name": "zIndex",
-          "kebab": "z-index",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "层级 z-index",
-          "descFrom": "types"
-        },
-        {
-          "name": "closeOnClickOverlay",
-          "kebab": "close-on-click-overlay",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "点击遮罩是否关闭（关闭即把 v-model:show 置为 false）",
-          "descFrom": "types"
-        },
-        {
-          "name": "duration",
-          "kebab": "duration",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "300",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "淡入淡出时长，单位 ms",
-          "descFrom": "types"
-        },
-        {
-          "name": "bgColor",
-          "kebab": "bg-color",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "遮罩背景色，留空走样式表默认值",
-          "descFrom": "types"
-        }
-      ],
-      "events": [
-        {
-          "name": "click",
-          "payload": "event: UniPointerEvent",
-          "desc": "点击遮罩时触发，回传点击事件"
-        },
-        {
-          "name": "opened",
-          "payload": "",
-          "desc": "打开动画结束触发"
-        },
-        {
-          "name": "closed",
-          "payload": "",
-          "desc": "关闭动画结束、节点卸载前触发"
-        }
-      ],
-      "models": [
-        {
-          "name": "show",
-          "channels": [
-            "defineModel"
-          ],
-          "propName": "show",
-          "updateEvent": "update:show",
-          "default": "false"
-        }
-      ],
-      "slots": [
-        {
-          "name": "default",
-          "desc": ""
-        }
-      ],
-      "externalClasses": [
-        "custom-class"
-      ],
-      "methods": [],
-      "warnings": [],
-      "apiHash": "sha256:bf243c71500bf3b3e6e738ac8e995fe48a5501d5d775a88b2aa79fa3d1764673"
-    },
     "ux-pagination": {
       "name": "ux-pagination",
       "dir": "components/ux-pagination",
@@ -11508,10 +10937,10 @@
             "kind": "opaque",
             "values": null
           },
-          "default": "'uicon'",
+          "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "自定义扩展前缀，方便用户扩展自己的图标库",
+          "desc": "图标库前缀（前缀即 font-family 名，传给 ux-icon；空串为内置图标库）",
           "descFrom": "types"
         },
         {
@@ -11568,7 +10997,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:e7fb96341b69d27d5e313a476e87f04634df6d2b65878e8357c3a6f3b378fa03"
+      "apiHash": "sha256:09e888cf9b2ae58953123cec8f040c84d2203722578955e50a514596ac4da95f"
     },
     "ux-row": {
       "name": "ux-row",
@@ -11660,283 +11089,6 @@
       "methods": [],
       "warnings": [],
       "apiHash": "sha256:c9a17240709109d1020fdd7ae78dcc8078f53a70ed01149dd7c53d0887edfd83"
-    },
-    "ux-row-notice": {
-      "name": "ux-row-notice",
-      "dir": "components/ux-row-notice",
-      "description": "水平滚动通告栏，支持主题、图标、关闭等",
-      "props": [
-        {
-          "name": "customStyle",
-          "kebab": "custom-style",
-          "type": "string | UTSJSONObject",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): UTSJSONObject => ({})",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "自定义根节点样式",
-          "descFrom": "types"
-        },
-        {
-          "name": "customClass",
-          "kebab": "custom-class",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "自定义根节点样式类",
-          "descFrom": "types"
-        },
-        {
-          "name": "list",
-          "kebab": "list",
-          "type": "string[]",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "(): string[] => []",
-          "defaultKind": "factory",
-          "required": false,
-          "desc": "显示的内容，数组",
-          "descFrom": "types"
-        },
-        {
-          "name": "type",
-          "kebab": "type",
-          "type": "ThemeType | 'none'",
-          "typeResolved": {
-            "kind": "literalUnion",
-            "values": [
-              "primary",
-              "info",
-              "error",
-              "warning",
-              "success",
-              "default",
-              "none"
-            ]
-          },
-          "default": "'warning'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "显示的主题，success|error|primary|info|warning|none",
-          "descFrom": "types"
-        },
-        {
-          "name": "volumeIcon",
-          "kebab": "volume-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示左侧的音量图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "moreIcon",
-          "kebab": "more-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示右侧的右箭头图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "closeIcon",
-          "kebab": "close-icon",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "false",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示右侧的关闭图标",
-          "descFrom": "types"
-        },
-        {
-          "name": "autoplay",
-          "kebab": "autoplay",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否自动播放",
-          "descFrom": "types"
-        },
-        {
-          "name": "color",
-          "kebab": "color",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "文字颜色，各图标也会使用文字颜色",
-          "descFrom": "types"
-        },
-        {
-          "name": "bgColor",
-          "kebab": "bg-color",
-          "type": "string",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "''",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "背景颜色",
-          "descFrom": "types"
-        },
-        {
-          "name": "show",
-          "kebab": "show",
-          "type": "boolean",
-          "typeResolved": {
-            "kind": "boolean",
-            "values": null
-          },
-          "default": "true",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "是否显示",
-          "descFrom": "types"
-        },
-        {
-          "name": "fontSize",
-          "kebab": "font-size",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "13",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "字体大小，单位px",
-          "descFrom": "types"
-        },
-        {
-          "name": "volumeSize",
-          "kebab": "volume-size",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "17",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "音量喇叭的大小",
-          "descFrom": "types"
-        },
-        {
-          "name": "speed",
-          "kebab": "speed",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "160",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "水平滚动时的滚动速度，即每秒滚动多少px",
-          "descFrom": "types"
-        },
-        {
-          "name": "playState",
-          "kebab": "play-state",
-          "type": "PlayState",
-          "typeResolved": {
-            "kind": "literalUnion",
-            "values": [
-              "play",
-              "paused"
-            ]
-          },
-          "default": "'play'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "播放状态，play-播放，paused-暂停",
-          "descFrom": "types"
-        },
-        {
-          "name": "padding",
-          "kebab": "padding",
-          "type": "string | number",
-          "typeResolved": {
-            "kind": "opaque",
-            "values": null
-          },
-          "default": "'9px 12px'",
-          "defaultKind": "literal",
-          "required": false,
-          "desc": "通知的边距",
-          "descFrom": "types"
-        }
-      ],
-      "events": [
-        {
-          "name": "click",
-          "payload": "",
-          "desc": "点击通告文字触发"
-        },
-        {
-          "name": "close",
-          "payload": "",
-          "desc": "点击右侧关闭图标触发"
-        },
-        {
-          "name": "getMore",
-          "payload": "",
-          "desc": "点击右侧向右图标触发"
-        }
-      ],
-      "models": [
-        {
-          "name": "show",
-          "channels": [
-            "prop"
-          ],
-          "propName": "show",
-          "updateEvent": null,
-          "default": "true"
-        }
-      ],
-      "slots": [],
-      "externalClasses": [
-        "custom-class"
-      ],
-      "methods": [],
-      "warnings": [],
-      "apiHash": "sha256:6b92965a17e527963e94928ca9d5f469dcccd680baff17cdd78ffb19e8149dfb"
     },
     "ux-safe-bottom": {
       "name": "ux-safe-bottom",
@@ -17823,14 +16975,14 @@
   },
   "errors": [],
   "stats": {
-    "components": 74,
-    "props": 1006,
-    "events": 138,
-    "models": 32,
-    "slots": 65,
+    "components": 69,
+    "props": 960,
+    "events": 124,
+    "models": 29,
+    "slots": 66,
     "methods": 53,
     "warnings": 0,
-    "requested": 76
+    "requested": 75
   },
   "unresolvedRefs": []
 }
