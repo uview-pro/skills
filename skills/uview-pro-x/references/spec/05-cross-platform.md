@@ -27,9 +27,15 @@ uni-app x 可用平台宏：
 
 <script setup lang="uts">
 // 脚本
-// #ifdef MP
-onPageScroll((e) => { scrollTop.value = e.scrollTop });
+// #ifdef APP
+// App 专属逻辑
 // #endif
+
+// 页面生命周期不加条件编译：onPageScroll 页面层三端都可用，
+// 但必须写在页面脚本里（小程序编译期靠它给页面挂滚动钩子）
+onPageScroll((e) => {
+    setScrollTop(e.scrollTop);
+});
 </script>
 
 <style lang="scss">
@@ -54,7 +60,7 @@ flex: 1;
 | 1 | 文字样式 | 在 `<view>` 上写 `font-size` / `color` / `font-weight` / `line-height` | 写到 `<text>` 上（或直接使用 `ux-text`） |
 | 2 | display | `display: block` / `inline` / `inline-block` | App 端仅支持 `flex` / `none`；纵向用 `flex-direction: column` |
 | 3 | 满屏高度 | 直接写 `min-height: 100vh` | `/* #ifndef APP */ 100vh /* #endif */` + `/* #ifdef APP */ flex: 1 /* #endif */` |
-| 4 | 滚动监听 | App 端使用 `onPageScroll` | App 端包 `<scroll-view @scroll>`；`onPageScroll` 只在 H5/小程序生效 |
+| 4 | 滚动监听 | 在页面里手写 `#ifdef` 分端注册，或把 `onPageScroll` 写进 `.uts` / hook | 用 `usePageScroll()`，但 `onPageScroll((e) => setScrollTop(e.scrollTop))` 必须留在**页面脚本**里：页面层三端可用、组件内不触发，小程序编译期靠页面文件里这次调用挂钩子 |
 | 5 | 空值 | `undefined` | `null` 或 `''` |
 | 6 | 条件判断 | `if (list)` 真值判断 | `if (list != null)` 等显式布尔表达式 |
 | 7 | 数组读取 | `arr[i]` 无边界判断 | `if (i >= 0 && i < arr.length)` 后再读 |
@@ -80,7 +86,7 @@ flex: 1;
 | H5 / 小程序端省略号不出现 | 只写了 `max-lines` | 补 `#ifndef APP` 的 `-webkit-line-clamp` 一套 |
 | 长文本挤走相邻图标/按钮 | 文本节点未允许收缩 | 文本 `flex-shrink: 1` + `min-width: 0`；相邻元素 `flex-shrink: 0` |
 | App 端满屏高度失效 | 用了 `100vh` | 条件编译改用 `flex: 1`（父级需为 flex 且有高度） |
-| App 端滚动监听不触发 | 用了 `onPageScroll` | 改用 `<scroll-view @scroll>`（见 recipe-page-scroll） |
+| 小程序端滚动距离恒为 0 | 把 `onPageScroll` 注册写进了 `.uts` / hook / 组件，小程序编译期没在页面文件里看到这次调用 | 注册行写到页面 `<script setup>` 里，回调里调 `setScrollTop(e.scrollTop)` |
 | 编译报错：条件表达式不是布尔 | 真值判断 | 改显式比较（`!= null` / `== true`） |
 | 编译告警 possibly null | 可空类型未收窄 | 判空分支或非空断言 `!` |
 | 编译报错：类型不匹配 | string/number 混用 | `$u.toNumber` / `toString()` / `as` 断言 |

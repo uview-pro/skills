@@ -39,21 +39,20 @@ const GROUPS = [
     ['表单', ['ux-form', 'ux-form-item', 'ux-input', 'ux-textarea', 'ux-select', 'ux-picker', 'ux-rate', 'ux-search', 'ux-number-box', 'ux-checkbox', 'ux-checkbox-group', 'ux-radio', 'ux-radio-group', 'ux-switch', 'ux-slider', 'ux-keyboard']],
     ['数据展示', ['ux-line-progress', 'ux-circle-progress', 'ux-count-to', 'ux-count-down', 'ux-swiper']],
     ['反馈', ['ux-action-sheet', 'ux-toast', 'ux-notice-bar', 'ux-collapse', 'ux-collapse-item', 'ux-popup', 'ux-swipe-action', 'ux-modal', 'ux-mask', 'ux-loading', 'ux-loadmore', 'ux-empty', 'ux-no-network', 'ux-alert-tips', 'ux-top-tips']],
-    ['布局', ['ux-line', 'ux-card', 'ux-grid', 'ux-grid-item', 'ux-divider', 'ux-row', 'ux-col', 'ux-section', 'ux-gap', 'ux-safe-bottom', 'ux-status-bar']],
+    ['布局', ['ux-line', 'ux-card', 'ux-grid', 'ux-grid-item', 'ux-divider', 'ux-row', 'ux-col', 'ux-section', 'ux-sticky', 'ux-gap', 'ux-safe-bottom', 'ux-status-bar']],
     ['导航', ['ux-tabbar', 'ux-back-top', 'ux-navbar', 'ux-tabs', 'ux-subsection', 'ux-steps', 'ux-step', 'ux-link', 'ux-pagination']],
     ['其他', ['ux-transition', 'ux-skeleton', 'ux-config-provider', 'ux-full-screen']],
 ];
 
 /**
  * 消费侧隐藏清单：源码保留但暂不暴露（不进卡片 / 索引 / model / 校验）。
- * 两类：① 暂缓组件 ux-sticky / ux-waterfall（无示例页、无对外支持）；
+ * 两类：① 暂缓组件 ux-waterfall（无示例页、无对外支持）；
  * ② 内部子件 ux-row-notice / ux-column-notice（由 ux-notice-bar 渲染）、
  *    ux-number-keyboard / ux-car-keyboard（由 ux-keyboard 按 mode 分派）——
  *    用户从不直接写这些标签，props 全由父组件代理，暴露卡片会误导成公开 API。
  * 恢复 = 移除条目后重跑本脚本。
  */
 const HIDDEN = new Set([
-    'ux-sticky',
     'ux-waterfall',
     'ux-row-notice',
     'ux-column-notice',

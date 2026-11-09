@@ -1,6 +1,6 @@
 {
   "libVersion": "1.0.0",
-  "libHash": "sha256:e59cb4b9f79ceddbf768b4c8814fd53c447e24e73dc02d4dce435f45a0dfe1fd",
+  "libHash": "sha256:26c9826c9a9fc7f94b6b5742db3160002e095aa23ee6ddf2a15cd110f9b23d09",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -12924,6 +12924,150 @@
       "warnings": [],
       "apiHash": "sha256:1d256008409aaa6390504134fa29e7ce62c47e7853b6213b6497c241087ca4c8"
     },
+    "ux-sticky": {
+      "name": "ux-sticky",
+      "dir": "components/ux-sticky",
+      "description": "内容滚到距顶部 offsetTop 时固定在顶部，回滚时复位；吸顶时外层占位高度锁住内容高度，避免下方内容上跳。页面顶部结构用 navbar 声明，组件自己按端换算避让高度，调用方不需要判断平台。滚动距离建议用 usePageScroll() 获取后传入 scroll-top（页面层 onPageScroll 需由页面脚本注册）；不传时退化为内部节点观察（仅 Web / 小程序，App 端必须传 scroll-top，否则不会吸顶）。",
+      "props": [
+        {
+          "name": "customStyle",
+          "kebab": "custom-style",
+          "type": "string | UTSJSONObject",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "(): UTSJSONObject => ({})",
+          "defaultKind": "factory",
+          "required": false,
+          "desc": "自定义根节点样式",
+          "descFrom": "types"
+        },
+        {
+          "name": "customClass",
+          "kebab": "custom-class",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "自定义根节点样式类",
+          "descFrom": "types"
+        },
+        {
+          "name": "offsetTop",
+          "kebab": "offset-top",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "0",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "吸顶时与导航栏底部的距离，数字按 config.unit 解释，也支持 '20px' / '40rpx' 字符串",
+          "descFrom": "types"
+        },
+        {
+          "name": "navbar",
+          "kebab": "navbar",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "页面顶部导航栏形态，与 pages.json 的 navigationStyle 对齐：default-原生导航栏（缺省）：App / 小程序内容区原点已在导航栏下方，不避让；H5 的 fixed 以视口为原点，让出导航栏高度 custom-自绘导航栏：让出状态栏 + 导航栏 none-全屏无导航栏：只让出状态栏 也可传数值，表示自绘导航栏本体高度（状态栏自动叠加） 未设置时读全局 componentProps['ux-sticky'].navbar，最终回退 default",
+          "descFrom": "types"
+        },
+        {
+          "name": "enable",
+          "kebab": "enable",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否开启吸顶",
+          "descFrom": "types"
+        },
+        {
+          "name": "bgColor",
+          "kebab": "bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "吸顶时的背景色，支持主题色名（primary / success 等）与普通色值",
+          "descFrom": "types"
+        },
+        {
+          "name": "zIndex",
+          "kebab": "z-index",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "吸顶时的层级，缺省取主题层级 $u.zIndex.sticky",
+          "descFrom": "types"
+        },
+        {
+          "name": "scrollTop",
+          "kebab": "scroll-top",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "-1",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "页面或滚动容器的滚动距离（px），建议用 usePageScroll() 获取后传入。注意页面层 onPageScroll 必须写在页面脚本里（小程序编译期靠它给页面挂滚动钩子），写成 onPageScroll((e) => setScrollTop(e.scrollTop)) 即可。不传（负数）时退化为组件内部节点观察，仅 Web / 小程序可用；App 端没有观察器通道，不传则不会吸顶（开发期会打印一次告警）。传容器滚动距离时按「相对测量基准的位移」判定，不要求滚动容器贴视口顶部。负数表示未提供。",
+          "descFrom": "types"
+        }
+      ],
+      "events": [
+        {
+          "name": "fixed",
+          "payload": "",
+          "desc": "开始吸顶时触发"
+        },
+        {
+          "name": "unfixed",
+          "payload": "",
+          "desc": "取消吸顶时触发"
+        }
+      ],
+      "models": [],
+      "slots": [
+        {
+          "name": "default",
+          "desc": "吸顶的内容"
+        }
+      ],
+      "externalClasses": [
+        "custom-class"
+      ],
+      "methods": [],
+      "warnings": [],
+      "apiHash": "sha256:e0a92ec52b74ed10fcc9a5e2b0e0770a1606e1e61140236c28845c2c886ecfa0"
+    },
     "ux-subsection": {
       "name": "ux-subsection",
       "dir": "components/ux-subsection",
@@ -16975,11 +17119,11 @@
   },
   "errors": [],
   "stats": {
-    "components": 69,
-    "props": 960,
-    "events": 124,
+    "components": 70,
+    "props": 968,
+    "events": 126,
     "models": 29,
-    "slots": 66,
+    "slots": 67,
     "methods": 53,
     "warnings": 0,
     "requested": 75

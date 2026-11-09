@@ -95,7 +95,9 @@ onUnload(() => {
 
 平台差异注意：
 
-- `onPageScroll` **App 端不生效**。App 端需监听滚动时，把页面内容包进 `<scroll-view direction="vertical" @scroll="...">`（见 [recipe-page-scroll](../recipes/recipe-page-scroll.md)）。
+- `onPageScroll` 在**页面层三端都可用**（含 App），但在**自定义组件内不触发**。
+- **小程序端必须在页面脚本里写出 `onPageScroll(...)` 这次调用**：小程序编译期靠它给页面挂滚动钩子，写在 `.uts` / hook / 组件里都不会被挂载，滚动距离会恒为 0。
+- 取滚动距离优先用 `usePageScroll()`（页面层 onPageScroll 写值 + 容器 `@scroll` 兜底），见 [recipe-page-scroll](../recipes/recipe-page-scroll.md)。
 - 定时器、`uni.$on` 监听等副作用在 `onUnload` 中清理，避免页面销毁后回调触发。
 
 ## 常见编译/运行报错 → 修法

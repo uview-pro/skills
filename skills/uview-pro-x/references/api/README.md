@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x v1.0.0 ｜ 全库 API 指纹 `sha256:e59cb4b9f79ceddbf768b4c8814fd53c447e24e73dc02d4dce435f45a0dfe1fd` ｜ 69 个组件
+> uview-pro-x v1.0.0 ｜ 全库 API 指纹 `sha256:26c9826c9a9fc7f94b6b5742db3160002e095aa23ee6ddf2a15cd110f9b23d09` ｜ 70 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
@@ -87,6 +87,7 @@
 | [ux-safe-bottom](./ux-safe-bottom.md) | 这个适配，主要是针对IPhone X等一些底部带指示条的机型，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行底部安全区适配 | — | 0 |
 | [ux-section](./ux-section.md) | 该组件一般用于分类信息有很多，但是限于篇幅只能列出一部分，让用户通过"查看更多"获得更多信息的场景，实际效果见演示 | — | 1 |
 | [ux-status-bar](./ux-status-bar.md) | 用于沉浸式状态栏适配，自动撑起系统状态栏高度 | — | 0 |
+| [ux-sticky](./ux-sticky.md) | 内容滚到距顶部 offsetTop 时固定在顶部，回滚时复位 | — | 2 |
 
 ## 导航
 

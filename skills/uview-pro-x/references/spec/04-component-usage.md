@@ -169,12 +169,13 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `useDeviceInfo()` | → `{ device, platform, orientation }` 等 | 运行期只读的设备与系统标识 |
 | `useDebounce(delay?)` / `useThrottle(delay?)` | → `{ debounce(callback, debounceTime) }` / 节流同构 | 延迟执行包装 |
 | `useRect()` | → `{ getRect(el) }` | 获取节点尺寸/位置（配合模板 ref） |
+| `usePageScroll()` | → `{ scrollTop, onScroll, setScrollTop }`（页面滚动与容器滚动写同一个 ref） | 滚动距离（吸顶 / 返回顶部 / 滚动联动），页面 setup 调用；`onPageScroll((e) => setScrollTop(e.scrollTop))` 必须写在**页面脚本**里（小程序编译期要求），页面仍不判断平台 |
 
 ### 页面型 / 组件内部型
 
 | 类型 | 数量 | hook |
 |---|---|---|
-| 页面型 | 9 | `useTheme`、`useLocale`、`useCountDown`、`useSafeArea`、`useWindowInfo`、`useDeviceInfo`、`useDebounce`、`useThrottle`、`useRect` |
+| 页面型 | 10 | `useTheme`、`useLocale`、`useCountDown`、`useSafeArea`、`useWindowInfo`、`useDeviceInfo`、`usePageScroll`、`useDebounce`、`useThrottle`、`useRect` |
 | 配置型 | 1 | `useConfig`（`config/` 组，应用层通常不需要） |
 | 组件内部型 | 7 | `useBEM`、`useStyle`、`useNotice`、`useTouch`、`useChildren`、`useParent`、`usePopup` |
 
