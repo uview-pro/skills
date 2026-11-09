@@ -20,7 +20,7 @@
 | `icon-color` / `iconColor` | 图标的颜色 | `string` | `''` |
 | `icon-size` / `iconSize` | 图标的大小 | `string \| number` | `DEFAULT_ICON_SIZE` |
 | `font-size` / `fontSize` | 文字大小，单位px | `string \| number` | `DEFAULT_FONT_SIZE` |
-| `mode` | 选择预置的图标类型 | `EmptyMode`（`car`｜`page`｜`search`｜`address`｜`wifi`｜`order`｜`coupon`｜`favor`｜`permission`｜`history`｜`news`｜`message`｜`list`｜`data`） | `'data'` |
+| `mode` | 选择预置的图标类型 | `EmptyMode`（`cart`｜`page`｜`search`｜`address`｜`wifi`｜`order`｜`coupon`｜`favor`｜`permission`｜`history`｜`news`｜`message`｜`list`｜`data`） | `'data'` |
 | `img-width` / `imgWidth` | 图标宽度，单位px | `string \| number` | `60` |
 | `img-height` / `imgHeight` | 图标高度，单位px | `string \| number` | `'auto'` |
 | `show` | 是否显示组件 | `boolean` | `true` |
