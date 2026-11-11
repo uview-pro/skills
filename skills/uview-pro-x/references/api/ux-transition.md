@@ -2,7 +2,7 @@
 
 # ux-transition API
 
-> 来源：`components/ux-transition`（uview-pro-x v1.0.0）
+> 来源：`components/ux-transition`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:4d27d5d9cecd7d380b75a55a3df14bc9456f5597b29d3db1dcaebe53d30c9b8c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only transition`
 

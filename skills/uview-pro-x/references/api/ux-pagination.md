@@ -2,7 +2,7 @@
 
 # ux-pagination API
 
-> 来源：`components/ux-pagination`（uview-pro-x v1.0.0）
+> 来源：`components/ux-pagination`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:673af753a1442443cd937fe1c2915a216ebd16c8b9264acfb4ac03fb23076cc2`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only pagination`
 

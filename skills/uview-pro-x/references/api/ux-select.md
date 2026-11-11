@@ -2,7 +2,7 @@
 
 # ux-select API
 
-> 来源：`components/ux-select`（uview-pro-x v1.0.0）
+> 来源：`components/ux-select`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:b4629cc8a0197781d812f468ff1a4bbe1e3a337323eb798be0ec17bf24e8b631`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only select`
 

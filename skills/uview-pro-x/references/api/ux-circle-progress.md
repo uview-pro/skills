@@ -2,7 +2,7 @@
 
 # ux-circle-progress API
 
-> 来源：`components/ux-circle-progress`（uview-pro-x v1.0.0）
+> 来源：`components/ux-circle-progress`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:4f36502edae1e5dc1aa18c49b1edf2eed0583f55b2812e26b7b3689c5a250cd4`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only circle-progress`
 

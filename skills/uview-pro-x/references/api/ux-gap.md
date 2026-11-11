@@ -2,7 +2,7 @@
 
 # ux-gap API
 
-> 来源：`components/ux-gap`（uview-pro-x v1.0.0）
+> 来源：`components/ux-gap`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:1a32d2671314f278e02208f10516a000f104e0e7d37bec13308b75edf253edaa`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only gap`
 

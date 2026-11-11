@@ -2,7 +2,7 @@
 
 # ux-checkbox API
 
-> 来源：`components/ux-checkbox`（uview-pro-x v1.0.0）
+> 来源：`components/ux-checkbox`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:6378151c1f5c268f9dfa892832a58eaa8db1af9cd22df0c4b069c4a9a06e104d`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only checkbox`
 

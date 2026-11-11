@@ -1,6 +1,6 @@
 {
-  "libVersion": "1.0.0",
-  "libHash": "sha256:26c9826c9a9fc7f94b6b5742db3160002e095aa23ee6ddf2a15cd110f9b23d09",
+  "libVersion": "1.0.24",
+  "libHash": "sha256:735795471da59e76b47a1e8049db25a9712078054dc01ea4a15eead701d02128",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -4668,7 +4668,7 @@
           "typeResolved": {
             "kind": "literalUnion",
             "values": [
-              "car",
+              "cart",
               "page",
               "search",
               "address",
@@ -4770,7 +4770,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:60f746de850813392d61b8a4a3aaa254ffef6e80065601db013a3df563f4239e"
+      "apiHash": "sha256:37ece224aff79400c9c0839168e3f75c9c1f53e44448451c00e4015d9ea01a42"
     },
     "ux-form": {
       "name": "ux-form",
@@ -16624,7 +16624,7 @@
     "EmptyMode": {
       "kind": "literalUnion",
       "values": [
-        "car",
+        "cart",
         "page",
         "search",
         "address",

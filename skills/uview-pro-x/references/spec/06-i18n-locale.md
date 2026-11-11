@@ -68,7 +68,7 @@ export function createApp() {
 
 ## useLocale API
 
-```uts
+```ts
 import { useLocale } from '@/uni_modules/uview-pro-x'
 
 const { t, setLocale, currentLocale, locales } = useLocale()   // 全 key 形态
@@ -128,7 +128,7 @@ const { t: demo } = useLocale('demo')                          // 命名空间�
 
 ## 运行时切换（示例）
 
-```uts
+```ts
 import { useLocale } from '@/uni_modules/uview-pro-x'
 
 const { locales, currentLocale, setLocale } = useLocale()
@@ -154,7 +154,7 @@ function switchLocale(name: string): void {
 </ux-config-provider>
 ```
 
-```uts
+```ts
 const localeName = ref<string>('en-US')
 // 改动 localeName → 内部自动 setLocale，适合「设置页语言选项」这类状态驱动写法
 ```

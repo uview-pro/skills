@@ -2,7 +2,7 @@
 
 # ux-image API
 
-> 来源：`components/ux-image`（uview-pro-x v1.0.0）
+> 来源：`components/ux-image`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:119930825a08183aa9653775f1182a034a05b9a3ed9bfe61cb967442df6b4dc3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only image`
 

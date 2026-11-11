@@ -2,7 +2,7 @@
 
 # ux-modal API
 
-> 来源：`components/ux-modal`（uview-pro-x v1.0.0）
+> 来源：`components/ux-modal`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:9e429e94be2c145dcec4c5199438e0256e7ee9123616a2d1f19603d518cf0d53`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only modal`
 

@@ -86,7 +86,7 @@ App 端省略由 `<text>` 原生属性 `max-lines` 承担；H5 / 小程序端 `m
 
 ### 动态样式：运行时 `$u.color` 与工具
 
-```uts
+```ts
 const boxStyle = computed((): UTSJSONObject => {
     const style = new UTSJSONObject()
     style['background-color'] = $u.color.primary
@@ -114,7 +114,7 @@ const boxStyle = computed((): UTSJSONObject => {
 
 > 完整能力（主题注册四种形态、暗色板自动生成、跟随系统、App 原生联动、常见坑）见 [07-theme-dark-mode](07-theme-dark-mode.md)；本节为页面写法速览。
 
-```uts
+```ts
 import { useTheme } from '@/uni_modules/uview-pro-x'
 
 const { darkMode, setDarkMode, isInDarkMode, setTheme, themes } = useTheme()
@@ -125,7 +125,7 @@ setTheme('uviewpro')  // 切换到内置/自定义主题（列表见 themes）
 
 **页面根节点绑定 `cssVars` 后，页面中的 `$u-*` 样式才会随主题 / 暗黑切换联动**：
 
-```uts
+```ts
 const { cssVars } = useTheme()
 const cssVarsStyle = computed(() => $u.toStyle(cssVars.value))
 ```

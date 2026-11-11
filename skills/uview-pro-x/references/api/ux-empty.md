@@ -2,8 +2,8 @@
 
 # ux-empty API
 
-> 来源：`components/ux-empty`（uview-pro-x v1.0.0）
-> API 指纹：`sha256:60f746de850813392d61b8a4a3aaa254ffef6e80065601db013a3df563f4239e`
+> 来源：`components/ux-empty`（uview-pro-x v1.0.24）
+> API 指纹：`sha256:37ece224aff79400c9c0839168e3f75c9c1f53e44448451c00e4015d9ea01a42`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only empty`
 
 该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景，我们精心挑选了十几个场景的图标，方便您使用。

@@ -2,7 +2,7 @@
 
 # ux-count-down API
 
-> 来源：`components/ux-count-down`（uview-pro-x v1.0.0）
+> 来源：`components/ux-count-down`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:4a42e81ad705d4f5eba4b8923117036a780fd6b40409bc9759ce6bf2cd77079b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only count-down`
 

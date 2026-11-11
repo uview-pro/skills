@@ -2,7 +2,7 @@
 
 # ux-icon API
 
-> 来源：`components/ux-icon`（uview-pro-x v1.0.0）
+> 来源：`components/ux-icon`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:0747ab67b0f4784047dd3bbcd804091d10bf95018192a268a837c528e2ed9438`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only icon`
 

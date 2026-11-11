@@ -2,7 +2,7 @@
 
 # ux-input API
 
-> 来源：`components/ux-input`（uview-pro-x v1.0.0）
+> 来源：`components/ux-input`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:eb3bf6852930d224c7747af1904e011aa57017bbacdab5f3bd64506536fb7534`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only input`
 

@@ -43,7 +43,7 @@ UTS 是强类型语言（编译到 Kotlin/Swift/ArkTS），很多 JS 习惯写�
 
 对象的值来源不明时，用 `as` 断言收窄 + `??` 兜底：
 
-```uts
+```ts
 const raw = uni.getStorageSync('keyword')
 const keyword = (raw != null && typeof raw == 'string') ? raw as string : ''
 ```
@@ -65,7 +65,7 @@ const keyword = (raw != null && typeof raw == 'string') ? raw as string : ''
 
 v-for 子项内的动态绑定**不得读取「源数组自身」**（如 `list.length`、`list[index]` 反向依赖）。App 端 Vapor 引擎下会触发字段表越界原生崩溃。把这类派生数据**提前落到数据层**：
 
-```uts
+```ts
 type Item = { name: string; last: boolean }
 
 // ❌ 模板里 :class="{ 'is-last': index == list.length - 1 }"
@@ -80,7 +80,7 @@ const list = ref<Item[]>([
 
 页面生命周期（`onLoad` / `onShow` / `onReady` / `onHide` / `onUnload` / `onPageScroll` / `onReachBottom` / `onPullDownRefresh`）在 `<script setup>` 顶层直接调用，无需导入：
 
-```uts
+```ts
 onPageScroll((e) => {
     scrollTop.value = e.scrollTop
 })

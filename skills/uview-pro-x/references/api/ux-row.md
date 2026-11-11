@@ -2,7 +2,7 @@
 
 # ux-row API
 
-> 来源：`components/ux-row`（uview-pro-x v1.0.0）
+> 来源：`components/ux-row`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:c9a17240709109d1020fdd7ae78dcc8078f53a70ed01149dd7c53d0887edfd83`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only row`
 

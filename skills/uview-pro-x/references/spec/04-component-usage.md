@@ -4,7 +4,7 @@
 
 配置 easycom 后（见 `spec/01`），模板中直接使用 `<ux-*>`，无需 import 组件。组件库的 `$u`、hooks、类型从库入口导入：
 
-```uts
+```ts
 import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x'
 ```
 
@@ -96,6 +96,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-gap` | 间隔槽 |
 | `ux-safe-bottom` | 底部安全区占位 |
 | `ux-status-bar` | 状态栏占位 |
+| `ux-sticky` | 吸顶容器（滚到 `offset-top` 后固定） |
 
 ### 导航
 
@@ -144,6 +145,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `$u.hexToRgba(hex, opacity?)` | 十六进制转 rgba |
 | `$u.getThemeColor(type)` | 语义名 → 主题色值 |
 | `$u.isThemeColor(type)` | 判断是否语义色名（如 primary / success） |
+| `$u.registerIconFont(prefix, icons)` | 登记自定义图标字体码点表（接入见 `spec/10`） |
 | `$u.splitCssProperty(css)` | 拆分样式对象为「文字属性 / 容器属性」两部分（配合 text/view 分别绑定） |
 | `$u.formatNumber(num, decimals?, keepTrailingZeros?)` | 数字格式化（去/补尾零） |
 | `$u.formatName(name)` | 姓名打码 |
@@ -155,9 +157,11 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `$u.debugWarn(...)` | 调试输出（仅非生产环境生效） |
 | `$u.test.*` | 校验谓词：`empty` / `null` / `array` / `object` / `func` / `string` / `email` / `mobile` / `url` / `number` / `digits` / `idCard` / `amount` / `chinese` / `letter` / `enOrNum` / `contains` / `range` / `rangeLength` / `landline` / `code` / `image` / `video` / `gradientColor` |
 
+另有一个**不在 `$u` 上**的独立导出：`import { getNavbarHeight } from '@/uni_modules/uview-pro-x'`，`getNavbarHeight(platform)` 返回导航栏本体高度 px（不含状态栏；H5 / App 44，小程序 iOS 44 / 安卓 48），供自定义导航栏与吸顶避让同源取高。
+
 ## hooks 速查
 
-17 个 hooks 均从库入口导入。页面型（9 个）常用：
+19 个 hooks 均从库入口导入。页面型（11 个）常用：
 
 | hook | 签名与返回 | 用途 |
 |---|---|---|
@@ -170,12 +174,13 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `useDebounce(delay?)` / `useThrottle(delay?)` | → `{ debounce(callback, debounceTime) }` / 节流同构 | 延迟执行包装 |
 | `useRect()` | → `{ getRect(el) }` | 获取节点尺寸/位置（配合模板 ref） |
 | `usePageScroll()` | → `{ scrollTop, onScroll, setScrollTop }`（页面滚动与容器滚动写同一个 ref） | 滚动距离（吸顶 / 返回顶部 / 滚动联动），页面 setup 调用；`onPageScroll((e) => setScrollTop(e.scrollTop))` 必须写在**页面脚本**里（小程序编译期要求），页面仍不判断平台 |
+| `useRequest<T>(fetcher, options?)` | → `{ loading, data, error, run, cancel }`；fetcher 收到 `{ signal }` | 页面请求三态：竞态丢弃、重跑先取消、卸载自动取消（完整说明见 `spec/08`） |
 
 ### 页面型 / 组件内部型
 
 | 类型 | 数量 | hook |
 |---|---|---|
-| 页面型 | 10 | `useTheme`、`useLocale`、`useCountDown`、`useSafeArea`、`useWindowInfo`、`useDeviceInfo`、`usePageScroll`、`useDebounce`、`useThrottle`、`useRect` |
+| 页面型 | 11 | `useTheme`、`useLocale`、`useCountDown`、`useSafeArea`、`useWindowInfo`、`useDeviceInfo`、`usePageScroll`、`useDebounce`、`useThrottle`、`useRect`、`useRequest` |
 | 配置型 | 1 | `useConfig`（`config/` 组，应用层通常不需要） |
 | 组件内部型 | 7 | `useBEM`、`useStyle`、`useNotice`、`useTouch`、`useChildren`、`useParent`、`usePopup` |
 
@@ -190,6 +195,16 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `useChildren` | 父子组件注入与注册（provide / inject） | 需要组件层级，页面无对应上下文 |
 | `useParent` | 子组件获取父组件实例 | 同上 |
 | `usePopup` | 弹层开关 / 动画状态机 | 与 `ux-popup` 内部结构绑定 |
+
+## 网络请求与状态管理
+
+| 能力 | 入口 | 主题文件 |
+|---|---|---|
+| HTTP 请求（实例 / 拦截器 / 取消 / 上传下载 / useRequest） | `import { http, useRequest } from '@/uni_modules/uview-pro-x'` | [spec/08](08-request-http.md)，落地方案 [recipe-http-instance](../recipes/recipe-http-instance.md) |
+| 跨页面共享状态（pinia，uni-app x 内置 3.0.4） | `import { defineStore } from 'pinia'` | [spec/09](09-pinia-store.md) |
+
+- 接口请求统一走 `http.create` 派生出的业务单例，**不在页面建实例、不改 defaults**。
+- store 只存业务数据；接口三态（loading / data / error）交给 `useRequest`。
 
 ## 常用组合示例
 
@@ -235,7 +250,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 <ux-toast ref="toastRef" />
 ```
 
-```uts
+```ts
 const toastRef = ref<any>()
 
 function showSuccess(): void {

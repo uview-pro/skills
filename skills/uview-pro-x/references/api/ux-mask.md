@@ -2,7 +2,7 @@
 
 # ux-mask API
 
-> 来源：`components/ux-mask`（uview-pro-x v1.0.0）
+> 来源：`components/ux-mask`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:ba074d412dc8ac5a4ba42633d1f19cbfea231a0a7501e8f87820aeae30922ee9`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only mask`
 

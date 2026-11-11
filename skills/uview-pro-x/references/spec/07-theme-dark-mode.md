@@ -93,7 +93,7 @@ type Theme = {
 
 ## useTheme API
 
-```uts
+```ts
 import { useTheme } from '@/uni_modules/uview-pro-x'
 
 const { themes, currentTheme, darkMode, cssVars,
@@ -116,7 +116,7 @@ const { themes, currentTheme, darkMode, cssVars,
 
 ## 运行时切换（示例）
 
-```uts
+```ts
 const { themes, currentTheme, setTheme, setDarkMode } = useTheme()
 
 function onThemeTap(name: string): void {
@@ -150,7 +150,7 @@ function onModeTap(mode: DarkMode): void {
 
 主题 / 暗黑最终通过 CSS 变量（`--u-*` / `--u-type-*`）生效：`theme.scss` 在 `page` 层提供默认值，页面根节点绑定 `cssVars` 后由运行时注入覆盖：
 
-```uts
+```ts
 import { $u, useTheme } from '@/uni_modules/uview-pro-x'
 
 const { cssVars } = useTheme()

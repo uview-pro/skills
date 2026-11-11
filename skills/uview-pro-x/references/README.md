@@ -6,13 +6,15 @@
 
 ```
 安装接入 → 页面脚本（UTS）→ 页面样式（UCSS / 主题）→ 组件使用 → 三端兼容
-多语言国际化（spec/06）与多主题 / 暗黑模式（spec/07）为跨环节能力，按需查阅。
+多语言国际化（spec/06）与多主题 / 暗黑模式（spec/07）为跨环节能力，按需查阅；
+HTTP 请求（spec/08 + recipe-http-instance）与 pinia 状态管理（spec/09）为可选配套能力；
+自定义图标字体（spec/10）在项目自带 iconfont 时按需查阅。
 ```
 
 ## 权威源与优先级
 
 1. **组件库源码** `uni_modules/uview-pro-x`（install API / `$u` / hooks / 各组件属性定义）——**源码可读时**为最终事实源
-2. **API 快照卡片** `api/`（77 组件属性/取值/事件/v-model/插槽，随技能发货）——**源码不可读（加密）时即权威**
+2. **API 快照卡片** `api/`（70 个公开组件属性/取值/事件/v-model/插槽，随技能发货）——**源码不可读（加密）时即权威**
 3. 本手册 `spec/`（按主题拆分，一个主题一个文件）
 4. 本手册 `recipes/`（照抄写法）
 5. 经验
@@ -31,7 +33,7 @@
 
 | 文件 | 定位 |
 |---|---|
-| `api/README.md` | 组件 API 卡片索引（77 组件 → 卡片；含快照再生成与版本升级流程） |
+| `api/README.md` | 组件 API 卡片索引（70 个公开组件 → 卡片；含快照再生成与版本升级流程） |
 | `spec/01-install-and-setup.md` | 安装与接入：插件市场导入、easycom、main.uts 注册、样式接入、install 选项全表 |
 | `spec/02-page-script-uts.md` | 页面脚本：组合式写法、UTS 类型陷阱 ❌/✅、模板绑定规则、页面生命周期 |
 | `spec/03-page-style-ucss.md` | 页面样式：UCSS 红线、布局陷阱、文本省略双轨、主题变量表、暗黑模式 |
@@ -39,9 +41,13 @@
 | `spec/05-cross-platform.md` | 条件编译宏（权威清单）、三端红线表、症状→修法速查 |
 | `spec/06-i18n-locale.md` | 多语言国际化：语言包注册（传入即注册全集）、useLocale API、默认语言优先级、16 个组件内置文案联动 |
 | `spec/07-theme-dark-mode.md` | 多主题与暗黑模式：主题注册四形态、ThemeColor token、暗色板自动生成、useTheme API、cssVars 页面联动 |
+| `spec/08-request-http.md` | HTTP 请求库：http 实例模型、拦截器链、错误与取消、上传下载、useRequest 三态与红线 |
+| `spec/09-pinia-store.md` | pinia 状态管理：uni-app x 内置 3.0.4、main.uts 挂载、setup store、storeToRefs、持久化与红线 |
+| `spec/10-custom-icon.md` | 自定义图标字体：static 字体 + App.uvue @font-face + registerIconFont 登记码点表、码点直传、三端排查 |
 | `recipes/README.md` | 配方索引与 recipe-first 规则 |
 | `recipes/recipe-page-scaffold.md` | 最小页面脚手架（注册 + 骨架 + 主题绑定） |
 | `recipes/recipe-page-scroll.md` | 三端滚动监听与返回顶部绑定 |
+| `recipes/recipe-http-instance.md` | 业务请求实例：api/request.uts + 拦截器 + 页面 useRequest |
 
 ## 自包含声明
 

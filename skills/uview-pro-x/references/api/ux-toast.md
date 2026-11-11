@@ -2,7 +2,7 @@
 
 # ux-toast API
 
-> 来源：`components/ux-toast`（uview-pro-x v1.0.0）
+> 来源：`components/ux-toast`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:132dd4413c406e9a33ce03f17cb22e6ddff77e2ad1af929e4c1e1cdcc166bd64`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only toast`
 

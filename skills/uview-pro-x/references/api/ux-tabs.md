@@ -2,7 +2,7 @@
 
 # ux-tabs API
 
-> 来源：`components/ux-tabs`（uview-pro-x v1.0.0）
+> 来源：`components/ux-tabs`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:85cd9c912033a985faaaf6ef8a538c5fc11634ec070bda0ad35b571bbd7a17a7`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabs`
 

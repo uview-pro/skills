@@ -2,7 +2,7 @@
 
 # ux-number-box API
 
-> 来源：`components/ux-number-box`（uview-pro-x v1.0.0）
+> 来源：`components/ux-number-box`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:adf867dff71a20cdf2a6b3d2ea460cfa6b0b875965ef5782901e58b31c1e0634`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only number-box`
 

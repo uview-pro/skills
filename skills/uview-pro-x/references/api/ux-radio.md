@@ -2,7 +2,7 @@
 
 # ux-radio API
 
-> 来源：`components/ux-radio`（uview-pro-x v1.0.0）
+> 来源：`components/ux-radio`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:0b713654effd399038d87f78e7560d252eecece36bff818fc52690703241dfc3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only radio`
 

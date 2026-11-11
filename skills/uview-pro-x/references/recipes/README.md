@@ -9,6 +9,7 @@
 |---|---|---|
 | `recipe-page-scaffold.md` | 新页面、骨架、脚手架、路由注册、主题联动 | 最小业务页面：注册路由 + 根节点主题绑定 + 内容 |
 | `recipe-page-scroll.md` | 滚动、scrollTop、返回顶部、ux-back-top、三端滚动监听 | App 用 scroll-view / H5+小程序用 onPageScroll |
+| `recipe-http-instance.md` | 接口、http、request、拦截器、token、useRequest、上传下载 | 业务请求单例 api/request.uts + 拦截器 + 页面三态 |
 
 ## 新增配方约定
 

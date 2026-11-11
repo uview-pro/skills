@@ -2,7 +2,7 @@
 
 # ux-section API
 
-> 来源：`components/ux-section`（uview-pro-x v1.0.0）
+> 来源：`components/ux-section`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:fbef7e39168eb74d6862c567fdde319a2cc607def2632e9e4fc22d1f62243da9`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only section`
 

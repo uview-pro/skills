@@ -2,7 +2,7 @@
 
 # ux-slider API
 
-> 来源：`components/ux-slider`（uview-pro-x v1.0.0）
+> 来源：`components/ux-slider`（uview-pro-x v1.0.24）
 > API 指纹：`sha256:35a72f4300321eada253001aaa49e012c5d72613ed8a07428dee16b94788db33`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only slider`
 
