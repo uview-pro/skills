@@ -1,6 +1,6 @@
 {
   "libVersion": "1.0.24",
-  "libHash": "sha256:735795471da59e76b47a1e8049db25a9712078054dc01ea4a15eead701d02128",
+  "libHash": "sha256:23c43ad517664acb1b978ce849fb450c2937f1a29feb8a645a22a727e2e890d2",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -7412,6 +7412,20 @@
           "descFrom": "types"
         },
         {
+          "name": "text",
+          "kebab": "text",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "链接文字（未传入默认插槽内容时使用）",
+          "descFrom": "types"
+        },
+        {
           "name": "mpTips",
           "kebab": "mp-tips",
           "type": "string",
@@ -7473,7 +7487,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:ec08d86e7525f3163919fd6cbac043a9befbf16c61b5b195600699bfe55baca6"
+      "apiHash": "sha256:239dba22a97bdb4fbacebc95ce9a9d6186968e0cf84c1243498591d04e4a736f"
     },
     "ux-loading": {
       "name": "ux-loading",
@@ -17120,7 +17134,7 @@
   "errors": [],
   "stats": {
     "components": 70,
-    "props": 968,
+    "props": 969,
     "events": 126,
     "models": 29,
     "slots": 67,

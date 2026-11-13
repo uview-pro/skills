@@ -130,6 +130,8 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 |---|---|
 | `$u.color` | 当前主题色（响应式，随主题/暗黑切换更新） |
 | `$u.zIndex` | 层级常量（浮层 z-index 参考值） |
+| `$u.config` | 当前配置（reactive：版本 / 语义色名 / 默认主题 / 默认语言 / 组件默认属性覆盖），由 install 选项写入 |
+| `$u.setConfig(partial)` | 原位合并配置（空值不覆盖；install 内部调用，应用侧改配置优先走 install 选项） |
 
 ### 常用函数
 

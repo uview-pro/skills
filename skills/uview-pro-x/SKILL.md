@@ -48,6 +48,7 @@ description: "UView Pro X 页面编写规范（消费侧自包含技能）——
 | `scripts/gen-api-cards.mjs` | API 快照/卡片生成器（组件库源码可读时重生成；生成物随技能发货） |
 | `scripts/update-api.mjs` | 一条命令更新快照与卡片：重生成 → 一致性核对 → 语料回归（库维护者用，消费侧不需要） |
 | `scripts/verify-ux-usage.mjs` | 页面写法校验器（默认读内置快照，写后 0 违规门禁） |
+| `scripts/verify-skill-docs.mjs` | 文档结构门禁（链接 / 索引登记双向 / 围栏语言 / 名单计数一致），spec、recipes 改动后跑 |
 
 ## 工作流
 

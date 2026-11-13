@@ -69,7 +69,7 @@ flex: 1;
 | 10 | 定时器 | `let t` 无类型；销毁不清理 | `let t: number \| null = null`；`onUnload` 中 `clearTimeout(t!)` |
 | 11 | watch getter | `watch(() => x.value, ...)` | `watch((): boolean => x.value, (v: boolean) => ...)`（显式类型） |
 | 12 | 多行省略 | 样式写 `lines: 2` | `<text :max-lines="2">` + `#ifndef APP` 写 `-webkit-line-clamp`（见 `spec/03`） |
-| 13 | 选择器 | 标签 / ID / 属性 / 通配选择器 | 仅 class 选择器（App 端 UCSS 限制） |
+| 13 | 选择器 | 标签 / ID / 属性 / 通配选择器；后代 / 子代 / 兄弟组合（`.a .b`、`.a > .b`） | 仅**单个 class** 选择器（App 端 UCSS 限制，组合选择器编译期报 `Invalid selector`）；状态样式改同节点多 class |
 | 14 | 对象字面量 | 内联类型 `let u: { name: string }` | `type User = {...}` 后再用 |
 | 15 | 双向绑定 | `v-model:model-value="x"` | 默认模型 `v-model="x"`；命名模型 `v-model:show="x"` |
 | 16 | 动态属性 | `title="{{ x }}"` | `:title="x"` |

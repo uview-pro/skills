@@ -25,7 +25,7 @@
 
 | 红线 | 说明 |
 |---|---|
-| 选择器只用 class | App 端（UCSS）仅支持 **class 选择器**与 `page` 选择器；不要用标签选择器、ID、属性选择器、通配符、伪元素。后代 class 选择器（`.a .b`）可用 |
+| 选择器只用 class | App 端（UCSS）仅支持 **单个 class 选择器**与 `page` 选择器；不要用标签选择器、ID、属性选择器、通配符、伪元素。**组合选择器一律非法**（后代 `.a .b`、子代 `.a > .b`、兄弟 `.a + .b` / `.a ~ .b`），编译期报 `[plugin:uni:app-uvue-css] Invalid selector`；改法是给同一节点挂多个 class（静态 `class="a b"`、条件 `:class="ok ? 'a b' : 'a'"`），不要靠祖先限定 |
 | `display` 只用 flex / none | App 端不支持 `block` / `inline` / `inline-block`；横向排列用默认 flex（row），纵向须显式 `flex-direction: column` |
 | 文字属性只放 `<text>` | `font-size` / `color` / `font-weight` / `line-height` 只有写在 `<text>` 上才生效；写在 `<view>` 上不会被内部文字继承（不是「无效告警」而是确实不生效） |
 | 单位 | `px` / `rpx` / `%` 均可，等比布局推荐 `rpx`；**`vh` / `vw` 不要用于 App 端**（用 `flex: 1` 或 `100%` 替代） |

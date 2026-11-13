@@ -86,9 +86,9 @@ export function createApp() {
 
 | 形态 | 示例 | 效果 |
 |---|---|---|
-| 单主题覆盖 | `{ primary: '#7c3aed' }` | 只把指定 token 合并进内置官方蓝 |
-| 多主题数组 | `[{ name: 'purple', label: '紫', color: { primary: '#7c3aed' } }]` | 与内置主题合并（同名覆盖），运行时可切换 |
-| 多主题 + 默认配置 | `{ themes: [...], defaultTheme: 'purple', defaultDarkMode: 'auto', isForce: true }` | 追加默认主题与默认暗黑模式 |
+| 单主题覆盖 | `{ primary: '#7c3aed' }` | 只把指定 token 合并进内置官方蓝；**不能带 `darkColor` / `css` / `darkCss`**，需要时改用单元素数组（见 `spec/07`） |
+| 多主题数组 | `[{ name: 'purple', label: '紫', color: { primary: '#7c3aed' } }]` | 传入的非空数组**就是最终主题列表**，内置主题不再自动追加，只作同名项的基线；运行时可切换 |
+| 多主题 + 默认配置 | `{ themes: [...], defaultTheme: 'purple', defaultDarkMode: 'auto', isForce: true }` | 设定默认主题 / 默认暗黑模式 / 是否忽略已保存选择（暗黑未配时默认 `'light'`） |
 
 `Theme` 结构：`{ name, label?, description?, color, darkColor?, css?, darkCss? }`；`darkColor` 不传时按亮色自动生成暗色变体（结构色直接取暗色基础值，语义色按比例混合）。
 
