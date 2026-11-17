@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `height` | 导航栏高度，单位 px，非 px | `string \| number` | `''` |
+| `height` | 导航栏高度，单位 px，非 rpx | `string \| number` | `''` |
 | `back-icon-color` / `backIconColor` | 返回箭头的颜色 | `string` | `''` |
 | `back-icon-name` / `backIconName` | 左边返回的图标 | `string` | `'nav-back'` |
 | `back-icon-size` / `backIconSize` | 左边返回图标的大小，px | `string \| number` | `'18'` |

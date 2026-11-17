@@ -3,7 +3,7 @@
 # ux-button API
 
 > 来源：`components/ux-button`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:f5d2a442253549fd52247d6e7fd7d7d9c086068a9f76d33fbd1a34e963609b05`
+> API 指纹：`sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only button`
 
 以 uni-app `button` 原生组件为基础进行二次封装，内置多套主题色并可选水波纹点击效果；纯文字与富内容分别由默认插槽与 content 插槽承载（见 @slot），App 端文字着色已显式处理
@@ -15,6 +15,10 @@
 | `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `text` | 按钮文本：纯文字用 text 传入或写默认插槽均可，组件自动包带色 text 并着色；富内容（图标+文字混排、富样式）用 content 插槽，插槽内文字需自行设 color（App 端样式不继承） | `string` | `''` |
+| `font-size` / `fontSize` | 按钮文字大小，单位px，不传时按 size 档位自动匹配（large 18 / default 15 / small 12）；只改字号，不改按钮高度 | `string \| number` | `''` |
+| `bold` | 按钮文字是否加粗（含 loading 文案，默认 false） | `boolean` | `false` |
+| `color` | 按钮文字颜色，不传时跟随 type/plain 派生；图标与 loading 圆环默认跟随本项；按压时文字回退 type 状态色（自传 hover-class 时按压文字色交给该样式类） | `string` | `''` |
+| `height` | 按钮高度，单位px，不传时按 size 档位（large 50 / default 40 / small 30）；文字行高同步跟随，shape=circle 且非 block 时宽度同步为同值以保持正圆 | `string \| number` | `''` |
 | `icon` | 图标名称，见 ux-icon 图标集，loading 时自动隐藏 | `string` | `''` |
 | `icon-size` / `iconSize` | 图标大小，单位px，不传时按按钮尺寸自动匹配 | `string \| number` | `''` |
 | `icon-color` / `iconColor` | 图标颜色，不传时跟随按钮文字色 | `string` | `''` |

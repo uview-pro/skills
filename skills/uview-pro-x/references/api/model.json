@@ -1,6 +1,6 @@
 {
   "libVersion": "1.0.24",
-  "libHash": "sha256:23c43ad517664acb1b978ce849fb450c2937f1a29feb8a645a22a727e2e890d2",
+  "libHash": "sha256:d6bbae2da327299e33d141d5ac378ad18099dd8d31620e6a3badc4d6533bef18",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -1262,6 +1262,62 @@
           "descFrom": "types"
         },
         {
+          "name": "fontSize",
+          "kebab": "font-size",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "按钮文字大小，单位px，不传时按 size 档位自动匹配（large 18 / default 15 / small 12）；只改字号，不改按钮高度",
+          "descFrom": "types"
+        },
+        {
+          "name": "bold",
+          "kebab": "bold",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "false",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "按钮文字是否加粗（含 loading 文案，默认 false）",
+          "descFrom": "types"
+        },
+        {
+          "name": "color",
+          "kebab": "color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "按钮文字颜色，不传时跟随 type/plain 派生；图标与 loading 圆环默认跟随本项；按压时文字回退 type 状态色（自传 hover-class 时按压文字色交给该样式类）",
+          "descFrom": "types"
+        },
+        {
+          "name": "height",
+          "kebab": "height",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "按钮高度，单位px，不传时按 size 档位（large 50 / default 40 / small 30）；文字行高同步跟随，shape=circle 且非 block 时宽度同步为同值以保持正圆",
+          "descFrom": "types"
+        },
+        {
           "name": "icon",
           "kebab": "icon",
           "type": "string",
@@ -1837,7 +1893,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:f5d2a442253549fd52247d6e7fd7d7d9c086068a9f76d33fbd1a34e963609b05"
+      "apiHash": "sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40"
     },
     "ux-card": {
       "name": "ux-card",
@@ -8386,7 +8442,7 @@
           "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "导航栏高度，单位 px，非 px",
+          "desc": "导航栏高度，单位 px，非 rpx",
           "descFrom": "types"
         },
         {
@@ -17134,7 +17190,7 @@
   "errors": [],
   "stats": {
     "components": 70,
-    "props": 969,
+    "props": 973,
     "events": 126,
     "models": 29,
     "slots": 67,
