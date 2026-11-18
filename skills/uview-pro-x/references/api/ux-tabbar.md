@@ -2,8 +2,8 @@
 
 # ux-tabbar API
 
-> 来源：`components/ux-tabbar`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:884d42043f083ca34bf3603092692e655f5e9584154c65c397d60d9f5752f5a6`
+> 来源：`components/ux-tabbar`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:5086e87a610cf8c5b69b45d053e261b3ba21d4d22dbd0e40cd107a2c7e57410a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabbar`
 
 底部导航栏
@@ -30,6 +30,14 @@
 | `text-size` / `textSize` | 文字大小 | `string` | `DEFAULT_TEXT_SIZE` |
 | `custom-class` / `customClass` | 自定义类名 | `string` | `''` |
 | `custom-style` / `customStyle` | 自定义样式 | `string` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `TabbarItem` | `{ iconPath?: string; selectedIconPath?: string; text?: string; pagePath?: string; midButton?: boolean; customIcon?: boolean \| string; count?: number; isDot?: boolean; width?: string \| number; iconSize?: string \| number; textSize?: string \| number; gap?: string \| number; }` |
 
 ## 双向绑定（v-model）
 

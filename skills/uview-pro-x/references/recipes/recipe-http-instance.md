@@ -1,4 +1,4 @@
-# 配方：业务请求实例（api/request.uts + 拦截器 + 页面三态）
+# 配方：业务请求实例（api/request.ts + 拦截器 + 页面三态）
 
 > 适用：任何需要调后端接口的 uni-app x 页面。
 > 规则依据 [spec/08](../spec/08-request-http.md)；本配方给「照抄即可」的完整落法。
@@ -7,9 +7,9 @@
 
 ```
 api/
-├── request.uts        业务实例：defaults + 导出（全站唯一）
-├── interceptors.uts   可复用拦截器：token 注入 + 响应解包 + 错误处理
-└── user.uts           业务接口函数（可选，页面不拼 URL）
+├── request.ts        业务实例：defaults + 导出（全站唯一）
+├── interceptors.ts   可复用拦截器：token 注入 + 响应解包 + 错误处理
+└── user.ts           业务接口函数（可选，页面不拼 URL）
 pages/
 └── user/index.uvue    页面：import request / useRequest
 ```
@@ -17,12 +17,12 @@ pages/
 ## 1. 业务实例（模块级单例）
 
 ```ts
-// api/request.uts
+// api/request.ts
 import { http } from '@/uni_modules/uview-pro-x';
 import { setupInterceptors } from './interceptors';
 
 /** 业务默认请求头：模块级只建一次 */
-const defaultHeaders = new UTSJSONObject();
+const defaultHeaders = new JsonObject();
 defaultHeaders['content-type'] = 'application/json';
 defaultHeaders['x-client'] = 'uni-app-x';
 
@@ -50,7 +50,7 @@ export { request };
 ## 2. 拦截器（token + 解包 + 错误）
 
 ```ts
-// api/interceptors.uts
+// api/interceptors.ts
 import type { HttpInstance, ResolvedHttpConfig, HttpResponse, HttpError } from '@/uni_modules/uview-pro-x';
 
 export function setupInterceptors(instance: HttpInstance): void {
@@ -83,7 +83,7 @@ export function setupInterceptors(instance: HttpInstance): void {
 ## 3. 接口函数（可选但推荐）
 
 ```ts
-// api/user.uts
+// api/user.ts
 import { request } from './request';
 
 export type User = {
@@ -112,7 +112,7 @@ export function fetchUser(id: number): Promise<any> {
     </view>
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 import { request } from '@/api/request';
 import type { User } from '@/api/user';
 import { useRequest } from '@/uni_modules/uview-pro-x';
@@ -162,7 +162,7 @@ request.get('/user/1').then((data: any) => {
 | 长期存在的第二域名 | `request.create({ baseURL })` 派生实例 | 是 | 否，需重新注册拦截器 |
 
 ```ts
-// api/cdn.uts
+// api/cdn.ts
 import { request } from './request';
 import { setupInterceptors } from './interceptors';
 

@@ -2,8 +2,8 @@
 
 # ux-image API
 
-> 来源：`components/ux-image`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:119930825a08183aa9653775f1182a034a05b9a3ed9bfe61cb967442df6b4dc3`
+> 来源：`components/ux-image`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:46b9ed564da20e31f213b8cc18fa283adde55853e23825960cd68546f6f2a984`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only image`
 
 此组件为uni-app的image组件的加强版，在继承了原有功能外，还支持淡入动画、加载中、加载失败提示、圆角值和形状等。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `src` | 图片地址 | `string` | `''` |
 | `mode` | 裁剪模式 | `ImgMode`（`aspectFit`｜`aspectFill`｜`widthFix`｜`top`｜`bottom`｜`center`｜`scaleToFill`） | `'aspectFit'` |
@@ -30,6 +30,16 @@
 | `webp` | 只支持网络资源，只对微信小程序有效（默认 false） | `boolean` | `false` |
 | `duration` | 搭配fade参数的过渡时间，单位ms（默认250） | `string \| number` | `500` |
 | `bg-color` / `bgColor` | 背景颜色 | `string` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `ImageShape` | `'square' \| 'circle'` |
+| `ImgMode` | `'aspectFit' \| 'aspectFill' \| 'widthFix' \| 'top' \| 'bottom' \| 'center' \| 'scaleToFill'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

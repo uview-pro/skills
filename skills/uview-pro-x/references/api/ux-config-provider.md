@@ -2,8 +2,8 @@
 
 # ux-config-provider API
 
-> 来源：`components/ux-config-provider`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:899ad17eb969619797a46392ea73d46d2afc35e5ada6a97b472736211a63d1f3`
+> 来源：`components/ux-config-provider`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:a42b83d341de62e82fc31b4574ef9fdc6e99731e2969553e88daccf74b536511`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only config-provider`
 
 配置注入组件：初始化并响应主题、暗黑模式、国际化的切换，并把主题 CSS 变量下发到根节点

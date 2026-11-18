@@ -1,19 +1,19 @@
 ---
 name: "uview-pro-x"
-description: "UView Pro X 页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x 组件库编写页面：安装接入、页面脚本 UTS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x 编写或修改页面、规范 UTS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
+description: "UView Pro X 2.0（TypeScript，需 HBuilderX 5.31+）页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x 组件库编写页面：安装接入、页面脚本 TS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x 编写或修改页面、规范 TS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
 ---
 
 # UView Pro X 页面编写规范（uview-pro-x）
 
 > **本技能是「使用 uview-pro-x 组件库编写页面」的唯一权威入口。** 规范正文唯一权威源在 `references/`：
-> `references/README.md`（手册索引）→ `references/spec/`（按主题拆分：接入 / UTS / UCSS / 组件 / 三端）+ `references/recipes/`（照抄写法）。
+> `references/README.md`（手册索引）→ `references/spec/`（按主题拆分：接入 / TS / UCSS / 组件 / 三端）+ `references/recipes/`（照抄写法）。
 > 本技能面向**消费者**（使用组件库的项目），指导「页面怎么写」；不涉及组件库自身实现与开发流程。
 
 ## 适用场景
 
-- 在 uni-app x 项目（Vue3 + UTS，`.uvue` 页面）中使用 `ux-*` 组件编写业务页面
+- 在 uni-app x 项目（Vue3 + TS，`.uvue` 页面）中使用 `ux-*` 组件编写业务页面
 - 需要接口请求（`http` / `useRequest`）或跨页共享状态（pinia）的页面
-- 需要 UTS/UCSS 写法规避高频陷阱、三端（App / H5 / 小程序）兼容、不出现运行期报错
+- 需要 TS/UCSS 写法规避高频陷阱、三端（App / H5 / 小程序）兼容、不出现运行期报错
 - 不适用：修改组件库源码本身（那是另一个技能域的职责）
 
 ## 强制机制（动手前必读）
@@ -24,15 +24,15 @@ description: "UView Pro X 页面编写规范（消费侧自包含技能）——
 4. **取色走主题**：所有颜色取自 `$u-*` SCSS 变量或 `$u.color.*`，不硬编码色值（暗黑模式与换肤才能生效）。
 5. **接口与状态收敛**：接口请求统一走 `http.create` 派生的业务单例（`recipe-http-instance`），页面不建实例、不改 defaults、不在页面注册拦截器；跨页共享状态用 pinia store（`spec/09`），接口三态用 `useRequest`（`spec/08`）。
 6. **三端红线自查**：收尾时逐条核对 `references/spec/05-cross-platform.md` 的红线表与症状速查表。
-7. **写前查卡片**：写任何 `<ux-*>` 前先查 `references/api/ux-<name>.md` 卡片（属性/取值/事件/v-model/插槽一页俱全，**随技能发货、不依赖项目内组件库源码**，源码加密的项目同样可用）；卡上没有的写法不猜。
+7. **写前查卡片**：写任何 `<ux-*>` 前先查 `references/api/ux-<name>.md` 卡片（属性/取值/事件/v-model/插槽/类型定义一页俱全，**随技能发货、不依赖项目内组件库源码**，源码加密的项目同样可用）；卡上没有的写法不猜。
 8. **写后必校验**：页面写完/改动后必须运行 `node scripts/verify-ux-usage.mjs <页面文件或目录>`，**0 违规才算完成**；报 error 逐条改到 0 再交付（默认用技能内置 API 快照；组件库源码可读的项目可加 `--lib` 用实装库比对）。
 
 ## references 结构索引
 
 | 文件 | 职责 |
 |---|---|
-| `references/spec/01-install-and-setup.md` | 安装、easycom、main.uts 注册、样式接入、install 选项全表 |
-| `references/spec/02-page-script-uts.md` | 页面脚本 UTS：组合式写法、类型陷阱 ❌/✅、模板绑定规则、生命周期 |
+| `references/spec/01-install-and-setup.md` | 安装、easycom、main.ts 注册、样式接入、install 选项全表 |
+| `references/spec/02-page-script-ts.md` | 页面脚本 TS：组合式写法、类型陷阱 ❌/✅、模板绑定规则、生命周期 |
 | `references/spec/03-page-style-ucss.md` | 页面样式 UCSS：选择器/属性红线、布局陷阱、文本省略双轨、主题取色、暗黑模式 |
 | `references/spec/04-component-usage.md` | 组件使用约定、全量组件速查表、$u 工具与 hooks 速查、常用示例 |
 | `references/spec/05-cross-platform.md` | 条件编译宏清单（权威）、三端红线、症状→修法速查 |
@@ -43,7 +43,7 @@ description: "UView Pro X 页面编写规范（消费侧自包含技能）——
 | `references/spec/10-custom-icon.md` | 自定义图标字体：static 放 ttf + App.uvue @font-face + `$u.registerIconFont` 三步接入、码点直传、三端排查 |
 | `references/recipes/recipe-page-scaffold.md` | 消费者视角最小页面（路由注册 + 骨架 + 主题绑定） |
 | `references/recipes/recipe-page-scroll.md` | 三端滚动监听与返回顶部绑定 |
-| `references/recipes/recipe-http-instance.md` | 业务请求实例：`api/request.uts` + 拦截器 + 页面 `useRequest` |
+| `references/recipes/recipe-http-instance.md` | 业务请求实例：`api/request.ts` + 拦截器 + 页面 `useRequest` |
 | `references/api/README.md` | 组件 API 卡片索引（70 个公开组件 → 卡片；含快照再生成与版本升级流程） |
 | `scripts/gen-api-cards.mjs` | API 快照/卡片生成器（组件库源码可读时重生成；生成物随技能发货） |
 | `scripts/update-api.mjs` | 一条命令更新快照与卡片：重生成 → 一致性核对 → 语料回归（库维护者用，消费侧不需要） |
@@ -54,7 +54,7 @@ description: "UView Pro X 页面编写规范（消费侧自包含技能）——
 
 1. 读 `spec/01` 完成接入（安装 / easycom / 注册 / 样式）
 2. 参照 `recipe-page-scaffold` 起页面骨架
-3. 写每个 `<ux-*>` 前查 `references/api/ux-<name>.md` 卡片，核对属性/取值/事件/v-model/插槽
+3. 写每个 `<ux-*>` 前查 `references/api/ux-<name>.md` 卡片，核对属性/取值/事件/v-model/插槽/类型定义
 4. 按 `spec/04` 选组件与工具、按 `spec/02` 写脚本、按 `spec/03` 写样式
 5. 涉及接口请求 / 跨页共享状态时：按 `spec/08` + `recipe-http-instance` 建业务实例，按 `spec/09` 建 store
 6. 收尾按 `spec/05` 红线与症状表自查

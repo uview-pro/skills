@@ -2,7 +2,7 @@
 
 **适用场景**：页面需要获取滚动距离（吸顶显隐、返回顶部按钮、滚动联动动画等）。
 
-**核心事实**：`onPageScroll` 页面生命周期在**页面层**三端都可用（App 端同样触发），但在**自定义组件内不触发**；更关键的是**小程序端必须在页面脚本里写出 `onPageScroll(...)` 这次调用**——小程序编译期靠它给页面挂滚动钩子，写在 `.uts` / hook / 组件里都不会被挂载，滚动距离会一直是 0。如果页面内容被包进 `<scroll-view>` 且该容器自身在滚（有高度约束），则只有容器的 `@scroll` 会触发。两条通道用 `usePageScroll()` 接，注册那一行留在页面脚本里，页面里依然不判断平台。
+**核心事实**：`onPageScroll` 页面生命周期在**页面层**三端都可用（App 端同样触发），但在**自定义组件内不触发**；更关键的是**小程序端必须在页面脚本里写出 `onPageScroll(...)` 这次调用**——小程序编译期靠它给页面挂滚动钩子，写在 `.ts` / hook / 组件里都不会被挂载，滚动距离会一直是 0。如果页面内容被包进 `<scroll-view>` 且该容器自身在滚（有高度约束），则只有容器的 `@scroll` 会触发。两条通道用 `usePageScroll()` 接，注册那一行留在页面脚本里，页面里依然不判断平台。
 
 ## 完整写法
 
@@ -37,7 +37,7 @@
     <!-- #endif -->
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 import { $u, useTheme, usePageScroll } from '@/uni_modules/uview-pro-x'
 
 const { cssVars } = useTheme()

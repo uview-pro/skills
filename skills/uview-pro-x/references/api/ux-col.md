@@ -2,8 +2,8 @@
 
 # ux-col API
 
-> 来源：`components/ux-col`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:6f80cd01c61b33ff40dfe68cbe82bbccd3b76e6381c5e94aa91641c2be890d19`
+> 来源：`components/ux-col`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:a4cb7dfd92e17b52dee7646a2fe7005d405232a4040847b50d96ce1707650ecc`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only col`
 
 与 ux-row 配套的栅格列：一行按总 12 栏均分，span 决定所占栏数、offset 决定左偏移；分栏间隔由父级 ux-row 的 gutter 下发，本组件在左右各留一半，脱离 ux-row 使用时无间隔
@@ -12,13 +12,21 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `span` | 栅格占据的列数，总 12 等分 | `number \| string` | `12` |
 | `offset` | 分栏左边偏移，同 span 计算方式（总 12 栏） | `number \| string` | `0` |
 | `justify` | 水平排列方式 | `string` | `'start'` |
 | `align` | 垂直排列方式 | `string` | `'center'` |
 | `text-align` / `textAlign` | 文字水平对齐方式 | `string` | `'left'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

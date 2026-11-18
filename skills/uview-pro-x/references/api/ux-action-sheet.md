@@ -2,8 +2,8 @@
 
 # ux-action-sheet API
 
-> 来源：`components/ux-action-sheet`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:dda801ffe9c0a29e48978e1349599dbc6869a66f8e2b5e433187cdd2d6e27d3a`
+> 来源：`components/ux-action-sheet`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:444f0872d8fe38d3f21dfc54c5820ceda88015ff006fbfb9103b4e0961295ded`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only action-sheet`
 
 由 ux-popup 从底部弹出的操作菜单：tips 提示 + list 菜单项 + 取消按钮的组合，list 为空时可改用默认插槽自定义内容；点击菜单项默认自动收起（async-close 为 true 时保持展开，由调用方关闭）
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `mask-close-able` / `maskCloseAble` | 是否允许点击遮罩关闭，默认 true | `boolean` | `true` |
 | `list` | 菜单项数组，每项 { text, subText?, color?, fontSize?, disabled? }，默认 [] | `ActionSheetItem[]` | - |
@@ -26,6 +26,16 @@
 | `color` | 菜单项文字颜色，不传时取全局主文字色 | `string` | `''` |
 | `font-size` / `fontSize` | 菜单项文字大小，单位px，默认 16px | `string \| number` | `'16px'` |
 | `async-close` / `asyncClose` | 是否异步关闭，为 true 时点击菜单项后不自动收起，默认 false | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `ActionSheetItem` | `{ text: string; subText?: string; color?: string; fontSize?: string \| number; disabled?: boolean; }` |
+| `ActionSheetTips` | `{ text: string; color?: string; fontSize?: string \| number; }` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

@@ -2,8 +2,8 @@
 
 # ux-keyboard API
 
-> 来源：`components/ux-keyboard`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:d5921c3bf5663365fa218d4f430ce4694431124515c77e376ed0ce49801142f7`
+> 来源：`components/ux-keyboard`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:d9ef064683d2d3ac3a4b7a2603cfba24e5f97ccdef636ef24103d9019098e916`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only keyboard`
 
 自定义键盘面板，按 mode 内置数字 / 身份证 / 车牌号三种键盘，以底部弹层承载；顶部工具条提供取消与确认，支持点击遮罩关闭、底部安全区适配与工具条文案定制
@@ -28,7 +28,15 @@
 | `cancel-text` / `cancelText` | 取消按钮的文字 | `string` | `''` |
 | `confirm-text` / `confirmText` | 确认按钮的文字 | `string` | `''` |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

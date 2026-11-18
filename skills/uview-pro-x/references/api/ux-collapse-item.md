@@ -2,8 +2,8 @@
 
 # ux-collapse-item API
 
-> 来源：`components/ux-collapse-item`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:a1d3201bc2dad26d8cfead1a6415153aaf1c54a5ab66884cadd87c40be2a166a`
+> 来源：`components/ux-collapse-item`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:7e7daf9889694471515e25a2866173a4f400870d0f3d8c77f7700f7b15e71bdb`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only collapse-item`
 
 通过折叠面板收纳内容区域（搭配u-collapse使用）
@@ -12,15 +12,23 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 面板标题 | `string` | `''` |
 | `align` | 标题的对齐方式（默认left） | `string` | `'left'` |
 | `disabled` | 面板是否可以打开或收起（默认false） | `boolean` | `false` |
 | `open` | 设置某个面板的初始状态是否打开（默认false） | `boolean` | `false` |
 | `name` | 唯一标识符，如不设置，默认用当前collapse-item的索引值 | `string \| number` | `''` |
-| `active-style` / `activeStyle` | 不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式 | `UTSJSONObject` | - |
+| `active-style` / `activeStyle` | 不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式 | `JsonObject` | - |
 | `index` | 主要用于事件的回调，标识那个Item被点击 | `string \| number` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

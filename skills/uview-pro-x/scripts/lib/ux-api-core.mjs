@@ -3,7 +3,7 @@
  * uview-pro-x 组件 API 解析核心（零依赖，Node >= 18）
  * ------------------------------------------------------------------
  * 从 uview-pro-x 组件库源码提取全量 API 模型（LibraryModel）：
- *   components/ux-<name>/ux-<name>.uvue + types.uts  →  props / events / models / slots /
+ *   components/ux-<name>/ux-<name>.uvue + types.ts  →  props / events / models / slots /
  *   externalClasses / methods，附 canoical 指纹（apiHash / libHash）与 did-you-mean 工具。
  *
  * 供两个消费者复用：
@@ -245,7 +245,7 @@ export function findNearest(name, candidates, maxDist = 2) {
 /* ================================ type 解析 ================================ */
 
 const AMBIENT_REFS = new Set([
-    'UTSJSONObject', 'RegExp', 'Promise', 'Array', 'Map', 'Set', 'Function', 'Ref',
+    'JsonObject', 'StyleObject', 'RegExp', 'Promise', 'Array', 'Map', 'Set', 'Function', 'Ref',
     'UniEvent', 'UniTouchEvent', 'UniScrollEvent', 'UniElement', 'UniButtonElement',
     'UniInputElement', 'UniTextareaElement', 'UniImageElement', 'UniVideoElement',
     'DateTime', 'Date', 'Record',
@@ -260,7 +260,7 @@ const IDENT_RE = /^[A-Za-z_$][\w$]*$/;
 
 /**
  * 解析类型文本 → { kind: 'literalUnion' | 'boolean' | 'object' | 'function' | 'opaque', values? }
- * 别名沿 局部 types.uts → types/global.uts 逐层展开（局部同名遮蔽全局，最多 8 层，环安全）。
+ * 别名沿 局部 types.ts → types/global.ts 逐层展开（局部同名遮蔽全局，最多 8 层，环安全）。
  */
 function resolveTypeText(text, ctx) {
     const t = String(text).replace(/\s+/g, ' ').trim();
@@ -351,6 +351,30 @@ export function resolveTypeExpr(typeText, localTable, globalTable) {
         stack: [],
         unresolved: new Set(),
     });
+}
+
+/**
+ * 收集类型文本引用的自定义类型定义：name → RHS 原文（沿别名递归展开，环安全）。
+ * 服务卡片「类型定义」段：消费侧（源码加密场景）看不到 types.ts，私有别名必须随卡携带定义。
+ */
+function collectTypeDefs(typeTexts, localTable, globalTable) {
+    const defs = {};
+    const seen = new Set();
+    const queue = [];
+    const seed = (text) => {
+        for (const m of String(text).matchAll(/[A-Za-z_$][\w$]*/g)) {
+            const name = m[0];
+            if (seen.has(name)) continue;
+            const rhs = localTable.get(name) ?? globalTable.get(name);
+            if (rhs == null) continue;
+            seen.add(name);
+            defs[name] = rhs.replace(/\s+/g, ' ').trim();
+            queue.push(defs[name]);
+        }
+    };
+    for (const t of typeTexts) seed(t);
+    while (queue.length > 0) seed(queue.shift());
+    return Object.fromEntries(Object.keys(defs).sort().map((k) => [k, defs[k]]));
 }
 
 /** 扫描 export type 别名：name → RHS 原文（注释已剥离） */
@@ -485,7 +509,7 @@ function section(src, tag) {
  * 解析 props 类型块（优先 defineProps 泛型名对应的 export type，其次内联对象）。
  * 定位在「剥注释文本」上做（括号配对天然跳过注释干扰），但返回的 block 内容从**原文**切片——
  * stripCommentsSmart 保持长度，故 clean 上算出的索引在原文同样有效；若直接切 clean 文本，
- * 属性上方的 /** 说明注释会全部变成空格，types.uts 里的 desc 永远取不到。
+ * 属性上方的 /** 说明注释会全部变成空格，types.ts 里的 desc 永远取不到。
  */
 function extractPropsBlock(cleanScript, rawScript, cleanTypes, rawTypes) {
     const named = cleanScript.match(/defineProps\s*<\s*([A-Za-z_$][\w$]*)\s*>/);
@@ -579,7 +603,7 @@ function codeDelta(code) {
 /**
  * 块内按「新属性起点」切分，兼容两种书写风格：
  *   - 分号风格（`foo?: string;` 逐条，外层 splitTopLevelSmart(';') 后每块即单条）
- *   - 换行风格（`foo?: string` 逐行无分号，如 ux-alert-tips/types.uts —— 仅按 ';' 切会整块粘成一条，静默漏解析）
+ *   - 换行风格（`foo?: string` 逐行无分号，如 ux-alert-tips/types.ts —— 仅按 ';' 切会整块粘成一条，静默漏解析）
  * 行首 JSDoc 注释归入其后一条属性；多行类型（联合/对象字面量/函数签名）不误切。
  */
 function splitByPropStarts(chunk) {
@@ -879,7 +903,7 @@ function extractComponent(libAbs, compName, globalTable) {
     const dirRel = toPosix(path.join('components', compName));
     const dirAbs = path.join(libAbs, 'components', compName);
     const uvuePath = path.join(dirAbs, compName + '.uvue');
-    const typesPath = path.join(dirAbs, 'types.uts');
+    const typesPath = path.join(dirAbs, 'types.ts');
     const warnings = [];
     if (!fs.existsSync(uvuePath)) throw new Error(`缺少组件主文件：${compName}.uvue`);
 
@@ -920,7 +944,7 @@ function extractComponent(libAbs, compName, globalTable) {
         const jp = jpKebab ?? jpCamel ?? null;
         let desc = '';
         let descFrom = null;
-        // 优先 types.uts：它是属性声明契约，且实证更新最及时（withDefaults 内联注释常为滞后复制）；
+        // 优先 types.ts：它是属性声明契约，且实证更新最及时（withDefaults 内联注释常为滞后复制）；
         // defaults / jsdoc 依次兜底，保证无 types 注释的属性仍能拿到说明
         if (e.comment) {
             desc = e.comment;
@@ -985,6 +1009,13 @@ function extractComponent(libAbs, compName, globalTable) {
     const externalClasses = parseExternalClasses(cleanScript);
     const methods = parseExposedMethods(cleanScript);
 
+    // 卡片引用的自定义类型随模型携带定义（属性类型 + 事件回调参数）
+    const typeDefs = collectTypeDefs(
+        [...props.map((p) => p.type), ...events.map((e) => e.payload)],
+        localTable,
+        globalTable
+    );
+
     const hashInput = {
         props: props.map((p) => [
             p.name,
@@ -1001,6 +1032,7 @@ function extractComponent(libAbs, compName, globalTable) {
         slots: slots.map((s) => s.name),
         externalClasses,
         methods: methods.map((m) => m.name),
+        typeDefs,
     };
 
     return {
@@ -1014,6 +1046,7 @@ function extractComponent(libAbs, compName, globalTable) {
         externalClasses,
         methods,
         warnings,
+        typeDefs,
         unresolved: [...unresolved].sort(),
         apiHash: fingerprint(hashInput),
     };
@@ -1044,7 +1077,7 @@ export function loadLibraryModel(libRoot) {
     const componentsDir = path.join(libAbs, 'components');
     if (!fs.existsSync(componentsDir)) throw new Error(`组件库缺少 components/ 目录：${libAbs}`);
 
-    const globalPath = path.join(libAbs, 'types', 'global.uts');
+    const globalPath = path.join(libAbs, 'types', 'global.ts');
     const globalTable = fs.existsSync(globalPath) ? scanTypeAliases(readTextSafe(globalPath) || '') : new Map();
 
     const symbols = {};

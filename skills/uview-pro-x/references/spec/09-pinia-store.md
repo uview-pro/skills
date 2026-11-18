@@ -14,10 +14,10 @@
 
 ## 挂载
 
-`main.uts` 里挂一次，全应用共享同一个 pinia 实例：
+`main.ts` 里挂一次，全应用共享同一个 pinia 实例：
 
 ```ts
-// main.uts
+// main.ts
 import { createSSRApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.uvue'
@@ -36,7 +36,7 @@ export function createApp() {
 ## 定义 store（setup store）
 
 ```ts
-// store/counter.uts
+// store/counter.ts
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
@@ -66,14 +66,14 @@ export const useCounterStore = defineStore('counter', () => {
 | action | 普通函数，改 `ref.value` | 不需要额外包装 |
 | id | `defineStore('counter', ...)` | 同一应用内必须唯一 |
 
-UTS 是强类型语言：泛型、返回类型、函数参数类型都写全，不要依赖推断。
+TS 是强类型语言：泛型、返回类型、函数参数类型都写全，不要依赖推断。
 
 ## 页面使用
 
 ```vue
-<script setup lang="uts">
+<script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useCounterStore } from '@/store/counter.uts'
+import { useCounterStore } from '@/store/counter.ts'
 
 const counterStore = useCounterStore()
 // state / getter 必须经 storeToRefs 解构，直接解构 store 会丢响应式
@@ -108,7 +108,7 @@ function onClick(): void {
 ## 与 HTTP 层协作
 
 ```ts
-// store/user.uts
+// store/user.ts
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { request } from '@/api/request'
@@ -145,4 +145,4 @@ export const useUserStore = defineStore('user', () => {
 
 - HTTP 请求与 `useRequest`：[spec/08](08-request-http.md)
 - 业务请求实例配方：[recipe-http-instance](../recipes/recipe-http-instance.md)
-- 页面脚本 UTS 写法：[spec/02](02-page-script-uts.md)
+- 页面脚本 TS 写法：[spec/02](02-page-script-ts.md)

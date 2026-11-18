@@ -1,11 +1,11 @@
-# 02 页面脚本 UTS 规范
+# 02 页面脚本 TS 规范
 
 ## 基本形态
 
-`.uvue` 页面使用组合式 API + UTS：
+`.uvue` 页面使用组合式 API + TS：
 
 ```vue
-<script setup lang="uts">
+<script setup lang="ts">
 import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x'
 
 const count = ref(0)
@@ -19,9 +19,9 @@ const theme = useTheme()
 | 组件库导入 | 统一从 `@/uni_modules/uview-pro-x` 导入（`$u`、hooks、类型）；`<ux-*>` 组件靠 easycom 免导入 |
 | 类型导入 | 内联 `type` 修饰符：`import { $u, type TabbarItem } from '@/uni_modules/uview-pro-x'` |
 
-## UTS 高频类型陷阱（❌/✅ 对照）
+## TS 高频类型陷阱（❌/✅ 对照）
 
-UTS 是强类型语言（编译到 Kotlin/Swift/ArkTS），很多 JS 习惯写法会编译报错或运行期抛异常。
+TS 是强类型语言（编译到 Kotlin/Swift/ArkTS），很多 JS 习惯写法会编译报错或运行期抛异常。
 
 | 场景 | ❌ 错误写法 | ✅ 正确写法 |
 |---|---|---|
@@ -35,7 +35,7 @@ UTS 是强类型语言（编译到 Kotlin/Swift/ArkTS），很多 JS 习惯写�
 | watch getter | `watch(() => x.value, (v) => ...)` | `watch((): boolean => x.value, (v: boolean) => ...)`（显式返回类型 + 参数类型） |
 | 数组越界 | `arr[i]` 直接读 | 先 `if (i >= 0 && i < arr.length)` 再读（App 端越界会抛异常） |
 | JSON 取值 | `data['key']` 直接当 string 用 | 先 `typeof v == 'string'` 判断，再 `as string` 断言 |
-| JSON 解析 | `JSON.parse(str)` 直接用 | `const obj = JSON.parse(str) as UTSJSONObject` |
+| JSON 解析 | `JSON.parse(str)` 直接用 | `const obj = JSON.parse(str) as JsonObject` |
 | 函数作值传参 | `setTimeout(fn, 300)` 直传声明函数 | `setTimeout(() => { fn() }, 300)`（箭头函数包装） |
 | 函数声明顺序 | 顶层立即调用后面才定义的函数 | **先定义后使用**（把被调用的 function 写在使用位置之前） |
 | v-for index 传参 | `onSelect(index)` 直接传 number 形参 | `onSelect(index as number)`（index 推断类型需断言） |
@@ -96,7 +96,7 @@ onUnload(() => {
 平台差异注意：
 
 - `onPageScroll` 在**页面层三端都可用**（含 App），但在**自定义组件内不触发**。
-- **小程序端必须在页面脚本里写出 `onPageScroll(...)` 这次调用**：小程序编译期靠它给页面挂滚动钩子，写在 `.uts` / hook / 组件里都不会被挂载，滚动距离会恒为 0。
+- **小程序端必须在页面脚本里写出 `onPageScroll(...)` 这次调用**：小程序编译期靠它给页面挂滚动钩子，写在 `.ts` / hook / 组件里都不会被挂载，滚动距离会恒为 0。
 - 取滚动距离优先用 `usePageScroll()`（页面层 onPageScroll 写值 + 容器 `@scroll` 兜底），见 [recipe-page-scroll](../recipes/recipe-page-scroll.md)。
 - 定时器、`uni.$on` 监听等副作用在 `onUnload` 中清理，避免页面销毁后回调触发。
 

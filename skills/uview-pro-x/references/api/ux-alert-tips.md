@@ -2,8 +2,8 @@
 
 # ux-alert-tips API
 
-> 来源：`components/ux-alert-tips`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:77f8274fc8841509cb17d78bbb64f69b34336e20425d29f4fc6867350b173876`
+> 来源：`components/ux-alert-tips`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:c4449d1f5e6bceab2112dd46fd8ab156dfafa1cb80578ed27507812db5f6297a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only alert-tips`
 
 警告提示，展现需要关注的信息；分 success / warning / info / error 四种主题，背景、边框、文字与默认图标颜色均按 type 回退，可关闭并支持自定义关闭文案
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 显示文字 | `string` | `''` |
 | `type` | 主题，success/warning/info/error | `string` | `'warning'` |
@@ -26,9 +26,17 @@
 | `show` | 是否显示 | `boolean` | `true` |
 | `icon` | 左边显示的icon | `string` | `''` |
 | `icon-size` / `iconSize` | 左边icon的大小，单位px（默认16） | `number` | `16` |
-| `icon-style` / `iconStyle` | icon的样式 | `UTSJSONObject` | - |
-| `title-style` / `titleStyle` | 标题的样式 | `UTSJSONObject` | - |
-| `desc-style` / `descStyle` | 描述文字的样式 | `UTSJSONObject` | - |
+| `icon-style` / `iconStyle` | icon的样式 | `JsonObject` | - |
+| `title-style` / `titleStyle` | 标题的样式 | `JsonObject` | - |
+| `desc-style` / `descStyle` | 描述文字的样式 | `JsonObject` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

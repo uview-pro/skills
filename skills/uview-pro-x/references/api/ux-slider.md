@@ -2,8 +2,8 @@
 
 # ux-slider API
 
-> 来源：`components/ux-slider`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:35a72f4300321eada253001aaa49e012c5d72613ed8a07428dee16b94788db33`
+> 来源：`components/ux-slider`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:68b637bf45b1d72ba9825cb71075aa54a0263bbc6779adc5f5239b688ea9554a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only slider`
 
 滑块选择器
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 当前值（默认0） | `number \| string` | `0` |
 | `start` | 整体范围起点值（默认0） | `number \| string` | `0` |
@@ -25,13 +25,21 @@
 | `active-color` / `activeColor` | 进度条激活部分颜色 | `string` | `''` |
 | `inactive-color` / `inactiveColor` | 进度条背景颜色 | `string` | `''` |
 | `block-color` / `blockColor` | 滑块颜色 | `string` | `''` |
-| `block-style` / `blockStyle` | 滑块自定义样式 | `UTSJSONObject` | - |
+| `block-style` / `blockStyle` | 滑块自定义样式 | `JsonObject` | - |
 | `disabled` | 是否禁用滑块（默认false） | `boolean` | `false` |
 | `show-value` / `showValue` | 是否显示当前数值（默认false） | `boolean` | `false` |
 | `value-position` / `valuePosition` | 数值显示位置，top-上方，bottom-下方（默认top） | `string` | `'top'` |
 | `show-edge-value` / `showEdgeValue` | 是否显示起始和结束数值（默认false） | `boolean` | `false` |
 | `edge-value-position` / `edgeValuePosition` | 起始和结束数值显示位置（默认top） | `string` | `'top'` |
 | `validate-state` / `validateState` | 是否处于校验错误状态（由父级 form-item 联动，默认false） | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

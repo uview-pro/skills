@@ -15,7 +15,7 @@
 | 持久化 | 主题与暗黑选择自动存本地，下次启动恢复 |
 | 声明式联动 | `ux-config-provider` 的 `current-theme` / `dark-mode` prop 驱动 |
 
-## 主题注册（main.uts）：四种形态
+## 主题注册（main.ts）：四种形态
 
 | 形态 | 传入 | 效果 |
 |---|---|---|
@@ -27,7 +27,7 @@
 ```ts
 // 命名导入：加密版插件入口的 `export * from './index'` 不转发 default（见 spec/01）
 import { uViewProX } from '@/uni_modules/uview-pro-x'
-import themes from './theme.uts'    // Theme[]：自定义主题数组
+import themes from './theme.ts'    // Theme[]：自定义主题数组
 
 app.use(uViewProX, {
     theme: themes                   // 形态一：多主题数组（列表 = 自定义主题；保留官方蓝需在数组里声明 { name: BASE_THEME_NAME, color: {} }）
@@ -60,7 +60,7 @@ app.use(uViewProX, {
 
 ### 单主题覆盖的边界
 
-`ThemeColor` 只有颜色令牌，**没有 `darkColor` / `css` / `darkCss` / `label` 字段**（`types/global.uts`）：
+`ThemeColor` 只有颜色令牌，**没有 `darkColor` / `css` / `darkCss` / `label` 字段**（`types/global.ts`）：
 
 - 要精确控制暗色、注入额外 CSS 变量、或自定义展示名，**必须用数组形态** —— 只有一套主题也要写成 `[ { ... } ]`；
 - 单主题形态下暗色只能由亮色推导（见下节），结构色（`bgColor` / `borderColor` / `mainColor` 等）固定取内置暗色基线；
@@ -93,8 +93,8 @@ type Theme = {
     description?: string    // 描述
     color: ThemeColor       // 亮色令牌（可只传部分字段，其余继承基线）
     darkColor?: ThemeColor  // 暗色令牌（不传自动生成，见下节）
-    css?: UTSJSONObject     // 直接注入的 CSS 变量（亮色）
-    darkCss?: UTSJSONObject // 直接注入的 CSS 变量（暗黑）
+    css?: JsonObject     // 直接注入的 CSS 变量（亮色）
+    darkCss?: JsonObject // 直接注入的 CSS 变量（暗黑）
 }
 ```
 
@@ -137,7 +137,7 @@ const { themes, currentTheme, darkMode, cssVars,
 | `themes` | `Ref<Theme[]>` | 全部可用主题（传入的主题列表即最终列表，内置主题只作同名项基线；可直接渲染主题列表 UI） |
 | `currentTheme` | `Ref<Theme \| null>` | 当前主题 |
 | `darkMode` | `Ref<DarkMode>` | 当前模式设置：`'light'` / `'dark'` / `'auto'` |
-| `cssVars` | `Ref<UTSJSONObject>` | 当前主题 + 模式的 CSS 变量表（绑页面根节点用） |
+| `cssVars` | `Ref<JsonObject>` | 当前主题 + 模式的 CSS 变量表（绑页面根节点用） |
 | `setTheme` | `(name: string) => void` | 切换主题并持久化；**主题名不存在时静默忽略**（不报错） |
 | `setDarkMode` | `(mode: DarkMode) => void` | 切换亮 / 暗 / 自动并持久化 |
 | `toggleDarkMode` | `() => void` | 在 `dark` 与 `light` 间切换（不经过 `auto`；当前为 `auto` 时切到 `dark`） |
@@ -211,7 +211,7 @@ const cssVarsStyle = computed(() => $u.toStyle(cssVars.value))
 
 未配置 `defaultDarkMode` 时默认 **`'light'`（强制亮色，不跟随系统）**；要跟随系统必须显式配 `'auto'`。
 
-> `types/global.uts` 末尾的 `export const DarkMode: DarkMode = 'auto'` 是加密版类型占位常量，**不代表默认值**，业务代码不要引用。
+> `types/global.ts` 末尾的 `export const DarkMode: DarkMode = 'auto'` 是加密版类型占位常量，**不代表默认值**，业务代码不要引用。
 
 ## 声明式联动（ux-config-provider）
 

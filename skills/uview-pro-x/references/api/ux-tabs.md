@@ -2,8 +2,8 @@
 
 # ux-tabs API
 
-> 来源：`components/ux-tabs`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:85cd9c912033a985faaaf6ef8a538c5fc11634ec070bda0ad35b571bbd7a17a7`
+> 来源：`components/ux-tabs`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:78383a02493bfa651d361111db63b981c28962e34b3afeb07d944541d5b86067`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabs`
 
 该组件是一个 tabs 标签组件，标签多时可配置左右滑动，标签少时可禁止滑动。配置为滚动模式时，激活的 tab 会自动移动到组件的中间位置。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `is-scroll` / `isScroll` | tabs 是否可左右拖动 | `boolean` | `true` |
 | `list` | 标签数组 | `TabsItem[]` | - |
@@ -31,10 +31,19 @@
 | `offset` | 徽标数位置偏移 | `number[]` | - |
 | `is-dot` / `isDot` | 徽标是否是圆点 | `boolean` | `false` |
 | `bold` | 活动 tab 字体是否加粗 | `boolean` | `true` |
-| `active-item-style` / `activeItemStyle` | 当前活动 tab item 的样式 | `UTSJSONObject` | - |
+| `active-item-style` / `activeItemStyle` | 当前活动 tab item 的样式 | `JsonObject` | - |
 | `show-bar` / `showBar` | 是否显示底部的滑块 | `boolean` | `true` |
-| `bar-style` / `barStyle` | 底部滑块的自定义样式 | `UTSJSONObject` | - |
+| `bar-style` / `barStyle` | 底部滑块的自定义样式 | `JsonObject` | - |
 | `item-width` / `itemWidth` | 标签的宽度 | `string \| number` | `'auto'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `TabsItem` | `{ name?: string \| number; count?: string \| number; hidden?: boolean; }` |
 
 ## 双向绑定（v-model）
 

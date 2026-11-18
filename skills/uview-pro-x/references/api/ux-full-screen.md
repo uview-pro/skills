@@ -2,8 +2,8 @@
 
 # ux-full-screen API
 
-> 来源：`components/ux-full-screen`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:54543276ab30c61ea4cda4660b988adb4601f310a37a661214bfb8d50757276a`
+> 来源：`components/ux-full-screen`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:39d7daba050047d7583125aeed2c4cda139bc446497d817c3c11f8dd4968819c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only full-screen`
 
 用于 App 弹窗遮盖导航栏和底部 tabbar，提示新版本升级内容；组件挂载后自动弹起，取消与确认均执行返回上一页，标题不传取本地化默认文案

@@ -2,8 +2,8 @@
 
 # ux-pagination API
 
-> 来源：`components/ux-pagination`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:673af753a1442443cd937fe1c2915a216ebd16c8b9264acfb4ac03fb23076cc2`
+> 来源：`components/ux-pagination`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:1e890ff7cee497b87ec3202ea0b08d9a6af7591236c6f30814b19e04ed8971da`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only pagination`
 
 上一页 / 下一页按钮 + 页码文本的组合式分页器：总页数由 total 与 pageSize 计算；默认显示「当前页 / 总页数」，可用默认插槽整体替换；页码变化通过 v-model 与 change 事件同步
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | v-model 绑定当前页码，默认 1 | `number` | `1` |
 | `prev-text` / `prevText` | 上一页按钮文字，不传取本地化默认文案 | `string` | `''` |
@@ -22,6 +22,14 @@
 | `show-icon` / `showIcon` | 是否用图标代替文字表示翻页按钮，默认 false | `boolean` | `false` |
 | `prev-icon` / `prevIcon` | 上一页图标名，show-icon 为 true 时有效，默认 arrow-left | `string` | `'arrow-left'` |
 | `next-icon` / `nextIcon` | 下一页图标名，show-icon 为 true 时有效，默认 arrow-right | `string` | `'arrow-right'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 
@@ -33,7 +41,7 @@
 
 | 事件 | 回调参数 | 说明 |
 | --- | --- | --- |
-| `@change` | `payload: UTSJSONObject` | 页码变化时触发，携带 { type: 'prev' \| 'next', current } |
+| `@change` | `payload: JsonObject` | 页码变化时触发，携带 { type: 'prev' \| 'next', current } |
 
 ## 插槽
 

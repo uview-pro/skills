@@ -2,8 +2,8 @@
 
 # ux-steps API
 
-> 来源：`components/ux-steps`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:1d256008409aaa6390504134fa29e7ce62c47e7853b6213b6497c241087ca4c8`
+> 来源：`components/ux-steps`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:86cae656843286ae81ba05d694f72551b5f3e8afa0d0d316e80bb4fe06e2cd07`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only steps`
 
 该组件一般用于完成一个任务要分几个步骤，标识目前处于第几步的场景
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `mode` | 设置模式（dot\|number，默认dot） | `string` | `'dot'` |
 | `list` | 数轴条数据 | `StepsListItem[]` | - |
@@ -22,6 +22,15 @@
 | `inactive-color` / `inactiveColor` | 未激活的颜色 | `string` | `''` |
 | `icon` | 自定义图标（默认check） | `string` | `'checkmark'` |
 | `direction` | 排列方向 row-横向 column-竖向（默认row） | `string` | `'row'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `StepsListItem` | `{ name?: string; desc?: string; }` |
 
 ## 双向绑定（v-model）
 

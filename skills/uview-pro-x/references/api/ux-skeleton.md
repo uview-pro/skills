@@ -2,8 +2,8 @@
 
 # ux-skeleton API
 
-> 来源：`components/ux-skeleton`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:3d1f15b8c161209bf35a08c91d201f1038f895c1a4b81aca7175be120088c8f6`
+> 来源：`components/ux-skeleton`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:6fa086388f50b930ea0ec4ad721b8e78c64f5d8ec2bde12cf7b731f0af900e67`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only skeleton`
 
 骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `loading` | 是否显示骨架占位图，设置为false将会展示子组件内容 | `boolean` | `true` |
 | `animate` | 是否开启动画效果 | `boolean` | `true` |
@@ -25,6 +25,14 @@
 | `avatar` | 是否展示头像占位图 | `boolean` | `false` |
 | `avatar-size` / `avatarSize` | 头像占位图大小 | `string \| number` | `32` |
 | `avatar-shape` / `avatarShape` | 头像占位图的形状，circle-圆形，square-小圆角 4px 方形 | `string` | `'circle'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

@@ -2,8 +2,8 @@
 
 # ux-switch API
 
-> 来源：`components/ux-switch`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:39293c5afd516966e8a8094ca5123a48151091edfcae6a204e63d77c2782d9b9`
+> 来源：`components/ux-switch`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:e68bcf3c474b8aa3bf104e55f2ebf3ca06d2563a5f77352456deca648a2e087a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only switch`
 
 选择开关一般用于只有两个选择，且只能选其一的场景。形态：轨道为 50:28 胶囊、**无描边**，白色滑块四周内缩（默认档 3px）且**恒垂直居中**，位移由「一侧内缩」到「轨道宽 - 滑块径 - 一侧内缩」；size 只描述轨道高度，宽/内缩/滑块径随之等比推导。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `loading` | 是否显示加载中状态 | `boolean` | `false` |
 | `disabled` | 是否禁用 | `boolean` | `false` |
@@ -24,6 +24,14 @@
 | `active-value` / `activeValue` | 打开时的值 | `boolean \| number \| string` | `true` |
 | `inactive-value` / `inactiveValue` | 关闭时的值 | `boolean \| number \| string` | `false` |
 | `validate-state` / `validateState` | 输入框的验证状态，用于错误时，边框是否改为红色 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

@@ -2,7 +2,7 @@
 
 ## 环境前提
 
-- HBuilderX（建议较新版本）+ **uni-app x** 项目（Vue3 + UTS，页面文件为 `.uvue`）
+- HBuilderX（建议较新版本）+ **uni-app x** 项目（Vue3 + TS，页面文件为 `.uvue`）
 - uview-pro-x 以 uni_modules 形式分发：仅支持通过 **DCloud 插件市场**导入，不支持 npm 安装
 - 插件市场地址：`https://ext.dcloud.net.cn/plugin?name=uview-pro-x`（uView Pro X）
 
@@ -22,11 +22,11 @@ your-project/
 │     ├─ libs/              # $u 工具、hooks、config、styles
 │     ├─ locale/            # 内置语言包（zh-CN / en-US）
 │     ├─ types/             # 类型定义
-│     ├─ index.uts          # 库入口（install）
+│     ├─ index.ts          # 库入口（install）
 │     ├─ index.scss         # 样式统一入口
 │     └─ theme.scss         # 主题变量
 ├─ pages.json
-├─ main.uts
+├─ main.ts
 └─ uni.scss
 ```
 
@@ -47,7 +47,7 @@ your-project/
 
 规则含义：模板中的 `<ux-button>` 自动解析到 `uni_modules/uview-pro-x/components/ux-button/ux-button.uvue`。组件按需编译，未使用的组件不进入产物。
 
-## 第三步：注册组件库（main.uts）
+## 第三步：注册组件库（main.ts）
 
 ```ts
 import App from './App.uvue'
@@ -187,7 +187,7 @@ $u-type-info-light: var(--u-type-info-light, #f4f4f5);
     </view>
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 function onClick(): void {
     uni.showToast({ title: '点击了按钮', icon: 'none' })
 }
@@ -213,6 +213,6 @@ function onClick(): void {
 ## 下一步
 
 - 起页面骨架：[recipe-page-scaffold](../recipes/recipe-page-scaffold.md)
-- 写脚本：[02-page-script-uts](02-page-script-uts.md)；写样式：[03-page-style-ucss](03-page-style-ucss.md)
+- 写脚本：[02-page-script-ts](02-page-script-ts.md)；写样式：[03-page-style-ucss](03-page-style-ucss.md)
 - 选组件：[04-component-usage](04-component-usage.md)；三端自查：[05-cross-platform](05-cross-platform.md)
 - 多语言国际化：[06-i18n-locale](06-i18n-locale.md)；多主题与暗黑模式：[07-theme-dark-mode](07-theme-dark-mode.md)

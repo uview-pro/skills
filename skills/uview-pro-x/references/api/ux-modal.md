@@ -2,8 +2,8 @@
 
 # ux-modal API
 
-> 来源：`components/ux-modal`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:9e429e94be2c145dcec4c5199438e0256e7ee9123616a2d1f19603d518cf0d53`
+> 来源：`components/ux-modal`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:bc2562ec2c9f165333f59b5787a94eb1c2122b250c91b18e42da42fe550400d1`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only modal`
 
 弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 是否显示模态框 | `boolean` | `false` |
 | `z-index` / `zIndex` | 层级 z-index | `string \| number` | `''` |
@@ -27,16 +27,24 @@
 | `confirm-color` / `confirmColor` | 确认按钮颜色 | `string` | `''` |
 | `cancel-color` / `cancelColor` | 取消文字颜色 | `string` | `''` |
 | `border-radius` / `borderRadius` | 圆角值 | `string \| number` | `8` |
-| `title-style` / `titleStyle` | 标题的样式 | `UTSJSONObject` | - |
-| `content-style` / `contentStyle` | 内容的样式 | `UTSJSONObject` | - |
-| `cancel-style` / `cancelStyle` | 取消按钮的样式 | `UTSJSONObject` | - |
-| `confirm-style` / `confirmStyle` | 确定按钮的样式 | `UTSJSONObject` | - |
+| `title-style` / `titleStyle` | 标题的样式 | `JsonObject` | - |
+| `content-style` / `contentStyle` | 内容的样式 | `JsonObject` | - |
+| `cancel-style` / `cancelStyle` | 取消按钮的样式 | `JsonObject` | - |
+| `confirm-style` / `confirmStyle` | 确定按钮的样式 | `JsonObject` | - |
 | `zoom` | 是否开启缩放效果 | `boolean` | `true` |
 | `async-close` / `asyncClose` | 是否异步关闭，只对确定按钮有效 | `boolean` | `false` |
 | `mask-close-able` / `maskCloseAble` | 是否允许点击遮罩关闭 modal | `boolean` | `false` |
 | `margin-top` / `marginTop` | 纵向偏移量：正值下移、负值上移（避开键盘时传负值），透传给 ux-popup 的 margin-top | `string \| number` | `0` |
 | `global` | 是否作为全局根部 modal（通常放在 App.vue 中，给 useModal() 使用） | `boolean` | `false` |
 | `page` | 是否作为页面级 modal（通常放在页面中，给 useModal({ page: true }) 使用） | `boolean \| string` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

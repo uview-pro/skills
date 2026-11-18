@@ -2,8 +2,8 @@
 
 # ux-number-box API
 
-> 来源：`components/ux-number-box`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:adf867dff71a20cdf2a6b3d2ea460cfa6b0b875965ef5782901e58b31c1e0634`
+> 来源：`components/ux-number-box`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:1ebdb80eee45ee1811c7eac2c17d307dbcdb22b0a37cc545edb1394efb2d9a22`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only number-box`
 
 该组件一般用于商城购物选择物品数量的场景。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 输入框初始值（默认1） | `number` | `1` |
 | `bg-color` / `bgColor` | 输入框和按钮的背景颜色 | `string` | `''` |
@@ -32,6 +32,14 @@
 | `positive-integer` / `positiveInteger` | 是否只能输入正整数（默认true） | `boolean` | `true` |
 | `validate-state` / `validateState` | 校验错误状态，用于错误时边框是否改为红色 | `boolean` | `false` |
 
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+
 ## 双向绑定（v-model）
 
 | 写法 | 通道 | 说明 |
@@ -42,11 +50,11 @@
 
 | 事件 | 回调参数 | 说明 |
 | --- | --- | --- |
-| `@change` | `value: UTSJSONObject` | 输入框内容发生变化时触发 |
-| `@blur` | `value: UTSJSONObject` | 输入框失去焦点时触发 |
+| `@change` | `value: JsonObject` | 输入框内容发生变化时触发 |
+| `@blur` | `value: JsonObject` | 输入框失去焦点时触发 |
 | `@focus` | - | - |
-| `@minus` | `value: UTSJSONObject` | 点击减少按钮时触发 |
-| `@plus` | `value: UTSJSONObject` | 点击增加按钮时触发 |
+| `@minus` | `value: JsonObject` | 点击减少按钮时触发 |
+| `@plus` | `value: JsonObject` | 点击增加按钮时触发 |
 
 ## 插槽
 

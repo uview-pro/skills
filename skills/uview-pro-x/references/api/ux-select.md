@@ -2,8 +2,8 @@
 
 # ux-select API
 
-> 来源：`components/ux-select`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:b4629cc8a0197781d812f468ff1a4bbe1e3a337323eb798be0ec17bf24e8b631`
+> 来源：`components/ux-select`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:344eb4cacc3371359dc9758d624536f94d214a36ec34e8d9a91a9bb0a76a42a9`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only select`
 
 由 ux-popup 从底部弹出的列选择器，支持 single-column-单列 / mutil-column-多列 / mutil-column-auto-多列联动三种模式；list 项的 label / value / children 字段名可自定义，preserve-selection 开启时再次打开会恢复上次确认的选择
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 列数据，外部传入 | `SelectListItem[] \| SelectListItem[][]` | - |
 | `model-value` / `modelValue` | v-model 控制弹出与收起 | `boolean` | `false` |
@@ -31,6 +31,16 @@
 | `cancel-text` / `cancelText` | 取消按钮文字 | `string` | `''` |
 | `confirm-text` / `confirmText` | 确认按钮文字 | `string` | `''` |
 
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SelectListItem` | `{ label: string; value: string \| number; children?: SelectListItem[]; extra?: any; }` |
+| `SelectMode` | `'single-column' \| 'mutil-column' \| 'mutil-column-auto'` |
+
 ## 双向绑定（v-model）
 
 | 写法 | 通道 | 说明 |
@@ -41,7 +51,7 @@
 
 | 事件 | 回调参数 | 说明 |
 | --- | --- | --- |
-| `@confirm` | `value: UTSJSONObject[]` | 点击确认时触发，携带选中项数组（按列的 SelectListItem 列表） |
+| `@confirm` | `value: JsonObject[]` | 点击确认时触发，携带选中项数组（按列的 SelectListItem 列表） |
 | `@cancel` | - | 点击取消时触发 |
 
 ## 插槽

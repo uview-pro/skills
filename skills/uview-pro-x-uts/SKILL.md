@@ -1,6 +1,6 @@
 ---
-name: "uview-pro-x"
-description: "UView Pro X 页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x 组件库编写页面：安装接入、页面脚本 UTS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x 编写或修改页面、规范 UTS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
+name: "uview-pro-x-uts"
+description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x 组件库编写页面：安装接入、页面脚本 UTS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x 编写或修改页面、规范 UTS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
 ---
 
 # UView Pro X 页面编写规范（uview-pro-x）

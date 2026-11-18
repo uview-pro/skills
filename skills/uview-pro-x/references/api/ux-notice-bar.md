@@ -2,8 +2,8 @@
 
 # ux-notice-bar API
 
-> 来源：`components/ux-notice-bar`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:0b7d1741989cb3d0136021c06516c1788a2bc659e8353829916ce56ec5d0d333`
+> 来源：`components/ux-notice-bar`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:a0f788ab9ae31635bbe71abd931ca3df447755a2a7c1e31023f8f032caaa3645`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only notice-bar`
 
 该组件用于滚动通告场景，有多种模式可供选择
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 滚动内容，数组形式 | `string[]` | - |
 | `type` | 显示的主题（默认warning） | `primary`｜`info`｜`error`｜`warning`｜`success`｜`default`｜`none` | `'warning'` |
@@ -34,6 +34,17 @@
 | `border-radius` / `borderRadius` | 圆角（默认0） | `number \| string` | `0` |
 | `padding` | 内边距（默认"9px 12px"） | `number \| string` | `'9px 12px'` |
 | `no-list-hidden` / `noListHidden` | 列表为空时是否隐藏（默认true） | `boolean` | `true` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `Direction` | `'horizontal' \| 'vertical'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `PlayState` | `'play' \| 'paused'` |
+| `ThemeType` | `'primary' \| 'info' \| 'error' \| 'warning' \| 'success' \| 'default'` |
 
 ## 双向绑定（v-model）
 

@@ -2,8 +2,8 @@
 
 # ux-status-bar API
 
-> 来源：`components/ux-status-bar`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:939e2e6842b7a15d3df3d5dbe4a6f7e5505ab55ec9e60f36b5b98ee057627579`
+> 来源：`components/ux-status-bar`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:d1b6c18f65d4b67718687635bdacdcc4bd69c8a79ddd736f77af34406d948f84`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only status-bar`
 
 用于沉浸式状态栏适配，自动撑起系统状态栏高度
@@ -12,9 +12,17 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `background` | 背景颜色 | `string` | `'transparent'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

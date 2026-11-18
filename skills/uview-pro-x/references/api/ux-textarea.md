@@ -2,8 +2,8 @@
 
 # ux-textarea API
 
-> 来源：`components/ux-textarea`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:46e7d65d8a9a708939223763db13128aa5c916411d6d52523fe7e7005ea42e29`
+> 来源：`components/ux-textarea`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:6f6d5ec39285fca5062d748ebb16c9a98ed4e564b34dd20418f6ba54ff0589ba`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only textarea`
 
 多行文本输入组件，支持字数统计、自动增高、清除按钮，可配合 ux-form 实现表单校验。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 输入值 | `string \| number` | `''` |
 | `placeholder` | 占位文字（默认''） | `string \| number` | `''` |
@@ -41,6 +41,16 @@
 | `size` | 尺寸预设，空时继承 ux-form-item 尺寸（默认''） | `SizeType \| string \| number` | `''` |
 | `clearable` | 是否显示清除按钮（默认true） | `boolean` | `true` |
 | `validate-state` / `validateState` | 是否显示校验错误状态，可被 ux-form-item 覆盖（默认false） | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `BorderType` | `'surround' \| 'none' \| 'bottom'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SizeType` | `'default' \| 'small' \| 'large'` |
 
 ## 双向绑定（v-model）
 

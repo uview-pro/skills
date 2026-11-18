@@ -2,8 +2,8 @@
 
 # ux-empty API
 
-> 来源：`components/ux-empty`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:37ece224aff79400c9c0839168e3f75c9c1f53e44448451c00e4015d9ea01a42`
+> 来源：`components/ux-empty`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:b88c78ba914706ab5e10035a29559b21ba8a925292a66a972020d445215cfb19`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only empty`
 
 该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景，我们精心挑选了十几个场景的图标，方便您使用。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `src` | 图标路径 | `string` | `''` |
 | `text` | 提示文字 | `string` | `''` |
@@ -25,6 +25,15 @@
 | `img-height` / `imgHeight` | 图标高度，单位px | `string \| number` | `'auto'` |
 | `show` | 是否显示组件 | `boolean` | `true` |
 | `margin-top` / `marginTop` | 组件距离上一个元素之间的距离 | `string \| number` | `10` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `EmptyMode` | `\| 'cart' \| 'page' \| 'search' \| 'address' \| 'wifi' \| 'order' \| 'coupon' \| 'favor' \| 'permission' \| 'history' \| 'news' \| 'message' \| 'list' \| 'data'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

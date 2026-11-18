@@ -2,8 +2,8 @@
 
 # ux-badge API
 
-> 来源：`components/ux-badge`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:e88306c72d8c9533b2b214d998d0e5d3906081b87c23c37160010897020df351`
+> 来源：`components/ux-badge`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:9fbff6995871ecf5b58fc6e265191bbd4ac84c9239e96cef92e8b5c0cfbe0455`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only badge`
 
 本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `type` | 使用预设的背景颜色 | `ThemeType`（`primary`｜`info`｜`error`｜`warning`｜`success`｜`default`） | `'error'` |
 | `size` | Badge的尺寸 | `BadgeSize`（`default`｜`mini`） | `'default'` |
@@ -26,6 +26,16 @@
 | `color` | 字体颜色 | `string` | `''` |
 | `bg-color` / `bgColor` | 背景颜色 | `string` | `''` |
 | `is-center` / `isCenter` | 中心点是否重合 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `BadgeSize` | `'default' \| 'mini'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `ThemeType` | `'primary' \| 'info' \| 'error' \| 'warning' \| 'success' \| 'default'` |
 
 ## 双向绑定（v-model）
 

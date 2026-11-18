@@ -2,8 +2,8 @@
 
 # ux-count-to API
 
-> 来源：`components/ux-count-to`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:c8dad8b1ddd4b37e726f7f52c572972dc5108f197dbd106662676b4c88efb49b`
+> 来源：`components/ux-count-to`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:198189cf2bd18787fc216a8a8748408bd408381a0c72d311da96e816fd9b816c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only count-to`
 
 该组件一般用于需要滚动数字到某一个值的场景，目标要求是一个递增的值。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `start-val` / `startVal` | 开始的数值，默认从0增长到某一个数 | `number \| string` | `0` |
 | `end-val` / `endVal` | 要滚动的目标数值 | `number \| string` | `0` |
@@ -25,6 +25,14 @@
 | `font-size` / `fontSize` | 字体大小 | `number \| string` | `DEFAULT_FONT_SIZE` |
 | `bold` | 是否加粗字体 | `boolean` | `false` |
 | `separator` | 千位分隔符，类似金额的分割(￥23,321.05中的",") | `string` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

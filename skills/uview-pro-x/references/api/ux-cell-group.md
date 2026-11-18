@@ -2,8 +2,8 @@
 
 # ux-cell-group API
 
-> 来源：`components/ux-cell-group`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:31419c4528d329820cc72fe6d39d13c48e9ad7f0d98a4d3b41337423fb6843e5`
+> 来源：`components/ux-cell-group`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:e45f2c90a3a346536d30cebafc8c9fde9f886ebaa0940484582da1fda0f05b4f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only cell-group`
 
 cell单元格一般用于一组列表的情况，比如个人中心页，设置页等。搭配ux-cell-item
@@ -12,11 +12,19 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 分组标题 | `string` | `''` |
 | `border` | 是否显示分组list上下边框（默认true） | `boolean` | `true` |
-| `title-style` / `titleStyle` | 分组标题的样式，对象形式，注意驼峰属性写法 | `UTSJSONObject` | - |
+| `title-style` / `titleStyle` | 分组标题的样式，对象形式，注意驼峰属性写法 | `JsonObject` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

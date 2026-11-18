@@ -2,8 +2,8 @@
 
 # ux-avatar API
 
-> 来源：`components/ux-avatar`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:ccc98252fe79717e0e3610fd9d248e8179b2021587a607e25392dd120028f9c1`
+> 来源：`components/ux-avatar`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:e30fb2a4bbae8bf376f4b2adb5c54852c98a0c7f1a410f4f4aba4125c43aabf8`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only avatar`
 
 本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。
@@ -12,12 +12,12 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `bg-color` / `bgColor` | 背景颜色 | `string` | `'transparent'` |
 | `src` | 头像路径，如加载失败，将会显示默认头像 | `string` | `''` |
 | `size` | 尺寸，large-大，default-中等，small-小，如果为数值，则单位为px，宽度等于高度 | `string \| number` | `'default'` |
-| `shape` | 头像形状（词表见 global.uts 的 Shape）：square-小圆角 4px 方形，circle-正圆；原 mode 参数，已更名 shape 与全库词表对齐（默认 circle）；直角可走 custom-style 但仅限文字/背景头像，图片头像的圆角写在内层 imgStyle，覆盖不到 | `square`｜`circle` | `'circle'` |
+| `shape` | 头像形状（词表见 global.ts 的 Shape）：square-小圆角 4px 方形，circle-正圆；原 mode 参数，已更名 shape 与全库词表对齐（默认 circle）；直角可走 custom-style 但仅限文字/背景头像，图片头像的圆角写在内层 imgStyle，覆盖不到 | `square`｜`circle` | `'circle'` |
 | `text` | 文字内容 | `string` | `''` |
 | `img-mode` / `imgMode` | 图片的裁剪模型 | `ImgMode`（`aspectFit`｜`aspectFill`｜`widthFix`｜`top`｜`bottom`｜`center`｜`scaleToFill`） | `'aspectFill'` |
 | `index` | 标识符 | `string \| number` | `''` |
@@ -27,6 +27,15 @@
 | `sex-bg-color` / `sexBgColor` | 右上角性别图标的背景颜色 | `string` | `''` |
 | `show-sex` / `showSex` | 是否显示性别图标 | `boolean` | `false` |
 | `show-level` / `showLevel` | 是否显示等级图标 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `ImgMode` | `'aspectFit' \| 'aspectFill' \| 'widthFix' \| 'top' \| 'bottom' \| 'center' \| 'scaleToFill'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

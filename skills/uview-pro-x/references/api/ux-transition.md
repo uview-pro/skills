@@ -2,8 +2,8 @@
 
 # ux-transition API
 
-> 来源：`components/ux-transition`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:4d27d5d9cecd7d380b75a55a3df14bc9456f5597b29d3db1dcaebe53d30c9b8c`
+> 来源：`components/ux-transition`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:9e7c75a8b3ab751d8ee68e896461ad7b326ef846da7ec9dcf23c660d6472e88f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only transition`
 
 进出场动画封装：CSS transition 驱动显隐过渡（uni-app x App 端不支持 @keyframes，统一走 transition + 类切换范式）。进出场用 v-if 两段式（先挂 DOM、隔一拍切终态类，保证起始态 先提交一帧），完成判定走时长定时器（App 端 transitionend 可能不触发，不可依赖）。通用显隐动画底座，供需要进出场过渡的组件复用。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `show` | 是否展示内容 | `boolean` | `true` |
 | `name` | 预设动画名：fade / slide-up / slide-down / slide-left / slide-right / zoom-in / zoom-out | `string` | `'fade'` |
@@ -20,6 +20,14 @@
 | `timing-function` / `timingFunction` | 动画曲线 | `string` | `'cubic-bezier(0.2, 0.8, 0.2, 1)'` |
 | `delay` | 动画延迟，单位ms（进入与离开都生效） | `number` | `0` |
 | `appear` | 首次渲染时是否播放进场动画 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

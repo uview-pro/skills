@@ -2,8 +2,8 @@
 
 # ux-line-progress API
 
-> 来源：`components/ux-line-progress`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:b68936f1d7b7e51c13d3b3e2cbfb25d2f4146670f2a07928e6a1969ba0b458f2`
+> 来源：`components/ux-line-progress`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:767793c117b1369f37feb8ba82873fa1c7a58fbecd66b909311ab242a7d10124`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only line-progress`
 
 展示操作或任务的当前进度，比如上传文件，是一个线形的进度条。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `shape` | 进度条形状：round-两端胶囊（默认，等价旧 boolean round: true），square-小圆角 3px（平头）；方角请走 custom-style | `square`｜`round` | `'round'` |
 | `type` | 主题颜色，primary\|success\|warning\|error\|info，设置后 activeColor 失效 | `string` | `''` |
@@ -23,6 +23,14 @@
 | `height` | 进度条的高度，单位px | `number \| string` | `DEFAULT_HEIGHT` |
 | `striped` | 是否显示条纹 | `boolean` | `false` |
 | `striped-active` / `stripedActive` | 条纹是否具有动态效果 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

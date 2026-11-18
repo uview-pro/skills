@@ -2,7 +2,7 @@
 
 **适用场景**：新建业务页面（注册路由 → 起骨架 → 主题联动 → 放组件）。
 
-**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.uts 注册 + 在 `uni.scss` 接入主题变量——加密版粘贴 `$u-*` 变量块，源码版 `@import '@/uni_modules/uview-pro-x/theme.scss';`）。
+**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.ts 注册 + 在 `uni.scss` 接入主题变量——加密版粘贴 `$u-*` 变量块，源码版 `@import '@/uni_modules/uview-pro-x/theme.scss';`）。
 
 ## 1. 注册路由（pages.json）
 
@@ -33,7 +33,7 @@
     </view>
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 import { $u, useTheme } from '@/uni_modules/uview-pro-x'
 
 /** 主题 CSS 变量样式：绑定到页面根节点后，换肤/暗黑切换时页面样式联动 */
@@ -78,7 +78,7 @@ function onClick(): void {
 ## 4. 继续开发
 
 - 选组件与工具：`spec/04`（组件速查表 / $u / hooks）
-- 写脚本：`spec/02`（UTS 类型陷阱、模板规则）
+- 写脚本：`spec/02`（TS 类型陷阱、模板规则）
 - 写样式：`spec/03`（UCSS 红线、省略双轨、主题变量）
 - 滚动与返回顶部：`recipe-page-scroll.md`
 - 收尾自查：`spec/05`（红线表 + 症状速查 + 自查清单）

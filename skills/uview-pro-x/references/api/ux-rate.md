@@ -2,8 +2,8 @@
 
 # ux-rate API
 
-> 来源：`components/ux-rate`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:09e888cf9b2ae58953123cec8f040c84d2203722578955e50a514596ac4da95f`
+> 来源：`components/ux-rate`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:baa2f88dbb3e7e0cd3be598474415c0ea8b3dd19a4af8762c8ebfebeccd122c4`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only rate`
 
 该组件一般用于满意度调查，星型评分的场景
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | v-model双向绑定选中的星星数量 | `number \| string` | `-1` |
 | `count` | 要显示的星星数量 | `number \| string` | `5` |
@@ -29,6 +29,14 @@
 | `custom-prefix` / `customPrefix` | 图标库前缀（前缀即 font-family 名，传给 ux-icon；空串为内置图标库） | `string` | `''` |
 | `colors` | 分段颜色 | `string[]` | - |
 | `icons` | 分段图标 | `string[]` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

@@ -2,8 +2,8 @@
 
 # ux-toast API
 
-> 来源：`components/ux-toast`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:132dd4413c406e9a33ce03f17cb22e6ddff77e2ad1af929e4c1e1cdcc166bd64`
+> 来源：`components/ux-toast`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:76053ebff9b219a0116e7d198b66ff0f2ee7fa53c65dbb9296fb3b58f902951b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only toast`
 
 此组件表现形式类似uni的uni.showToastAPI，但也有不同的地方。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `z-index` / `zIndex` | 层级 z-index | `string \| number` | `''` |
 | `type` | 提示类型，success/warning/error/loading 等 | `primary`｜`info`｜`error`｜`warning`｜`success`｜`default`｜`default` | `'default'` |
@@ -23,10 +23,20 @@
 | `back` | 是否返回上一页 | `boolean` | `false` |
 | `is-tab` / `isTab` | 是否为tab页面跳转 | `boolean` | `false` |
 | `url` | 跳转的url | `string` | `''` |
-| `params` | 跳转参数对象 | `UTSJSONObject` | - |
+| `params` | 跳转参数对象 | `JsonObject` | - |
 | `global` | 是否作为全局根部 toast（通常放在 App.vue 中，给 useToast() 使用） | `boolean` | `false` |
 | `page` | 是否作为页面级 toast（通常放在页面中，给 useToast({ page: true }) 使用） | `boolean \| string` | `false` |
 | `loading` | 是否为loading “常驻” | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `ThemeType` | `'primary' \| 'info' \| 'error' \| 'warning' \| 'success' \| 'default'` |
+| `ToastPosition` | `'top' \| 'center' \| 'bottom'` |
 
 ## 双向绑定（v-model）
 

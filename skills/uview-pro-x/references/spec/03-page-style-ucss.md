@@ -87,8 +87,8 @@ App 端省略由 `<text>` 原生属性 `max-lines` 承担；H5 / 小程序端 `m
 ### 动态样式：运行时 `$u.color` 与工具
 
 ```ts
-const boxStyle = computed((): UTSJSONObject => {
-    const style = new UTSJSONObject()
+const boxStyle = computed((): JsonObject => {
+    const style = new JsonObject()
     style['background-color'] = $u.color.primary
     return style
 })

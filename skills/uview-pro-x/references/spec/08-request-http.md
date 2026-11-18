@@ -15,7 +15,7 @@ import type { HttpError, HttpInstance, HttpConfig } from '@/uni_modules/uview-pr
 | `http` | 库内置默认实例（`baseURL` 空、无业务拦截器） | 偶发请求 / 第三方接口；也可作为派生模板 |
 | `request` | 业务侧 `http.create(...)` 的单例 | 页面统一使用这一份（见配方） |
 
-- **业务不要在每个页面 `http.create`**：实例、`defaults`、拦截器收敛到一个 `api/request.uts`，页面只 import 这份实例。
+- **业务不要在每个页面 `http.create`**：实例、`defaults`、拦截器收敛到一个 `api/request.ts`，页面只 import 这份实例。
 - `create` 继承父级 `defaults`（深合并），**不继承拦截器**；派生后需要重新注册拦截器。
 - `setDefaults` 改的是实例级默认值；页面里调用会污染全站，禁止。
 
@@ -25,7 +25,7 @@ import type { HttpError, HttpInstance, HttpConfig } from '@/uni_modules/uview-pr
 |---|---|---|
 | `get` / `delete` / `head` | `(url, params?, config?)` | 查询参数走第二参 `params` |
 | `post` / `put` / `patch` | `(url, data?, config?)` | 请求体走第二参 `data` |
-| `request` | `(config)`，`url` 必填 | 通用入口（UTS 无 callable object，不能写 `http(config)`） |
+| `request` | `(config)`，`url` 必填 | 通用入口（TS 无 callable object，不能写 `http(config)`） |
 | `create` | `(config?)` | 派生实例 |
 | `setDefaults` | `(patch)` | 增量更新默认值（仅模块初始化处用） |
 | `abortController` | `()` → `{ signal, abort }` | 取消凭证 |
@@ -158,5 +158,5 @@ request.get('/list', null, { meta: { toast: false } })
 
 - 落地方案：[recipe-http-instance](../recipes/recipe-http-instance.md)
 - 页面级 `useRequest` 已登记在 [spec/04 的 hooks 速查](04-component-usage.md)
-- UTS 类型写法与陷阱见 [spec/02](02-page-script-uts.md)
+- TS 类型写法与陷阱见 [spec/02](02-page-script-ts.md)
 - 下一主题：[spec/09 pinia 状态管理](09-pinia-store.md)

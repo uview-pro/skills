@@ -2,8 +2,8 @@
 
 # ux-checkbox-group API
 
-> 来源：`components/ux-checkbox-group`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:800dd3f967441e06ee59a9552794a4289b989a2a03a371aa492fd6039947cfe0`
+> 来源：`components/ux-checkbox-group`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:458a17ea0d499b37a07b43f2db09fc4643a624f8162b936eb9ab0bed56468a5c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only checkbox-group`
 
 复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 绑定值，选中的复选框 name 组成的数组（支持 v-model 双向绑定） | `(string \| number)[]` | - |
 | `max` | 最多能选中多少个 checkbox（默认500） | `number` | `999` |
@@ -25,6 +25,14 @@
 | `width` | 每个 checkbox 占 u-checkbox-group 的宽度 | `string` | `'auto'` |
 | `wrap` | 是否每个 checkbox 都换行（默认false） | `boolean` | `false` |
 | `icon-size` / `iconSize` | 图标大小，单位px（默认10px） | `string \| number` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

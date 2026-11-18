@@ -2,8 +2,8 @@
 
 # ux-search API
 
-> 来源：`components/ux-search`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:ebb308f4c18df346c0f0b4de70809875112d801de5bb18050b51387d2644623d`
+> 来源：`components/ux-search`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:1a3efc61cbca31383a2fd5fc07158b45a54ede79f6574a33d418f92ae83d6bab`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only search`
 
 搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `shape` | 搜索框形状：square-小圆角 4px（默认），round-胶囊；圆角写在内层 contentStyle 上，根节点 custom-style 覆盖不到，当前无直角通道 | `SearchShape`（`square`｜`round`） | `'square'` |
 | `bg-color` / `bgColor` | 搜索框背景颜色 | `string` | `''` |
@@ -22,9 +22,9 @@
 | `focus` | 是否自动获得焦点 | `boolean` | `false` |
 | `show-action` / `showAction` | 是否显示右侧控件 | `boolean` | `true` |
 | `action-text` / `actionText` | 右侧控件文字 | `string` | `''` |
-| `action-style` / `actionStyle` | 右侧控件的样式，对象形式 | `UTSJSONObject` | - |
+| `action-style` / `actionStyle` | 右侧控件的样式，对象形式 | `JsonObject` | - |
 | `input-align` / `inputAlign` | 输入框内容水平对齐方式 | `InputAlign`（`left`｜`center`｜`right`） | `'left'` |
-| `input-style` / `inputStyle` | 自定义输入框样式，对象形式 | `UTSJSONObject` | - |
+| `input-style` / `inputStyle` | 自定义输入框样式，对象形式 | `JsonObject` | - |
 | `disabled` | 是否启用输入框 | `boolean` | `false` |
 | `animation` | 是否开启动画，见上方说明 | `boolean` | `false` |
 | `search-icon-color` / `searchIconColor` | 搜索图标的颜色，默认同输入框字体颜色 | `string` | `''` |
@@ -36,6 +36,16 @@
 | `maxlength` | 输入框最大能输入的长度，-1 为不限制长度 | `string \| number` | `-1` |
 | `model-value` / `modelValue` | 输入框的初始化内容 | `string` | `''` |
 | `adjust-position` / `adjustPosition` | 弹出键盘时是否自动调节高度 | `boolean` | `true` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `InputAlign` | `'left' \| 'center' \| 'right'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SearchShape` | `'square' \| 'round'` |
 
 ## 双向绑定（v-model）
 

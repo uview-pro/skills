@@ -2,8 +2,8 @@
 
 # ux-subsection API
 
-> 来源：`components/ux-subsection`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:e7fff74265df7af60fdd9ee22268fc4b0190a12b9705b6233ccd9acebef25062`
+> 来源：`components/ux-subsection`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:0a9d4c0bb457796022a9edcd62c716d2c60ad1f0df82018dff8678d1e06687d5`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only subsection`
 
 横向分段选择器，内置 button-按钮式与 subsection-选项卡式两种外观：滑动条随选中项移动（animation 控制过渡），切换后通过 change 事件回传下标
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 分段项数组，每项 { name, disabled?, width? }，默认 [] | `SubsectionListItem[]` | - |
 | `current` | 当前选中项下标，默认 0 | `number \| string` | `0` |
@@ -27,6 +27,16 @@
 | `button-color` / `buttonColor` | button 模式的滑动条背景色，不传时取全局白色 | `string` | `''` |
 | `vibrate-short` / `vibrateShort` | 切换时是否触发轻微振动，默认 false | `boolean` | `false` |
 | `disabled` | 是否禁用整个分段器 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SubsectionListItem` | `{ name: string; disabled?: boolean; width?: number; }` |
+| `SubsectionMode` | `'button' \| 'subsection'` |
 
 ## 双向绑定（v-model）
 

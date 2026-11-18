@@ -2,8 +2,8 @@
 
 # ux-radio-group API
 
-> 来源：`components/ux-radio-group`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:59aaa1974ac7f868882a98e3d7f7643bfce4594435973a9d90ccfb5d161a8d27`
+> 来源：`components/ux-radio-group`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:d5ead7c5c2eddd31a20061016a41944382764e07e5394e1b6106d207c2cfbd3a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only radio-group`
 
 单选框用于有一个选择，用户只能选择其中一个的场景。搭配 ux-radio 使用
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 绑定值，选中的 radio 的 name/value（支持 v-model 双向绑定） | `string \| number` | `''` |
 | `disabled` | 是否禁用所有 radio（默认false） | `boolean` | `false` |
@@ -23,6 +23,14 @@
 | `icon-size` / `iconSize` | 图标大小，单位px（默认10px） | `string \| number` | `''` |
 | `width` | 每个 radio 占 u-radio-group 的宽度 | `string` | `'auto'` |
 | `wrap` | 是否每个 radio 都换行（默认false） | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

@@ -2,8 +2,8 @@
 
 # ux-text API
 
-> 来源：`components/ux-text`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:084ce1a53b566d2fac147154a793ee6fa1039725c14aaa3c845a2e0e6c3419e9`
+> 来源：`components/ux-text`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:c6a034b768b705d191a47c432ab22341d703aa0dcb675c0719797e377792f6e6`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only text`
 
 此组件集成了文本类在项目中的常用功能，包括状态，拨打电话，格式化日期，*替换，超链接...等功能。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `type` | 主题颜色 | `string` | `''` |
 | `show` | 是否显示文本 | `boolean` | `true` |
@@ -37,13 +37,21 @@
 | `lines` | 显示行数，超出省略号 | `string \| number` | `''` |
 | `color` | 文本颜色 | `string` | `''` |
 | `size` | 字体大小 | `string \| number` | `14` |
-| `icon-style` / `iconStyle` | 图标样式 | `UTSJSONObject \| string` | - |
-| `text-style` / `textStyle` | 文字样式 | `UTSJSONObject \| string` | - |
+| `icon-style` / `iconStyle` | 图标样式 | `JsonObject \| string` | - |
+| `text-style` / `textStyle` | 文字样式 | `JsonObject \| string` | - |
 | `decoration` | 文字装饰 | `string` | `'none'` |
-| `margin` | 外边距 | `UTSJSONObject \| string \| number` | `0` |
+| `margin` | 外边距 | `JsonObject \| string \| number` | `0` |
 | `line-height` / `lineHeight` | 行高 | `string \| number` | `''` |
 | `align` | 对齐方式 | `string` | `'left'` |
 | `word-wrap` / `wordWrap` | 换行方式 | `string` | `'normal'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

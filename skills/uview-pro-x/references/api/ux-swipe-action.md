@@ -2,8 +2,8 @@
 
 # ux-swipe-action API
 
-> 来源：`components/ux-swipe-action`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:c1fbe361a4348bfe230131c9a3049c8b2f12d0f2d74f111577d0f42cfe7fb1a4`
+> 来源：`components/ux-swipe-action`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:e1c814866d1e17eee856baf2b34d61c28070fbc5679b990d2e5501969f3c4b7b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swipe-action`
 
 该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `index` | 标识符，点击时候用于区分点击了哪一个 | `number \| string` | `''` |
 | `btn-width` / `btnWidth` | 按钮宽度，单位px（默认90） | `number \| string` | `90` |
@@ -21,6 +21,15 @@
 | `bg-color` / `bgColor` | 整个组件背景颜色 | `string` | `''` |
 | `vibrate-short` / `vibrateShort` | 是否使手机发生短促震动（默认false） | `boolean` | `false` |
 | `options` | 数组形式，可以配置背景颜色和文字 | `SwipeActionOption[]` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SwipeActionOption` | `{ text: string; style?: JsonObject; }` |
 
 ## 双向绑定（v-model）
 

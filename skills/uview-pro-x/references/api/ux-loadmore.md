@@ -2,8 +2,8 @@
 
 # ux-loadmore API
 
-> 来源：`components/ux-loadmore`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:53d46ce0948be395305cbbadcbdc004191e572c230717bd4c1a2d645d2703311`
+> 来源：`components/ux-loadmore`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:9aa1b60b06df4ccffb15f3365728a6967388470cf7102d68c91cc927dc53b48f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only loadmore`
 
 此组件一般用于标识页面底部加载数据时的状态。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `bg-color` / `bgColor` | 组件背景色 | `string` | `''` |
 | `icon` | 是否显示加载中的图标（默认true） | `boolean` | `true` |
@@ -26,6 +26,15 @@
 | `margin-top` / `marginTop` | 上边距 | `number \| string` | `0` |
 | `margin-bottom` / `marginBottom` | 下边距 | `number \| string` | `0` |
 | `height` | 高度，单位px | `number \| string` | `'auto'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `LoadmoreText` | `{ loadmore: string; loading: string; nomore: string; }` |
 
 ## 双向绑定（v-model）
 

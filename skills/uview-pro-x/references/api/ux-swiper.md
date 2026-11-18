@@ -2,8 +2,8 @@
 
 # ux-swiper API
 
-> 来源：`components/ux-swiper`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:519dc8f7b60879bc9206d615ac646f2fd6be23572bb1177c7420cb708ba8babe`
+> 来源：`components/ux-swiper`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:3daf112ea262d5b736c206e26a398d8e50bf9d6dc5d350bfa64e402a97318e64`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swiper`
 
 该组件一般用于导航轮播，广告展示等场景，可开箱即用
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 轮播数据列表，数组对象 | `any[]` | - |
 | `title` | 是否显示标题 | `boolean` | `false` |
@@ -30,7 +30,18 @@
 | `name` | 轮播项对象的图片字段名 | `string` | `'image'` |
 | `bg-color` / `bgColor` | 轮播背景色 | `string` | `''` |
 | `current` | 当前激活项索引 | `string \| number` | `0` |
-| `title-style` / `titleStyle` | 标题样式对象 | `UTSJSONObject` | - |
+| `title-style` / `titleStyle` | 标题样式对象 | `JsonObject` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `ImgMode` | `'aspectFit' \| 'aspectFill' \| 'widthFix' \| 'top' \| 'bottom' \| 'center' \| 'scaleToFill'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SwiperIndicatorPosition` | `\| 'topLeft' \| 'topCenter' \| 'topRight' \| 'bottomLeft' \| 'bottomCenter' \| 'bottomRight'` |
+| `SwiperMode` | `'round' \| 'dot' \| 'rect' \| 'number' \| 'none'` |
 
 ## 双向绑定（v-model）
 

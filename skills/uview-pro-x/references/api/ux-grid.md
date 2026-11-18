@@ -2,8 +2,8 @@
 
 # ux-grid API
 
-> 来源：`components/ux-grid`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:db5e3bbf9b7913780a905f0330fb4422522e22d4957d2ad443fa507adc1763bf`
+> 来源：`components/ux-grid`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:bedb071cc0d3ea30bfe113c95d373f4f8de4ba371c9da143da33841f760811c9`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only grid`
 
 宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件(badge)，或者图标等，也可以扩展为左右滑动的轮播形式。
@@ -12,12 +12,20 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `col` | 分成几列（默认2） | `number \| string` | `3` |
 | `border` | 是否显示边框（默认true） | `boolean` | `true` |
 | `align` | 宫格对齐方式，数量少时靠左/居中/靠右（默认left） | `string` | `'left'` |
 | `hover-class` / `hoverClass` | 宫格按压时的样式类，"none"为无效果（默认ux-grid--hover） | `string` | `'ux-grid-item--hover'` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

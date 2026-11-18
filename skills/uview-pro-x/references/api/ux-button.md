@@ -2,8 +2,8 @@
 
 # ux-button API
 
-> 来源：`components/ux-button`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40`
+> 来源：`components/ux-button`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:73f43ff1f143b8b4596c9cfb7f58b453cafd07d61e8193370c2c56fa051de897`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only button`
 
 以 uni-app `button` 原生组件为基础进行二次封装，内置多套主题色并可选水波纹点击效果；纯文字与富内容分别由默认插槽与 content 插槽承载（见 @slot），App 端文字着色已显式处理
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `text` | 按钮文本：纯文字用 text 传入或写默认插槽均可，组件自动包带色 text 并着色；富内容（图标+文字混排、富样式）用 content 插槽，插槽内文字需自行设 color（App 端样式不继承） | `string` | `''` |
 | `font-size` / `fontSize` | 按钮文字大小，单位px，不传时按 size 档位自动匹配（large 18 / default 15 / small 12）；只改字号，不改按钮高度 | `string \| number` | `''` |
@@ -52,6 +52,21 @@
 | `throttle-time` / `throttleTime` | 节流，一定时间内只能触发一次 | `string \| number` | `0` |
 | `hover-start-time` / `hoverStartTime` | 按住后多久出现点击态，单位毫秒 | `string \| number` | `20` |
 | `hover-stay-time` / `hoverStayTime` | 手指松开后点击态保留时间，单位毫秒 | `string \| number` | `150` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `ButtonFormType` | `'' \| 'submit' \| 'reset'` |
+| `ButtonOpenType` | `\| 'feedback' \| 'share' \| 'getUserInfo' \| 'contact' \| 'getPhoneNumber' \| 'launchApp' \| 'openSetting' \| 'chooseAvatar' \| 'getAuthorize' \| 'lifestyle' \| 'contactShare' \| 'openGroupProfile' \| 'openGuildProfile' \| 'openPublicProfile' \| 'shareMessageToFriend' \| 'addFriend' \| 'addColorSign' \| 'addGroupApp' \| 'addToFavorites' \| 'chooseAddress' \| 'chooseInvoiceTitle' \| 'login' \| 'subscribe' \| 'favorite' \| 'watchLater' \| 'openProfile' \| 'agreePrivacyAuthorization'` |
+| `ButtonScope` | `'phoneNumber' \| 'userInfo'` |
+| `ButtonShape` | `'square' \| 'round' \| 'circle'` |
+| `ButtonSize` | `SizeType` |
+| `ButtonType` | `'primary' \| 'info' \| 'error' \| 'warning' \| 'success' \| 'default'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SizeType` | `'default' \| 'small' \| 'large'` |
 
 ## 双向绑定（v-model）
 

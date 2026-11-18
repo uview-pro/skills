@@ -2,8 +2,8 @@
 
 # ux-top-tips API
 
-> 来源：`components/ux-top-tips`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:0a8e0677d08182cc2dee25a75ce2f83620b5322d6109432cf279d3257bf149d3`
+> 来源：`components/ux-top-tips`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:bc5d93a4daac691de2f9f6529700c4d1cd5b20f3da7ae853b67885d1579ed868`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only top-tips`
 
 顶部提示条，通过组件实例的 show() 弹出，支持导航栏高度适配与 z-index 定制，到时自动收起

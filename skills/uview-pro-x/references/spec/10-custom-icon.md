@@ -22,8 +22,8 @@
 ```
 
 ```ts
-// iconfont.uts
-export const customIconFont: UTSJSONObject = {
+// iconfont.ts
+export const customIconFont: JsonObject = {
     'sun': 'e712',
     'moon': 'e609',
     'eye': 'e68e'
@@ -36,9 +36,9 @@ export const customIconFont: UTSJSONObject = {
 
 ```vue
 <!-- App.uvue -->
-<script setup lang="uts">
+<script setup lang="ts">
 import { $u } from '@/uni_modules/uview-pro-x'
-import { customIconFont } from './iconfont.uts'
+import { customIconFont } from './iconfont.ts'
 
 onLaunch(() => {
     // 必须在图标渲染之前完成，onLaunch 最稳妥
@@ -95,9 +95,9 @@ onLaunch(() => {
 码点表的键就是图标清单：
 
 ```ts
-import { customIconFont } from '@/iconfont.uts'
+import { customIconFont } from '@/iconfont.ts'
 
-const customIconList: string[] = UTSJSONObject.keys(customIconFont)
+const customIconList: string[] = JsonObject.keys(customIconFont)
 ```
 
 ```vue

@@ -2,8 +2,8 @@
 
 # ux-navbar API
 
-> 来源：`components/ux-navbar`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:f32c1096a5eea846cb936d7e63ac09ae474ae02d94e20ac7157edbccb70cd314`
+> 来源：`components/ux-navbar`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:725ea6d43c30aed731a8b7a3d1b9e16d5cb98ad9749dcccba48ba737223b8a5b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only navbar`
 
 此组件一般用于在特殊情况下，需要自定义导航栏的时候用到，一般建议使用 uni-app 自带的导航栏。
@@ -18,21 +18,29 @@
 | `back-icon-size` / `backIconSize` | 左边返回图标的大小，px | `string \| number` | `'18'` |
 | `back-text` / `backText` | 返回的文字提示 | `string` | `''` |
 | `back-text-color` / `backTextColor` | 返回文字的颜色 | `string` | `''` |
-| `back-text-style` / `backTextStyle` | 返回文字的样式 | `UTSJSONObject` | - |
+| `back-text-style` / `backTextStyle` | 返回文字的样式 | `JsonObject` | - |
 | `title` | 导航栏标题 | `string` | `''` |
 | `title-width` / `titleWidth` | 标题的宽度，单位 px | `string \| number` | `'180'` |
 | `title-color` / `titleColor` | 标题的颜色 | `string` | `''` |
 | `title-bold` / `titleBold` | 标题字体是否加粗 | `boolean` | `false` |
 | `title-size` / `titleSize` | 标题的字体大小 | `string \| number` | `16` |
 | `is-back` / `isBack` | 是否显示导航栏左边返回图标和辅助文字 | `boolean \| string` | `true` |
-| `background` | 导航栏背景设置 | `UTSJSONObject` | - |
+| `background` | 导航栏背景设置 | `JsonObject` | - |
 | `is-fixed` / `isFixed` | 导航栏是否固定在顶部 | `boolean` | `true` |
 | `immersive` | 是否沉浸式，允许 fixed 定位后导航栏塌陷，仅 fixed 定位下生效 | `boolean` | `false` |
 | `border-bottom` / `borderBottom` | 是否显示导航栏的下边框 | `boolean` | `true` |
 | `z-index` / `zIndex` | 固定在顶部时的 z-index 值 | `string \| number` | `''` |
 | `custom-back` / `customBack` | 自定义返回逻辑方法 | `() => void` | - |
 | `custom-class` / `customClass` | 自定义类名 | `string` | `''` |
-| `custom-style` / `customStyle` | 自定义样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义样式 | `string \| JsonObject` | - |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

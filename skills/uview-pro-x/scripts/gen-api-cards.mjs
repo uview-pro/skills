@@ -85,6 +85,11 @@ function litLabel(v) {
     return s === '' ? "''" : s;
 }
 
+/** 库级通用类型的白话注解（定义本身是 TS utility 写法，补一句人读说明） */
+const TYPE_GLOSS = {
+    JsonObject: '普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式',
+};
+
 /** 类型列：字面量联合展开为取值清单（具名别名保留别名） */
 function typeCell(p) {
     const t = p.typeResolved;
@@ -148,6 +153,22 @@ function renderCard(comp, model) {
         }
     }
     L.push('');
+
+    // ---- 类型定义（私有别名展开随卡发货，消费侧不猜定义） ----
+    const defNames = Object.keys(comp.typeDefs || {});
+    if (defNames.length > 0) {
+        L.push('## 类型定义');
+        L.push('');
+        L.push('> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。');
+        L.push('');
+        L.push('| 类型 | 定义 |');
+        L.push('| --- | --- |');
+        for (const n of defNames) {
+            const gloss = TYPE_GLOSS[n] ? `（${TYPE_GLOSS[n]}）` : '';
+            L.push(`| ${code(n)} | ${code(comp.typeDefs[n])}${gloss} |`);
+        }
+        L.push('');
+    }
 
     // ---- v-model ----
     L.push('## 双向绑定（v-model）');
@@ -267,7 +288,7 @@ function renderReadme(model, names) {
     L.push('');
     L.push(`> uview-pro-x v${model.libVersion} ｜ 全库 API 指纹 \`${model.libHash}\` ｜ ${model.stats.components} 个组件`);
     L.push('>');
-    L.push('> 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。');
+    L.push('> 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽/类型定义一页俱全）；卡上没有的写法不要猜。');
     L.push('> 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。');
     L.push('');
 

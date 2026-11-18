@@ -2,8 +2,8 @@
 
 # ux-divider API
 
-> 来源：`components/ux-divider`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:4c23857aa5620f204b111782dedf59c2849ab4216c30b49f645fc7447db08c2e`
+> 来源：`components/ux-divider`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:e435fcf3a996339c301711cfdece935ee462ea4ab137b9c8aa1dc55ebe919f4c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only divider`
 
 区隔内容的分割线，一般用于页面底部"没有更多"的提示。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `half-width` / `halfWidth` | 单一边divider横线的宽度(数值)，单位px。或者百分比 | `string \| number` | `75` |
 | `border-color` / `borderColor` | divider横线的颜色，如设置，优先级高于type | `string` | `''` |
@@ -24,6 +24,14 @@
 | `margin-top` / `marginTop` | 上边距 | `string \| number` | `0` |
 | `margin-bottom` / `marginBottom` | 下边距 | `string \| number` | `0` |
 | `use-slot` / `useSlot` | 是否使用slot传入内容，如果不用slot传入内容，中间就不会有空隙 | `boolean` | `true` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

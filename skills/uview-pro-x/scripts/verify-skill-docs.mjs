@@ -279,8 +279,8 @@ function checkRoster(libDir, warns) {
         }
     }
 
-    // hooks：libs/hooks/index.uts 导出 → spec/04 全文提及
-    const hooksIndex = path.join(libDir, 'libs', 'hooks', 'index.uts');
+    // hooks：libs/hooks/index.ts 导出 → spec/04 全文提及
+    const hooksIndex = path.join(libDir, 'libs', 'hooks', 'index.ts');
     if (fs.existsSync(hooksIndex)) {
         const exports = Array.from(readText(hooksIndex).matchAll(/export\s+\*\s+from\s+'\.\/(use[A-Za-z0-9_]+)'/g), (m) => m[1]);
         const mentioned = new Set(Array.from(specText.matchAll(/\b(use[A-Z][A-Za-z0-9_]*)\b/g), (m) => m[1]));
@@ -296,8 +296,8 @@ function checkRoster(libDir, warns) {
         }
     }
 
-    // $u：libs/index.uts 的 UViewProXUtil 字段 → spec/04 全文 $u.xxx
-    const libIndex = path.join(libDir, 'libs', 'index.uts');
+    // $u：libs/index.ts 的 UViewProXUtil 字段 → spec/04 全文 $u.xxx
+    const libIndex = path.join(libDir, 'libs', 'index.ts');
     if (fs.existsSync(libIndex)) {
         const src = readText(libIndex);
         const start = src.indexOf('export type UViewProXUtil');

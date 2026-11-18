@@ -2,8 +2,8 @@
 
 # ux-input API
 
-> 来源：`components/ux-input`（uview-pro-x v1.0.24）
-> API 指纹：`sha256:eb3bf6852930d224c7747af1904e011aa57017bbacdab5f3bd64506536fb7534`
+> 来源：`components/ux-input`（uview-pro-x v2.0.0）
+> API 指纹：`sha256:cb0886473d5c28ecf1f3af4ed954588a1ce184f46c321e328c1f368112d84366`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only input`
 
 此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件ux-form而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 用于双向绑定输入框的值 | `string \| number` | `''` |
 | `type` | 输入框的类型，textarea，text，number | `InputType`（`text`｜`number`｜`idcard`｜`digit`｜`password`｜`textarea`｜`phone`｜`url`｜`email`｜`safe-password`｜`name`｜`nickname`｜`bank-card`｜`tel`｜`select`） | `'text'` |
@@ -44,6 +44,19 @@
 | `adjust-position` / `adjustPosition` | 弹出键盘时是否自动调节高度，uni-app默认值是true | `boolean` | `true` |
 | `confirm-hold` / `confirmHold` | 点击键盘右下角按钮时是否保持键盘不收起（默认false） | `boolean` | `false` |
 | `validate-state` / `validateState` | 输入框的验证状态，用于错误时，边框是否改为红色 | `boolean` | `false` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `BorderType` | `'surround' \| 'none' \| 'bottom'` |
+| `InputAlign` | `'left' \| 'center' \| 'right'` |
+| `InputConfirmType` | `'send' \| 'search' \| 'next' \| 'go' \| 'done'` |
+| `InputType` | `\| 'text' \| 'number' \| 'idcard' \| 'digit' \| 'password' \| 'textarea' \| 'phone' \| 'url' \| 'email' \| 'safe-password' \| 'name' \| 'nickname' \| 'bank-card' \| 'tel' \| 'select'` |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
+| `SizeType` | `'default' \| 'small' \| 'large'` |
 
 ## 双向绑定（v-model）
 
