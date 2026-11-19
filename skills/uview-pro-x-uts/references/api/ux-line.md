@@ -2,9 +2,9 @@
 
 # ux-line API
 
-> 来源：`components/ux-line`（uview-pro-x v1.0.24）
+> 来源：`components/ux-line`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:b6eea355c34f7be9aae95bcfc89ef9f5041abccaafd3b3aaa463bdc05507e4a4`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only line`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only line`
 
 此组件一般用于显示一根线条，用于分隔内容块，有横向和竖向两种模式，且能设置0.5px线条，使用也很简单
 

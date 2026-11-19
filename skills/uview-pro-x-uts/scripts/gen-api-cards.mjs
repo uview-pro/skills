@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * gen-api-cards.mjs — uview-pro-x 组件 API 卡片生成器（零依赖，Node >= 18）
+ * gen-api-cards.mjs — uview-pro-x-uts 组件 API 卡片生成器（零依赖，Node >= 18）
  * ------------------------------------------------------------------
  * 数据源二选一：
  *   --lib <dir>    从组件库源码现场提取（author-time / 库升级后再生成时用），随之写出 model.json
@@ -12,8 +12,8 @@
  *   README.md           索引：7 分类列表 + 快照更新流程
  *
  * 用法：
- *   node scripts/gen-api-cards.mjs --lib uni_modules/uview-pro-x                 # 全量生成
- *   node scripts/gen-api-cards.mjs --lib uni_modules/uview-pro-x --only button --stdout
+ *   node scripts/gen-api-cards.mjs --lib uni_modules/uview-pro-x-uts                 # 全量生成
+ *   node scripts/gen-api-cards.mjs --lib uni_modules/uview-pro-x-uts --only button --stdout
  *   node scripts/gen-api-cards.mjs --model references/api/model.json             # 仅重渲染卡片
  *   node scripts/gen-api-cards.mjs --check                                       # 只比对不落盘（有漂移 exit 1）
  *
@@ -125,9 +125,9 @@ function renderCard(comp, model) {
     L.push('');
     L.push(`# ${comp.name} API`);
     L.push('');
-    L.push(`> 来源：\`${comp.dir}\`（uview-pro-x v${model.libVersion}）`);
+    L.push(`> 来源：\`${comp.dir}\`（uview-pro-x-uts v${model.libVersion}）`);
     L.push(`> API 指纹：\`${comp.apiHash}\``);
-    L.push(`> 再生成（组件库源码可读时）：\`node ${GEN_BY} --lib <uview-pro-x 路径> --only ${shortName(comp.name)}\``);
+    L.push(`> 再生成（组件库源码可读时）：\`node ${GEN_BY} --lib <uview-pro-x-uts 路径> --only ${shortName(comp.name)}\``);
     L.push('');
     if (comp.description) {
         L.push(escText(comp.description));
@@ -265,7 +265,7 @@ function renderReadme(model, names) {
     L.push('');
     L.push('# 组件 API 卡片索引');
     L.push('');
-    L.push(`> uview-pro-x v${model.libVersion} ｜ 全库 API 指纹 \`${model.libHash}\` ｜ ${model.stats.components} 个组件`);
+    L.push(`> uview-pro-x-uts v${model.libVersion} ｜ 全库 API 指纹 \`${model.libHash}\` ｜ ${model.stats.components} 个组件`);
     L.push('>');
     L.push('> 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。');
     L.push('> 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。');
@@ -295,7 +295,7 @@ function renderReadme(model, names) {
     L.push('node <技能目录>/scripts/update-api.mjs');
     L.push('```');
     L.push('');
-    L.push('- 默认读取 `<cwd>/uni_modules/uview-pro-x` 与 `<cwd>/pages`（`--lib` / `--verify <dir>` 可指定，`--no-verify` 跳过语料回归）；');
+    L.push('- 默认读取 `<cwd>/uni_modules/uview-pro-x-uts` 与 `<cwd>/pages`（`--lib` / `--verify <dir>` 可指定，`--no-verify` 跳过语料回归）；');
     L.push('- 内部依次执行：重提取 + 重生成（`' + GEN_BY + ' --lib …`）→ 一致性核对（`--check`，应 0 漂移）→ 语料回归（`scripts/verify-ux-usage.mjs`，应 0 error）；');
     L.push('- 结束后输出变更报告：库版本 / 全库指纹 / 组件新增·移除·API 变更清单；');
     L.push('- 校验器 `scripts/verify-ux-usage.mjs` 默认读取本目录 `model.json`；传 `--lib` 且实装库源码可解析时会现场提取比对，快照过旧会在报表顶部提示；');
@@ -460,7 +460,7 @@ function main() {
     }
 
     const rel = toRel(outDir);
-    if (modelText != null) console.log(`[gen-api-cards] 写出：${rel}/model.json（uview-pro-x v${model.libVersion}，${model.stats.components} 组件）`);
+    if (modelText != null) console.log(`[gen-api-cards] 写出：${rel}/model.json（uview-pro-x-uts v${model.libVersion}，${model.stats.components} 组件）`);
     console.log(`[gen-api-cards] 写出：${rel}/ux-*.md × ${cardTexts.size}${targets.length < allNames.length ? `（仅 --only 指定，全库共 ${allNames.length}）` : ''}`);
     console.log(`[gen-api-cards] 写出：${rel}/README.md`);
     if (removedCards.length > 0) console.log(`[gen-api-cards] 清理孤儿卡片 ×${removedCards.length}：${removedCards.join('、')}`);

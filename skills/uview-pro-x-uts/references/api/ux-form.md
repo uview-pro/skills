@@ -2,9 +2,9 @@
 
 # ux-form API
 
-> 来源：`components/ux-form`（uview-pro-x v1.0.24）
+> 来源：`components/ux-form`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:5d18ceb27c7c09311dcbca26494e8158f924d094cdf0bd74254a64978cd32059`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only form`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only form`
 
 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
 

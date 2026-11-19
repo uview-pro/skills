@@ -2,9 +2,9 @@
 
 # ux-tag API
 
-> 来源：`components/ux-tag`（uview-pro-x v1.0.24）
+> 来源：`components/ux-tag`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:8dff74007a7b38e8e2bf15238fd1d1d288fb9db8ada0c1f1fe42fb925f514214`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tag`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only tag`
 
 该组件一般用于标记和选择
 

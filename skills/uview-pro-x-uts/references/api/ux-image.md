@@ -2,9 +2,9 @@
 
 # ux-image API
 
-> 来源：`components/ux-image`（uview-pro-x v1.0.24）
+> 来源：`components/ux-image`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:119930825a08183aa9653775f1182a034a05b9a3ed9bfe61cb967442df6b4dc3`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only image`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only image`
 
 此组件为uni-app的image组件的加强版，在继承了原有功能外，还支持淡入动画、加载中、加载失败提示、圆角值和形状等。
 

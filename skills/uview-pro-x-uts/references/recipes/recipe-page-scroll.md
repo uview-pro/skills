@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="uts">
-import { $u, useTheme, usePageScroll } from '@/uni_modules/uview-pro-x'
+import { $u, useTheme, usePageScroll } from '@/uni_modules/uview-pro-x-uts'
 
 const { cssVars } = useTheme()
 const cssVarsStyle = computed(() => $u.toStyle(cssVars.value))

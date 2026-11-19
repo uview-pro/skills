@@ -6,7 +6,7 @@
 
 ```vue
 <script setup lang="uts">
-import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x'
+import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x-uts'
 
 const count = ref(0)
 const theme = useTheme()
@@ -16,8 +16,8 @@ const theme = useTheme()
 | 规则 | 说明 |
 |---|---|
 | 无需导入 | `ref` / `computed` / `watch` / `reactive` 等 Vue API，以及 `onLoad` / `onShow` / `onPageScroll` 等页面生命周期，**自动注入**，不要手写 import |
-| 组件库导入 | 统一从 `@/uni_modules/uview-pro-x` 导入（`$u`、hooks、类型）；`<ux-*>` 组件靠 easycom 免导入 |
-| 类型导入 | 内联 `type` 修饰符：`import { $u, type TabbarItem } from '@/uni_modules/uview-pro-x'` |
+| 组件库导入 | 统一从 `@/uni_modules/uview-pro-x-uts` 导入（`$u`、hooks、类型）；`<ux-*>` 组件靠 easycom 免导入 |
+| 类型导入 | 内联 `type` 修饰符：`import { $u, type TabbarItem } from '@/uni_modules/uview-pro-x-uts'` |
 
 ## UTS 高频类型陷阱（❌/✅ 对照）
 

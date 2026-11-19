@@ -2,9 +2,9 @@
 
 # ux-grid API
 
-> 来源：`components/ux-grid`（uview-pro-x v1.0.24）
+> 来源：`components/ux-grid`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:db5e3bbf9b7913780a905f0330fb4422522e22d4957d2ad443fa507adc1763bf`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only grid`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only grid`
 
 宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件(badge)，或者图标等，也可以扩展为左右滑动的轮播形式。
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * update-api.mjs —— uview-pro-x API 快照「一条命令」更新（维护者用，author-time，零依赖 Node >= 18）
+ * update-api.mjs —— uview-pro-x-uts API 快照「一条命令」更新（维护者用，author-time，零依赖 Node >= 18）
  * ------------------------------------------------------------------
  * 在项目根目录执行，依次完成三步，任一步失败即中止（exit 1）：
  *   ① 重提取并重生成：从组件库源码生成 references/api/model.json + 全部卡片 + 索引
@@ -11,7 +11,7 @@
  * 用法：
  *   node <本脚本路径> [--lib <dir>] [--verify <dir>] [--no-verify]
  *
- *   --lib <dir>     组件库源码目录（默认 <cwd>/uni_modules/uview-pro-x）
+ *   --lib <dir>     组件库源码目录（默认 <cwd>/uni_modules/uview-pro-x-uts）
  *                   源码不可读（如加密）时无法更新，请在源码可读环境执行；
  *                   消费侧无需本脚本——快照与卡片随技能发货。
  *   --verify <dir>  页面语料目录（默认 <cwd>/pages）
@@ -112,7 +112,7 @@ function main() {
     const cwd = process.cwd();
 
     // ---- 预检：组件库源码必须可读（加密场景给出明确报错，而非静默） ----
-    const lib = path.resolve(cwd, opts.lib ?? path.join('uni_modules', 'uview-pro-x'));
+    const lib = path.resolve(cwd, opts.lib ?? path.join('uni_modules', 'uview-pro-x-uts'));
     if (!fs.existsSync(lib)) {
         console.error(`[update-api] 组件库目录不存在：${lib}`);
         console.error('[update-api] 请用 --lib <组件库目录> 指定；源码加密/不可读的项目无法更新快照（消费侧无需本脚本，快照随技能发货）');

@@ -6,8 +6,8 @@
 ## 导入与实例模型
 
 ```ts
-import { http } from '@/uni_modules/uview-pro-x'
-import type { HttpError, HttpInstance, HttpConfig } from '@/uni_modules/uview-pro-x'
+import { http } from '@/uni_modules/uview-pro-x-uts'
+import type { HttpError, HttpInstance, HttpConfig } from '@/uni_modules/uview-pro-x-uts'
 ```
 
 | 实例 | 来源 | 用途 |
@@ -112,7 +112,7 @@ request.upload({
 ## useRequest（页面三态）
 
 ```ts
-import { useRequest } from '@/uni_modules/uview-pro-x'
+import { useRequest } from '@/uni_modules/uview-pro-x-uts'
 
 const { loading, data, error, run, cancel } = useRequest<Profile>(async (ctx) => {
     const result = await request.get('/profile', null, { signal: ctx.signal })

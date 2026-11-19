@@ -2,9 +2,9 @@
 
 # ux-checkbox-group API
 
-> 来源：`components/ux-checkbox-group`（uview-pro-x v1.0.24）
+> 来源：`components/ux-checkbox-group`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:800dd3f967441e06ee59a9552794a4289b989a2a03a371aa492fd6039947cfe0`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only checkbox-group`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only checkbox-group`
 
 复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便
 

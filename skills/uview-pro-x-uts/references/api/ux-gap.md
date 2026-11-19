@@ -2,9 +2,9 @@
 
 # ux-gap API
 
-> 来源：`components/ux-gap`（uview-pro-x v1.0.24）
+> 来源：`components/ux-gap`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:1a32d2671314f278e02208f10516a000f104e0e7d37bec13308b75edf253edaa`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only gap`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only gap`
 
 该组件一般用于内容块之间的用一个灰色块隔开的场景，方便用户风格统一，减少工作量
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * verify-ux-usage.mjs —— uview-pro-x 页面组件用法校验（消费侧）
+ * verify-ux-usage.mjs —— uview-pro-x-uts 页面组件用法校验（消费侧）
  * ------------------------------------------------------------------
  * 默认零源码依赖：数据源为技能内置快照 references/api/model.json（随技能发货，
  * 组件库源码加密/不可读的项目同样可用）。

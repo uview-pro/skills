@@ -2,9 +2,9 @@
 
 # ux-input API
 
-> 来源：`components/ux-input`（uview-pro-x v1.0.24）
+> 来源：`components/ux-input`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:eb3bf6852930d224c7747af1904e011aa57017bbacdab5f3bd64506536fb7534`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only input`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only input`
 
 此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件ux-form而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。
 

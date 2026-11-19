@@ -29,7 +29,7 @@ app.use(uViewProX)   // 注册表 = 内置 zh-CN + en-US
 要「内置文案 + 应用文案」同时可用，必须把库内置包一并传入：
 
 ```ts
-import { uViewProX, zhCN as libZhCN, enUS as libEnUS } from '@/uni_modules/uview-pro-x'
+import { uViewProX, zhCN as libZhCN, enUS as libEnUS } from '@/uni_modules/uview-pro-x-uts'
 import { zhCN as appZhCN, enUS as appEnUS } from '@/locales'
 
 export function createApp() {
@@ -46,7 +46,7 @@ export function createApp() {
 }
 ```
 
-- 库内置包从库入口导入：`import { zhCN, enUS, frFR } from '@/uni_modules/uview-pro-x'`；`fr-FR` 已随库导出但不在默认注册表，需要法语时手动传入。
+- 库内置包从库入口导入：`import { zhCN, enUS, frFR } from '@/uni_modules/uview-pro-x-uts'`；`fr-FR` 已随库导出但不在默认注册表，需要法语时手动传入。
 - `isForce: true` 时同名语言包不做深合并、直接整体替换，且初始语言强制取 `defaultLocale`（忽略用户已保存选择）。
 
 ### 语言包结构
@@ -69,7 +69,7 @@ export function createApp() {
 ## useLocale API
 
 ```ts
-import { useLocale } from '@/uni_modules/uview-pro-x'
+import { useLocale } from '@/uni_modules/uview-pro-x-uts'
 
 const { t, setLocale, currentLocale, locales } = useLocale()   // 全 key 形态
 const { t: demo } = useLocale('demo')                          // 命名空间形态
@@ -129,7 +129,7 @@ const { t: demo } = useLocale('demo')                          // 命名空间�
 ## 运行时切换（示例）
 
 ```ts
-import { useLocale } from '@/uni_modules/uview-pro-x'
+import { useLocale } from '@/uni_modules/uview-pro-x-uts'
 
 const { locales, currentLocale, setLocale } = useLocale()
 const { t: demo } = useLocale('demo')
@@ -166,7 +166,7 @@ const localeName = ref<string>('en-US')
 | 传了自定义语言包后，组件内置文案显示成 `uPicker.cancelText` 原始 key | `locales` 传入数组即注册全集，内置包被整体替换 | 把库内置包一并传入 `locales`（库包在前、应用包在后） |
 | `setLocale('ja-JP')` 无效 | 语言未注册（仅 warn 不报错） | 先在 `locales` 注册该语言包 |
 | 界面出现 `xxx.yyy` 点路径文本 | `t` 未命中返回 key 原文 | 核对命名空间与 key 拼写、确认语言包已注册 |
-| 想用法语但语言列表只有中英 | `fr-FR` 不在默认注册表 | `import { frFR } from '@/uni_modules/uview-pro-x'` 后传入 `locales` |
+| 想用法语但语言列表只有中英 | `fr-FR` 不在默认注册表 | `import { frFR } from '@/uni_modules/uview-pro-x-uts'` 后传入 `locales` |
 | H5 刷新后语言总被 URL 覆盖 | URL `lang=` 注入优先级最高（仅 H5） | 去掉 URL 参数，或检查该参数的来源 |
 | 切换后重启又变回默认 | `isForce: true` 强制忽略已保存选择 | 需要记忆用户选择时把 `isForce` 设为 `false` |
 

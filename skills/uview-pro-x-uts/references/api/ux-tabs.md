@@ -2,9 +2,9 @@
 
 # ux-tabs API
 
-> 来源：`components/ux-tabs`（uview-pro-x v1.0.24）
+> 来源：`components/ux-tabs`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:85cd9c912033a985faaaf6ef8a538c5fc11634ec070bda0ad35b571bbd7a17a7`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabs`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only tabs`
 
 该组件是一个 tabs 标签组件，标签多时可配置左右滑动，标签少时可禁止滑动。配置为滚动模式时，激活的 tab 会自动移动到组件的中间位置。
 

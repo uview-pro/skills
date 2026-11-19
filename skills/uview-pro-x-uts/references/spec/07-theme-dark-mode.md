@@ -26,7 +26,7 @@
 
 ```ts
 // 命名导入：加密版插件入口的 `export * from './index'` 不转发 default（见 spec/01）
-import { uViewProX } from '@/uni_modules/uview-pro-x'
+import { uViewProX } from '@/uni_modules/uview-pro-x-uts'
 import themes from './theme.uts'    // Theme[]：自定义主题数组
 
 app.use(uViewProX, {
@@ -67,7 +67,7 @@ app.use(uViewProX, {
 - 单主题形态会把 `config.defaultTheme` 重置为 `uviewpro`，数组形态不会。
 
 ```ts
-import { BASE_THEME_NAME } from '@/uni_modules/uview-pro-x'
+import { BASE_THEME_NAME } from '@/uni_modules/uview-pro-x-uts'
 
 // 只有一套主题、但要显式暗色：写成单元素数组
 app.use(uViewProX, {
@@ -126,7 +126,7 @@ type Theme = {
 ## useTheme API
 
 ```ts
-import { useTheme } from '@/uni_modules/uview-pro-x'
+import { useTheme } from '@/uni_modules/uview-pro-x-uts'
 
 const { themes, currentTheme, darkMode, cssVars,
         setTheme, setDarkMode, toggleDarkMode, isInDarkMode } = useTheme()
@@ -183,7 +183,7 @@ function onModeTap(mode: DarkMode): void {
 主题 / 暗黑最终通过 CSS 变量（`--u-*` / `--u-type-*`）生效：`theme.scss` 在 `page` 层提供默认值，页面根节点绑定 `cssVars` 后由运行时注入覆盖：
 
 ```ts
-import { $u, useTheme } from '@/uni_modules/uview-pro-x'
+import { $u, useTheme } from '@/uni_modules/uview-pro-x-uts'
 
 const { cssVars } = useTheme()
 const cssVarsStyle = computed(() => $u.toStyle(cssVars.value))

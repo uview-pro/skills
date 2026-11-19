@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x v1.0.24 ｜ 全库 API 指纹 `sha256:d6bbae2da327299e33d141d5ac378ad18099dd8d31620e6a3badc4d6533bef18` ｜ 70 个组件
+> uview-pro-x-uts v1.0.24 ｜ 全库 API 指纹 `sha256:d6bbae2da327299e33d141d5ac378ad18099dd8d31620e6a3badc4d6533bef18` ｜ 70 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
@@ -120,7 +120,7 @@
 node <技能目录>/scripts/update-api.mjs
 ```
 
-- 默认读取 `<cwd>/uni_modules/uview-pro-x` 与 `<cwd>/pages`（`--lib` / `--verify <dir>` 可指定，`--no-verify` 跳过语料回归）；
+- 默认读取 `<cwd>/uni_modules/uview-pro-x-uts` 与 `<cwd>/pages`（`--lib` / `--verify <dir>` 可指定，`--no-verify` 跳过语料回归）；
 - 内部依次执行：重提取 + 重生成（`scripts/gen-api-cards.mjs --lib …`）→ 一致性核对（`--check`，应 0 漂移）→ 语料回归（`scripts/verify-ux-usage.mjs`，应 0 error）；
 - 结束后输出变更报告：库版本 / 全库指纹 / 组件新增·移除·API 变更清单；
 - 校验器 `scripts/verify-ux-usage.mjs` 默认读取本目录 `model.json`；传 `--lib` 且实装库源码可解析时会现场提取比对，快照过旧会在报表顶部提示；

@@ -2,9 +2,9 @@
 
 # ux-popup API
 
-> 来源：`components/ux-popup`（uview-pro-x v1.0.24）
+> 来源：`components/ux-popup`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:624e6906426589a693dfb451369f301a3cff69c362cb61f1e85905b618bbe4a0`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only popup`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only popup`
 
 弹出层容器，用于展示弹窗、信息提示等内容，支持上、下、左、右和中部弹出。组件只提供容器，内部内容由用户自定义。显隐模型：内容层节点由 v-if 创建，起始态（屏外位移 / opacity:0）由静态方向类承载，终态（归位、不透明）由 `el.style.setProperty` 命令式直写，关闭时反向写回起始值、播完时长再卸载节点；小程序端节点被渲染层按位置复用，卸载前行内值会被置空交还给类（见 usePopup 的 `#ifdef MP-WEIXIN`），以保证换方向重开时起点仍由当前方向类决定。下一拍的 50ms 延时是「让起始态先绘制一帧」的必要节拍，不是可消灭的错帧。遮罩层用 ux-mask，常驻不卸载。
 

@@ -2,9 +2,9 @@
 
 # ux-button API
 
-> 来源：`components/ux-button`（uview-pro-x v1.0.24）
+> 来源：`components/ux-button`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only button`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only button`
 
 以 uni-app `button` 原生组件为基础进行二次封装，内置多套主题色并可选水波纹点击效果；纯文字与富内容分别由默认插槽与 content 插槽承载（见 @slot），App 端文字着色已显式处理
 

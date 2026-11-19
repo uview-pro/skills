@@ -2,9 +2,9 @@
 
 # ux-keyboard API
 
-> 来源：`components/ux-keyboard`（uview-pro-x v1.0.24）
+> 来源：`components/ux-keyboard`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:d5921c3bf5663365fa218d4f430ce4694431124515c77e376ed0ce49801142f7`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only keyboard`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only keyboard`
 
 自定义键盘面板，按 mode 内置数字 / 身份证 / 车牌号三种键盘，以底部弹层承载；顶部工具条提供取消与确认，支持点击遮罩关闭、底部安全区适配与工具条文案定制
 

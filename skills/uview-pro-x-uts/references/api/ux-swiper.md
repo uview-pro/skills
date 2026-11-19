@@ -2,9 +2,9 @@
 
 # ux-swiper API
 
-> 来源：`components/ux-swiper`（uview-pro-x v1.0.24）
+> 来源：`components/ux-swiper`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:519dc8f7b60879bc9206d615ac646f2fd6be23572bb1177c7420cb708ba8babe`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swiper`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only swiper`
 
 该组件一般用于导航轮播，广告展示等场景，可开箱即用
 

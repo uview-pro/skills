@@ -2,9 +2,9 @@
 
 # ux-textarea API
 
-> 来源：`components/ux-textarea`（uview-pro-x v1.0.24）
+> 来源：`components/ux-textarea`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:46e7d65d8a9a708939223763db13128aa5c916411d6d52523fe7e7005ea42e29`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only textarea`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only textarea`
 
 多行文本输入组件，支持字数统计、自动增高、清除按钮，可配合 ux-form 实现表单校验。
 

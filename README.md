@@ -20,5 +20,6 @@ pnpx skills add uview-pro/skills
 |-------|-------------|--------|
 | [uview-pro](skills/uview-pro) | uView Pro 组件库 - uni-app 跨平台组件库 | [uview-pro 官方文档站](https://uviewpro.cn/) |
 | [uview-pro-x](skills/uview-pro-x) | uView Pro X 组件库 - uni-app x 跨平台组件库 | [uview-pro-x 官方文档站](https://x.uviewpro.cn/) |
+| [uview-pro-x-uts](skills/uview-pro-x-uts) | uView Pro X 1.x（UTS）组件库 - uni-app x 跨平台组件库 | [uview-pro-x-uts 官方文档站](https://uts.uviewpro.cn/) |
 
 

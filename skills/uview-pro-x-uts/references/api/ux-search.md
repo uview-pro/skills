@@ -2,9 +2,9 @@
 
 # ux-search API
 
-> 来源：`components/ux-search`（uview-pro-x v1.0.24）
+> 来源：`components/ux-search`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:ebb308f4c18df346c0f0b4de70809875112d801de5bb18050b51387d2644623d`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only search`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only search`
 
 搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用。
 

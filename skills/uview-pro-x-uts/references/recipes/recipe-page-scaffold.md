@@ -2,7 +2,7 @@
 
 **适用场景**：新建业务页面（注册路由 → 起骨架 → 主题联动 → 放组件）。
 
-**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.uts 注册 + 在 `uni.scss` 接入主题变量——加密版粘贴 `$u-*` 变量块，源码版 `@import '@/uni_modules/uview-pro-x/theme.scss';`）。
+**前置**：项目已完成接入（`spec/01`：插件市场导入 + easycom + main.uts 注册 + 在 `uni.scss` 接入主题变量——加密版粘贴 `$u-*` 变量块，源码版 `@import '@/uni_modules/uview-pro-x-uts/theme.scss';`）。
 
 ## 1. 注册路由（pages.json）
 
@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="uts">
-import { $u, useTheme } from '@/uni_modules/uview-pro-x'
+import { $u, useTheme } from '@/uni_modules/uview-pro-x-uts'
 
 /** 主题 CSS 变量样式：绑定到页面根节点后，换肤/暗黑切换时页面样式联动 */
 const { cssVars } = useTheme()

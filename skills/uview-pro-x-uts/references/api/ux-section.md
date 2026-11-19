@@ -2,9 +2,9 @@
 
 # ux-section API
 
-> 来源：`components/ux-section`（uview-pro-x v1.0.24）
+> 来源：`components/ux-section`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:fbef7e39168eb74d6862c567fdde319a2cc607def2632e9e4fc22d1f62243da9`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only section`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only section`
 
 该组件一般用于分类信息有很多，但是限于篇幅只能列出一部分，让用户通过"查看更多"获得更多信息的场景，实际效果见演示。
 

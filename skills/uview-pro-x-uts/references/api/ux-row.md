@@ -2,9 +2,9 @@
 
 # ux-row API
 
-> 来源：`components/ux-row`（uview-pro-x v1.0.24）
+> 来源：`components/ux-row`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:c9a17240709109d1020fdd7ae78dcc8078f53a70ed01149dd7c53d0887edfd83`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only row`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only row`
 
 栅格布局的行容器：gutter 统一控制列间隔（左右各一半下发到 ux-col），justify / align 控制列在行内的排布；配合 ux-col 使用
 

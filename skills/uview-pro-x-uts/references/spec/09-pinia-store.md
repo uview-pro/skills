@@ -1,6 +1,6 @@
 # 09 pinia 状态管理
 
-> pinia 由 **uni-app x 内置（3.0.4）**，不是 uview-pro-x 的依赖，也不写进 `package.json`。
+> pinia 由 **uni-app x 内置（3.0.4）**，不是 uview-pro-x-uts 的依赖，也不写进 `package.json`。
 > 本文件只写「跨页面共享状态」在 uni-app x 里的正确落法。
 
 ## 是否该用 pinia

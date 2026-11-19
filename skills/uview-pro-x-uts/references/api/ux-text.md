@@ -2,9 +2,9 @@
 
 # ux-text API
 
-> 来源：`components/ux-text`（uview-pro-x v1.0.24）
+> 来源：`components/ux-text`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:084ce1a53b566d2fac147154a793ee6fa1039725c14aaa3c845a2e0e6c3419e9`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only text`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only text`
 
 此组件集成了文本类在项目中的常用功能，包括状态，拨打电话，格式化日期，*替换，超链接...等功能。
 

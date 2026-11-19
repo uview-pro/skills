@@ -2,9 +2,9 @@
 
 # ux-navbar API
 
-> 来源：`components/ux-navbar`（uview-pro-x v1.0.24）
+> 来源：`components/ux-navbar`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:f32c1096a5eea846cb936d7e63ac09ae474ae02d94e20ac7157edbccb70cd314`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only navbar`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only navbar`
 
 此组件一般用于在特殊情况下，需要自定义导航栏的时候用到，一般建议使用 uni-app 自带的导航栏。
 

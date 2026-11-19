@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * verify-skill-docs.mjs —— uview-pro-x 技能文档结构门禁（零依赖 Node >= 18）
+ * verify-skill-docs.mjs —— uview-pro-x-uts 技能文档结构门禁（零依赖 Node >= 18）
  * ------------------------------------------------------------------
  * 组件 API 由 gen-api-cards.mjs 生成；spec / recipes 是手写内容，本脚本只做
  * 「确定性检查」，不判断内容对错：
@@ -15,7 +15,7 @@
  * 用法：
  *   node scripts/verify-skill-docs.mjs [--lib <组件库目录>] [--strict] [--json]
  *
- *   --lib <dir>  组件库目录（默认 <cwd>/uni_modules/uview-pro-x）；不存在时跳过 ④
+ *   --lib <dir>  组件库目录（默认 <cwd>/uni_modules/uview-pro-x-uts）；不存在时跳过 ④
  *   --strict     warn 也视为失败（退出码 1）
  *   --json       输出 JSON 报告
  *
@@ -331,7 +331,7 @@ function main() {
     checkRegistration(errors);
     checkFences(files, errors, warns);
 
-    const libDir = path.resolve(process.cwd(), opts.lib ?? path.join('uni_modules', 'uview-pro-x'));
+    const libDir = path.resolve(process.cwd(), opts.lib ?? path.join('uni_modules', 'uview-pro-x-uts'));
     let rosterSkipped = false;
     if (fs.existsSync(path.join(libDir, 'components'))) {
         checkRoster(libDir, warns);

@@ -115,7 +115,7 @@ const boxStyle = computed((): UTSJSONObject => {
 > 完整能力（主题注册四种形态、暗色板自动生成、跟随系统、App 原生联动、常见坑）见 [07-theme-dark-mode](07-theme-dark-mode.md)；本节为页面写法速览。
 
 ```ts
-import { useTheme } from '@/uni_modules/uview-pro-x'
+import { useTheme } from '@/uni_modules/uview-pro-x-uts'
 
 const { darkMode, setDarkMode, isInDarkMode, setTheme, themes } = useTheme()
 

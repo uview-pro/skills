@@ -2,9 +2,9 @@
 
 # ux-alert-tips API
 
-> 来源：`components/ux-alert-tips`（uview-pro-x v1.0.24）
+> 来源：`components/ux-alert-tips`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:77f8274fc8841509cb17d78bbb64f69b34336e20425d29f4fc6867350b173876`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only alert-tips`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only alert-tips`
 
 警告提示，展现需要关注的信息；分 success / warning / info / error 四种主题，背景、边框、文字与默认图标颜色均按 type 回退，可关闭并支持自定义关闭文案
 

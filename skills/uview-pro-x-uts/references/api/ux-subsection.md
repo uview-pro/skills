@@ -2,9 +2,9 @@
 
 # ux-subsection API
 
-> 来源：`components/ux-subsection`（uview-pro-x v1.0.24）
+> 来源：`components/ux-subsection`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:e7fff74265df7af60fdd9ee22268fc4b0190a12b9705b6233ccd9acebef25062`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only subsection`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only subsection`
 
 横向分段选择器，内置 button-按钮式与 subsection-选项卡式两种外观：滑动条随选中项移动（animation 控制过渡），切换后通过 change 事件回传下标
 

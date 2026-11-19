@@ -2,9 +2,9 @@
 
 # ux-picker API
 
-> 来源：`components/ux-picker`（uview-pro-x v1.0.24）
+> 来源：`components/ux-picker`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:da3aef27b595e50910ac8949e5687c441e47415da705190a97dda90ba6c2af47`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only picker`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only picker`
 
 由 ux-popup 从底部弹出的滚动选择器，支持 selector-单列 / multiSelector-多列 / cascade-级联联动三种模式；列数据全部由 columns 传入，cascade 模式通过 children 逐级展开，滚动上级列自动刷新下级列
 

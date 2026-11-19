@@ -2,9 +2,9 @@
 
 # ux-transition API
 
-> 来源：`components/ux-transition`（uview-pro-x v1.0.24）
+> 来源：`components/ux-transition`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:4d27d5d9cecd7d380b75a55a3df14bc9456f5597b29d3db1dcaebe53d30c9b8c`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only transition`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only transition`
 
 进出场动画封装：CSS transition 驱动显隐过渡（uni-app x App 端不支持 @keyframes，统一走 transition + 类切换范式）。进出场用 v-if 两段式（先挂 DOM、隔一拍切终态类，保证起始态 先提交一帧），完成判定走时长定时器（App 端 transitionend 可能不触发，不可依赖）。通用显隐动画底座，供需要进出场过渡的组件复用。
 

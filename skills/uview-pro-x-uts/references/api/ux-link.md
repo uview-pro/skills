@@ -2,9 +2,9 @@
 
 # ux-link API
 
-> 来源：`components/ux-link`（uview-pro-x v1.0.24）
+> 来源：`components/ux-link`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:239dba22a97bdb4fbacebc95ce9a9d6186968e0cf84c1243498591d04e4a736f`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only link`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only link`
 
 该组件为超链接组件，在不同平台有不同表现形式：在APP平台会通过plus环境打开内置浏览器，在小程序中把链接复制到粘贴板，同时提示信息，在H5中通过window.open打开链接。
 

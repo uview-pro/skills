@@ -5,7 +5,7 @@
 配置 easycom 后（见 `spec/01`），模板中直接使用 `<ux-*>`，无需 import 组件。组件库的 `$u`、hooks、类型从库入口导入：
 
 ```ts
-import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x'
+import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x-uts'
 ```
 
 ### 通用属性约定
@@ -122,7 +122,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 
 ## `$u` 工具速查
 
-从库入口导入：`import { $u } from '@/uni_modules/uview-pro-x'`。
+从库入口导入：`import { $u } from '@/uni_modules/uview-pro-x-uts'`。
 
 ### 状态与常量
 
@@ -159,7 +159,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `$u.debugWarn(...)` | 调试输出（仅非生产环境生效） |
 | `$u.test.*` | 校验谓词：`empty` / `null` / `array` / `object` / `func` / `string` / `email` / `mobile` / `url` / `number` / `digits` / `idCard` / `amount` / `chinese` / `letter` / `enOrNum` / `contains` / `range` / `rangeLength` / `landline` / `code` / `image` / `video` / `gradientColor` |
 
-另有一个**不在 `$u` 上**的独立导出：`import { getNavbarHeight } from '@/uni_modules/uview-pro-x'`，`getNavbarHeight(platform)` 返回导航栏本体高度 px（不含状态栏；H5 / App 44，小程序 iOS 44 / 安卓 48），供自定义导航栏与吸顶避让同源取高。
+另有一个**不在 `$u` 上**的独立导出：`import { getNavbarHeight } from '@/uni_modules/uview-pro-x-uts'`，`getNavbarHeight(platform)` 返回导航栏本体高度 px（不含状态栏；H5 / App 44，小程序 iOS 44 / 安卓 48），供自定义导航栏与吸顶避让同源取高。
 
 ## hooks 速查
 
@@ -202,7 +202,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 
 | 能力 | 入口 | 主题文件 |
 |---|---|---|
-| HTTP 请求（实例 / 拦截器 / 取消 / 上传下载 / useRequest） | `import { http, useRequest } from '@/uni_modules/uview-pro-x'` | [spec/08](08-request-http.md)，落地方案 [recipe-http-instance](../recipes/recipe-http-instance.md) |
+| HTTP 请求（实例 / 拦截器 / 取消 / 上传下载 / useRequest） | `import { http, useRequest } from '@/uni_modules/uview-pro-x-uts'` | [spec/08](08-request-http.md)，落地方案 [recipe-http-instance](../recipes/recipe-http-instance.md) |
 | 跨页面共享状态（pinia，uni-app x 内置 3.0.4） | `import { defineStore } from 'pinia'` | [spec/09](09-pinia-store.md) |
 
 - 接口请求统一走 `http.create` 派生出的业务单例，**不在页面建实例、不改 defaults**。

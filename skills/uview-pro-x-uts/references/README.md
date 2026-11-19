@@ -1,8 +1,8 @@
-# uview-pro-x references 手册
+# uview-pro-x-uts references 手册
 
 ## 本手册是什么
 
-指导在**任意 uni-app x 项目**中，使用 `uview-pro-x` 组件库编写页面。覆盖链路：
+指导在**任意 uni-app x 项目**中，使用 `uview-pro-x-uts` 组件库编写页面。覆盖链路：
 
 ```
 安装接入 → 页面脚本（UTS）→ 页面样式（UCSS / 主题）→ 组件使用 → 三端兼容
@@ -13,7 +13,7 @@ HTTP 请求（spec/08 + recipe-http-instance）与 pinia 状态管理（spec/09�
 
 ## 权威源与优先级
 
-1. **组件库源码** `uni_modules/uview-pro-x`（install API / `$u` / hooks / 各组件属性定义）——**源码可读时**为最终事实源
+1. **组件库源码** `uni_modules/uview-pro-x-uts`（install API / `$u` / hooks / 各组件属性定义）——**源码可读时**为最终事实源
 2. **API 快照卡片** `api/`（70 个公开组件属性/取值/事件/v-model/插槽，随技能发货）——**源码不可读（加密）时即权威**
 3. 本手册 `spec/`（按主题拆分，一个主题一个文件）
 4. 本手册 `recipes/`（照抄写法）
@@ -51,9 +51,9 @@ HTTP 请求（spec/08 + recipe-http-instance）与 pinia 状态管理（spec/09�
 
 ## 自包含声明
 
-本技能（`uview-pro-x/`）可整体复制到任意使用 uview-pro-x 的 uni-app x 项目中独立使用。约定：
+本技能（`uview-pro-x-uts/`）可整体复制到任意使用 uview-pro-x-uts 的 uni-app x 项目中独立使用。约定：
 
-- 所有导入以 `@/uni_modules/uview-pro-x` 为前缀
+- 所有导入以 `@/uni_modules/uview-pro-x-uts` 为前缀
 - `<ux-*>` 组件依赖 easycom 免导入（接入见 `spec/01`）
 - 不依赖任何特定宿主工程的目录、脚本或约定
 - API 卡片与模型快照（`api/`）随技能发货；校验器 `scripts/verify-ux-usage.mjs` 默认只读技能内置数据，零源码依赖、零第三方依赖（Node ≥ 18）

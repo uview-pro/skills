@@ -2,9 +2,9 @@
 
 # ux-sticky API
 
-> 来源：`components/ux-sticky`（uview-pro-x v1.0.24）
+> 来源：`components/ux-sticky`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:e0a92ec52b74ed10fcc9a5e2b0e0770a1606e1e61140236c28845c2c886ecfa0`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only sticky`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only sticky`
 
 内容滚到距顶部 offsetTop 时固定在顶部，回滚时复位；吸顶时外层占位高度锁住内容高度，避免下方内容上跳。页面顶部结构用 navbar 声明，组件自己按端换算避让高度，调用方不需要判断平台。滚动距离建议用 usePageScroll() 获取后传入 scroll-top（页面层 onPageScroll 需由页面脚本注册）；不传时退化为内部节点观察（仅 Web / 小程序，App 端必须传 scroll-top，否则不会吸顶）。
 

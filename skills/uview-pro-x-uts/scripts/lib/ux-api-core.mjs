@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * uview-pro-x 组件 API 解析核心（零依赖，Node >= 18）
+ * uview-pro-x-uts 组件 API 解析核心（零依赖，Node >= 18）
  * ------------------------------------------------------------------
- * 从 uview-pro-x 组件库源码提取全量 API 模型（LibraryModel）：
+ * 从 uview-pro-x-uts 组件库源码提取全量 API 模型（LibraryModel）：
  *   components/ux-<name>/ux-<name>.uvue + types.uts  →  props / events / models / slots /
  *   externalClasses / methods，附 canoical 指纹（apiHash / libHash）与 did-you-mean 工具。
  *
@@ -1023,7 +1023,7 @@ function extractComponent(libAbs, compName, globalTable) {
 
 /**
  * 加载组件库全量 API 模型。
- * @param libRoot 组件库根目录（含 components/ 与 package.json，包名须为 uview-pro-x）
+ * @param libRoot 组件库根目录（含 components/ 与 package.json，包名须为 uview-pro-x-uts）
  * @returns LibraryModel：
  *   { libVersion, libHash, components: { name: ComponentApi }, symbols, errors, stats, unresolvedRefs }
  */
@@ -1038,8 +1038,8 @@ export function loadLibraryModel(libRoot) {
     } catch (e) {
         throw new Error(`package.json 解析失败：${pkgPath}`);
     }
-    if (pkgJson.name !== 'uview-pro-x') {
-        throw new Error(`package.json 包名不是 uview-pro-x（实际：${pkgJson.name}）：${libAbs}`);
+    if (pkgJson.name !== 'uview-pro-x-uts') {
+        throw new Error(`package.json 包名不是 uview-pro-x-uts（实际：${pkgJson.name}）：${libAbs}`);
     }
     const componentsDir = path.join(libAbs, 'components');
     if (!fs.existsSync(componentsDir)) throw new Error(`组件库缺少 components/ 目录：${libAbs}`);

@@ -2,9 +2,9 @@
 
 # ux-switch API
 
-> 来源：`components/ux-switch`（uview-pro-x v1.0.24）
+> 来源：`components/ux-switch`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:39293c5afd516966e8a8094ca5123a48151091edfcae6a204e63d77c2782d9b9`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only switch`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only switch`
 
 选择开关一般用于只有两个选择，且只能选其一的场景。形态：轨道为 50:28 胶囊、**无描边**，白色滑块四周内缩（默认档 3px）且**恒垂直居中**，位移由「一侧内缩」到「轨道宽 - 滑块径 - 一侧内缩」；size 只描述轨道高度，宽/内缩/滑块径随之等比推导。
 

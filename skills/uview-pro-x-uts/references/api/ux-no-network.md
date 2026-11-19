@@ -2,9 +2,9 @@
 
 # ux-no-network API
 
-> 来源：`components/ux-no-network`（uview-pro-x v1.0.24）
+> 来源：`components/ux-no-network`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:9a52e8968900a624483d890c2d36930db0c8f77310738d3a97649ffc76e35706`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only no-network`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only no-network`
 
 监听网络状态自动显隐的无网络提示页，支持自定义图片、提示语与层级；App 端额外提供系统设置入口，重试成功后自动隐藏并以 toast 反馈
 

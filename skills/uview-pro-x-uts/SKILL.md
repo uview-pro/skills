@@ -1,11 +1,11 @@
 ---
 name: "uview-pro-x-uts"
-description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x 组件库编写页面：安装接入、页面脚本 UTS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x 编写或修改页面、规范 UTS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
+description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技能）——在任意 uni-app x 项目中，用 uview-pro-x-uts 组件库编写页面：安装接入、页面脚本 UTS 规范、页面样式 UCSS 与主题、组件/$u/hooks 速查、HTTP 请求（http/useRequest）与 pinia 状态管理、自定义图标字体（customIcon/registerIconFont）、多语言国际化、多主题与暗黑模式、三端兼容避错。写任何 ux-* 组件前先查随技能发货的 API 卡片（references/api/，不依赖组件库源码）；写完页面必须跑 scripts/verify-ux-usage.mjs 校验至 0 违规。规范正文按主题拆分在 references/spec/，照抄配方在 references/recipes/。当用户要求使用 uview-pro-x-uts 编写或修改页面、规范 UTS/UCSS 写法、接入接口请求或 pinia、多语言/换肤/暗黑模式、排查三端兼容与运行报错时使用。"
 ---
 
-# UView Pro X 页面编写规范（uview-pro-x）
+# UView Pro X 页面编写规范（uview-pro-x-uts）
 
-> **本技能是「使用 uview-pro-x 组件库编写页面」的唯一权威入口。** 规范正文唯一权威源在 `references/`：
+> **本技能是「使用 uview-pro-x-uts 组件库编写页面」的唯一权威入口。** 规范正文唯一权威源在 `references/`：
 > `references/README.md`（手册索引）→ `references/spec/`（按主题拆分：接入 / UTS / UCSS / 组件 / 三端）+ `references/recipes/`（照抄写法）。
 > 本技能面向**消费者**（使用组件库的项目），指导「页面怎么写」；不涉及组件库自身实现与开发流程。
 
@@ -19,7 +19,7 @@ description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技
 ## 强制机制（动手前必读）
 
 1. **单一权威源**：规范正文只在本技能 `references/`；组件 API 以 `references/api/` 快照卡片为准。组件库源码可读时可 `--lib` 比对（冲突以源码为准并重生成快照）；**源码不可读（加密）时快照即权威**（优先级细则见 `references/README.md`）。
-2. **自包含**：本技能可整体复制到任意使用 uview-pro-x 的 uni-app x 项目中独立使用；不依赖任何特定宿主工程的目录、脚本或约定；API 快照与卡片随技能发货，校验器零源码依赖。
+2. **自包含**：本技能可整体复制到任意使用 uview-pro-x-uts 的 uni-app x 项目中独立使用；不依赖任何特定宿主工程的目录、脚本或约定；API 快照与卡片随技能发货，校验器零源码依赖。
 3. **recipe-first**：`references/recipes/` 中已有对应场景的配方时**必须采用**，禁止自造写法。
 4. **取色走主题**：所有颜色取自 `$u-*` SCSS 变量或 `$u.color.*`，不硬编码色值（暗黑模式与换肤才能生效）。
 5. **接口与状态收敛**：接口请求统一走 `http.create` 派生的业务单例（`recipe-http-instance`），页面不建实例、不改 defaults、不在页面注册拦截器；跨页共享状态用 pinia store（`spec/09`），接口三态用 `useRequest`（`spec/08`）。
@@ -60,4 +60,4 @@ description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技
 6. 收尾按 `spec/05` 红线与症状表自查
 7. 运行 `node scripts/verify-ux-usage.mjs <页面文件>` 校验至 **0 违规**（error 必须清零）
 
-> 全部示例均为消费者视角：导入以 `@/uni_modules/uview-pro-x` 为前缀，`<ux-*>` 组件依赖 easycom 免手动 import。
+> 全部示例均为消费者视角：导入以 `@/uni_modules/uview-pro-x-uts` 为前缀，`<ux-*>` 组件依赖 easycom 免手动 import。

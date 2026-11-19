@@ -2,9 +2,9 @@
 
 # ux-card API
 
-> 来源：`components/ux-card`（uview-pro-x v1.0.24）
+> 来源：`components/ux-card`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:41a501ce648e8a457eee2f10ad3e4feda8380eac83123d0364d73ed4ad7df795`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only card`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only card`
 
 卡片组件一般用于多个列表条目，且风格统一的场景
 

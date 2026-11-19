@@ -2,9 +2,9 @@
 
 # ux-swipe-action API
 
-> 来源：`components/ux-swipe-action`（uview-pro-x v1.0.24）
+> 来源：`components/ux-swipe-action`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:c1fbe361a4348bfe230131c9a3049c8b2f12d0f2d74f111577d0f42cfe7fb1a4`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swipe-action`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only swipe-action`
 
 该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作
 

@@ -18,7 +18,7 @@ pages/
 
 ```ts
 // api/request.uts
-import { http } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
 import { setupInterceptors } from './interceptors';
 
 /** 业务默认请求头：模块级只建一次 */
@@ -51,7 +51,7 @@ export { request };
 
 ```ts
 // api/interceptors.uts
-import type { HttpInstance, ResolvedHttpConfig, HttpResponse, HttpError } from '@/uni_modules/uview-pro-x';
+import type { HttpInstance, ResolvedHttpConfig, HttpResponse, HttpError } from '@/uni_modules/uview-pro-x-uts';
 
 export function setupInterceptors(instance: HttpInstance): void {
     // 请求拦截器：token 每次请求实时读取，登录 / 登出后立即生效
@@ -115,7 +115,7 @@ export function fetchUser(id: number): Promise<any> {
 <script setup lang="uts">
 import { request } from '@/api/request';
 import type { User } from '@/api/user';
-import { useRequest } from '@/uni_modules/uview-pro-x';
+import { useRequest } from '@/uni_modules/uview-pro-x-uts';
 
 const { loading, data, error, run } = useRequest<User>(async (ctx) => {
     const result = await request.get('/user/1', null, { signal: ctx.signal });

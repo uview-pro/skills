@@ -2,9 +2,9 @@
 
 # ux-avatar API
 
-> 来源：`components/ux-avatar`（uview-pro-x v1.0.24）
+> 来源：`components/ux-avatar`（uview-pro-x-uts v1.0.24）
 > API 指纹：`sha256:ccc98252fe79717e0e3610fd9d248e8179b2021587a607e25392dd120028f9c1`
-> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only avatar`
+> 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only avatar`
 
 本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。
 

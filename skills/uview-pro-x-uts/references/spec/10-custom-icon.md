@@ -37,7 +37,7 @@ export const customIconFont: UTSJSONObject = {
 ```vue
 <!-- App.uvue -->
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x'
+import { $u } from '@/uni_modules/uview-pro-x-uts'
 import { customIconFont } from './iconfont.uts'
 
 onLaunch(() => {
