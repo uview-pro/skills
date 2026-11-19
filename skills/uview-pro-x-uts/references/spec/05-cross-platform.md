@@ -75,6 +75,8 @@ flex: 1;
 | 16 | 动态属性 | `title="{{ x }}"` | `:title="x"` |
 | 17 | 页面主题联动 | 页面根节点未绑定 `cssVars` | 根节点 `:style="cssVarsStyle"`（见 `spec/03`） |
 | 18 | custom-class 样式 | 写在 scoped 样式中 | 写非 scoped 页面样式，确保命中组件内部节点 |
+| 19 | 横向滚动 | 横向 `<scroll-view direction="horizontal">` 只写 `direction` 就以为能滚（App 端内容主轴默认 column，唯一子内容被拉成可视宽） | 滚动模式下给 scroll-view 补 `/* #ifdef APP */ flex-direction: row`，内容层再补 `flex-shrink: 0`；非滚动模式**不要**加（那里靠 `width: 100%` 均分） |
+| 20 | 原生组件配色 | 直接依赖 `picker-view` 自带的蒙层/指示器颜色（小程序、App 跟系统深色模式，H5 写死白色，均不跟应用主题） | 用 `mask-style` / `indicator-style` 按 `$u.color.*` 内联接管：MP+H5 可叠两层渐变；App 的 `background-image` 只支持单层三参数渐变，上下蒙层拆到 `mask-top-style` / `mask-bottom-style`，指示器还要 `background-color: transparent` 清掉自带高亮底色 |
 
 ## 症状 → 修法速查
 
@@ -89,10 +91,14 @@ flex: 1;
 | 小程序端滚动距离恒为 0 | 把 `onPageScroll` 注册写进了 `.uts` / hook / 组件，小程序编译期没在页面文件里看到这次调用 | 注册行写到页面 `<script setup>` 里，回调里调 `setScrollTop(e.scrollTop)` |
 | 编译报错：条件表达式不是布尔 | 真值判断 | 改显式比较（`!= null` / `== true`） |
 | 编译告警 possibly null | 可空类型未收窄 | 判空分支或非空断言 `!` |
+| App 编译告警 `Argument of type 'string \| null \| undefined' is not assignable to parameter of type 'string'`（常见于 `$u.hexToRgba($u.color.bgWhite, 0.95)`） | `$u.color.*` 在 UTS 侧声明为可空（`string \| null`），`hexToRgba` 等形参是 `string` | 取色先过 `$u.strOr($u.color.bgWhite, '#ffffff')`（双参：令牌 + 兜底色，单参等于没兜底）；要交付 CSS 字符串时用 `createStyle()` 逐键赋值再 `$u.toStyle(style)`，不裸手拼样式串（见 component-writer `recipe-dynamic-style`） |
 | 编译报错：类型不匹配 | string/number 混用 | `$u.toNumber` / `toString()` / `as` 断言 |
 | 运行崩溃（偶发、原生层） | v-for 子项动态绑定读源数组 | 派生字段落数据层 |
 | 数组相关运行异常 | 越界读取 | 边界判断；v-for index 传参 `as number` |
 | 传给组件的 `custom-class` 样式不生效 | 类写在 scoped 样式里 | 移到非 scoped 页面样式 |
+| App 端横向 scroll-view 不滚、末位内容被截断（H5 正常） | scroll-view 内层默认 `flex-direction: column`，唯一子内容在交叉轴被拉成可视宽 → 内容宽=可视宽，可滚范围恒为 0 | 滚动模式加 `#ifdef APP { flex-direction: row }`，内容层加 `flex-shrink: 0`；非滚动模式保持 column |
+| 系统深色 + 应用亮色时 picker/select 候选列表被压黑、指示器边框消失；暗色主题下 H5 蒙层发白 | `picker-view` 的蒙层与指示器颜色由各端内置实现绘制，不读应用主题（小程序/App 跟系统深色模式，H5 固定白色渐变 + 浅灰线） | 见红线 20：`mask-style` / `indicator-style` 按主题色接管；App 蒙层拆 `mask-top/bottom-style` 并清掉指示器底色 |
+| App 选中行是一条灰色高亮带，小程序只有上下两条线 | App 指示器自带高亮底色，其它端没有 | `indicator-style` 里补 `background-color: transparent; background-image: none;`，只保留下发边框 |
 | 模板里 `<ux-xxx>` 未解析/报错 | easycom 未配置 | pages.json 增加 `^ux-(.*)` 规则（见 `spec/01`） |
 | 主题/暗黑切换后页面自定义颜色不联动 | 页面根节点未绑定 `cssVars` | 根节点 `:style="cssVarsStyle"` |
 | 全项目 `$u-xxx` SCSS 变量编译报错 | `uni.scss` 未接入主题变量 | 加密版把 `theme.scss` 的 `$u-*` 变量块复制进 `uni.scss`；源码版追加 `@import '@/uni_modules/uview-pro-x-uts/theme.scss';`（见 `spec/01`） |
@@ -105,6 +111,7 @@ flex: 1;
 - **安全区 / 状态栏**：底部用 `ux-safe-bottom` 占位或 `useSafeArea().bottom`；顶部用 `ux-status-bar` 或 `useWindowInfo().statusBarHeight`。
 - **回退按钮**：`ux-navbar` 内部已处理返回逻辑（`uni.navigateBack()`），页面无需自行绑定返回事件。
 - **App 端原生主题联动**：`setDarkMode` 后库内部会同步 App 原生页面背景/导航栏（`uni.setAppTheme`），页面样式联动仍需 `cssVars` 绑定。
+- **原生组件主题接管**：`picker-view`（`ux-picker` / `ux-select` 内部）的蒙层与指示器颜色不跟应用主题——小程序/App 跟系统深色模式，H5 固定为白色渐变与浅灰线；三端统一靠 `mask-style` / `indicator-style` 内联下发，取色用 `$u.strOr($u.color.bgWhite, '#ffffff')` / `$u.strOr($u.color.borderColor, '#dcdfe6')` 收窄后喂给 `$u.hexToRgba`；样式字符串交付一律 `createStyle()` + `$u.toStyle()`，注意 App 端单层渐变限制。
 - **字体图标**：内置图标集随组件库分发，三端无需额外配置。
 
 ## 收尾自查清单
