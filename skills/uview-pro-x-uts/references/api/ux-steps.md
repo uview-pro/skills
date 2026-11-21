@@ -2,8 +2,8 @@
 
 # ux-steps API
 
-> 来源：`components/ux-steps`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:1d256008409aaa6390504134fa29e7ce62c47e7853b6213b6497c241087ca4c8`
+> 来源：`components/ux-steps`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:2ffc75cdce65f780db5a18ef67fb713711c4d9b568370ae7eccda37debf7e40f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only steps`
 
 该组件一般用于完成一个任务要分几个步骤，标识目前处于第几步的场景
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `mode` | 设置模式（dot\|number，默认dot） | `string` | `'dot'` |
 | `list` | 数轴条数据 | `StepsListItem[]` | - |

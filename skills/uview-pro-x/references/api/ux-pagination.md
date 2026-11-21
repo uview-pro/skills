@@ -2,8 +2,8 @@
 
 # ux-pagination API
 
-> 来源：`components/ux-pagination`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:1e890ff7cee497b87ec3202ea0b08d9a6af7591236c6f30814b19e04ed8971da`
+> 来源：`components/ux-pagination`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:fcd61c252624748132ff5d61f72582ff26140ad9dbe6d0a85b005a0b26d99873`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only pagination`
 
 上一页 / 下一页按钮 + 页码文本的组合式分页器：总页数由 total 与 pageSize 计算；默认显示「当前页 / 总页数」，可用默认插槽整体替换；页码变化通过 v-model 与 change 事件同步
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | v-model 绑定当前页码，默认 1 | `number` | `1` |
 | `prev-text` / `prevText` | 上一页按钮文字，不传取本地化默认文案 | `string` | `''` |

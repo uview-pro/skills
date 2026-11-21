@@ -2,8 +2,8 @@
 
 # ux-config-provider API
 
-> 来源：`components/ux-config-provider`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:899ad17eb969619797a46392ea73d46d2afc35e5ada6a97b472736211a63d1f3`
+> 来源：`components/ux-config-provider`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:d94e29fb0442487d1a3de52219b93562cb1ee2a581f56aca634132f0791119a8`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only config-provider`
 
 配置注入组件：初始化并响应主题、暗黑模式、国际化的切换，并把主题 CSS 变量下发到根节点
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | `''` |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `dark-mode` / `darkMode` | 暗黑模式：'light' \| 'dark' \| 'auto' | `string` | `''` |
 | `current-theme` / `currentTheme` | 当前主题名称 | `string` | `''` |

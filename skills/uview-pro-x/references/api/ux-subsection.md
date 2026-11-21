@@ -2,8 +2,8 @@
 
 # ux-subsection API
 
-> 来源：`components/ux-subsection`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:0a9d4c0bb457796022a9edcd62c716d2c60ad1f0df82018dff8678d1e06687d5`
+> 来源：`components/ux-subsection`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:24bef807420725b3dd10adf358a7b45914668a219aabcd1e2485ed8f51e2783b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only subsection`
 
 横向分段选择器，内置 button-按钮式与 subsection-选项卡式两种外观：滑动条随选中项移动（animation 控制过渡），切换后通过 change 事件回传下标
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 分段项数组，每项 { name, disabled?, width? }，默认 [] | `SubsectionListItem[]` | - |
 | `current` | 当前选中项下标，默认 0 | `number \| string` | `0` |

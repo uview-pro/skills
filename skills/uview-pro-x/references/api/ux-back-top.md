@@ -2,7 +2,7 @@
 
 # ux-back-top API
 
-> 来源：`components/ux-back-top`（uview-pro-x v2.0.0）
+> 来源：`components/ux-back-top`（uview-pro-x v2.0.2）
 > API 指纹：`sha256:9cb357b89d7f33c62e53e18399883d360dd134e644105861aa8a9229226c8412`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only back-top`
 

@@ -2,8 +2,8 @@
 
 # ux-select API
 
-> 来源：`components/ux-select`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:344eb4cacc3371359dc9758d624536f94d214a36ec34e8d9a91a9bb0a76a42a9`
+> 来源：`components/ux-select`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:b52827e4434e4ebb58d7c02416ad4b87de1e6d7b98e5eea476b6f3a8a00ffda7`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only select`
 
 由 ux-popup 从底部弹出的列选择器，支持 single-column-单列 / mutil-column-多列 / mutil-column-auto-多列联动三种模式；list 项的 label / value / children 字段名可自定义，preserve-selection 开启时再次打开会恢复上次确认的选择
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 列数据，外部传入 | `SelectListItem[] \| SelectListItem[][]` | - |
 | `model-value` / `modelValue` | v-model 控制弹出与收起 | `boolean` | `false` |

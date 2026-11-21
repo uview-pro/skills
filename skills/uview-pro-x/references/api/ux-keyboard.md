@@ -2,7 +2,7 @@
 
 # ux-keyboard API
 
-> 来源：`components/ux-keyboard`（uview-pro-x v2.0.0）
+> 来源：`components/ux-keyboard`（uview-pro-x v2.0.2）
 > API 指纹：`sha256:d9ef064683d2d3ac3a4b7a2603cfba24e5f97ccdef636ef24103d9019098e916`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only keyboard`
 

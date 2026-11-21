@@ -2,8 +2,8 @@
 
 # ux-notice-bar API
 
-> 来源：`components/ux-notice-bar`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:0b7d1741989cb3d0136021c06516c1788a2bc659e8353829916ce56ec5d0d333`
+> 来源：`components/ux-notice-bar`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:a13a12c98d40408deeb6bb2dc0405fafcd6db3dec46e23c14913639b3935bcb2`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only notice-bar`
 
 该组件用于滚动通告场景，有多种模式可供选择
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `list` | 滚动内容，数组形式 | `string[]` | - |
 | `type` | 显示的主题（默认warning） | `primary`｜`info`｜`error`｜`warning`｜`success`｜`default`｜`none` | `'warning'` |

@@ -2,7 +2,7 @@
 
 # ux-cell-item API
 
-> 来源：`components/ux-cell-item`（uview-pro-x v2.0.0）
+> 来源：`components/ux-cell-item`（uview-pro-x v2.0.2）
 > API 指纹：`sha256:bb99f2390d2a8f3b48dddad6e6c3cda4e6740dc0500427aa3143deddd2f58e21`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only cell-item`
 

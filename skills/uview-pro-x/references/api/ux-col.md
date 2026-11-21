@@ -2,8 +2,8 @@
 
 # ux-col API
 
-> 来源：`components/ux-col`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:a4cb7dfd92e17b52dee7646a2fe7005d405232a4040847b50d96ce1707650ecc`
+> 来源：`components/ux-col`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:25961cba8a458ec1d655cff5bff978a58e092c86eb0a51e10860171197530f02`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only col`
 
 与 ux-row 配套的栅格列：一行按总 12 栏均分，span 决定所占栏数、offset 决定左偏移；分栏间隔由父级 ux-row 的 gutter 下发，本组件在左右各留一半，脱离 ux-row 使用时无间隔
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `span` | 栅格占据的列数，总 12 等分 | `number \| string` | `12` |
 | `offset` | 分栏左边偏移，同 span 计算方式（总 12 栏） | `number \| string` | `0` |

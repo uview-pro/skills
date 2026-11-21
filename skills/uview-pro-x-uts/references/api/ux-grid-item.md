@@ -2,8 +2,8 @@
 
 # ux-grid-item API
 
-> 来源：`components/ux-grid-item`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:bb8d719821d316ea2872ed29083185a40b5d42e9ecb18f9e18cb3d310d6bd4e6`
+> 来源：`components/ux-grid-item`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:51bcd802552783c6f3a2f7309550a5f7e77ec73d294faabe2fc2072ff7db325d`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only grid-item`
 
 宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件(badge)，或者图标等，也可以扩展为左右滑动的轮播形式。搭配ux-grid使用
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `bg-color` / `bgColor` | 背景颜色 | `string` | `''` |
 | `index` | 点击时返回的index | `string \| number` | `''` |

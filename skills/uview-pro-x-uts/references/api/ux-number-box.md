@@ -2,8 +2,8 @@
 
 # ux-number-box API
 
-> 来源：`components/ux-number-box`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:adf867dff71a20cdf2a6b3d2ea460cfa6b0b875965ef5782901e58b31c1e0634`
+> 来源：`components/ux-number-box`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:c15a81640f0861fb54fa90bdbd2047e19143e8a45fdfeead36272ef89075c80d`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only number-box`
 
 该组件一般用于商城购物选择物品数量的场景。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 输入框初始值（默认1） | `number` | `1` |
 | `bg-color` / `bgColor` | 输入框和按钮的背景颜色 | `string` | `''` |

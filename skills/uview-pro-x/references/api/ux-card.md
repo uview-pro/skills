@@ -2,8 +2,8 @@
 
 # ux-card API
 
-> 来源：`components/ux-card`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:e123d8b94831ec39703db06d07036adf310c4494a27766c88755f9627318de64`
+> 来源：`components/ux-card`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:97a2882aa92823d9ab4e6edcab33393a68548e5e51f5934ac9da351595fa0bb8`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only card`
 
 卡片组件一般用于多个列表条目，且风格统一的场景
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `full` | 卡片与屏幕两侧是否留空隙 | `boolean` | `false` |
 | `title` | 头部左边的标题 | `string` | `''` |

@@ -2,7 +2,7 @@
 
 # ux-tag API
 
-> 来源：`components/ux-tag`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-tag`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:8dff74007a7b38e8e2bf15238fd1d1d288fb9db8ada0c1f1fe42fb925f514214`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only tag`
 
@@ -44,7 +44,7 @@
 
 | 插槽名 | 说明 |
 | --- | --- |
-| `default` | - |
+| `default` | 自定义标签内容，未传时回退 text 属性 |
 
 ## 外部样式类
 

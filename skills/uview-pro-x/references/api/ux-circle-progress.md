@@ -2,8 +2,8 @@
 
 # ux-circle-progress API
 
-> 来源：`components/ux-circle-progress`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:89d16dd35ba1fd8a2570d97d688f92c6670c6f3dea371b579455c42692a7cac2`
+> 来源：`components/ux-circle-progress`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:36322c3d467401818a1f957ba1443b185a7958b655f00bc868b6e6aed9dc922d`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only circle-progress`
 
 展示操作或任务的当前进度，是一个圆形的进度条。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `percent` | 圆环进度百分比，0-100 | `number` | `0` |
 | `inactive-color` / `inactiveColor` | 圆环的底色，默认分隔线颜色 | `string` | `''` |

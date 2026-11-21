@@ -2,8 +2,8 @@
 
 # ux-section API
 
-> 来源：`components/ux-section`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:fbef7e39168eb74d6862c567fdde319a2cc607def2632e9e4fc22d1f62243da9`
+> 来源：`components/ux-section`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:7966590f58dfa7692de4c89a117a1024a9e23328c73bc9ea4ed8c74d03936e8b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only section`
 
 该组件一般用于分类信息有很多，但是限于篇幅只能列出一部分，让用户通过"查看更多"获得更多信息的场景，实际效果见演示。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 标题信息 | `string` | `''` |
 | `sub-title` / `subTitle` | 右边副标题内容 | `string` | `''` |

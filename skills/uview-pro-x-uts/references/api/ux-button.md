@@ -2,7 +2,7 @@
 
 # ux-button API
 
-> 来源：`components/ux-button`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-button`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only button`
 
@@ -35,8 +35,8 @@
 | `loading-text` / `loadingText` | 加载中显示的文案，不传时沿用按钮文本 | `string` | `''` |
 | `loading-size` / `loadingSize` | 加载图标的大小，单位px，不传时按按钮尺寸自动匹配 | `string \| number` | `''` |
 | `scope` | 支付宝小程序，当 open-type 为 getAuthorize 时有效 | `ButtonScope`（`phoneNumber`｜`userInfo`） | `''` |
-| `open-type` / `openType` | 开放能力，具体请看uniapp稳定关于button组件部分说明 | `ButtonOpenType`（`feedback`｜`share`｜`getUserInfo`｜`contact`｜`getPhoneNumber`｜`launchApp`｜`openSetting`｜`chooseAvatar`｜`getAuthorize`｜`lifestyle`｜`contactShare`｜`openGroupProfile`｜`openGuildProfile`｜`openPublicProfile`｜`shareMessageToFriend`｜`addFriend`｜`addColorSign`｜`addGroupApp`｜`addToFavorites`｜`chooseAddress`｜`chooseInvoiceTitle`｜`login`｜`subscribe`｜`favorite`｜`watchLater`｜`openProfile`｜`agreePrivacyAuthorization`） | `''` |
-| `form-type` / `formType` | 用于 &lt;form&gt; 组件，点击分别会触发 &lt;form&gt; 组件的 submit/reset 事件 | `ButtonFormType`（`''`｜`submit`｜`reset`） | `''` |
+| `open-type` / `openType` | 开放能力，详见 uni-app button 组件开放能力说明 | `ButtonOpenType`（`feedback`｜`share`｜`getUserInfo`｜`contact`｜`getPhoneNumber`｜`launchApp`｜`openSetting`｜`chooseAvatar`｜`getAuthorize`｜`lifestyle`｜`contactShare`｜`openGroupProfile`｜`openGuildProfile`｜`openPublicProfile`｜`shareMessageToFriend`｜`addFriend`｜`addColorSign`｜`addGroupApp`｜`addToFavorites`｜`chooseAddress`｜`chooseInvoiceTitle`｜`login`｜`subscribe`｜`favorite`｜`watchLater`｜`openProfile`｜`agreePrivacyAuthorization`） | `''` |
+| `form-type` / `formType` | 用于 &lt;form&gt; 组件，点击触发 submit / reset 事件 | `ButtonFormType`（`''`｜`submit`｜`reset`） | `''` |
 | `app-parameter` / `appParameter` | 打开 APP 时，向 APP 传递的参数，open-type=launchApp时有效 | `string` | `''` |
 | `hover-stop-propagation` / `hoverStopPropagation` | 指定是否阻止本节点的祖先节点出现点击态，微信小程序有效 | `boolean` | `false` |
 | `lang` | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。只微信小程序有效 | `string` | `'en'` |

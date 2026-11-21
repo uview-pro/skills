@@ -2,8 +2,8 @@
 
 # ux-config-provider API
 
-> 来源：`components/ux-config-provider`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:a42b83d341de62e82fc31b4574ef9fdc6e99731e2969553e88daccf74b536511`
+> 来源：`components/ux-config-provider`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:3b3f6e26481082889801997f108489467c5f52e9d430fc777a483988502c259a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only config-provider`
 
 配置注入组件：初始化并响应主题、暗黑模式、国际化的切换，并把主题 CSS 变量下发到根节点
@@ -12,11 +12,19 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | `''` |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `dark-mode` / `darkMode` | 暗黑模式：'light' \| 'dark' \| 'auto' | `string` | `''` |
 | `current-theme` / `currentTheme` | 当前主题名称 | `string` | `''` |
 | `current-locale` / `currentLocale` | 国际化当前语言名称 | `string` | `''` |
+
+## 类型定义
+
+> 本卡引用的自定义类型展开定义（源自组件 types.ts / 全局 types/global.ts），对象字面量可直接赋值。
+
+| 类型 | 定义 |
+| --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 
 ## 双向绑定（v-model）
 

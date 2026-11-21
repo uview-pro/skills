@@ -2,8 +2,8 @@
 
 # ux-slider API
 
-> 来源：`components/ux-slider`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:68b637bf45b1d72ba9825cb71075aa54a0263bbc6779adc5f5239b688ea9554a`
+> 来源：`components/ux-slider`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:62fc60960952de578133894ae90be989c0c6ebac5d457ac75618d2e1a16980ea`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only slider`
 
 滑块选择器
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 当前值（默认0） | `number \| string` | `0` |
 | `start` | 整体范围起点值（默认0） | `number \| string` | `0` |

@@ -2,7 +2,7 @@
 
 # ux-navbar API
 
-> 来源：`components/ux-navbar`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-navbar`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:f32c1096a5eea846cb936d7e63ac09ae474ae02d94e20ac7157edbccb70cd314`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only navbar`
 

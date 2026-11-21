@@ -2,8 +2,8 @@
 
 # ux-step API
 
-> 来源：`components/ux-step`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:3b913a2e8376fb666b04a367ae20acc274a37c355694d815c62615912acefda2`
+> 来源：`components/ux-step`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:486248a285229576b8dc87eb6c2a4f353acb0d7b0d7f8b3df0bf3e1e737c3e32`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only step`
 
 步骤条子组件，搭配 ux-steps 使用
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `name` | 步骤名称 | `string` | `''` |
 | `desc` | 步骤描述 | `string` | `''` |

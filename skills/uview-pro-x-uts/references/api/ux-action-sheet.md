@@ -2,8 +2,8 @@
 
 # ux-action-sheet API
 
-> 来源：`components/ux-action-sheet`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:dda801ffe9c0a29e48978e1349599dbc6869a66f8e2b5e433187cdd2d6e27d3a`
+> 来源：`components/ux-action-sheet`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:14bc472b103aeb1d29443765514655a1451fc21f34ab2c2effba085c77669ac3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only action-sheet`
 
 由 ux-popup 从底部弹出的操作菜单：tips 提示 + list 菜单项 + 取消按钮的组合，list 为空时可改用默认插槽自定义内容；点击菜单项默认自动收起（async-close 为 true 时保持展开，由调用方关闭）
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `mask-close-able` / `maskCloseAble` | 是否允许点击遮罩关闭，默认 true | `boolean` | `true` |
 | `list` | 菜单项数组，每项 { text, subText?, color?, fontSize?, disabled? }，默认 [] | `ActionSheetItem[]` | - |

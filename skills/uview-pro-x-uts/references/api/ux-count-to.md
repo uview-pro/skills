@@ -2,7 +2,7 @@
 
 # ux-count-to API
 
-> 来源：`components/ux-count-to`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-count-to`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:c8dad8b1ddd4b37e726f7f52c572972dc5108f197dbd106662676b4c88efb49b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only count-to`
 

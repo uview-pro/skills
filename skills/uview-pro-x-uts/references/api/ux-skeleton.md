@@ -2,7 +2,7 @@
 
 # ux-skeleton API
 
-> 来源：`components/ux-skeleton`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-skeleton`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:3d1f15b8c161209bf35a08c91d201f1038f895c1a4b81aca7175be120088c8f6`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only skeleton`
 

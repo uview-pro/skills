@@ -2,8 +2,8 @@
 
 # ux-alert-tips API
 
-> 来源：`components/ux-alert-tips`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:c4449d1f5e6bceab2112dd46fd8ab156dfafa1cb80578ed27507812db5f6297a`
+> 来源：`components/ux-alert-tips`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:29ccfb14e1d7b6eecb413c08e46d09f55772ff75f6096c523f35e82bc9b3e78c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only alert-tips`
 
 警告提示，展现需要关注的信息；分 success / warning / info / error 四种主题，背景、边框、文字与默认图标颜色均按 type 回退，可关闭并支持自定义关闭文案
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 显示文字 | `string` | `''` |
 | `type` | 主题，success/warning/info/error | `string` | `'warning'` |

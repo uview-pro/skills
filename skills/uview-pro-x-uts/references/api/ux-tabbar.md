@@ -2,8 +2,8 @@
 
 # ux-tabbar API
 
-> 来源：`components/ux-tabbar`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:884d42043f083ca34bf3603092692e655f5e9584154c65c397d60d9f5752f5a6`
+> 来源：`components/ux-tabbar`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:31bb9aea98597b5bc32b6c764311db78a0308ea6bdc735564484cb27a20c191f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only tabbar`
 
 底部导航栏
@@ -29,7 +29,7 @@
 | `gap` | 图标和文字间距 | `string` | `'2px'` |
 | `text-size` / `textSize` | 文字大小 | `string` | `DEFAULT_TEXT_SIZE` |
 | `custom-class` / `customClass` | 自定义类名 | `string` | `''` |
-| `custom-style` / `customStyle` | 自定义样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义样式 | `string \| UTSJSONObject` | `''` |
 
 ## 双向绑定（v-model）
 

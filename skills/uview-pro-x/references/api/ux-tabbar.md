@@ -2,8 +2,8 @@
 
 # ux-tabbar API
 
-> 来源：`components/ux-tabbar`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:5086e87a610cf8c5b69b45d053e261b3ba21d4d22dbd0e40cd107a2c7e57410a`
+> 来源：`components/ux-tabbar`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:34c378fde39c8fd254d50c1257823664414f67bcd9dd1680689ca43198cd6c03`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabbar`
 
 底部导航栏
@@ -29,7 +29,7 @@
 | `gap` | 图标和文字间距 | `string` | `'2px'` |
 | `text-size` / `textSize` | 文字大小 | `string` | `DEFAULT_TEXT_SIZE` |
 | `custom-class` / `customClass` | 自定义类名 | `string` | `''` |
-| `custom-style` / `customStyle` | 自定义样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义样式 | `string \| JsonObject` | `''` |
 
 ## 类型定义
 
@@ -37,6 +37,7 @@
 
 | 类型 | 定义 |
 | --- | --- |
+| `JsonObject` | `Record<string, any>`（普通对象，任意键值、可嵌套；全库统一对象类型，含内联样式） |
 | `TabbarItem` | `{ iconPath?: string; selectedIconPath?: string; text?: string; pagePath?: string; midButton?: boolean; customIcon?: boolean \| string; count?: number; isDot?: boolean; width?: string \| number; iconSize?: string \| number; textSize?: string \| number; gap?: string \| number; }` |
 
 ## 双向绑定（v-model）

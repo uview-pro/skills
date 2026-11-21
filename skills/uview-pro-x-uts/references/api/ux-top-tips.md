@@ -2,8 +2,8 @@
 
 # ux-top-tips API
 
-> 来源：`components/ux-top-tips`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:0a8e0677d08182cc2dee25a75ce2f83620b5322d6109432cf279d3257bf149d3`
+> 来源：`components/ux-top-tips`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:6540d8ece247d089ae639423f0f37ea58972fdd8fee45967b7588538e6fa1dfb`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only top-tips`
 
 顶部提示条，通过组件实例的 show() 弹出，支持导航栏高度适配与 z-index 定制，到时自动收起
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | `''` |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `navbar-height` / `navbarHeight` | 顶部避让总高度(包含状态栏高度在内)，单位 PX；0 时自动取「状态栏 + 平台默认导航栏高度」 | `number \| string` | `0` |
 | `z-index` / `zIndex` | z-index 值 | `number \| string` | - |

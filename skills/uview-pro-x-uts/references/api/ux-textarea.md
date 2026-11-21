@@ -2,8 +2,8 @@
 
 # ux-textarea API
 
-> 来源：`components/ux-textarea`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:46e7d65d8a9a708939223763db13128aa5c916411d6d52523fe7e7005ea42e29`
+> 来源：`components/ux-textarea`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:5304dd82f147b46a72177cbb9e275c2de4f6d3aa5b5b57a22b36c21aae1078c2`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only textarea`
 
 多行文本输入组件，支持字数统计、自动增高、清除按钮，可配合 ux-form 实现表单校验。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `UTSJSONObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | 输入值 | `string \| number` | `''` |
 | `placeholder` | 占位文字（默认''） | `string \| number` | `''` |
@@ -54,10 +54,10 @@
 | --- | --- | --- |
 | `@focus` | `value: string` | 获得焦点时触发 |
 | `@blur` | `value: string` | 失去焦点时触发 |
-| `@linechange` | `e: UniTextareaLineChangeEvent` | - |
+| `@linechange` | `e: UniTextareaLineChangeEvent` | 输入框行数变化时触发，回调含 height / heightRpx / lineCount |
 | `@input` | `value: string` | 输入内容变化时触发 |
 | `@confirm` | `value: string` | 点击键盘完成时触发 |
-| `@keyboardheightchange` | `e: UniTextareaKeyboardHeightChangeEvent` | - |
+| `@keyboardheightchange` | `e: UniTextareaKeyboardHeightChangeEvent` | 键盘高度变化时触发，回调含 height / duration |
 | `@change` | `value: string` | 输入内容变化时触发 |
 | `@click` | - | 点击时触发 |
 

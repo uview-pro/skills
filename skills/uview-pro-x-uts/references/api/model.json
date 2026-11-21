@@ -1,6 +1,6 @@
 {
-  "libVersion": "1.0.24",
-  "libHash": "sha256:d6bbae2da327299e33d141d5ac378ad18099dd8d31620e6a3badc4d6533bef18",
+  "libVersion": "1.0.31",
+  "libHash": "sha256:b585783f69fc12ba82aad23fae441b348da67b8c45324a6babe0fd986312066f",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -10,7 +10,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -18,7 +18,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -246,7 +246,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:dda801ffe9c0a29e48978e1349599dbc6869a66f8e2b5e433187cdd2d6e27d3a"
+      "apiHash": "sha256:14bc472b103aeb1d29443765514655a1451fc21f34ab2c2effba085c77669ac3"
     },
     "ux-alert-tips": {
       "name": "ux-alert-tips",
@@ -256,7 +256,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -521,7 +521,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:77f8274fc8841509cb17d78bbb64f69b34336e20425d29f4fc6867350b173876"
+      "apiHash": "sha256:f2cdd1d4656d235f8edf699204133c5e8c47aa1db79d67f6f3eb736b6cc3d41b"
     },
     "ux-avatar": {
       "name": "ux-avatar",
@@ -1598,7 +1598,7 @@
           "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "开放能力，具体请看uniapp稳定关于button组件部分说明",
+          "desc": "开放能力，详见 uni-app button 组件开放能力说明",
           "descFrom": "types"
         },
         {
@@ -1616,7 +1616,7 @@
           "default": "''",
           "defaultKind": "literal",
           "required": false,
-          "desc": "用于 <form> 组件，点击分别会触发 <form> 组件的 submit/reset 事件",
+          "desc": "用于 <form> 组件，点击触发 submit / reset 事件",
           "descFrom": "types"
         },
         {
@@ -1903,7 +1903,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -2297,7 +2297,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:41a501ce648e8a457eee2f10ad3e4feda8380eac83123d0364d73ed4ad7df795"
+      "apiHash": "sha256:b86313362ba087318d7cd6132f1c4b4d5b83690dee3b436661930fdc667d4970"
     },
     "ux-cell-group": {
       "name": "ux-cell-group",
@@ -3171,7 +3171,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -3322,7 +3322,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:4f36502edae1e5dc1aa18c49b1edf2eed0583f55b2812e26b7b3689c5a250cd4"
+      "apiHash": "sha256:321a5b83ba3066ca37433fc58385832d9da1a885ec6008aa93ed1526aef1e73a"
     },
     "ux-col": {
       "name": "ux-col",
@@ -3332,7 +3332,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -3441,7 +3441,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:6f80cd01c61b33ff40dfe68cbe82bbccd3b76e6381c5e94aa91641c2be890d19"
+      "apiHash": "sha256:1ac438d3ad75742225e5bde429e8bba380eaebde52cf6d966da798a05d5c9bbe"
     },
     "ux-collapse": {
       "name": "ux-collapse",
@@ -3451,7 +3451,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -3610,7 +3610,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:3f90ca8a31c95ce82448777979493f50926e34f539f5741ae2aa7334d3cb772f"
+      "apiHash": "sha256:ee8cf20e5cb24730f4a8a6a0ce40d747e013f1e969f9de62181fd55786bb0257"
     },
     "ux-collapse-item": {
       "name": "ux-collapse-item",
@@ -3620,7 +3620,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -3781,7 +3781,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:a1d3201bc2dad26d8cfead1a6415153aaf1c54a5ab66884cadd87c40be2a166a"
+      "apiHash": "sha256:dacf30c5be23640259269a920c183a90cabccf395d637d2159e38f3fb987310d"
     },
     "ux-config-provider": {
       "name": "ux-config-provider",
@@ -3791,7 +3791,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "string",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -3883,7 +3883,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:899ad17eb969619797a46392ea73d46d2afc35e5ada6a97b472736211a63d1f3"
+      "apiHash": "sha256:d94e29fb0442487d1a3de52219b93562cb1ee2a581f56aca634132f0791119a8"
     },
     "ux-count-down": {
       "name": "ux-count-down",
@@ -5324,7 +5324,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "string",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -5410,7 +5410,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:54543276ab30c61ea4cda4660b988adb4601f310a37a661214bfb8d50757276a"
+      "apiHash": "sha256:a94f5dcaa03a41b8acd76b96ff118d627ba557a7d58047aef0e6c1b6c9dc8aa6"
     },
     "ux-gap": {
       "name": "ux-gap",
@@ -5520,7 +5520,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -5625,7 +5625,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:db5e3bbf9b7913780a905f0330fb4422522e22d4957d2ad443fa507adc1763bf"
+      "apiHash": "sha256:ca299762e4ba455f6f17887d0ff74f2299b5aadfb83eaddfe2fc6dec8f5f3172"
     },
     "ux-grid-item": {
       "name": "ux-grid-item",
@@ -5635,7 +5635,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -5712,7 +5712,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:bb8d719821d316ea2872ed29083185a40b5d42e9ecb18f9e18cb3d310d6bd4e6"
+      "apiHash": "sha256:51bcd802552783c6f3a2f7309550a5f7e77ec73d294faabe2fc2072ff7db325d"
     },
     "ux-icon": {
       "name": "ux-icon",
@@ -6728,7 +6728,7 @@
         {
           "name": "change",
           "payload": "value: string",
-          "desc": ""
+          "desc": "输入内容变化时触发（与 input 同时派发）"
         },
         {
           "name": "blur",
@@ -7680,7 +7680,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -7888,7 +7888,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:53d46ce0948be395305cbbadcbdc004191e572c230717bd4c1a2d645d2703311"
+      "apiHash": "sha256:6eb7812fd94d2e66c459ab6051d5a9fbc89c7cc94b098e42cddb950e535e392a"
     },
     "ux-mask": {
       "name": "ux-mask",
@@ -8826,7 +8826,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -8834,7 +8834,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -9185,7 +9185,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:0b7d1741989cb3d0136021c06516c1788a2bc659e8353829916ce56ec5d0d333"
+      "apiHash": "sha256:a13a12c98d40408deeb6bb2dc0405fafcd6db3dec46e23c14913639b3935bcb2"
     },
     "ux-number-box": {
       "name": "ux-number-box",
@@ -9195,7 +9195,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -9508,7 +9508,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:adf867dff71a20cdf2a6b3d2ea460cfa6b0b875965ef5782901e58b31c1e0634"
+      "apiHash": "sha256:c15a81640f0861fb54fa90bdbd2047e19143e8a45fdfeead36272ef89075c80d"
     },
     "ux-pagination": {
       "name": "ux-pagination",
@@ -9518,7 +9518,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -9526,7 +9526,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -9686,7 +9686,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:673af753a1442443cd937fe1c2915a216ebd16c8b9264acfb4ac03fb23076cc2"
+      "apiHash": "sha256:c6a3636ec54790dd9f583c35728080754f10dfd4cb31230c75ea3c0e2af4792c"
     },
     "ux-picker": {
       "name": "ux-picker",
@@ -9696,7 +9696,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -9704,7 +9704,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -9938,7 +9938,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:da3aef27b595e50910ac8949e5687c441e47415da705190a97dda90ba6c2af47"
+      "apiHash": "sha256:c529760fb94b56e1860d9add72c3a9f133a3db6ec2e0b6a449318be2d4321d1a"
     },
     "ux-popup": {
       "name": "ux-popup",
@@ -11077,7 +11077,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -11158,7 +11158,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:c9a17240709109d1020fdd7ae78dcc8078f53a70ed01149dd7c53d0887edfd83"
+      "apiHash": "sha256:e6acad8da50ea6044818c690339bc2f4ffdb0841a0d3da8a027ecfdc1be1de95"
     },
     "ux-safe-bottom": {
       "name": "ux-safe-bottom",
@@ -11633,7 +11633,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -11818,7 +11818,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:fbef7e39168eb74d6862c567fdde319a2cc607def2632e9e4fc22d1f62243da9"
+      "apiHash": "sha256:7966590f58dfa7692de4c89a117a1024a9e23328c73bc9ea4ed8c74d03936e8b"
     },
     "ux-select": {
       "name": "ux-select",
@@ -11828,7 +11828,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -11836,7 +11836,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -12116,7 +12116,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:b4629cc8a0197781d812f468ff1a4bbe1e3a337323eb798be0ec17bf24e8b631"
+      "apiHash": "sha256:997f12b5d3bf7cc648d92142b66840b98ae9a464273f6e26bb0cf2f34ef781fa"
     },
     "ux-skeleton": {
       "name": "ux-skeleton",
@@ -12329,7 +12329,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -12654,7 +12654,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:35a72f4300321eada253001aaa49e012c5d72613ed8a07428dee16b94788db33"
+      "apiHash": "sha256:53e9a886ccfbf080c12c87656206c7033417ddc87dcb4ca963c5ac201bd82e79"
     },
     "ux-status-bar": {
       "name": "ux-status-bar",
@@ -12727,7 +12727,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -12735,7 +12735,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -12831,7 +12831,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:3b913a2e8376fb666b04a367ae20acc274a37c355694d815c62615912acefda2"
+      "apiHash": "sha256:486248a285229576b8dc87eb6c2a4f353acb0d7b0d7f8b3df0bf3e1e737c3e32"
     },
     "ux-steps": {
       "name": "ux-steps",
@@ -12841,7 +12841,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -12849,7 +12849,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -12992,7 +12992,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:1d256008409aaa6390504134fa29e7ce62c47e7853b6213b6497c241087ca4c8"
+      "apiHash": "sha256:2ffc75cdce65f780db5a18ef67fb713711c4d9b568370ae7eccda37debf7e40f"
     },
     "ux-sticky": {
       "name": "ux-sticky",
@@ -13146,7 +13146,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -13154,7 +13154,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -13371,7 +13371,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:e7fff74265df7af60fdd9ee22268fc4b0190a12b9705b6233ccd9acebef25062"
+      "apiHash": "sha256:f023ee2db9ad88fd6fa6204111d3e63c03cdb69e480b1464dfe5e30dad87fae0"
     },
     "ux-swipe-action": {
       "name": "ux-swipe-action",
@@ -13381,7 +13381,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -13389,7 +13389,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -13559,7 +13559,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:c1fbe361a4348bfe230131c9a3049c8b2f12d0f2d74f111577d0f42cfe7fb1a4"
+      "apiHash": "sha256:0c614a33b7a50c3ff8987801bc62b3c6d5c269d58d52fc516bb3ffe11a9ebbe2"
     },
     "ux-swiper": {
       "name": "ux-swiper",
@@ -14329,7 +14329,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "string",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -14375,7 +14375,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:884d42043f083ca34bf3603092692e655f5e9584154c65c397d60d9f5752f5a6"
+      "apiHash": "sha256:31bb9aea98597b5bc32b6c764311db78a0308ea6bdc735564484cb27a20c191f"
     },
     "ux-tabs": {
       "name": "ux-tabs",
@@ -14975,7 +14975,7 @@
       "slots": [
         {
           "name": "default",
-          "desc": ""
+          "desc": "自定义标签内容，未传时回退 text 属性"
         }
       ],
       "externalClasses": [
@@ -15508,7 +15508,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -15516,7 +15516,7 @@
           "default": "(): UTSJSONObject => ({})",
           "defaultKind": "factory",
           "required": false,
-          "desc": "自定义根节点样式，对象形式",
+          "desc": "自定义根节点样式",
           "descFrom": "jsdoc"
         },
         {
@@ -15926,7 +15926,7 @@
         {
           "name": "linechange",
           "payload": "e: UniTextareaLineChangeEvent",
-          "desc": ""
+          "desc": "输入框行数变化时触发，回调含 height / heightRpx / lineCount"
         },
         {
           "name": "input",
@@ -15941,7 +15941,7 @@
         {
           "name": "keyboardheightchange",
           "payload": "e: UniTextareaKeyboardHeightChangeEvent",
-          "desc": ""
+          "desc": "键盘高度变化时触发，回调含 height / duration"
         },
         {
           "name": "change",
@@ -15972,7 +15972,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:46e7d65d8a9a708939223763db13128aa5c916411d6d52523fe7e7005ea42e29"
+      "apiHash": "sha256:5304dd82f147b46a72177cbb9e275c2de4f6d3aa5b5b57a22b36c21aae1078c2"
     },
     "ux-toast": {
       "name": "ux-toast",
@@ -16230,7 +16230,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "string",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -16296,7 +16296,7 @@
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:0a8e0677d08182cc2dee25a75ce2f83620b5322d6109432cf279d3257bf149d3"
+      "apiHash": "sha256:6540d8ece247d089ae639423f0f37ea58972fdd8fee45967b7588538e6fa1dfb"
     },
     "ux-transition": {
       "name": "ux-transition",
@@ -16306,7 +16306,7 @@
         {
           "name": "customStyle",
           "kebab": "custom-style",
-          "type": "UTSJSONObject",
+          "type": "string | UTSJSONObject",
           "typeResolved": {
             "kind": "opaque",
             "values": null
@@ -16480,7 +16480,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:4d27d5d9cecd7d380b75a55a3df14bc9456f5597b29d3db1dcaebe53d30c9b8c"
+      "apiHash": "sha256:c40835ab0426a106081d122ab0a83faba9236757e44afe2fbbb7cd5cfb42d5b0"
     }
   },
   "symbols": {

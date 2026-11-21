@@ -2,8 +2,8 @@
 
 # ux-full-screen API
 
-> 来源：`components/ux-full-screen`（uview-pro-x-uts v1.0.24）
-> API 指纹：`sha256:54543276ab30c61ea4cda4660b988adb4601f310a37a661214bfb8d50757276a`
+> 来源：`components/ux-full-screen`（uview-pro-x-uts v1.0.31）
+> API 指纹：`sha256:a94f5dcaa03a41b8acd76b96ff118d627ba557a7d58047aef0e6c1b6c9dc8aa6`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only full-screen`
 
 用于 App 弹窗遮盖导航栏和底部 tabbar，提示新版本升级内容；组件挂载后自动弹起，取消与确认均执行返回上一页，标题不传取本地化默认文案
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `string` | `''` |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| UTSJSONObject` | `''` |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `show` | 是否显示弹窗 | `boolean` | `false` |
 | `title` | 弹窗标题 | `string` | `''` |

@@ -2,8 +2,8 @@
 
 # ux-swipe-action API
 
-> 来源：`components/ux-swipe-action`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:e1c814866d1e17eee856baf2b34d61c28070fbc5679b990d2e5501969f3c4b7b`
+> 来源：`components/ux-swipe-action`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:44e8870e271ab86a0f5e0fdf32d28f3e592b6c159547512ddc1ab1b2d90ac466`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swipe-action`
 
 该组件一般用于左滑唤出操作菜单的场景，用的最多的是左滑删除操作
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `index` | 标识符，点击时候用于区分点击了哪一个 | `number \| string` | `''` |
 | `btn-width` / `btnWidth` | 按钮宽度，单位px（默认90） | `number \| string` | `90` |

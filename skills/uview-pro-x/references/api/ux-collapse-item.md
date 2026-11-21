@@ -2,8 +2,8 @@
 
 # ux-collapse-item API
 
-> 来源：`components/ux-collapse-item`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:7e7daf9889694471515e25a2866173a4f400870d0f3d8c77f7700f7b15e71bdb`
+> 来源：`components/ux-collapse-item`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:746177746d3d7060857e8f36a333597f6bd5cb918d44fa6d3aba76c3bf9df6f9`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only collapse-item`
 
 通过折叠面板收纳内容区域（搭配u-collapse使用）
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `title` | 面板标题 | `string` | `''` |
 | `align` | 标题的对齐方式（默认left） | `string` | `'left'` |

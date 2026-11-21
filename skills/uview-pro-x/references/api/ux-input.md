@@ -2,7 +2,7 @@
 
 # ux-input API
 
-> 来源：`components/ux-input`（uview-pro-x v2.0.0）
+> 来源：`components/ux-input`（uview-pro-x v2.0.2）
 > API 指纹：`sha256:cb0886473d5c28ecf1f3af4ed954588a1ce184f46c321e328c1f368112d84366`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only input`
 
@@ -69,7 +69,7 @@
 | 事件 | 回调参数 | 说明 |
 | --- | --- | --- |
 | `@input` | `value: string` | 输入内容时触发 |
-| `@change` | `value: string` | - |
+| `@change` | `value: string` | 输入内容变化时触发（与 input 同时派发） |
 | `@blur` | `value: string` | 输入框失去焦点时触发 |
 | `@focus` | `value: string` | 输入框获得焦点时触发 |
 | `@confirm` | `value: string` | 点击完成按钮时触发 |

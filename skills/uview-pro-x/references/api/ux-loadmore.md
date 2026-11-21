@@ -2,8 +2,8 @@
 
 # ux-loadmore API
 
-> 来源：`components/ux-loadmore`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:9aa1b60b06df4ccffb15f3365728a6967388470cf7102d68c91cc927dc53b48f`
+> 来源：`components/ux-loadmore`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:7dad378d18cba164114c50e160c93877505e31c16496ecdbca3533b3f80b1bab`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only loadmore`
 
 此组件一般用于标识页面底部加载数据时的状态。
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `bg-color` / `bgColor` | 组件背景色 | `string` | `''` |
 | `icon` | 是否显示加载中的图标（默认true） | `boolean` | `true` |

@@ -2,8 +2,8 @@
 
 # ux-picker API
 
-> 来源：`components/ux-picker`（uview-pro-x v2.0.0）
-> API 指纹：`sha256:cd4898881a26c26acbc12e28eba0d5258856a71b655354452dd4e35777d58dc1`
+> 来源：`components/ux-picker`（uview-pro-x v2.0.2）
+> API 指纹：`sha256:7be2f8170b9b9a65826680f1f7eae5a88cf1663e4156f05a6ad1cc420da9bc7c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only picker`
 
 由 ux-popup 从底部弹出的滚动选择器，支持 selector-单列 / multiSelector-多列 / cascade-级联联动三种模式；列数据全部由 columns 传入，cascade 模式通过 children 逐级展开，滚动上级列自动刷新下级列
@@ -12,7 +12,7 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `custom-style` / `customStyle` | 自定义根节点样式，对象形式 | `JsonObject` | - |
+| `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `model-value` / `modelValue` | v-model 控制弹出与收起 | `boolean` | `false` |
 | `columns` | 列数据，全部由外部传入：selector 传 [[a, b, c]]；multiSelector 传 [[a, b], [c, d]]；cascade 传 [[根节点]]，通过 children 展开联动 | `PickerOption[][]` | - |

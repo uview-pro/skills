@@ -2,7 +2,7 @@
 
 # ux-loading API
 
-> 来源：`components/ux-loading`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-loading`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:6ba2b632e82d7c3cb377bea1523d8b2e7cdcc205b71be35f2cab84927b2813c3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only loading`
 

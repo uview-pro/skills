@@ -2,7 +2,7 @@
 
 # ux-empty API
 
-> 来源：`components/ux-empty`（uview-pro-x-uts v1.0.24）
+> 来源：`components/ux-empty`（uview-pro-x-uts v1.0.31）
 > API 指纹：`sha256:37ece224aff79400c9c0839168e3f75c9c1f53e44448451c00e4015d9ea01a42`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only empty`
 

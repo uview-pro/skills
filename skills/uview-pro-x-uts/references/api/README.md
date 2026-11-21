@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x-uts v1.0.24 ｜ 全库 API 指纹 `sha256:d6bbae2da327299e33d141d5ac378ad18099dd8d31620e6a3badc4d6533bef18` ｜ 70 个组件
+> uview-pro-x-uts v1.0.31 ｜ 全库 API 指纹 `sha256:b585783f69fc12ba82aad23fae441b348da67b8c45324a6babe0fd986312066f` ｜ 70 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
