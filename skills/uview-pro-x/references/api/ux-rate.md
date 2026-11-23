@@ -2,7 +2,7 @@
 
 # ux-rate API
 
-> 来源：`components/ux-rate`（uview-pro-x v2.0.2）
+> 来源：`components/ux-rate`（uview-pro-x v2.0.7）
 > API 指纹：`sha256:baa2f88dbb3e7e0cd3be598474415c0ea8b3dd19a4af8762c8ebfebeccd122c4`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only rate`
 

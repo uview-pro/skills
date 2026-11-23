@@ -1,5 +1,5 @@
 {
-  "libVersion": "2.0.2",
+  "libVersion": "2.0.7",
   "libHash": "sha256:e76b8bf56c8e136a84c70a8ee65f9aeca51f95c227e462055c355f31826ff3c8",
   "components": {
     "ux-action-sheet": {
@@ -9564,7 +9564,7 @@
           "default": "true",
           "defaultKind": "literal",
           "required": false,
-          "desc": "是否开启长按连续递增或递减（默认true）",
+          "desc": "是否开启长按连续递增或递减（默认true，连续触发依赖触摸事件，桌面浏览器不生效）",
           "descFrom": "types"
         },
         {

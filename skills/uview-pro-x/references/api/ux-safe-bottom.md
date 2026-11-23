@@ -2,7 +2,7 @@
 
 # ux-safe-bottom API
 
-> 来源：`components/ux-safe-bottom`（uview-pro-x v2.0.2）
+> 来源：`components/ux-safe-bottom`（uview-pro-x v2.0.7）
 > API 指纹：`sha256:4cf90d1d89f8bef1c8833b4f080f8dfc94f66d0c29bbb7e81f223033e69ad800`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only safe-bottom`
 

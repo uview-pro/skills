@@ -27,7 +27,7 @@
 | `index` | 事件回调时用以区分当前发生变化的是哪个输入框 | `number \| string` | `''` |
 | `disabled-input` / `disabledInput` | 是否禁止输入框手动输入值（默认false） | `boolean` | `false` |
 | `cursor-spacing` / `cursorSpacing` | 指定光标于键盘的距离（默认50） | `number \| string` | `100` |
-| `long-press` / `longPress` | 是否开启长按连续递增或递减（默认true） | `boolean` | `true` |
+| `long-press` / `longPress` | 是否开启长按连续递增或递减（默认true，连续触发依赖触摸事件，桌面浏览器不生效） | `boolean` | `true` |
 | `press-time` / `pressTime` | 开启长按触发后，每触发一次需要多久，单位ms（默认125） | `number \| string` | `250` |
 | `positive-integer` / `positiveInteger` | 是否只能输入正整数（默认true） | `boolean` | `true` |
 | `validate-state` / `validateState` | 校验错误状态，用于错误时边框是否改为红色 | `boolean` | `false` |

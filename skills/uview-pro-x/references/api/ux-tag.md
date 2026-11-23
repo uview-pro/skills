@@ -2,7 +2,7 @@
 
 # ux-tag API
 
-> 来源：`components/ux-tag`（uview-pro-x v2.0.2）
+> 来源：`components/ux-tag`（uview-pro-x v2.0.7）
 > API 指纹：`sha256:0e4c92c968319833a72474729ab2b2c7ad29d3e46de820551efc5a5581fca2fd`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tag`
 

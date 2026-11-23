@@ -2,7 +2,7 @@
 
 # ux-sticky API
 
-> 来源：`components/ux-sticky`（uview-pro-x v2.0.2）
+> 来源：`components/ux-sticky`（uview-pro-x v2.0.7）
 > API 指纹：`sha256:7f3bbf3699d2c7490f44f8ccc8e0c6a517aae2cfb29f5ff18250a21ec65b4d19`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only sticky`
 

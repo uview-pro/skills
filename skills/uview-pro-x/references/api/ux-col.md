@@ -2,7 +2,7 @@
 
 # ux-col API
 
-> 来源：`components/ux-col`（uview-pro-x v2.0.2）
+> 来源：`components/ux-col`（uview-pro-x v2.0.7）
 > API 指纹：`sha256:25961cba8a458ec1d655cff5bff978a58e092c86eb0a51e10860171197530f02`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only col`
 
