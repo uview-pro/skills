@@ -2,7 +2,7 @@
 
 # ux-link API
 
-> 来源：`components/ux-link`（uview-pro-x v2.0.7）
+> 来源：`components/ux-link`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:1ccd070d5305552fea957690f8253b3cf9f11160c265418f7fe3f4d8db303019`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only link`
 

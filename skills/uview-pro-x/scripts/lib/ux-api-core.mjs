@@ -418,6 +418,11 @@ function compactJsdoc(s) {
         .trim();
 }
 
+/** 剥掉说明尾部的 @since 标记（版本号只供文档 API 表使用，不进卡片正文） */
+function stripSince(text) {
+    return String(text).replace(/\s*@since\s+v?\d+(?:\.\d+)*\s*$/i, '').trim();
+}
+
 /** 解析组件头 JSDoc：@description / @property / @slot / @event（另收首个 @tag 前的标题行 leading 作描述兜底） */
 function parseJsDoc(block) {
     const out = { description: '', leading: '', props: new Map(), slots: [], events: new Map() };
@@ -439,15 +444,15 @@ function parseJsDoc(block) {
             } else if (name === 'property') {
                 mode = null;
                 const p = rest.match(/^\{([^}]+)\}\s+([\w-]+)\s+([\s\S]*)$/);
-                if (p) out.props.set(p[2], { type: p[1], desc: p[3].trim() });
+                if (p) out.props.set(p[2], { type: p[1], desc: stripSince(p[3]) });
             } else if (name === 'slot') {
                 mode = null;
                 const s = rest.match(/^(\S+)\s+([\s\S]*)$/);
-                if (s) out.slots.push({ name: s[1] === '默认插槽' ? 'default' : s[1], desc: s[2].trim() });
+                if (s) out.slots.push({ name: s[1] === '默认插槽' ? 'default' : s[1], desc: stripSince(s[2]) });
             } else if (name === 'event') {
                 mode = null;
                 const e = rest.match(/^\{[^}]+\}\s+([\w-]+)\s+([\s\S]*)$/);
-                if (e) out.events.set(e[1], e[2].trim());
+                if (e) out.events.set(e[1], stripSince(e[2]));
             } else {
                 mode = null;
             }

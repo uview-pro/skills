@@ -2,7 +2,7 @@
 
 # ux-tabbar API
 
-> 来源：`components/ux-tabbar`（uview-pro-x v2.0.7）
+> 来源：`components/ux-tabbar`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:34c378fde39c8fd254d50c1257823664414f67bcd9dd1680689ca43198cd6c03`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only tabbar`
 

@@ -2,7 +2,7 @@
 
 # ux-swipe-action API
 
-> 来源：`components/ux-swipe-action`（uview-pro-x v2.0.7）
+> 来源：`components/ux-swipe-action`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:44e8870e271ab86a0f5e0fdf32d28f3e592b6c159547512ddc1ab1b2d90ac466`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swipe-action`
 

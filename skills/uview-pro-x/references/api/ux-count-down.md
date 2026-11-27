@@ -2,8 +2,8 @@
 
 # ux-count-down API
 
-> 来源：`components/ux-count-down`（uview-pro-x v2.0.7）
-> API 指纹：`sha256:acc7ebf3bfc20cc1cddb0659f5fb81ad82d65ce7ef2812a87cdd8d16255ef50c`
+> 来源：`components/ux-count-down`（uview-pro-x v2.0.14）
+> API 指纹：`sha256:4797c41ead7d4ca3176a010a63ec91b7660d93383b20f1e5647880e19a03263e`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only count-down`
 
 该组件一般使用于某个活动的截止时间上，通过数字的变化，给用户明确的时间感受，提示用户进行某一个行为操作。
@@ -15,7 +15,8 @@
 | `custom-style` / `customStyle` | 自定义根节点样式 | `string \| JsonObject` | - |
 | `custom-class` / `customClass` | 自定义根节点样式类 | `string` | `''` |
 | `timestamp` | 倒计时的时间，秒为单位 | `number \| string` | `0` |
-| `autoplay` | 是否自动开始倒计时，false 时需手动调用 start 方法 | `boolean` | `true` |
+| `format` | 文本模板，如 HH:mm:ss、DD HH:mm:ss；为空时按分段盒子渲染 | `string` | `''` |
+| `autoplay` | 是否自动开始倒计时，false 时需手动调用 start / pause / reset 方法 | `boolean` | `true` |
 | `separator` | 分隔符，colon 为英文冒号，zh 为中文 | `string` | `'colon'` |
 | `separator-size` / `separatorSize` | 分隔符的字体大小，单位 px | `number \| string` | `DEFAULT_SEPARATOR_SIZE` |
 | `separator-color` / `separatorColor` | 分隔符的颜色 | `string` | `''` |
@@ -53,7 +54,9 @@
 
 ## 插槽
 
-无插槽。
+| 插槽名 | 说明 |
+| --- | --- |
+| `default` | 文本模板模式下的自定义渲染，插槽参数 current 为当前剩余时间；仅在 format 非空时渲染 |
 
 ## 外部样式类
 
@@ -66,4 +69,6 @@
 | 方法 | 说明 |
 | --- | --- |
 | `start` | - |
+| `pause` | - |
+| `reset` | - |
 | `end` | - |

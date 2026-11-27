@@ -2,7 +2,7 @@
 
 # ux-line-progress API
 
-> 来源：`components/ux-line-progress`（uview-pro-x v2.0.7）
+> 来源：`components/ux-line-progress`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:767793c117b1369f37feb8ba82873fa1c7a58fbecd66b909311ab242a7d10124`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only line-progress`
 

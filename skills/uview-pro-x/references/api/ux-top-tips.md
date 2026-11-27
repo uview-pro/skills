@@ -2,7 +2,7 @@
 
 # ux-top-tips API
 
-> 来源：`components/ux-top-tips`（uview-pro-x v2.0.7）
+> 来源：`components/ux-top-tips`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:7c295da4e7a7fe8a8191e486eb72d9b09d7d594c3c035b0d770ae2fbbdfce356`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only top-tips`
 

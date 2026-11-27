@@ -1,6 +1,6 @@
 {
-  "libVersion": "2.0.7",
-  "libHash": "sha256:e76b8bf56c8e136a84c70a8ee65f9aeca51f95c227e462055c355f31826ff3c8",
+  "libVersion": "2.0.14",
+  "libHash": "sha256:1abf0906f0f7d328b6e2946d87335b471014ea2771a8e63fa268ba812433896d",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -3996,6 +3996,20 @@
           "descFrom": "types"
         },
         {
+          "name": "format",
+          "kebab": "format",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "文本模板，如 HH:mm:ss、DD HH:mm:ss；为空时按分段盒子渲染",
+          "descFrom": "types"
+        },
+        {
           "name": "autoplay",
           "kebab": "autoplay",
           "type": "boolean",
@@ -4006,7 +4020,7 @@
           "default": "true",
           "defaultKind": "literal",
           "required": false,
-          "desc": "是否自动开始倒计时，false 时需手动调用 start 方法",
+          "desc": "是否自动开始倒计时，false 时需手动调用 start / pause / reset 方法",
           "descFrom": "types"
         },
         {
@@ -4233,13 +4247,24 @@
         }
       ],
       "models": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "default",
+          "desc": "文本模板模式下的自定义渲染，插槽参数 current 为当前剩余时间；仅在 format 非空时渲染"
+        }
+      ],
       "externalClasses": [
         "custom-class"
       ],
       "methods": [
         {
           "name": "start"
+        },
+        {
+          "name": "pause"
+        },
+        {
+          "name": "reset"
         },
         {
           "name": "end"
@@ -4249,7 +4274,7 @@
       "typeDefs": {
         "JsonObject": "Record<string, any>"
       },
-      "apiHash": "sha256:acc7ebf3bfc20cc1cddb0659f5fb81ad82d65ce7ef2812a87cdd8d16255ef50c"
+      "apiHash": "sha256:4797c41ead7d4ca3176a010a63ec91b7660d93383b20f1e5647880e19a03263e"
     },
     "ux-count-to": {
       "name": "ux-count-to",
@@ -6878,7 +6903,11 @@
       "slots": [
         {
           "name": "prefix",
-          "desc": ""
+          "desc": "前置插槽，在录入区之前渲染内容，如金额输入前的货币图标"
+        },
+        {
+          "name": "suffix",
+          "desc": "后置插槽，在录入区之后渲染内容，如单位、图标或按钮（点击不冒泡到根节点）"
         }
       ],
       "externalClasses": [
@@ -6894,7 +6923,7 @@
         "JsonObject": "Record<string, any>",
         "SizeType": "'default' | 'small' | 'large'"
       },
-      "apiHash": "sha256:cb0886473d5c28ecf1f3af4ed954588a1ce184f46c321e328c1f368112d84366"
+      "apiHash": "sha256:6219edac319e85ec5da308fae7b43219bd4925b3ff42436c490bf5049c4b49cf"
     },
     "ux-keyboard": {
       "name": "ux-keyboard",
@@ -10101,6 +10130,302 @@
         "PickerOption": "{ text: string; value?: string | number; disabled?: boolean; children?: PickerOption[]; }"
       },
       "apiHash": "sha256:7be2f8170b9b9a65826680f1f7eae5a88cf1663e4156f05a6ad1cc420da9bc7c"
+    },
+    "ux-popover": {
+      "name": "ux-popover",
+      "dir": "components/ux-popover",
+      "description": "在触发元素旁弹出菜单面板，菜单内容全部由 `#menu` 插槽自定义（组件不内置 options 渲染）。定位口径：打开后先让面板以透明态挂载并绘制一帧，再量触发元素与面板的矩形，按 placement 算出 left/top 并钳制在屏幕内；纵向越界时自动翻转到另一侧（只改视觉，不派发事件）。矩形用 getBoundingClientRectAsync 采集，与 position: fixed 的原点三端一致，因此直接使用矩形值、不做 windowTop 换算。显隐终态（transform / opacity / transition-duration）经 `el.style.setProperty` 命令式直写，几何量（left / top / width / 箭头偏移）走内联样式，位置与动画状态由 BEM 类表达。面板默认 1px 描边 + 单层柔和阴影（均取主题令牌、随亮暗主题切换），边界清晰又不抢眼；箭头叠在面板之上（层级更高），用同底色背景盖住横穿根部的那段描边，只描外露的两条斜边，因此三端都不会出现割裂横线；show-border / show-shadow 全关即为纯色气泡（深色气泡同色无缝）；Web 端打开期间发生任何滚动都会自动关闭面板，App 与小程序端由遮罩阻断触摸滑动，不会出现面板与触发元素错位。",
+      "props": [
+        {
+          "name": "customStyle",
+          "kebab": "custom-style",
+          "type": "string | JsonObject",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "(): JsonObject => ({})",
+          "defaultKind": "factory",
+          "required": false,
+          "desc": "自定义面板容器样式",
+          "descFrom": "types"
+        },
+        {
+          "name": "customClass",
+          "kebab": "custom-class",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "自定义面板容器样式类",
+          "descFrom": "types"
+        },
+        {
+          "name": "placement",
+          "kebab": "placement",
+          "type": "PopoverPlacement",
+          "typeResolved": {
+            "kind": "literalUnion",
+            "values": [
+              "bottom-end",
+              "bottom",
+              "bottom-start",
+              "top-end",
+              "top",
+              "top-start"
+            ]
+          },
+          "default": "'bottom-end'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板方位，bottom-end | bottom | bottom-start | top-end | top | top-start（默认 bottom-end）",
+          "descFrom": "types"
+        },
+        {
+          "name": "offset",
+          "kebab": "offset",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板与触发元素的间距，单位 px（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showArrow",
+          "kebab": "show-arrow",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示指向触发元素的箭头（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "arrowSize",
+          "kebab": "arrow-size",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "箭头边长，单位 px（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "bgColor",
+          "kebab": "bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板背景色，留空走主题白底（默认空）",
+          "descFrom": "types"
+        },
+        {
+          "name": "borderRadius",
+          "kebab": "border-radius",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板圆角，单位 px，传 0 为直角（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showBorder",
+          "kebab": "show-border",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示面板描边，默认 true：1px 描边定义边界，箭头叠在上层盖住断口，根部无接缝线",
+          "descFrom": "types"
+        },
+        {
+          "name": "showShadow",
+          "kebab": "show-shadow",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示漫射阴影，关掉后为无投影的纯色气泡（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "maskBgColor",
+          "kebab": "mask-bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "'rgba(0,0,0,0)'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "遮罩层背景色，默认全透明只做点击捕获（默认 rgba(0,0,0,0)）",
+          "descFrom": "types"
+        },
+        {
+          "name": "maskCloseAble",
+          "kebab": "mask-close-able",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "点击遮罩是否关闭面板（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "contentCloseAble",
+          "kebab": "content-close-able",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "false",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "点击面板内容后是否自动关闭，插槽方案下默认交给调用方（默认 false）",
+          "descFrom": "types"
+        },
+        {
+          "name": "duration",
+          "kebab": "duration",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "200",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "显隐动画时长，单位 ms（默认 200）",
+          "descFrom": "types"
+        },
+        {
+          "name": "zIndex",
+          "kebab": "z-index",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "层级，留空取 $u.zIndex.dropdown（默认空）",
+          "descFrom": "types"
+        },
+        {
+          "name": "refreshKey",
+          "kebab": "refresh-key",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "0",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "内容尺寸异步变化时改此值触发重新测位（默认 0）",
+          "descFrom": "types"
+        }
+      ],
+      "events": [
+        {
+          "name": "open",
+          "payload": "",
+          "desc": "开始打开（面板已挂载、测位前）"
+        },
+        {
+          "name": "close",
+          "payload": "",
+          "desc": "开始关闭（终态已写回起始值）"
+        },
+        {
+          "name": "clickMask",
+          "payload": "",
+          "desc": "点击遮罩层"
+        }
+      ],
+      "models": [
+        {
+          "name": "show",
+          "channels": [
+            "defineModel"
+          ],
+          "propName": "show",
+          "updateEvent": "update:show",
+          "default": "false"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "desc": "触发区内容（必填）"
+        },
+        {
+          "name": "menu",
+          "desc": "面板内容"
+        }
+      ],
+      "externalClasses": [
+        "custom-class"
+      ],
+      "methods": [
+        {
+          "name": "open"
+        },
+        {
+          "name": "close"
+        },
+        {
+          "name": "refresh"
+        }
+      ],
+      "warnings": [],
+      "typeDefs": {
+        "JsonObject": "Record<string, any>",
+        "PopoverPlacement": "'bottom-end' | 'bottom' | 'bottom-start' | 'top-end' | 'top' | 'top-start'"
+      },
+      "apiHash": "sha256:55e48495d233e8921c77134e1fd7dcfd72d143fbe5fbc9c385e84205bb59b805"
     },
     "ux-popup": {
       "name": "ux-popup",
@@ -17459,14 +17784,14 @@
   },
   "errors": [],
   "stats": {
-    "components": 70,
-    "props": 973,
-    "events": 126,
-    "models": 29,
-    "slots": 67,
-    "methods": 53,
+    "components": 71,
+    "props": 990,
+    "events": 129,
+    "models": 30,
+    "slots": 71,
+    "methods": 58,
     "warnings": 0,
-    "requested": 75
+    "requested": 76
   },
   "unresolvedRefs": []
 }

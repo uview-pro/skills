@@ -73,6 +73,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-notice-bar` | 通告栏（`mode` 切 horizontal / vertical，内部渲染横向或纵向滚动子件） |
 | `ux-collapse` / `ux-collapse-item` | 折叠面板 / 面板项 |
 | `ux-popup` | 弹窗（`v-model:show`） |
+| `ux-popover` | 气泡弹出菜单（`#menu` 插槽自定义内容，纵向越界自动翻转） |
 | `ux-swipe-action` | 滑动单元格 |
 | `ux-modal` | 弹窗（确认/取消） |
 | `ux-mask` | 遮罩层 |

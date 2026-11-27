@@ -2,7 +2,7 @@
 
 # ux-subsection API
 
-> 来源：`components/ux-subsection`（uview-pro-x v2.0.7）
+> 来源：`components/ux-subsection`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:24bef807420725b3dd10adf358a7b45914668a219aabcd1e2485ed8f51e2783b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only subsection`
 

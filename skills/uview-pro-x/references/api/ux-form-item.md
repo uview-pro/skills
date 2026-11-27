@@ -2,7 +2,7 @@
 
 # ux-form-item API
 
-> 来源：`components/ux-form-item`（uview-pro-x v2.0.7）
+> 来源：`components/ux-form-item`（uview-pro-x v2.0.14）
 > API 指纹：`sha256:38d2055466b9e557bc354c06916ee25628d73f356acd2b7a2223a15b6017a1c7`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only form-item`
 

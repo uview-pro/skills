@@ -14,7 +14,7 @@ HTTP 请求（spec/08 + recipe-http-instance）与 pinia 状态管理（spec/09�
 ## 权威源与优先级
 
 1. **组件库源码** `uni_modules/uview-pro-x`（install API / `$u` / hooks / 各组件属性定义）——**源码可读时**为最终事实源
-2. **API 快照卡片** `api/`（70 个公开组件属性/取值/事件/v-model/插槽/类型定义，随技能发货）——**源码不可读（加密）时即权威**
+2. **API 快照卡片** `api/`（71 个公开组件属性/取值/事件/v-model/插槽/类型定义，随技能发货）——**源码不可读（加密）时即权威**
 3. 本手册 `spec/`（按主题拆分，一个主题一个文件）
 4. 本手册 `recipes/`（照抄写法）
 5. 经验
@@ -33,7 +33,7 @@ HTTP 请求（spec/08 + recipe-http-instance）与 pinia 状态管理（spec/09�
 
 | 文件 | 定位 |
 |---|---|
-| `api/README.md` | 组件 API 卡片索引（70 个公开组件 → 卡片；含快照再生成与版本升级流程） |
+| `api/README.md` | 组件 API 卡片索引（71 个公开组件 → 卡片；含快照再生成与版本升级流程） |
 | `spec/01-install-and-setup.md` | 安装与接入：插件市场导入、easycom、main.ts 注册、样式接入、install 选项全表 |
 | `spec/02-page-script-ts.md` | 页面脚本：组合式写法、TS 类型陷阱 ❌/✅、模板绑定规则、页面生命周期 |
 | `spec/03-page-style-ucss.md` | 页面样式：UCSS 红线、布局陷阱、文本省略双轨、主题变量表、暗黑模式 |
