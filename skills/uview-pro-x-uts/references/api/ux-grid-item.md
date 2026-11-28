@@ -2,7 +2,7 @@
 
 # ux-grid-item API
 
-> 来源：`components/ux-grid-item`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-grid-item`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:51bcd802552783c6f3a2f7309550a5f7e77ec73d294faabe2fc2072ff7db325d`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only grid-item`
 

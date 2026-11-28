@@ -2,8 +2,8 @@
 
 # ux-input API
 
-> 来源：`components/ux-input`（uview-pro-x-uts v1.0.31）
-> API 指纹：`sha256:eb3bf6852930d224c7747af1904e011aa57017bbacdab5f3bd64506536fb7534`
+> 来源：`components/ux-input`（uview-pro-x-uts v1.1.13）
+> API 指纹：`sha256:d87f674cfb5851de061c885ae6303d31ed6b7b41c12593d88583550662aaafe3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only input`
 
 此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件ux-form而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。
@@ -67,7 +67,8 @@
 
 | 插槽名 | 说明 |
 | --- | --- |
-| `prefix` | - |
+| `prefix` | 前置插槽，在录入区之前渲染内容，如金额输入前的货币图标 |
+| `suffix` | 后置插槽，在录入区之后渲染内容，如单位、图标或按钮（点击不冒泡到根节点） |
 
 ## 外部样式类
 

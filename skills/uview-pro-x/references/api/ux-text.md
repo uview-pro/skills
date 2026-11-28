@@ -2,7 +2,7 @@
 
 # ux-text API
 
-> 来源：`components/ux-text`（uview-pro-x v2.0.14）
+> 来源：`components/ux-text`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:c6a034b768b705d191a47c432ab22341d703aa0dcb675c0719797e377792f6e6`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only text`
 

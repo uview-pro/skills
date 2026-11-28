@@ -2,7 +2,7 @@
 
 # ux-steps API
 
-> 来源：`components/ux-steps`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-steps`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:2ffc75cdce65f780db5a18ef67fb713711c4d9b568370ae7eccda37debf7e40f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only steps`
 

@@ -2,7 +2,7 @@
 
 # ux-full-screen API
 
-> 来源：`components/ux-full-screen`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-full-screen`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:a94f5dcaa03a41b8acd76b96ff118d627ba557a7d58047aef0e6c1b6c9dc8aa6`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only full-screen`
 

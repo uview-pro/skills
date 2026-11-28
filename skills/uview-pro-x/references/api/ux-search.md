@@ -2,7 +2,7 @@
 
 # ux-search API
 
-> 来源：`components/ux-search`（uview-pro-x v2.0.14）
+> 来源：`components/ux-search`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:1a3efc61cbca31383a2fd5fc07158b45a54ede79f6574a33d418f92ae83d6bab`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only search`
 

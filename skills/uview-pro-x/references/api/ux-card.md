@@ -2,7 +2,7 @@
 
 # ux-card API
 
-> 来源：`components/ux-card`（uview-pro-x v2.0.14）
+> 来源：`components/ux-card`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:97a2882aa92823d9ab4e6edcab33393a68548e5e51f5934ac9da351595fa0bb8`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only card`
 

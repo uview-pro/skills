@@ -36,7 +36,7 @@ const GEN_BY = 'scripts/gen-api-cards.mjs';
  */
 const GROUPS = [
     ['基础', ['ux-icon', 'ux-image', 'ux-button', 'ux-cell-item', 'ux-cell-group', 'ux-badge', 'ux-tag', 'ux-text', 'ux-avatar']],
-    ['表单', ['ux-form', 'ux-form-item', 'ux-input', 'ux-textarea', 'ux-select', 'ux-picker', 'ux-rate', 'ux-search', 'ux-number-box', 'ux-checkbox', 'ux-checkbox-group', 'ux-radio', 'ux-radio-group', 'ux-switch', 'ux-slider', 'ux-keyboard']],
+    ['表单', ['ux-form', 'ux-form-item', 'ux-input', 'ux-textarea', 'ux-select', 'ux-picker', 'ux-rate', 'ux-search', 'ux-number-box', 'ux-checkbox', 'ux-checkbox-group', 'ux-radio', 'ux-radio-group', 'ux-switch', 'ux-slider', 'ux-signature', 'ux-keyboard']],
     ['数据展示', ['ux-line-progress', 'ux-circle-progress', 'ux-count-to', 'ux-count-down', 'ux-swiper']],
     ['反馈', ['ux-action-sheet', 'ux-toast', 'ux-notice-bar', 'ux-collapse', 'ux-collapse-item', 'ux-popup', 'ux-swipe-action', 'ux-modal', 'ux-mask', 'ux-loading', 'ux-loadmore', 'ux-empty', 'ux-no-network', 'ux-alert-tips', 'ux-top-tips']],
     ['布局', ['ux-line', 'ux-card', 'ux-grid', 'ux-grid-item', 'ux-divider', 'ux-row', 'ux-col', 'ux-section', 'ux-sticky', 'ux-gap', 'ux-safe-bottom', 'ux-status-bar']],

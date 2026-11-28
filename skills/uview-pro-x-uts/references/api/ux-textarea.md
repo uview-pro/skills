@@ -2,7 +2,7 @@
 
 # ux-textarea API
 
-> 来源：`components/ux-textarea`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-textarea`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:5304dd82f147b46a72177cbb9e275c2de4f6d3aa5b5b57a22b36c21aae1078c2`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only textarea`
 

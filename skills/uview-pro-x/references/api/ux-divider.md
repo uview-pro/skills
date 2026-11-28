@@ -2,7 +2,7 @@
 
 # ux-divider API
 
-> 来源：`components/ux-divider`（uview-pro-x v2.0.14）
+> 来源：`components/ux-divider`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:e435fcf3a996339c301711cfdece935ee462ea4ab137b9c8aa1dc55ebe919f4c`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only divider`
 

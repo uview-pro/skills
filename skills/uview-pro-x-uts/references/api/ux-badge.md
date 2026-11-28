@@ -2,7 +2,7 @@
 
 # ux-badge API
 
-> 来源：`components/ux-badge`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-badge`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:e88306c72d8c9533b2b214d998d0e5d3906081b87c23c37160010897020df351`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only badge`
 

@@ -2,7 +2,7 @@
 
 # ux-cell-group API
 
-> 来源：`components/ux-cell-group`（uview-pro-x v2.0.14）
+> 来源：`components/ux-cell-group`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:e45f2c90a3a346536d30cebafc8c9fde9f886ebaa0940484582da1fda0f05b4f`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only cell-group`
 

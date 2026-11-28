@@ -52,6 +52,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-radio` / `ux-radio-group` | 单选框 / 单选框组 |
 | `ux-switch` | 开关 |
 | `ux-slider` | 滑块 |
+| `ux-signature` | 签名板（canvas 手写/撤销/清空/图片导出，可叠书写格与描红） |
 | `ux-keyboard` | 键盘（`mode` 切 number / card / car，内部分派给数字与车牌键盘子件） |
 
 ### 数据展示
@@ -73,6 +74,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-notice-bar` | 通告栏（`mode` 切 horizontal / vertical，内部渲染横向或纵向滚动子件） |
 | `ux-collapse` / `ux-collapse-item` | 折叠面板 / 面板项 |
 | `ux-popup` | 弹窗（`v-model:show`） |
+| `ux-popover` | 气泡弹出菜单（`#menu` 插槽自定义内容，纵向越界自动翻转） |
 | `ux-swipe-action` | 滑动单元格 |
 | `ux-modal` | 弹窗（确认/取消） |
 | `ux-mask` | 遮罩层 |

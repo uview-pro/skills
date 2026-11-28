@@ -2,7 +2,7 @@
 
 # ux-swiper API
 
-> 来源：`components/ux-swiper`（uview-pro-x v2.0.14）
+> 来源：`components/ux-swiper`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:3daf112ea262d5b736c206e26a398d8e50bf9d6dc5d350bfa64e402a97318e64`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only swiper`
 

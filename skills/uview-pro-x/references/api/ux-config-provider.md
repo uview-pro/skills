@@ -2,7 +2,7 @@
 
 # ux-config-provider API
 
-> 来源：`components/ux-config-provider`（uview-pro-x v2.0.14）
+> 来源：`components/ux-config-provider`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:3b3f6e26481082889801997f108489467c5f52e9d430fc777a483988502c259a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only config-provider`
 

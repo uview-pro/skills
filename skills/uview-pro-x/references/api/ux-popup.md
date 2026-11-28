@@ -2,7 +2,7 @@
 
 # ux-popup API
 
-> 来源：`components/ux-popup`（uview-pro-x v2.0.14）
+> 来源：`components/ux-popup`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:3e4da1f93547607adc935c8946e495ed580bfcf57c5c35ecf7398955a35b0b10`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only popup`
 

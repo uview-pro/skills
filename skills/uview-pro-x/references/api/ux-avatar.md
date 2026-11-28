@@ -2,7 +2,7 @@
 
 # ux-avatar API
 
-> 来源：`components/ux-avatar`（uview-pro-x v2.0.14）
+> 来源：`components/ux-avatar`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:e30fb2a4bbae8bf376f4b2adb5c54852c98a0c7f1a410f4f4aba4125c43aabf8`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only avatar`
 

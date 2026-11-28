@@ -2,7 +2,7 @@
 
 # ux-no-network API
 
-> 来源：`components/ux-no-network`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-no-network`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:9a52e8968900a624483d890c2d36930db0c8f77310738d3a97649ffc76e35706`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only no-network`
 

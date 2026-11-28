@@ -2,7 +2,7 @@
 
 # ux-notice-bar API
 
-> 来源：`components/ux-notice-bar`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-notice-bar`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:a13a12c98d40408deeb6bb2dc0405fafcd6db3dec46e23c14913639b3935bcb2`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only notice-bar`
 

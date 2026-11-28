@@ -44,7 +44,7 @@ description: "1.x（UTS）UView Pro X 页面编写规范（消费侧自包含技
 | `references/recipes/recipe-page-scaffold.md` | 消费者视角最小页面（路由注册 + 骨架 + 主题绑定） |
 | `references/recipes/recipe-page-scroll.md` | 三端滚动监听与返回顶部绑定 |
 | `references/recipes/recipe-http-instance.md` | 业务请求实例：`api/request.uts` + 拦截器 + 页面 `useRequest` |
-| `references/api/README.md` | 组件 API 卡片索引（70 个公开组件 → 卡片；含快照再生成与版本升级流程） |
+| `references/api/README.md` | 组件 API 卡片索引（72 个公开组件 → 卡片；含快照再生成与版本升级流程） |
 | `scripts/gen-api-cards.mjs` | API 快照/卡片生成器（组件库源码可读时重生成；生成物随技能发货） |
 | `scripts/update-api.mjs` | 一条命令更新快照与卡片：重生成 → 一致性核对 → 语料回归（库维护者用，消费侧不需要） |
 | `scripts/verify-ux-usage.mjs` | 页面写法校验器（默认读内置快照，写后 0 违规门禁） |

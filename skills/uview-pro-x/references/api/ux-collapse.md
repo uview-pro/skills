@@ -2,7 +2,7 @@
 
 # ux-collapse API
 
-> 来源：`components/ux-collapse`（uview-pro-x v2.0.14）
+> 来源：`components/ux-collapse`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:714b3bb3979fddaea5f5e63d559d09b35e8b99c887979073e88bcd2aa9503bfa`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only collapse`
 

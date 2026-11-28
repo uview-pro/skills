@@ -2,7 +2,7 @@
 
 # ux-picker API
 
-> 来源：`components/ux-picker`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-picker`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:c529760fb94b56e1860d9add72c3a9f133a3db6ec2e0b6a449318be2d4321d1a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only picker`
 

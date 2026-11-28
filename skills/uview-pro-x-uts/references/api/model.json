@@ -1,6 +1,6 @@
 {
-  "libVersion": "1.0.31",
-  "libHash": "sha256:b585783f69fc12ba82aad23fae441b348da67b8c45324a6babe0fd986312066f",
+  "libVersion": "1.1.13",
+  "libHash": "sha256:410ffb37f742850660a858f37229aa5a0b46e06285865ad562c93f4935d43336",
   "components": {
     "ux-action-sheet": {
       "name": "ux-action-sheet",
@@ -3933,6 +3933,20 @@
           "descFrom": "types"
         },
         {
+          "name": "format",
+          "kebab": "format",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "文本模板，如 HH:mm:ss、DD HH:mm:ss；为空时按分段盒子渲染",
+          "descFrom": "types"
+        },
+        {
           "name": "autoplay",
           "kebab": "autoplay",
           "type": "boolean",
@@ -3943,7 +3957,7 @@
           "default": "true",
           "defaultKind": "literal",
           "required": false,
-          "desc": "是否自动开始倒计时，false 时需手动调用 start 方法",
+          "desc": "是否自动开始倒计时，false 时需手动调用 start / pause / reset 方法",
           "descFrom": "types"
         },
         {
@@ -4170,7 +4184,12 @@
         }
       ],
       "models": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "default",
+          "desc": "文本模板模式下的自定义渲染，插槽参数 current 为当前剩余时间；仅在 format 非空时渲染"
+        }
+      ],
       "externalClasses": [
         "custom-class"
       ],
@@ -4179,11 +4198,17 @@
           "name": "start"
         },
         {
+          "name": "pause"
+        },
+        {
+          "name": "reset"
+        },
+        {
           "name": "end"
         }
       ],
       "warnings": [],
-      "apiHash": "sha256:4a42e81ad705d4f5eba4b8923117036a780fd6b40409bc9759ce6bf2cd77079b"
+      "apiHash": "sha256:6a7cd779390dc47c13731e8c4bc8906dd253d73804cb83b5bf29867757b4ab2b"
     },
     "ux-count-to": {
       "name": "ux-count-to",
@@ -6771,7 +6796,11 @@
       "slots": [
         {
           "name": "prefix",
-          "desc": ""
+          "desc": "前置插槽，在录入区之前渲染内容，如金额输入前的货币图标"
+        },
+        {
+          "name": "suffix",
+          "desc": "后置插槽，在录入区之后渲染内容，如单位、图标或按钮（点击不冒泡到根节点）"
         }
       ],
       "externalClasses": [
@@ -6779,7 +6808,7 @@
       ],
       "methods": [],
       "warnings": [],
-      "apiHash": "sha256:eb3bf6852930d224c7747af1904e011aa57017bbacdab5f3bd64506536fb7534"
+      "apiHash": "sha256:d87f674cfb5851de061c885ae6303d31ed6b7b41c12593d88583550662aaafe3"
     },
     "ux-keyboard": {
       "name": "ux-keyboard",
@@ -9940,6 +9969,298 @@
       "warnings": [],
       "apiHash": "sha256:c529760fb94b56e1860d9add72c3a9f133a3db6ec2e0b6a449318be2d4321d1a"
     },
+    "ux-popover": {
+      "name": "ux-popover",
+      "dir": "components/ux-popover",
+      "description": "在触发元素旁弹出菜单面板，菜单内容全部由 `#menu` 插槽自定义（组件不内置 options 渲染）。定位口径：打开后先让面板以透明态挂载并绘制一帧，再量触发元素与面板的矩形，按 placement 算出 left/top 并钳制在屏幕内；纵向越界时自动翻转到另一侧（只改视觉，不派发事件）。矩形用 getBoundingClientRectAsync 采集，与 position: fixed 的原点三端一致，因此直接使用矩形值、不做 windowTop 换算。显隐终态（transform / opacity / transition-duration）经 `el.style.setProperty` 命令式直写，几何量（left / top / width / 箭头偏移）走内联样式，位置与动画状态由 BEM 类表达。面板默认 1px 描边 + 单层柔和阴影（均取主题令牌、随亮暗主题切换），边界清晰又不抢眼；箭头叠在面板之上（层级更高），用同底色背景盖住横穿根部的那段描边，只描外露的两条斜边，因此三端都不会出现割裂横线；show-border / show-shadow 全关即为纯色气泡（深色气泡同色无缝）；Web 端打开期间发生任何滚动都会自动关闭面板，App 与小程序端由遮罩阻断触摸滑动，不会出现面板与触发元素错位。",
+      "props": [
+        {
+          "name": "customStyle",
+          "kebab": "custom-style",
+          "type": "string | UTSJSONObject",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "(): UTSJSONObject => ({})",
+          "defaultKind": "factory",
+          "required": false,
+          "desc": "自定义面板容器样式",
+          "descFrom": "types"
+        },
+        {
+          "name": "customClass",
+          "kebab": "custom-class",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "自定义面板容器样式类",
+          "descFrom": "types"
+        },
+        {
+          "name": "placement",
+          "kebab": "placement",
+          "type": "PopoverPlacement",
+          "typeResolved": {
+            "kind": "literalUnion",
+            "values": [
+              "bottom-end",
+              "bottom",
+              "bottom-start",
+              "top-end",
+              "top",
+              "top-start"
+            ]
+          },
+          "default": "'bottom-end'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板方位，bottom-end | bottom | bottom-start | top-end | top | top-start（默认 bottom-end）",
+          "descFrom": "types"
+        },
+        {
+          "name": "offset",
+          "kebab": "offset",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板与触发元素的间距，单位 px（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showArrow",
+          "kebab": "show-arrow",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示指向触发元素的箭头（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "arrowSize",
+          "kebab": "arrow-size",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "箭头边长，单位 px（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "bgColor",
+          "kebab": "bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板背景色，留空走主题白底（默认空）",
+          "descFrom": "types"
+        },
+        {
+          "name": "borderRadius",
+          "kebab": "border-radius",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "面板圆角，单位 px，传 0 为直角（默认 8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showBorder",
+          "kebab": "show-border",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示面板描边，默认 true：1px 描边定义边界，箭头叠在上层盖住断口，根部无接缝线",
+          "descFrom": "types"
+        },
+        {
+          "name": "showShadow",
+          "kebab": "show-shadow",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示漫射阴影，关掉后为无投影的纯色气泡（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "maskBgColor",
+          "kebab": "mask-bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "'rgba(0,0,0,0)'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "遮罩层背景色，默认全透明只做点击捕获（默认 rgba(0,0,0,0)）",
+          "descFrom": "types"
+        },
+        {
+          "name": "maskCloseAble",
+          "kebab": "mask-close-able",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "点击遮罩是否关闭面板（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "contentCloseAble",
+          "kebab": "content-close-able",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "false",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "点击面板内容后是否自动关闭，插槽方案下默认交给调用方（默认 false）",
+          "descFrom": "types"
+        },
+        {
+          "name": "duration",
+          "kebab": "duration",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "200",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "显隐动画时长，单位 ms（默认 200）",
+          "descFrom": "types"
+        },
+        {
+          "name": "zIndex",
+          "kebab": "z-index",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "层级，留空取 $u.zIndex.dropdown（默认空）",
+          "descFrom": "types"
+        },
+        {
+          "name": "refreshKey",
+          "kebab": "refresh-key",
+          "type": "string | number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "0",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "内容尺寸异步变化时改此值触发重新测位（默认 0）",
+          "descFrom": "types"
+        }
+      ],
+      "events": [
+        {
+          "name": "open",
+          "payload": "",
+          "desc": "开始打开（面板已挂载、测位前）"
+        },
+        {
+          "name": "close",
+          "payload": "",
+          "desc": "开始关闭（终态已写回起始值）"
+        },
+        {
+          "name": "clickMask",
+          "payload": "",
+          "desc": "点击遮罩层"
+        }
+      ],
+      "models": [
+        {
+          "name": "show",
+          "channels": [
+            "defineModel"
+          ],
+          "propName": "show",
+          "updateEvent": "update:show",
+          "default": "false"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "desc": "触发区内容（必填）"
+        },
+        {
+          "name": "menu",
+          "desc": "面板内容"
+        }
+      ],
+      "externalClasses": [
+        "custom-class"
+      ],
+      "methods": [
+        {
+          "name": "open"
+        },
+        {
+          "name": "close"
+        },
+        {
+          "name": "refresh"
+        }
+      ],
+      "warnings": [],
+      "apiHash": "sha256:c6b7f3c8f89fe951920fcb41a634c93f66389963c87564308bc9f330a4c6bd50"
+    },
     "ux-popup": {
       "name": "ux-popup",
       "dir": "components/ux-popup",
@@ -12117,6 +12438,453 @@
       ],
       "warnings": [],
       "apiHash": "sha256:997f12b5d3bf7cc648d92142b66840b98ae9a464273f6e26bb0cf2f34ef781fa"
+    },
+    "ux-signature": {
+      "name": "ux-signature",
+      "dir": "components/ux-signature",
+      "description": "基于 canvas 2D 的手写签名板，支持笔迹书写、撤销、清空与图片导出（base64 dataURL）；笔迹按落笔时的颜色与粗细保留，撤销通道按平台区分（鸿蒙重绘笔画，其它端还原像素快照）",
+      "props": [
+        {
+          "name": "customStyle",
+          "kebab": "custom-style",
+          "type": "string | UTSJSONObject",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "(): UTSJSONObject => ({})",
+          "defaultKind": "factory",
+          "required": false,
+          "desc": "自定义根节点样式",
+          "descFrom": "types"
+        },
+        {
+          "name": "customClass",
+          "kebab": "custom-class",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "自定义根节点样式类",
+          "descFrom": "types"
+        },
+        {
+          "name": "width",
+          "kebab": "width",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "'100%'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "组件宽度，支持数字(px)/百分比/带单位字符串（默认 100%）",
+          "descFrom": "types"
+        },
+        {
+          "name": "height",
+          "kebab": "height",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "200",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "画布区域高度，单位 px（默认 200）",
+          "descFrom": "types"
+        },
+        {
+          "name": "exportFormat",
+          "kebab": "export-format",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "'png'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "导出格式：png | jpeg（默认 png；jpeg 透明背景会变黑，需同时设置 exportBgColor）",
+          "descFrom": "types"
+        },
+        {
+          "name": "quality",
+          "kebab": "quality",
+          "type": "number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "0.8",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "jpeg 导出质量，0-1（默认 0.8）",
+          "descFrom": "types"
+        },
+        {
+          "name": "disabled",
+          "kebab": "disabled",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "false",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否禁用书写（默认 false）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showTips",
+          "kebab": "show-tips",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示提示层（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "tips",
+          "kebab": "tips",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "提示文案，为空时回退组件语料",
+          "descFrom": "types"
+        },
+        {
+          "name": "tipsSize",
+          "kebab": "tips-size",
+          "type": "number | string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "24",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "提示字号，单位 px（默认 24）",
+          "descFrom": "types"
+        },
+        {
+          "name": "tipsColor",
+          "kebab": "tips-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "提示文字颜色，为空时回退半透明水印色",
+          "descFrom": "types"
+        },
+        {
+          "name": "lineColor",
+          "kebab": "line-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "笔迹颜色，为空时回退主题主文字色",
+          "descFrom": "types"
+        },
+        {
+          "name": "lineWidth",
+          "kebab": "line-width",
+          "type": "number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "3",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "笔迹宽度，单位 px（默认 3）",
+          "descFrom": "types"
+        },
+        {
+          "name": "bgColor",
+          "kebab": "bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "签名区容器底色，为空时回退主题白底（只影响屏幕，不写入导出图）",
+          "descFrom": "types"
+        },
+        {
+          "name": "exportBgColor",
+          "kebab": "export-bg-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "画布填充底色（写入导出图），为空时透明",
+          "descFrom": "types"
+        },
+        {
+          "name": "exportGrid",
+          "kebab": "export-grid",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "导出是否保留格线（默认 true，取不到时按 true）；描红只作屏幕提示、不导出；false 时导出仅「底色 + 笔迹」",
+          "descFrom": "types"
+        },
+        {
+          "name": "gridType",
+          "kebab": "grid-type",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "书写格格线类型：空串关闭；tian 田字格 | mi 米字格 | nine 九宫格",
+          "descFrom": "types"
+        },
+        {
+          "name": "gridSize",
+          "kebab": "grid-size",
+          "type": "number",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "56",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "格子边长，单位 px（默认 56，内部钳制 24-120）",
+          "descFrom": "types"
+        },
+        {
+          "name": "gridColor",
+          "kebab": "grid-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "网格线颜色，为空时回退参考线红",
+          "descFrom": "types"
+        },
+        {
+          "name": "guideText",
+          "kebab": "guide-text",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "描红文字，逐格绘制，超出可视格数截断",
+          "descFrom": "types"
+        },
+        {
+          "name": "guideColor",
+          "kebab": "guide-color",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "描红文字颜色，为空时回退半透明红",
+          "descFrom": "types"
+        },
+        {
+          "name": "gridAlign",
+          "kebab": "grid-align",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "'center'",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "格线垂直对齐：center 居中（默认）| top 顶对齐；块高度接近画布高度时两者差异很小",
+          "descFrom": "types"
+        },
+        {
+          "name": "showClear",
+          "kebab": "show-clear",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示清空按钮（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showRevoke",
+          "kebab": "show-revoke",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "false",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示撤销按钮（默认 false）",
+          "descFrom": "types"
+        },
+        {
+          "name": "showConfirm",
+          "kebab": "show-confirm",
+          "type": "boolean",
+          "typeResolved": {
+            "kind": "boolean",
+            "values": null
+          },
+          "default": "true",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "是否显示确定按钮（默认 true）",
+          "descFrom": "types"
+        },
+        {
+          "name": "clearText",
+          "kebab": "clear-text",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "清空按钮文案，为空时回退组件语料",
+          "descFrom": "types"
+        },
+        {
+          "name": "revokeText",
+          "kebab": "revoke-text",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "撤销按钮文案，为空时回退组件语料",
+          "descFrom": "types"
+        },
+        {
+          "name": "confirmText",
+          "kebab": "confirm-text",
+          "type": "string",
+          "typeResolved": {
+            "kind": "opaque",
+            "values": null
+          },
+          "default": "''",
+          "defaultKind": "literal",
+          "required": false,
+          "desc": "确定按钮文案，为空时回退组件语料",
+          "descFrom": "types"
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "payload": "",
+          "desc": "落笔时触发"
+        },
+        {
+          "name": "signing",
+          "payload": "",
+          "desc": "书写过程中持续触发"
+        },
+        {
+          "name": "end",
+          "payload": "",
+          "desc": "抬笔或触摸取消时触发"
+        },
+        {
+          "name": "submit",
+          "payload": "image: string",
+          "desc": "点击确定时触发，回传 base64 dataURL；未落笔为空串"
+        }
+      ],
+      "models": [],
+      "slots": [
+        {
+          "name": "tips",
+          "desc": "自定义提示层内容，覆盖在画布上方且不拦截书写事件"
+        }
+      ],
+      "externalClasses": [
+        "custom-class"
+      ],
+      "methods": [
+        {
+          "name": "clear"
+        },
+        {
+          "name": "revoke"
+        },
+        {
+          "name": "done"
+        },
+        {
+          "name": "resize"
+        }
+      ],
+      "warnings": [],
+      "apiHash": "sha256:d50d8f20ea0a6a623801995d1abda1950f3f6b0d1cfb0010234b9cd343bad086"
     },
     "ux-skeleton": {
       "name": "ux-skeleton",
@@ -17189,14 +17957,14 @@
   },
   "errors": [],
   "stats": {
-    "components": 70,
-    "props": 973,
-    "events": 126,
-    "models": 29,
-    "slots": 67,
-    "methods": 53,
+    "components": 72,
+    "props": 1018,
+    "events": 133,
+    "models": 30,
+    "slots": 72,
+    "methods": 62,
     "warnings": 0,
-    "requested": 75
+    "requested": 77
   },
   "unresolvedRefs": []
 }

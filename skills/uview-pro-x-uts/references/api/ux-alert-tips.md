@@ -2,7 +2,7 @@
 
 # ux-alert-tips API
 
-> 来源：`components/ux-alert-tips`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-alert-tips`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:f2cdd1d4656d235f8edf699204133c5e8c47aa1db79d67f6f3eb736b6cc3d41b`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only alert-tips`
 

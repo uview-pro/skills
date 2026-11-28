@@ -2,7 +2,7 @@
 
 # ux-button API
 
-> 来源：`components/ux-button`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-button`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:7c2c7b815b2071720b29ceb08676e21a01fd5c4cdd8a0905dbdb7a9c7dcffc40`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only button`
 

@@ -2,7 +2,7 @@
 
 # ux-loadmore API
 
-> 来源：`components/ux-loadmore`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-loadmore`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:6eb7812fd94d2e66c459ab6051d5a9fbc89c7cc94b098e42cddb950e535e392a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only loadmore`
 

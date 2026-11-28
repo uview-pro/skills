@@ -52,6 +52,7 @@ import { $u, useTheme, useLocale, type TabbarItem } from '@/uni_modules/uview-pr
 | `ux-radio` / `ux-radio-group` | 单选框 / 单选框组 |
 | `ux-switch` | 开关 |
 | `ux-slider` | 滑块 |
+| `ux-signature` | 签名板（canvas 手写/撤销/清空/图片导出，可叠书写格与描红） |
 | `ux-keyboard` | 键盘（`mode` 切 number / card / car，内部分派给数字与车牌键盘子件） |
 
 ### 数据展示

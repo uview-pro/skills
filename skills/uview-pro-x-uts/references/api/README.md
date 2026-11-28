@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x-uts v1.0.31 ｜ 全库 API 指纹 `sha256:b585783f69fc12ba82aad23fae441b348da67b8c45324a6babe0fd986312066f` ｜ 70 个组件
+> uview-pro-x-uts v1.1.13 ｜ 全库 API 指纹 `sha256:410ffb37f742850660a858f37229aa5a0b46e06285865ad562c93f4935d43336` ｜ 72 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
@@ -38,6 +38,7 @@
 | [ux-rate](./ux-rate.md) | 该组件一般用于满意度调查，星型评分的场景 | `v-model` | 1 |
 | [ux-search](./ux-search.md) | 搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用 | `v-model` | 8 |
 | [ux-select](./ux-select.md) | 由 ux-popup 从底部弹出的列选择器，支持 single-column-单列 / mutil-column-多列 / mutil-column-auto-多列联动三种模式 | `v-model` | 2 |
+| [ux-signature](./ux-signature.md) | 基于 canvas 2D 的手写签名板，支持笔迹书写、撤销、清空与图片导出（base64 dataURL） | — | 4 |
 | [ux-slider](./ux-slider.md) | 滑块选择器 | `v-model` | 3 |
 | [ux-switch](./ux-switch.md) | 选择开关一般用于只有两个选择，且只能选其一的场景 | `v-model` | 1 |
 | [ux-textarea](./ux-textarea.md) | 多行文本输入组件，支持字数统计、自动增高、清除按钮，可配合 ux-form 实现表单校验 | `v-model` | 8 |
@@ -111,6 +112,12 @@
 | [ux-full-screen](./ux-full-screen.md) | 用于 App 弹窗遮盖导航栏和底部 tabbar，提示新版本升级内容 | — | 0 |
 | [ux-skeleton](./ux-skeleton.md) | 骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验 | — | 0 |
 | [ux-transition](./ux-transition.md) | 进出场动画封装：CSS transition 驱动显隐过渡（uni-app x App 端不支持 @keyframes，统一走 transition + 类切换范式） | — | 8 |
+
+## 未分组
+
+| 组件 | 说明 | v-model | 事件数 |
+| --- | --- | --- | --- |
+| [ux-popover](./ux-popover.md) | 在触发元素旁弹出菜单面板，菜单内容全部由 `#menu` 插槽自定义（组件不内置 options 渲染） | `v-model:show` | 3 |
 
 ## 快照更新与版本升级流程
 

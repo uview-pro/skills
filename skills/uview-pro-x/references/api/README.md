@@ -2,7 +2,7 @@
 
 # 组件 API 卡片索引
 
-> uview-pro-x v2.0.14 ｜ 全库 API 指纹 `sha256:1abf0906f0f7d328b6e2946d87335b471014ea2771a8e63fa268ba812433896d` ｜ 71 个组件
+> uview-pro-x v2.0.15 ｜ 全库 API 指纹 `sha256:043ba80d5488006a44bd9dc9570d66d3e6841c0790a75783e5ee01fb91b19fe0` ｜ 72 个组件
 >
 > 写任何 `<ux-*>` 前先查对应卡片（属性/取值/事件/v-model/插槽/类型定义一页俱全）；卡上没有的写法不要猜。
 > 本索引与 `model.json` 随技能发货，消费侧不依赖项目内组件库源码（源码加密场景同样可用）。
@@ -117,6 +117,7 @@
 | 组件 | 说明 | v-model | 事件数 |
 | --- | --- | --- | --- |
 | [ux-popover](./ux-popover.md) | 在触发元素旁弹出菜单面板，菜单内容全部由 `#menu` 插槽自定义（组件不内置 options 渲染） | `v-model:show` | 3 |
+| [ux-signature](./ux-signature.md) | 基于 canvas 2D 的手写签名板，支持笔迹书写、撤销、清空与图片导出（base64 dataURL） | — | 4 |
 
 ## 快照更新与版本升级流程
 

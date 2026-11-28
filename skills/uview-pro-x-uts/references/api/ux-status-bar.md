@@ -2,7 +2,7 @@
 
 # ux-status-bar API
 
-> 来源：`components/ux-status-bar`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-status-bar`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:939e2e6842b7a15d3df3d5dbe4a6f7e5505ab55ec9e60f36b5b98ee057627579`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only status-bar`
 

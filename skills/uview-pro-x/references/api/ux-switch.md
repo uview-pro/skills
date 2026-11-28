@@ -2,7 +2,7 @@
 
 # ux-switch API
 
-> 来源：`components/ux-switch`（uview-pro-x v2.0.14）
+> 来源：`components/ux-switch`（uview-pro-x v2.0.15）
 > API 指纹：`sha256:e68bcf3c474b8aa3bf104e55f2ebf3ca06d2563a5f77352456deca648a2e087a`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x 路径> --only switch`
 

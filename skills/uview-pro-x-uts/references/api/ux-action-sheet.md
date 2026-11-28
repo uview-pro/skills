@@ -2,7 +2,7 @@
 
 # ux-action-sheet API
 
-> 来源：`components/ux-action-sheet`（uview-pro-x-uts v1.0.31）
+> 来源：`components/ux-action-sheet`（uview-pro-x-uts v1.1.13）
 > API 指纹：`sha256:14bc472b103aeb1d29443765514655a1451fc21f34ab2c2effba085c77669ac3`
 > 再生成（组件库源码可读时）：`node scripts/gen-api-cards.mjs --lib <uview-pro-x-uts 路径> --only action-sheet`
 
